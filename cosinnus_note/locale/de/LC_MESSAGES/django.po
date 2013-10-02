@@ -1,0 +1,114 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Markus Holtermann <info@markusholtermann.eu>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-24 17:35+0200\n"
+"PO-Revision-Date: 2013-07-19 19:30+0200\n"
+"Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
+"Language-Team: German <>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: models.py:19 models.py:49 templates/note/note_list.html:31
+msgid "Created"
+msgstr "Erstellt"
+
+#: models.py:20 models.py:48 templates/note/note_list.html:30
+msgid "Author"
+msgstr "Autor"
+
+#: models.py:22
+msgid "Group"
+msgstr "Gruppe"
+
+#: models.py:24 models.py:51
+msgid "Text"
+msgstr "Text"
+
+#: models.py:25 templates/note/note_list.html:29
+msgid "Title"
+msgstr "Titel"
+
+#: models.py:30 templates/note/note_list.html:7
+msgid "Note"
+msgstr "Notiz"
+
+#: models.py:31 templates/note/base.html:8
+msgid "Notes"
+msgstr "Notizen"
+
+#: models.py:55 templates/note/note_list.html:54
+msgid "Comment"
+msgstr "Kommentar"
+
+#: models.py:56
+msgid "Comments"
+msgstr "Kommentare"
+
+#: templates/note/comment_create.html:9 templates/note/note_detail.html:13
+msgid "Write comment"
+msgstr "Kommentieren"
+
+#: templates/note/comment_create.html:36 templates/note/note_create.html:24
+msgid "Create"
+msgstr "Erstellen"
+
+#: templates/note/comment_create.html:37 templates/note/comment_delete.html:24
+#: templates/note/comment_update.html:38 templates/note/note_create.html:25
+#: templates/note/note_delete.html:24 templates/note/note_update.html:26
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: templates/note/comment_delete.html:10 templates/note/note_delete.html:9
+#: templates/note/note_detail.html:10 templates/note/note_detail.html.py:58
+#: templates/note/note_list.html:53
+msgid "Delete"
+msgstr "Löschen"
+
+#: templates/note/comment_update.html:10 templates/note/comment_update.html:37
+#: templates/note/note_update.html:13 templates/note/note_update.html.py:25
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: templates/note/note_create.html:12 templates/note/note_list.html:12
+msgid "Create note"
+msgstr "Neue Notiz"
+
+#: templates/note/note_detail.html:7 templates/note/note_detail.html.py:57
+#: templates/note/note_list.html:52
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: templates/note/note_list.html:25
+msgid "No tags available."
+msgstr "Keine Schlagwörter vorhanden."
+
+#: templates/note/note_list.html:32
+msgid "Tags"
+msgstr "Schlagwörter"
+
+#: templates/note/note_list.html:33
+msgid "Actions"
+msgstr "Aktionen"
+
+#: templates/note/note_list.html:49
+msgid "Show"
+msgstr "Anzeigen"
+
+#: templates/note/note_list.html:62
+msgid "There are no notes."
+msgstr "Es gibt keine Notizen."
+
+#~ msgid "Create new"
+#~ msgstr "Neue Notiz"
+
+#~ msgid "Create new note"
+#~ msgstr "Neue Notiz"

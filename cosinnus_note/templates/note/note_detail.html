@@ -1,0 +1,66 @@
+{% extends "note/base.html" %}
+{% load i18n %}
+{% block page_title %}Note{% endblock %}
+
+{% block subnav_add_right %}
+<a href="{% url 'note-update' group=group.pk slug=note.slug %}" class="btn">
+  {% trans "Edit" %}
+</a>
+<a href="{% url 'note-delete' group=group.pk slug=note.slug %}" class="btn">
+  {% trans "Delete" %}
+</a>
+<a href="{% url 'note-comment' group=group.pk slug=note.slug %}" class="btn">
+  {% trans "Write comment" %}
+</a>
+{{ block.super }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li class="active">{{ object.title }}</li>
+{% endblock %}
+
+{% block content %}
+<h3>{{ object.title }}</h3>
+<div class="media">
+  <a class="pull-left" href="#">
+    {% if object.author.get_profile.avatar %}
+      <img class="media-object avatar avatar-medium" src="{{ object.author.get_profile.avatar.url }}">
+    {% else %}
+      <img class="media-object avatar avatar-medium" src="http://placehold.it/64x64">
+    {% endif %}
+  </a>
+  <div class="media-body">
+    <h5 class="media-heading muted pull-right">{{ object.created_on }}</h5>
+    <h4 class="media-heading"><a href="{% url 'sinn_auth-user-detail' group=group.pk pk=object.author.pk %}">{{ object.author.get_full_name|default:object.author.username }}</a></h4>
+    {{ object.text }}
+  </div>
+</div>
+<hr>
+
+{% for comment in object.comments.all %}
+  <div class="media media-indent-small" id="comment-{{ comment.pk }}">
+    <a class="pull-left" href="#">
+      {% if comment.author.get_profile.avatar %}
+        <img class="media-object avatar avatar-small" src="{{ comment.author.get_profile.avatar.url }}">
+      {% else %}
+        <img class="media-object avatar avatar-small" src="http://placehold.it/32x32">
+      {% endif %}
+    </a>
+    <div class="media-body">
+      <h5 class="media-heading muted pull-right">{{ comment.created_on }}</h5>
+      <h4 class="media-heading">
+        <a href="{% url 'sinn_auth-user-detail' group=group.pk pk=comment.author.pk %}">{{ comment.author.get_full_name|default:comment.author.username }}</a>
+      </h4>
+      {{ comment.text }}
+      <div class="btn-group pull-right">
+        <a class="btn btn-mini" href="{% url 'comment-update' group=group.pk pk=comment.pk %}"><i class="icon-pencil"></i> {% trans "Edit" %}</a>
+        <a class="btn btn-mini" href="{% url 'comment-delete' group=group.pk pk=comment.pk %}"><i class="icon-trash"></i> {% trans "Delete" %}</a>
+      </div>
+    </div>
+  </div>
+  {% if not forloop.last %}
+    <hr class="media-indent-small">
+  {% endif %}
+{% endfor %}
+{% endblock %}

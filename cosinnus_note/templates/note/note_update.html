@@ -1,0 +1,44 @@
+{% extends "note/base.html" %}
+{% load i18n bootstrap_toolkit cosinnus %}
+{% load static from staticfiles %}
+{% block page_title %}Note{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/vendor/jquery-ui-autocomplete.min.css' %}">
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{{ object.get_absolute_url }}">{{ object.title }}</a> <span class="divider">/</span></li>
+    <li class="active">{% trans "Update" %}</li>
+{% endblock %}
+
+{% block subnav_add_right %}{% endblock %}
+
+{% block content %}
+<form action="." method="post" class="form-horizontal">
+    {% csrf_token %}
+    <fieldset>
+        {{ form|as_bootstrap }}
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary">{% trans "Update" %}</button>
+                <a href="{% url 'note-list' group=group.pk %}" class="btn">{% trans "Cancel" %}</a>
+            </div>
+        </div>
+    </fieldset>
+</form>
+{% endblock %}
+
+{% block extrafooter %}
+{{ block.super }}
+<script type="text/javascript" src="{% static "js/vendor/jquery-ui-autocomplete.min.js" %}"></script>
+<script type="text/javascript">
+var availableTags = [
+    {% for tag in tags %}
+        "{{ tag }}",
+    {% endfor %}
+];
+</script>
+<script type="text/javascript" src="{% static "js/vendor/jquery.ui.autocomplete-tags.js" %}"></script>
+{% endblock %}
