@@ -11,8 +11,9 @@ from django.views.generic.list import ListView
 
 from extra_views import SortableListMixin
 
-from cosinnus.authentication.views import FilterGroupMixin, RequireGroupMixin
-from cosinnus.utils.views import TaggedListMixin
+from cosinnus.views.mixins.group import (RequireGroupMixin, FilterGroupMixin,
+    GroupFormKwargsMixin)
+from cosinnus.views.mixins.tagged import TaggedListMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
 from cosinnus_note.models import Note, Comment

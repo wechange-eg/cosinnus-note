@@ -9,44 +9,40 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'Note'
-        db.create_table(u'note_note', (
+        db.create_table(u'cosinnus_note_note', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('created_on', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-            ('author', self.gf('django.db.models.fields.related.ForeignKey')(related_name='notes', on_delete=models.PROTECT, to=orm['auth.User'])),
+            ('author', self.gf('django.db.models.fields.related.ForeignKey')(related_name=u'notes', on_delete=models.PROTECT, to=orm['auth.User'])),
             ('group', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.Group'])),
             ('slug', self.gf('django.db.models.fields.SlugField')(max_length=145)),
-            ('text', self.gf('markupfield.fields.MarkupField')(rendered_field=True)),
-            ('text_markup_type', self.gf('django.db.models.fields.CharField')(default=None, max_length=30)),
+            ('text', self.gf('django.db.models.fields.TextField')()),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=140)),
-            ('_text_rendered', self.gf('django.db.models.fields.TextField')()),
         ))
-        db.send_create_signal(u'note', ['Note'])
+        db.send_create_signal(u'cosinnus_note', ['Note'])
 
         # Adding unique constraint on 'Note', fields ['group', 'slug']
-        db.create_unique(u'note_note', ['group_id', 'slug'])
+        db.create_unique(u'cosinnus_note_note', ['group_id', 'slug'])
 
         # Adding model 'Comment'
-        db.create_table(u'note_comment', (
+        db.create_table(u'cosinnus_note_comment', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('author', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'], on_delete=models.PROTECT)),
             ('created_on', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-            ('note', self.gf('django.db.models.fields.related.ForeignKey')(related_name='comments', to=orm['note.Note'])),
-            ('text', self.gf('markupfield.fields.MarkupField')(rendered_field=True)),
-            ('text_markup_type', self.gf('django.db.models.fields.CharField')(default=None, max_length=30)),
-            ('_text_rendered', self.gf('django.db.models.fields.TextField')()),
+            ('note', self.gf('django.db.models.fields.related.ForeignKey')(related_name=u'comments', to=orm['cosinnus_note.Note'])),
+            ('text', self.gf('django.db.models.fields.TextField')()),
         ))
-        db.send_create_signal(u'note', ['Comment'])
+        db.send_create_signal(u'cosinnus_note', ['Comment'])
 
 
     def backwards(self, orm):
         # Removing unique constraint on 'Note', fields ['group', 'slug']
-        db.delete_unique(u'note_note', ['group_id', 'slug'])
+        db.delete_unique(u'cosinnus_note_note', ['group_id', 'slug'])
 
         # Deleting model 'Note'
-        db.delete_table(u'note_note')
+        db.delete_table(u'cosinnus_note_note')
 
         # Deleting model 'Comment'
-        db.delete_table(u'note_comment')
+        db.delete_table(u'cosinnus_note_comment')
 
 
     models = {
@@ -86,26 +82,22 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        u'note.comment': {
-            'Meta': {'ordering': "['created_on']", 'object_name': 'Comment'},
-            '_text_rendered': ('django.db.models.fields.TextField', [], {}),
+        u'cosinnus_note.comment': {
+            'Meta': {'ordering': "[u'created_on']", 'object_name': 'Comment'},
             'author': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.User']", 'on_delete': 'models.PROTECT'}),
             'created_on': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'note': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'comments'", 'to': u"orm['note.Note']"}),
-            'text': ('markupfield.fields.MarkupField', [], {'rendered_field': 'True'}),
-            'text_markup_type': ('django.db.models.fields.CharField', [], {'default': 'None', 'max_length': '30'})
+            'note': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "u'comments'", 'to': u"orm['cosinnus_note.Note']"}),
+            'text': ('django.db.models.fields.TextField', [], {})
         },
-        u'note.note': {
-            'Meta': {'ordering': "['-created_on', 'title']", 'unique_together': "(('group', 'slug'),)", 'object_name': 'Note'},
-            '_text_rendered': ('django.db.models.fields.TextField', [], {}),
-            'author': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'notes'", 'on_delete': 'models.PROTECT', 'to': u"orm['auth.User']"}),
+        u'cosinnus_note.note': {
+            'Meta': {'ordering': "[u'-created_on', u'title']", 'unique_together': "((u'group', u'slug'),)", 'object_name': 'Note'},
+            'author': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "u'notes'", 'on_delete': 'models.PROTECT', 'to': u"orm['auth.User']"}),
             'created_on': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'group': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.Group']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slug': ('django.db.models.fields.SlugField', [], {'max_length': '145'}),
-            'text': ('markupfield.fields.MarkupField', [], {'rendered_field': 'True'}),
-            'text_markup_type': ('django.db.models.fields.CharField', [], {'default': 'None', 'max_length': '30'}),
+            'text': ('django.db.models.fields.TextField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '140'})
         },
         u'taggit.tag': {
@@ -123,4 +115,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['note']
+    complete_apps = ['cosinnus_note']

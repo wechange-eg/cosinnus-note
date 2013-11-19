@@ -7,9 +7,11 @@ from cosinnus_note.views import (NoteCreateView, NoteDeleteView,
     NoteDetailView, NoteIndexView, NoteListView, NoteUpdateView,
     CommentCreateView, CommentDeleteView, CommentDetailView,
     CommentUpdateView)
+    
+    
+cosinnus_root_patterns = patterns('', )
 
-
-urlpatterns = patterns('',
+cosinnus_group_patterns = patterns('',
     url(r'^list/$',
         NoteListView.as_view(),
         name='note-list'),
@@ -54,3 +56,6 @@ urlpatterns = patterns('',
         NoteIndexView.as_view(),
         name='index'),
 )
+
+
+urlpatterns = cosinnus_group_patterns + cosinnus_root_patterns
