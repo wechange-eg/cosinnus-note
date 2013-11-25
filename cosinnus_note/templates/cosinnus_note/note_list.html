@@ -1,4 +1,4 @@
-{% extends "note/base.html" %}
+{% extends "cosinnus_note/base.html" %}
 {% load i18n %}
 {% block page_title %}Note List{% endblock %}
 
@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block subnav_add_right %}
-<a href="{% url 'note-create' group=group.pk %}" class="btn">
+<a href="{% url 'cosinnus:note:add' group=group.name %}" class="btn">
   {% trans "Create note" %}
 </a>
 {{ block.super }}
@@ -19,7 +19,7 @@
 {% if object_list %}
 {% if tags %}
   {% for tag in tags %}
-    <a href="{% url 'note-list-filtered' group=group.pk tag=tag.slug %}"><span class="label">{{ tag.name }}</span></a>
+    <a href="{% url 'cosinnus:note:list-filtered' group=group.name tag=tag.slug %}"><span class="label">{{ tag.name }}</span></a>
   {% endfor %}
 {% else %}
   {% trans "No tags available." %}
@@ -39,7 +39,7 @@
             <td>{{ object.created_on }}</td>
             <td>
                 {% for tag in object.tags.all %}
-                    <a href="{% url 'note-list-filtered' group=group.pk tag=tag.slug %}"><span class="label">{{ tag.name }}</span></a>
+                    <a href="{% url 'cosinnus:note:list-filtered' group=group.name tag=tag.slug %}"><span class="label">{{ tag.name }}</span></a>
                 {% empty %}
                 -
                 {% endfor %}
@@ -49,9 +49,9 @@
                     <a class="btn btn-primary btn-mini" href="{{ object.get_absolute_url }}"><i class="icon-eye-open icon-white"></i> {% trans "Show" %}</a>
                     <a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{% url 'note-update' group=group.pk slug=object.slug %}"><i class="icon-pencil"></i> {% trans "Edit" %}</a></li>
-                        <li><a href="{% url 'note-delete' group=group.pk slug=object.slug %}"><i class="icon-trash"></i> {% trans "Delete" %}</a></li>
-                        <li><a href="{% url 'note-comment' group=group.pk slug=object.slug %}"><i class="icon-comment"></i> {% trans "Comment" %}</a></li>
+                        <li><a href="{% url 'cosinnus:note:update' group=group.name slug=object.slug %}"><i class="icon-pencil"></i> {% trans "Edit" %}</a></li>
+                        <li><a href="{% url 'cosinnus:note:delete' group=group.name slug=object.slug %}"><i class="icon-trash"></i> {% trans "Delete" %}</a></li>
+                        <li><a href="{% url 'cosinnus:note:comment' group=group.name slug=object.slug %}"><i class="icon-comment"></i> {% trans "Comment" %}</a></li>
                     </ul>
                 </div>
             </td>

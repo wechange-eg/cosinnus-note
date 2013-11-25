@@ -44,8 +44,8 @@ class Note(TaggableModel):
         super(Note, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        kwargs = {'group': self.group.pk, 'slug': self.slug}
-        return reverse('note-detail', kwargs=kwargs)
+        kwargs = {'group': self.group.name, 'slug': self.slug}
+        return reverse('cosinnus:note:note', kwargs=kwargs)
 
 
 class Comment(models.Model):

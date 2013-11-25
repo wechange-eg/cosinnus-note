@@ -1,5 +1,5 @@
-{% extends "note/base.html" %}
-{% load i18n bootstrap_toolkit cosinnus %}
+{% extends "cosinnus_note/base.html" %}
+{% load i18n cosinnus_tags %}
 {% load static from staticfiles %}
 {% block page_title %}Comment{% endblock %}
 
@@ -16,7 +16,7 @@
 <form action="." method="post" class="form-horizontal">
     {% csrf_token %}
     <fieldset>
-        {{ form|as_bootstrap }}
+        {{ form }}
         <div class="control-group">
           <label class="control-label">Are you sure to remove this comment?</label>
           <div class="controls">

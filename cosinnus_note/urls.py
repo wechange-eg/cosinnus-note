@@ -14,31 +14,31 @@ cosinnus_root_patterns = patterns('', )
 cosinnus_group_patterns = patterns('',
     url(r'^list/$',
         NoteListView.as_view(),
-        name='note-list'),
+        name='list'),
 
     url(r'^list/(?P<tag>[^/]+)/$',
         NoteListView.as_view(),
-        name='note-list-filtered'),
+        name='list-filtered'),
 
-    url(r'^create/$',
+    url(r'^add/$',
         NoteCreateView.as_view(),
-        name='note-create'),
+        name='add'),
 
-    url(r'^note/(?P<slug>[^/]+)/$',
+    url(r'^(?P<slug>[^/]+)/$',
         NoteDetailView.as_view(),
-        name='note-detail'),
+        name='note'),
 
-    url(r'^note/(?P<slug>[^/]+)/delete/$',
+    url(r'^(?P<slug>[^/]+)/delete/$',
         NoteDeleteView.as_view(),
-        name='note-delete'),
+        name='delete'),
 
-    url(r'^note/(?P<slug>[^/]+)/update/$',
+    url(r'^(?P<slug>[^/]+)/update/$',
         NoteUpdateView.as_view(),
-        name='note-update'),
+        name='update'),
 
-    url(r'^note/(?P<slug>[^/]+)/comment/$',
+    url(r'^(?P<slug>[^/]+)/comment/$',
         CommentCreateView.as_view(),
-        name='note-comment'),
+        name='comment'),
 
     url(r'^comment/(?P<pk>\d+)/$',
         CommentDetailView.as_view(),

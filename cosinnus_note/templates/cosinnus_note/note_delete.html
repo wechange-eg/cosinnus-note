@@ -1,5 +1,5 @@
-{% extends "note/base.html" %}
-{% load i18n bootstrap_toolkit cosinnus %}
+{% extends "cosinnus_note/base.html" %}
+{% load i18n cosinnus_tags %}
 {% load static from staticfiles %}
 {% block page_title %}Note{% endblock %}
 
@@ -15,13 +15,13 @@
 <form action="." method="post" class="form-horizontal">
     {% csrf_token %}
     <fieldset>
-        {{ form|as_bootstrap }}
+        {{ form }}
 
         <div class="control-group">
             <label class="control-label">Are you sure to remove this note?</label>
             <div class="controls">
                 <button type="submit" class="btn btn-danger">Delete</button>
-                <a href="{% url 'note-list' group=group.pk %}" class="btn">{% trans "Cancel" %}</a>
+                <a href="{% url 'cosinnus:note:list' group=group.name %}" class="btn">{% trans "Cancel" %}</a>
             </div>
         </div>
     </fieldset>

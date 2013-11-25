@@ -1,5 +1,5 @@
-{% extends "note/base.html" %}
-{% load i18n bootstrap_toolkit cosinnus %}
+{% extends "cosinnus_note/base.html" %}
+{% load i18n cosinnus_tags %}
 {% load static from staticfiles %}
 {% block page_title %}Comment on “{{ note.title }}”{% endblock %}
 
@@ -16,8 +16,8 @@
 <h3>{{ note.title }}</h3>
 <div class="media">
   <a class="pull-left" href="#">
-    {% if note.author.get_profile.avatar %}
-      <img class="media-object avatar avatar-medium" src="{{ note.author.get_profile.avatar.url }}">
+    {% if note.author.cosinnus_profile.avatar %}
+      <img class="media-object avatar avatar-medium" src="{{ note.author.cosinnus_profile.avatar.url }}">
     {% else %}
       <img class="media-object avatar avatar-medium" src="http://placehold.it/64x64">
     {% endif %}
@@ -31,7 +31,7 @@
 <form action="." method="post" class="form-horizontal">
     {% csrf_token %}
     <fieldset>
-        {{ form|as_bootstrap }}
+        {{ form }}
         <div class="control-group">
             <div class="controls">
                 <button type="submit" class="btn btn-primary">{% trans "Update" %}</button>
