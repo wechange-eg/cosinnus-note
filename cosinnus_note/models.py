@@ -11,11 +11,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import Group, User
 
 from cosinnus.utils.functions import unique_aware_slugify
-from cosinnus.models.utils import TaggableModel
+from cosinnus.models.tagged import BaseTaggableObjectModel
 
 
 
-class Note(TaggableModel):
+class Note(BaseTaggableObjectModel):
     
     SORT_FIELDS_ALIASES = [
         ('title', 'title'), ('author', 'author'), ('created_on', 'created_on'),
@@ -24,11 +24,8 @@ class Note(TaggableModel):
     created_on = models.DateTimeField(_(u'Created'), auto_now_add=True, editable=False)
     author = models.ForeignKey(User, verbose_name=_(u'Author'),
                                on_delete=models.PROTECT, related_name='notes')
-    group = models.ForeignKey(Group, verbose_name=_(u'Group'))
-    slug = models.SlugField(max_length=145)  # 4 numbers for the slug number should be fine
     text = models.TextField(_(u'Text'))
-    title = models.CharField(_(u'Title'), max_length=140)
-
+    
     class Meta:
         ordering = ['-created_on', 'title']
         unique_together = ('group', 'slug')
