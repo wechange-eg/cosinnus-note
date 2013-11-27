@@ -4,8 +4,8 @@
 
 {% block breadcrumbs %}
     {{ block.super }}
-    <li><a href="{% url 'cosinnus:group-detail' group=group.name %}">{{ group.name }}</a> <span class="divider">/</span></li>
-    <li><a href="{% url 'index' group=group.name %}">{% trans "Notes" %}</a> <span class="divider">/</span></li>
+    <li><a href="{% url 'cosinnus:group-detail' group=group.slug %}">{{ group.name }}</a> <span class="divider">/</span></li>
+    <li><a href="{% url 'index' group=group.slug %}">{% trans "Notes" %}</a> <span class="divider">/</span></li>
 {% endblock %}
 
 {% block extrahead %}
