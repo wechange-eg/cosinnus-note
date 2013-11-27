@@ -3,13 +3,13 @@
 {% block page_title %}Note{% endblock %}
 
 {% block subnav_add_right %}
-<a href="{% url 'cosinnus:note:update' group=group.name slug=note.slug %}" class="btn">
+<a href="{% url 'cosinnus:note:update' group=group.slug slug=note.slug %}" class="btn">
   {% trans "Edit" %}
 </a>
-<a href="{% url 'cosinnus:note:delete' group=group.name slug=note.slug %}" class="btn">
+<a href="{% url 'cosinnus:note:delete' group=group.slug slug=note.slug %}" class="btn">
   {% trans "Delete" %}
 </a>
-<a href="{% url 'cosinnus:note:comment' group=group.name slug=note.slug %}" class="btn">
+<a href="{% url 'cosinnus:note:comment' group=group.slug slug=note.slug %}" class="btn">
   {% trans "Write comment" %}
 </a>
 {{ block.super }}
@@ -54,8 +54,8 @@
       </h4>
       {{ comment.text }}
       <div class="btn-group pull-right">
-        <a class="btn btn-mini" href="{% url 'cosinnus:note:comment-update' group=group.name pk=comment.pk %}"><i class="icon-pencil"></i> {% trans "Edit" %}</a>
-        <a class="btn btn-mini" href="{% url 'cosinnus:note:comment-delete' group=group.name pk=comment.pk %}"><i class="icon-trash"></i> {% trans "Delete" %}</a>
+        <a class="btn btn-mini" href="{% url 'cosinnus:note:comment-update' group=group.slug pk=comment.pk %}"><i class="icon-pencil"></i> {% trans "Edit" %}</a>
+        <a class="btn btn-mini" href="{% url 'cosinnus:note:comment-delete' group=group.slug pk=comment.pk %}"><i class="icon-trash"></i> {% trans "Delete" %}</a>
       </div>
     </div>
   </div>

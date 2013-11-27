@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 #fixed?
 #from cosinnus.models import  User, Group
 #from django.contrib.auth import get_user_model
-from django.contrib.auth.models import Group, User
+from django.contrib.auth.models import User
 
 from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
@@ -28,7 +28,6 @@ class Note(BaseTaggableObjectModel):
     
     class Meta:
         ordering = ['-created_on', 'title']
-        unique_together = ('group', 'slug')
         verbose_name = _('Note')
         verbose_name_plural = _('Notes')
 
@@ -41,7 +40,7 @@ class Note(BaseTaggableObjectModel):
         super(Note, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        kwargs = {'group': self.group.name, 'slug': self.slug}
+        kwargs = {'group': self.group.slug, 'slug': self.slug}
         return reverse('cosinnus:note:note', kwargs=kwargs)
 
 

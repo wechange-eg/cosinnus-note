@@ -38,7 +38,7 @@ class NoteDeleteView(RequireGroupMixin, FilterGroupMixin, DeleteView):
     template_name_suffix = '_delete'
 
     def get_success_url(self):
-        return reverse('cosinnus:note:list', kwargs={'group': self.group.name})
+        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 
 class NoteDetailView(RequireGroupMixin, FilterGroupMixin, DetailView):
@@ -48,7 +48,7 @@ class NoteDetailView(RequireGroupMixin, FilterGroupMixin, DetailView):
 
 class NoteIndexView(RequireGroupMixin, RedirectView):
     def get_redirect_url(self, **kwargs):
-        return reverse('cosinnus:note:list', kwargs={'group': self.group.name})
+        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 
 class NoteListView(RequireGroupMixin, FilterGroupMixin, TaggedListMixin,
