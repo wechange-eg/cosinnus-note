@@ -11,15 +11,15 @@ from django.views.generic.list import ListView
 
 from extra_views import SortableListMixin
 
-from cosinnus.views.mixins.group import (RequireGroupMixin, FilterGroupMixin,
-    GroupFormKwargsMixin)
+from cosinnus.views.mixins.group import (
+                                         RequireReadMixin, RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin)
 from cosinnus.views.mixins.tagged import TaggedListMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
 from cosinnus_note.models import Note, Comment
 
 
-class NoteCreateView(RequireGroupMixin, FilterGroupMixin, CreateView):
+class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
 
     form_class = NoteForm
     model = Note
@@ -32,7 +32,7 @@ class NoteCreateView(RequireGroupMixin, FilterGroupMixin, CreateView):
         return super(NoteCreateView, self).form_valid(form)
 
 
-class NoteDeleteView(RequireGroupMixin, FilterGroupMixin, DeleteView):
+class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
 
     model = Note
     template_name_suffix = '_delete'
@@ -41,29 +41,29 @@ class NoteDeleteView(RequireGroupMixin, FilterGroupMixin, DeleteView):
         return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 
-class NoteDetailView(RequireGroupMixin, FilterGroupMixin, DetailView):
+class NoteDetailView(RequireReadMixin, FilterGroupMixin, DetailView):
 
     model = Note
 
 
-class NoteIndexView(RequireGroupMixin, RedirectView):
+class NoteIndexView(RequireReadMixin, RedirectView):
     def get_redirect_url(self, **kwargs):
         return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 
-class NoteListView(RequireGroupMixin, FilterGroupMixin, TaggedListMixin,
+class NoteListView(RequireReadMixin, FilterGroupMixin, TaggedListMixin,
                    SortableListMixin, ListView):
     model = Note
 
 
-class NoteUpdateView(RequireGroupMixin, FilterGroupMixin, UpdateView):
+class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
 
     form_class = NoteForm
     model = Note
     template_name_suffix = '_update'
 
 
-class CommentCreateView(RequireGroupMixin, FilterGroupMixin, CreateView):
+class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
 
     form_class = CommentForm
     group_field = 'note__group'
@@ -90,7 +90,7 @@ class CommentCreateView(RequireGroupMixin, FilterGroupMixin, CreateView):
         return super(CommentCreateView, self).post(request, *args, **kwargs)
 
 
-class CommentDeleteView(RequireGroupMixin, FilterGroupMixin, DeleteView):
+class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
 
     group_field = 'note__group'
     model = Comment
@@ -114,7 +114,7 @@ class CommentDetailView(SingleObjectMixin, RedirectView):
         return HttpResponseRedirect(obj.get_absolute_url())
 
 
-class CommentUpdateView(RequireGroupMixin, FilterGroupMixin, UpdateView):
+class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
 
     form_class = CommentForm
     group_field = 'note__group'
