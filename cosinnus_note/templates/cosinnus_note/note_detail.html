@@ -1,5 +1,6 @@
 {% extends "cosinnus_note/base.html" %}
 {% load i18n %}
+{% load cosinnus_tags %}
 {% block page_title %}Note{% endblock %}
 
 {% block subnav_add_right %}
@@ -36,6 +37,16 @@
     {{ object.text }}
   </div>
 </div>
+
+{% if object.attached_objects.all %}
+<hr>
+<div>
+    <span>Attached files:</span>
+    <br/>
+    {% cosinnus_render_attached_objects object %}
+</div>
+{% endif %}
+
 <hr>
 
 {% for comment in object.comments.all %}

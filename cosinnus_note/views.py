@@ -17,9 +17,10 @@ from cosinnus.views.mixins.tagged import TaggedListMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
 from cosinnus_note.models import Note, Comment
+from cosinnus.views.attached_object import CreateViewAttachable, UpdateViewAttachable
 
 
-class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
+class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateViewAttachable):
 
     form_class = NoteForm
     model = Note
@@ -29,8 +30,8 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
         self.object = form.save(commit=False)
         self.object.author = self.request.user
         self.object.group = self.group
-        return super(NoteCreateView, self).form_valid(form)
-
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
 
 class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
 
@@ -56,7 +57,7 @@ class NoteListView(RequireReadMixin, FilterGroupMixin, TaggedListMixin,
     model = Note
 
 
-class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
+class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateViewAttachable):
 
     form_class = NoteForm
     model = Note
