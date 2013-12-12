@@ -39,12 +39,7 @@
 </div>
 
 {% if object.attached_objects.all %}
-<hr>
-<div>
-    <span>Attached files:</span>
-    <br/>
     {% cosinnus_render_attached_objects object %}
-</div>
 {% endif %}
 
 <hr>
