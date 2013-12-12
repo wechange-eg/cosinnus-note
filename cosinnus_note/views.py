@@ -30,8 +30,7 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateViewAttachable):
         self.object = form.save(commit=False)
         self.object.author = self.request.user
         self.object.group = self.group
-        self.object.save()
-        return HttpResponseRedirect(self.get_success_url())
+        return super(NoteCreateView, self).form_valid(form)
 
 class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
 
