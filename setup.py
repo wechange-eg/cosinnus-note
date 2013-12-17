@@ -46,7 +46,7 @@ setup(
     name='cosinnus-note',
     version=get_version(),
     description='cosinnus note and news post application',
-    long_description=read('README.md'),
+    long_description=read('README'),
     author='Sinnwerkstatt Medienagentur GmbH Berlin',
     author_email='web@Sinnwerkstatt.com',
     packages=find_packages(exclude=["tests"]),
