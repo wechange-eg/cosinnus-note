@@ -2,3 +2,4 @@
 
 IS_COSINNUS_APP = True
 COSINNUS_APP_NAME = 'note'
+COSINNUS_APP_LABEL = 'Notes'
