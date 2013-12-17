@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 #fixed?
@@ -14,25 +15,20 @@ from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
 
 
-
 class Note(BaseTaggableObjectModel):
-    
     SORT_FIELDS_ALIASES = [
         ('title', 'title'), ('author', 'author'), ('created_on', 'created_on'),
     ]
 
-    created_on = models.DateTimeField(_(u'Created'), auto_now_add=True, editable=False)
-    author = models.ForeignKey(User, verbose_name=_(u'Author'),
+    created_on = models.DateTimeField(_('Created'), auto_now_add=True, editable=False)
+    author = models.ForeignKey(User, verbose_name=_('Author'),
                                on_delete=models.PROTECT, related_name='notes')
-    text = models.TextField(_(u'Text'))
+    text = models.TextField(_('Text'))
     
     class Meta:
         ordering = ['-created_on', 'title']
         verbose_name = _('Note')
         verbose_name_plural = _('Notes')
-
-    def __unicode__(self):
-        return self.title
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -44,20 +40,20 @@ class Note(BaseTaggableObjectModel):
         return reverse('cosinnus:note:note', kwargs=kwargs)
 
 
+@python_2_unicode_compatible
 class Comment(models.Model):
-
-    author = models.ForeignKey(User, verbose_name=_(u'Author'), on_delete=models.PROTECT)
-    created_on = models.DateTimeField(_(u'Created'), auto_now_add=True, editable=False)
+    author = models.ForeignKey(User, verbose_name=_('Author'), on_delete=models.PROTECT)
+    created_on = models.DateTimeField(_('Created'), auto_now_add=True, editable=False)
     note = models.ForeignKey(Note, related_name='comments')
-    text = models.TextField(_(u'Text'))
+    text = models.TextField(_('Text'))
 
     class Meta:
         ordering = ['created_on']
         verbose_name = _('Comment')
         verbose_name_plural = _('Comments')
 
-    def __unicode__(self):
-        return u'Comment on “%(note)s” by %(author)s' % {
+    def __str__(self):
+        return 'Comment on “%(note)s” by %(author)s' % {
             'note': self.note.title,
             'author': self.author.get_full_name(),
         }
