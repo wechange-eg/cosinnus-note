@@ -9,11 +9,11 @@ class NoteForm(FormAttachable):
 
     class Meta:
         model = Note
-        fields = ('title', 'text', 'tags',)
+        fields = ('title', 'text', 'tags', 'video',)
 
 
 class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ('text', )
+        fields = ('text',)

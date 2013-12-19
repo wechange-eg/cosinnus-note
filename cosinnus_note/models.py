@@ -6,10 +6,8 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
-#fixed?
-#from cosinnus.models import  User, Group
-#from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from embed_video.fields import EmbedVideoField
 
 from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
@@ -24,7 +22,8 @@ class Note(BaseTaggableObjectModel):
     author = models.ForeignKey(User, verbose_name=_('Author'),
                                on_delete=models.PROTECT, related_name='notes')
     text = models.TextField(_('Text'))
-    
+    video = EmbedVideoField(blank=True, null=True)
+
     class Meta:
         ordering = ['-created_on', 'title']
         verbose_name = _('Note')
