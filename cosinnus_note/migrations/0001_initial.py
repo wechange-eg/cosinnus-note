@@ -7,6 +7,10 @@ from django.db import models
 
 class Migration(SchemaMigration):
 
+    depends_on = (
+        ("cosinnus", "0001_initial"),
+    )
+
     def forwards(self, orm):
         # Adding model 'Note'
         db.create_table(u'cosinnus_note_note', (
