@@ -16,11 +16,11 @@
 
 {% block content %}
 
-{% if object_list %}
-
 <ul class="nav nav-pills pull-right">
   <li class="active"><a href="{% url 'cosinnus:note:add' group=group.slug %}" class="btn"><span class="glyphicon glyphicon-plus"></span> {% trans "Add" %}</a></li>
 </ul>
+
+{% if object_list %}
 
 {% if tags %}
   {% for tag in tags %}
