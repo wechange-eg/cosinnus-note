@@ -38,11 +38,23 @@
   </div>
 </div>
 
+
+<hr>
+
+<div class="btn-group">
+    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">{% trans "Actions" %} <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="{% url 'cosinnus:note:update' group=group.slug slug=object.slug %}"><span class="glyphicon glyphicon-pencil"></span> {% trans "Edit" %}</a></li>
+        <li><a href="{% url 'cosinnus:note:delete' group=group.slug slug=object.slug %}"><span class="glyphicon glyphicon-trash"></span> {% trans "Delete" %}</a></li>
+        <li class="divider"></li>
+        <li><a href="{% url 'cosinnus:note:comment' group=group.slug slug=object.slug %}"><i class="icon-comment"></i> {% trans "Comment" %}</a></li>
+    </ul>
+</div>
+
 {% if object.attached_objects.all %}
     {% cosinnus_render_attached_objects object %}
 {% endif %}
-
-<hr>
+<hr />
 
 {% for comment in object.comments.all %}
   <div class="media media-indent-small" id="comment-{{ comment.pk }}">

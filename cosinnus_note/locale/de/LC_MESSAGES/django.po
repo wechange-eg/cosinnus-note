@@ -39,11 +39,11 @@ msgstr "Titel"
 
 #: models.py:30 templates/note/note_list.html:7
 msgid "Note"
-msgstr "Notiz"
+msgstr "Neuigkeit"
 
 #: models.py:31 templates/note/base.html:8
 msgid "Notes"
-msgstr "Notizen"
+msgstr "Neuigkeiten"
 
 #: models.py:55 templates/note/note_list.html:54
 msgid "Comment"
@@ -80,7 +80,7 @@ msgstr "Aktualisieren"
 
 #: templates/note/note_create.html:12 templates/note/note_list.html:12
 msgid "Create note"
-msgstr "Neue Notiz"
+msgstr "Neuigkeit erstellen"
 
 #: templates/note/note_detail.html:7 templates/note/note_detail.html.py:57
 #: templates/note/note_list.html:52
@@ -105,10 +105,10 @@ msgstr "Anzeigen"
 
 #: templates/note/note_list.html:62
 msgid "There are no notes."
-msgstr "Es gibt keine Notizen."
+msgstr "Es gibt keine Neuigkeiten."
 
 #~ msgid "Create new"
-#~ msgstr "Neue Notiz"
+#~ msgstr "Neuigkeit erstellen"
 
 #~ msgid "Create new note"
-#~ msgstr "Neue Notiz"
+#~ msgstr "Neuigkeit erstellen"
