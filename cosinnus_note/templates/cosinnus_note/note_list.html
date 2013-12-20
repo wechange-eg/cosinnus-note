@@ -1,6 +1,6 @@
 {% extends "cosinnus_note/base.html" %}
 {% load i18n %}
-{% block page_title %}Note List{% endblock %}
+{% block page_title %}{% trans "Notes" %}: {{group.name}} {% endblock %}
 
 {% block breadcrumbs %}
     {{ block.super }}
