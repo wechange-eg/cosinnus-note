@@ -48,11 +48,11 @@ setup(
     description='cosinnus note and news post application',
     long_description=read('README'),
     author='Sinnwerkstatt Medienagentur GmbH Berlin',
-    author_email='web@Sinnwerkstatt.com',
+    author_email='web@sinnwerkstatt.com',
     packages=find_packages(exclude=["tests"]),
     data_files=data_files,
     install_requires=[
-        'cosinnus>=0.1dev',
+        'cosinnus>=0.1.dev0',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
