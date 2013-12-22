@@ -52,7 +52,8 @@ setup(
     packages=find_packages(exclude=["tests"]),
     data_files=data_files,
     install_requires=[
-        'cosinnus>=0.1.dev0',
+        'cosinnus>=0.2.dev0',
+        'django-embed-video>=0.7',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
