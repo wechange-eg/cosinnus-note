@@ -7,8 +7,8 @@ from cosinnus_note.views import (NoteCreateView, NoteDeleteView,
     NoteDetailView, NoteIndexView, NoteListView, NoteUpdateView,
     CommentCreateView, CommentDeleteView, CommentDetailView,
     CommentUpdateView)
-    
-    
+
+
 cosinnus_root_patterns = patterns('', )
 
 cosinnus_group_patterns = patterns('',

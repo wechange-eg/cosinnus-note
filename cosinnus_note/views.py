@@ -11,13 +11,14 @@ from django.views.generic.list import ListView
 
 from extra_views import SortableListMixin
 
-from cosinnus.views.mixins.group import (
-                                         RequireReadMixin, RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin)
+from cosinnus.views.mixins.group import (RequireReadMixin, RequireWriteMixin,
+    FilterGroupMixin)
 from cosinnus.views.mixins.tagged import TaggedListMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
 from cosinnus_note.models import Note, Comment
-from cosinnus.views.attached_object import CreateViewAttachable, UpdateViewAttachable
+from cosinnus.views.attached_object import (CreateViewAttachable,
+    UpdateViewAttachable)
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateViewAttachable):
@@ -31,6 +32,7 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateViewAttachable):
         self.object.author = self.request.user
         self.object.group = self.group
         return super(NoteCreateView, self).form_valid(form)
+
 
 class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
 

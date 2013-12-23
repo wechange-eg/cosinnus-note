@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from cosinnus_note.models import Comment, Note
 from django import forms
+
 from cosinnus.forms.attached_object import FormAttachable
+
+from cosinnus_note.models import Comment, Note
+
 
 class NoteForm(FormAttachable):
 

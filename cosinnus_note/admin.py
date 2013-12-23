@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from cosinnus_note.models import Note
 from embed_video.admin import AdminVideoMixin
+
+from cosinnus_note.models import Note
+
 
 class NoteModelAdmin(AdminVideoMixin, admin.ModelAdmin):
     pass
