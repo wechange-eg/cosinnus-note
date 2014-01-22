@@ -60,3 +60,9 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return '%s#comment-%d' % (self.note.get_absolute_url(), self.pk)
+
+
+import django
+if django.VERSION[:2] < (1, 7):
+    from cosinnus_note import cosinnus_app
+    cosinnus_app.register()
