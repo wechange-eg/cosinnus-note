@@ -7,6 +7,10 @@ from django.db import models
 
 class Migration(SchemaMigration):
 
+    depends_on = (
+        ("cosinnus", "0007_auto__add_attachedobject__add_unique_attachedobject_content_type_objec"),
+    )
+
     def forwards(self, orm):
         # Removing unique constraint on 'Note', fields ['group', 'slug']
         db.delete_unique(u'cosinnus_note_note', ['group_id', 'slug'])

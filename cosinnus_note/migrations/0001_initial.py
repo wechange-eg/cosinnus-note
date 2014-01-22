@@ -8,7 +8,7 @@ from django.db import models
 class Migration(SchemaMigration):
 
     depends_on = (
-        ("cosinnus", "0001_initial"),
+        ("cosinnus", "0003_auto__add_tagobject"),
     )
 
     def forwards(self, orm):
