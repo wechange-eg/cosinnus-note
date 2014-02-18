@@ -34,3 +34,29 @@ class CompactNotes(DashboardWidget):
         }
         return render_to_string('cosinnus_note/widgets/compact_news.html', data)
 
+class DetailedNotesForm(DashboardWidgetForm):
+    amount = forms.IntegerField(label="Amount", initial=3, min_value=0,
+        help_text="0 means unlimited", required=False)
+
+
+class DetailedNotes(DashboardWidget):
+
+    app_name = 'note'
+    form_class = DetailedNotesForm
+    model = Note
+    title = _('Detailed News')
+    user_model_attr = None
+    widget_name = 'detailed news list'
+
+    def get_data(self):
+        count = int(self.config['amount'])
+        qs = self.get_queryset().all()
+
+        if count != 0:
+            qs = qs[:count]
+        data = {
+            'notes': qs,
+            'no_data': _('No news'),
+        }
+        return render_to_string('cosinnus_note/widgets/detailed_news.html', data)
+
