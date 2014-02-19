@@ -9,7 +9,7 @@
               <td>{{ note.creator }} on {{ note.created }}</td>
           </tr>
           <tr>
-              <td><a href="{% url 'cosinnus:note:note' group=note.group slug=note.slug %}">title: {{ note.title }}</a></td>
+              <td><a href="{% url 'cosinnus:note:note' group=note.group.slug slug=note.slug %}">title: {{ note.title }}</a></td>
           </tr>
           <tr><td>text: {{ note.text }}</td></tr>
           

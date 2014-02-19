@@ -25,11 +25,12 @@ class CompactNotes(DashboardWidget):
 
     def get_data(self):
         count = int(self.config['amount'])
-        qs = self.get_queryset().values_list('title', 'created', 'slug', 'group').all()
+        qs = self.get_queryset().all()
+
         if count != 0:
             qs = qs[:count]
         data = {
-            'notes': [dict(zip(['title', 'date', 'slug', 'group'], note)) for note in qs],
+            'notes': qs,
             'no_data': _('No news'),
         }
         return render_to_string('cosinnus_note/widgets/compact_news.html', data)
