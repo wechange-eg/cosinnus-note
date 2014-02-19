@@ -15,19 +15,20 @@ from cosinnus.models.tagged import BaseTaggableObjectModel
 
 class Note(BaseTaggableObjectModel):
     SORT_FIELDS_ALIASES = [
-        ('title', 'title'), ('author', 'author'), ('created_on', 'created_on'),
+        ('title', 'title'), ('creator', 'creator'), ('created', 'created'),
     ]
 
-    created_on = models.DateTimeField(_('Created'), auto_now_add=True, editable=False)
-    author = models.ForeignKey(User, verbose_name=_('Author'),
-                               on_delete=models.PROTECT, related_name='notes')
     text = models.TextField(_('Text'))
     video = EmbedVideoField(blank=True, null=True)
 
     class Meta:
-        ordering = ['-created_on', 'title']
+        ordering = ['-created', 'title']
         verbose_name = _('Note')
         verbose_name_plural = _('Notes')
+
+    def __init__(self, *args, **kwargs):
+        super(Note, self).__init__(*args, **kwargs)
+        self._meta.get_field('creator').verbose_name = _('Author')
 
     def save(self, *args, **kwargs):
         if not self.slug:

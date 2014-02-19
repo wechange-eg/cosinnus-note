@@ -29,7 +29,7 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateViewAttachable):
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
-        self.object.author = self.request.user
+        self.object.creator = self.request.user
         self.object.group = self.group
         return super(NoteCreateView, self).form_valid(form)
 

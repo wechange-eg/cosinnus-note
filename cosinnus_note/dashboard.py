@@ -25,7 +25,7 @@ class CompactNotes(DashboardWidget):
 
     def get_data(self):
         count = int(self.config['amount'])
-        qs = self.get_queryset().values_list('title', 'created_on', 'slug', 'group').all()
+        qs = self.get_queryset().values_list('title', 'created', 'slug', 'group').all()
         if count != 0:
             qs = qs[:count]
         data = {

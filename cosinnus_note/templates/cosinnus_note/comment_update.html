@@ -16,14 +16,14 @@
 <h3>{{ note.title }}</h3>
 <div class="media">
   <a class="pull-left" href="#">
-    {% if note.author.cosinnus_profile.avatar %}
-      <img class="media-object avatar avatar-medium" src="{{ note.author.cosinnus_profile.avatar.url }}">
+    {% if note.creator.cosinnus_profile.avatar %}
+      <img class="media-object avatar avatar-medium" src="{{ note.creator.cosinnus_profile.avatar.url }}">
     {% else %}
       <img class="media-object avatar avatar-medium" src="http://placehold.it/64x64">
     {% endif %}
   </a>
   <div class="media-body">
-    <h4 class="media-heading">{{ note.author.get_full_name }}</h4>
+    <h4 class="media-heading">{{ note.creator.get_full_name }}</h4>
     {{ note.text }}
   </div>
 </div>
