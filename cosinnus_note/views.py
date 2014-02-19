@@ -57,6 +57,10 @@ class NoteListView(RequireReadMixin, FilterGroupMixin, TaggedListMixin,
                    SortableListMixin, ListView):
     model = Note
 
+    def get(self, request, *args, **kwargs):
+        self.sort_fields_aliases = self.model.SORT_FIELDS_ALIASES
+        return super(NoteListView, self).get(request, *args, **kwargs)
+
 
 class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateViewAttachable):
 
