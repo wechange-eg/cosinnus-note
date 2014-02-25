@@ -9,6 +9,7 @@ from cosinnus.utils.dashboard import DashboardWidget, DashboardWidgetForm
 
 from cosinnus_note.models import Note
 
+
 class CompactNotesForm(DashboardWidgetForm):
     amount = forms.IntegerField(label="Amount", initial=5, min_value=0,
         help_text="0 means unlimited", required=False)
@@ -35,6 +36,7 @@ class CompactNotes(DashboardWidget):
         }
         return render_to_string('cosinnus_note/widgets/compact_news.html', data)
 
+
 class DetailedNotesForm(DashboardWidgetForm):
     amount = forms.IntegerField(label="Amount", initial=3, min_value=0,
         help_text="0 means unlimited", required=False)
@@ -60,4 +62,3 @@ class DetailedNotes(DashboardWidget):
             'no_data': _('No news'),
         }
         return render_to_string('cosinnus_note/widgets/detailed_news.html', data)
-
