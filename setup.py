@@ -54,6 +54,7 @@ setup(
     install_requires=[
         'cosinnus>=0.3.dev0',
         'django-embed-video>=0.7',
+        'django-extra-views>=0.6.0',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
