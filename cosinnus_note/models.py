@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
-from django.contrib.auth.models import User
 from embed_video.fields import EmbedVideoField
 
 from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
+
 
 
 class Note(BaseTaggableObjectModel):
@@ -42,7 +43,7 @@ class Note(BaseTaggableObjectModel):
 
 @python_2_unicode_compatible
 class Comment(models.Model):
-    author = models.ForeignKey(User, verbose_name=_('Author'), on_delete=models.PROTECT)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('Author'), on_delete=models.PROTECT)
     created_on = models.DateTimeField(_('Created'), auto_now_add=True, editable=False)
     note = models.ForeignKey(Note, related_name='comments')
     text = models.TextField(_('Text'))
