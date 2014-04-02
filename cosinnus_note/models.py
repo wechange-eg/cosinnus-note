@@ -22,7 +22,7 @@ class Note(BaseTaggableObjectModel):
     text = models.TextField(_('Text'))
     video = EmbedVideoField(blank=True, null=True)
 
-    class Meta:
+    class Meta(BaseTaggableObjectModel.Meta):
         ordering = ['-created', 'title']
         verbose_name = _('Note')
         verbose_name_plural = _('Notes')
