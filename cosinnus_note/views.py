@@ -94,9 +94,8 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
     template_name_suffix = '_create'
 
     def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.author = self.request.user
-        self.object.note = self.note
+        form.instance.author = self.request.user
+        form.instance.note = self.note
         return super(CommentCreateView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
