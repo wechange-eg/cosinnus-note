@@ -30,8 +30,7 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     template_name_suffix = '_create'
 
     def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.creator = self.request.user
+        form.instance.creator = self.request.user
         return super(NoteCreateView, self).form_valid(form)
 
 note_create = NoteCreateView.as_view()
@@ -81,8 +80,7 @@ class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     template_name_suffix = '_update'
 
     def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.creator = self.request.user
+        form.instance.creator = self.request.user
         return super(NoteUpdateView, self).form_valid(form)
 
 note_update = NoteUpdateView.as_view()
