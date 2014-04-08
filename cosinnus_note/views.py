@@ -11,17 +11,19 @@ from django.views.generic.list import ListView
 
 from extra_views import SortableListMixin
 
+from cosinnus.views.attached_object import (CreateViewAttachable,
+    UpdateViewAttachable)
+
 from cosinnus.views.mixins.group import (RequireReadMixin, RequireWriteMixin,
-    FilterGroupMixin)
+    FilterGroupMixin, GroupFormKwargsMixin)
 from cosinnus.views.mixins.tagged import TaggedListMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
 from cosinnus_note.models import Note, Comment
-from cosinnus.views.attached_object import (CreateViewAttachable,
-    UpdateViewAttachable)
 
 
-class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateViewAttachable):
+class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
+                     CreateViewAttachable):
 
     form_class = NoteForm
     model = Note
@@ -30,8 +32,9 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, CreateViewAttachable):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.creator = self.request.user
-        self.object.group = self.group
         return super(NoteCreateView, self).form_valid(form)
+
+note_create = NoteCreateView.as_view()
 
 
 class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
@@ -42,15 +45,21 @@ class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
     def get_success_url(self):
         return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
+note_delete = NoteDeleteView.as_view()
+
 
 class NoteDetailView(RequireReadMixin, FilterGroupMixin, DetailView):
 
     model = Note
 
+note_detail = NoteDetailView.as_view()
+
 
 class NoteIndexView(RequireReadMixin, RedirectView):
     def get_redirect_url(self, **kwargs):
         return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
+
+note_index = NoteIndexView.as_view()
 
 
 class NoteListView(RequireReadMixin, FilterGroupMixin, TaggedListMixin,
@@ -61,12 +70,22 @@ class NoteListView(RequireReadMixin, FilterGroupMixin, TaggedListMixin,
         self.sort_fields_aliases = self.model.SORT_FIELDS_ALIASES
         return super(NoteListView, self).get(request, *args, **kwargs)
 
+note_list = NoteListView.as_view()
 
-class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateViewAttachable):
+
+class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
+                     UpdateViewAttachable):
 
     form_class = NoteForm
     model = Note
     template_name_suffix = '_update'
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.creator = self.request.user
+        return super(NoteUpdateView, self).form_valid(form)
+
+note_update = NoteUpdateView.as_view()
 
 
 class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
@@ -95,6 +114,8 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
         self.note = get_object_or_404(Note, group=self.group, slug=self.kwargs.get('slug'))
         return super(CommentCreateView, self).post(request, *args, **kwargs)
 
+comment_create = CommentCreateView.as_view()
+
 
 class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
 
@@ -110,6 +131,8 @@ class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
     def get_success_url(self):
         return self.object.note.get_absolute_url()
 
+comment_delete = CommentDeleteView.as_view()
+
 
 class CommentDetailView(SingleObjectMixin, RedirectView):
 
@@ -118,6 +141,8 @@ class CommentDetailView(SingleObjectMixin, RedirectView):
     def get(self, request, *args, **kwargs):
         obj = self.get_object()
         return HttpResponseRedirect(obj.get_absolute_url())
+
+comment_detail = CommentDetailView.as_view()
 
 
 class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
@@ -131,3 +156,5 @@ class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
         context = super(CommentUpdateView, self).get_context_data(**kwargs)
         context.update({'note': self.object.note})
         return context
+
+comment_update = CommentUpdateView.as_view()

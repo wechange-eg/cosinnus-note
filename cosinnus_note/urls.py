@@ -3,58 +3,53 @@ from __future__ import unicode_literals
 
 from django.conf.urls import patterns, url
 
-from cosinnus_note.views import (NoteCreateView, NoteDeleteView,
-    NoteDetailView, NoteIndexView, NoteListView, NoteUpdateView,
-    CommentCreateView, CommentDeleteView, CommentDetailView,
-    CommentUpdateView)
-
 
 cosinnus_root_patterns = patterns('', )
 
-cosinnus_group_patterns = patterns('',
+cosinnus_group_patterns = patterns('cosinnus_note.views',
+    url(r'^$',
+        'note_index',
+        name='index'),
+
     url(r'^list/$',
-        NoteListView.as_view(),
+        'note_list',
         name='list'),
 
     url(r'^list/(?P<tag>[^/]+)/$',
-        NoteListView.as_view(),
+        'note_list',
         name='list-filtered'),
 
     url(r'^add/$',
-        NoteCreateView.as_view(),
+        'note_create',
         name='add'),
 
     url(r'^(?P<slug>[^/]+)/$',
-        NoteDetailView.as_view(),
+        'note_detail',
         name='note'),
 
     url(r'^(?P<slug>[^/]+)/delete/$',
-        NoteDeleteView.as_view(),
+        'note_delete',
         name='delete'),
 
     url(r'^(?P<slug>[^/]+)/update/$',
-        NoteUpdateView.as_view(),
+        'note_update',
         name='update'),
 
     url(r'^(?P<slug>[^/]+)/comment/$',
-        CommentCreateView.as_view(),
+        'comment_create',
         name='comment'),
 
     url(r'^comment/(?P<pk>\d+)/$',
-        CommentDetailView.as_view(),
+        'comment_detail',
         name='comment-detail'),
 
     url(r'^comment/(?P<pk>\d+)/delete/$',
-        CommentDeleteView.as_view(),
+        'comment_delete',
         name='comment-delete'),
 
     url(r'^comment/(?P<pk>\d+)/update/$',
-        CommentUpdateView.as_view(),
+        'comment_update',
         name='comment-update'),
-
-    url(r'^$',
-        NoteIndexView.as_view(),
-        name='index'),
 )
 
 

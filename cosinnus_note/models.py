@@ -13,7 +13,6 @@ from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
 
 
-
 class Note(BaseTaggableObjectModel):
     SORT_FIELDS_ALIASES = [
         ('title', 'title'), ('creator', 'creator'), ('created', 'created'),
