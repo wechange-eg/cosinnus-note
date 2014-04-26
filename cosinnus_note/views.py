@@ -33,6 +33,9 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         form.instance.creator = self.request.user
         return super(NoteCreateView, self).form_valid(form)
 
+    def get_success_url(self):
+        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
+
 note_create = NoteCreateView.as_view()
 
 
@@ -55,6 +58,7 @@ note_detail = NoteDetailView.as_view()
 
 
 class NoteIndexView(RequireReadMixin, RedirectView):
+
     def get_redirect_url(self, **kwargs):
         return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
@@ -79,9 +83,8 @@ class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     model = Note
     template_name_suffix = '_update'
 
-    def form_valid(self, form):
-        form.instance.creator = self.request.user
-        return super(NoteUpdateView, self).form_valid(form)
+    def get_success_url(self):
+        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 note_update = NoteUpdateView.as_view()
 
