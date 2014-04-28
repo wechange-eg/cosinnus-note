@@ -17,13 +17,14 @@ from cosinnus.views.attached_object import (CreateViewAttachable,
 from cosinnus.views.mixins.group import (RequireReadMixin, RequireWriteMixin,
     FilterGroupMixin, GroupFormKwargsMixin)
 from cosinnus.views.mixins.tagged import TaggedListMixin
+from cosinnus.views.mixins.user import UserFormKwargsMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
 from cosinnus_note.models import Note, Comment
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
-                     CreateViewAttachable):
+                     UserFormKwargsMixin, CreateViewAttachable):
 
     form_class = NoteForm
     model = Note
@@ -77,7 +78,7 @@ note_list = NoteListView.as_view()
 
 
 class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
-                     UpdateViewAttachable):
+                     UserFormKwargsMixin, UpdateViewAttachable):
 
     form_class = NoteForm
     model = Note

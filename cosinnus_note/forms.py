@@ -6,11 +6,13 @@ from django import forms
 from cosinnus.forms.attached_object import FormAttachable
 from cosinnus.forms.group import GroupKwargModelFormMixin
 from cosinnus.forms.tagged import get_form
+from cosinnus.forms.user import UserKwargModelFormMixin
 
 from cosinnus_note.models import Comment, Note
 
 
-class _NoteForm(GroupKwargModelFormMixin, FormAttachable):
+class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
+                FormAttachable):
 
     class Meta:
         model = Note
