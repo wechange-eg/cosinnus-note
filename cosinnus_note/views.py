@@ -17,13 +17,14 @@ from cosinnus.views.attached_object import (CreateViewAttachable,
 from cosinnus.views.mixins.group import (RequireReadMixin, RequireWriteMixin,
     FilterGroupMixin, GroupFormKwargsMixin)
 from cosinnus.views.mixins.tagged import TaggedListMixin
+from cosinnus.views.mixins.user import UserFormKwargsMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
 from cosinnus_note.models import Note, Comment
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
-                     CreateViewAttachable):
+                     UserFormKwargsMixin, CreateViewAttachable):
 
     form_class = NoteForm
     model = Note
@@ -32,6 +33,9 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     def form_valid(self, form):
         form.instance.creator = self.request.user
         return super(NoteCreateView, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 note_create = NoteCreateView.as_view()
 
@@ -55,6 +59,7 @@ note_detail = NoteDetailView.as_view()
 
 
 class NoteIndexView(RequireReadMixin, RedirectView):
+
     def get_redirect_url(self, **kwargs):
         return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
@@ -73,15 +78,14 @@ note_list = NoteListView.as_view()
 
 
 class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
-                     UpdateViewAttachable):
+                     UserFormKwargsMixin, UpdateViewAttachable):
 
     form_class = NoteForm
     model = Note
     template_name_suffix = '_update'
 
-    def form_valid(self, form):
-        form.instance.creator = self.request.user
-        return super(NoteUpdateView, self).form_valid(form)
+    def get_success_url(self):
+        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 note_update = NoteUpdateView.as_view()
 
