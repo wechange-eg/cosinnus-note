@@ -1,6 +1,17 @@
-<div class="note">
-  <h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
-  <p>{{ object.text }}</p>
-  {% include "search/indexes/cosinnus/_media_tag_rendered.txt" %}
+<div class="app-main">
+  <div class="btn btn-emphasized w100 regular-space">
+    <ul class="media-list">
+      <li class="media">
+        <a class="pull-left" href="{{ object.get_absolute_url }}">
+          <i class="fa fa-envelope"></i>
+        </a>
+        <div class="media-body">
+          <a href="{{ object.get_absolute_url }}">
+            <span class="annotation moment-data-date" data-date="{{ object.created|date:"c" }}"></span>
+            {{ object.title }}
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
-
