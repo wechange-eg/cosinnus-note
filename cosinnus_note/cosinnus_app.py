@@ -15,5 +15,5 @@ def register():
     app_registry.register('cosinnus_note', 'note', _('Notes'))
     url_registry.register('cosinnus_note', cosinnus_root_patterns,
         cosinnus_group_patterns)
-    for w in ('CompactNotes', 'DetailedNotes',):
-        widget_registry.register('note', 'cosinnus_note.dashboard.%s' % w)
+    widget_registry.register('note', 'cosinnus_note.dashboard.DetailedNotes')
+    #widget_registry.register('note', 'cosinnus_note.dashboard.CompactNotes')
