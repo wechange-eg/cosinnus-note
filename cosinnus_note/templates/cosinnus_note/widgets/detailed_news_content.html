@@ -3,28 +3,48 @@
 
 {% if notes %}
     {% for note in notes %}
-      <table class="">
+        <div type="button" class="btn btn-emphasized dashboard-appwidget-headline">
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        {% if note.creator.cosinnus_profile.avatar %}
+                            <img src="{{ note.creator.cosinnus_profile.avatar_url }}" />
+                        {% else %}
+                            <img src="{% static 'images/jane-doe.png' %}" title="{% trans 'You have not uploaded an avatar yet' %}"></img>
+                        {% endif %}
+                    </a>
+                    <div class="media-body">
+                        <span class="annotation moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
+                        {{ note.creator.first_name }} {{ note.creator.last_name }}
+                        <div class="group-annotation">
+                        <i class="fa fa-users"></i>
+                            {{ group.name }}
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div><!-- btn -->
+        <div type="button" class="btn btn-default dashboard-appwidget-contentline-extra-indented large-space">
+            <ul class="media-list fine-space">
+                <li class="media">
+                    <div class="media-body">
+                        <div class="well">
+                            <p>{{ note.text }}</p>
+                        </div>
+                        {% if note.attached_image %}
+				            <img src="{{ note.attached_image.static_image_url }}" />
+				        {% endif %}
+                    </div>
+                </li>
+            </ul>
+        </div><!-- btn -->
         
-          <tr>
-              <td>{{ note.creator }} on {{ note.created }}</td>
-          </tr>
-          <tr>
-              <td><a href="{% url 'cosinnus:note:note' group=note.group.slug slug=note.slug %}">title: {{ note.title }}</a></td>
-          </tr>
-          <tr><td>text: {{ note.text }}</td></tr>
-          
-          <tr><td>
-            {% if note.attached_objects.all %}
-                <div style="max-width:250px; max-height:200px; overflow:hidden;">
-                    {% cosinnus_render_attached_objects note 'cosinnus_file.FileEntry' %}
-                </div>
-            {% endif %}
-          </td></tr>
-          <tr><td>{{ note.comments.count }} comments</td></tr>
-      </table>
-       
-      <hr/>
-      
+        {% comment %}  
+            Comments can be displayed like this:
+            {{ note.comments.count }}
+        {% endcomment %}
+        
     {% endfor %}
   
 {% else %}
