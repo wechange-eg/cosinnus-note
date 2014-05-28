@@ -35,7 +35,7 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         return super(NoteCreateView, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
+        return reverse('cosinnus:group-list', kwargs={'group': self.group.slug})
 
 note_create = NoteCreateView.as_view()
 

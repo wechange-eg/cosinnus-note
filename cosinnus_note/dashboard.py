@@ -11,6 +11,7 @@ from cosinnus.utils.dashboard import DashboardWidget, DashboardWidgetForm
 from cosinnus_note.models import Note
 from cosinnus_note.views import NoteCreateView
 from django.core.exceptions import ImproperlyConfigured
+from cosinnus_note.forms import NoteForm
 
 
 class CompactNotesForm(DashboardWidgetForm):
@@ -49,6 +50,7 @@ class BaseNotesWidget(DashboardWidget):
             'group': self.config.group,
             'no_data': _('No news'),
             'widget_id': self.id,
+            'widget_title': self.title,
         }
 
         # TODO: Refactor to use the ajax views. This would
@@ -58,9 +60,9 @@ class BaseNotesWidget(DashboardWidget):
                 view = NoteCreateView.as_view()
                 slug = self.config.group.slug
                 response = view(self.request, group=slug)
-                return {}
+                return response
             else:
-                data['form'] = NewNoteForm()
+                data['form'] = NoteForm(group=self.config.group)
         return render_to_string(self.get_template_name(), data,
                                 context_instance=RequestContext(self.request))
 

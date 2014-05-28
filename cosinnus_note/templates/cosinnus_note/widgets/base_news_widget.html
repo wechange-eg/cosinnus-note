@@ -1,125 +1,25 @@
-{% extends "cosinnus/widgets/fadedown_base_widget.html" %}
+{% extends "cosinnus/widgets/base_widget.html" %}
 {% load i18n cosinnus_tags %}
 
+
+{% block base_widget_content %}
+
     
-{% block fadedown_content %}
+    <div data-target="widget-content"></div>
     
-
-    <div><!-- just for fun -->
-        <ol class="input-area">
-            <li class="w100">
-                <textarea placeholder="Bitte neue Nachricht eingeben"></textarea>
-            </li>
-        </ol>
-        <ol class="input-area" style="display: none;" id="user-selector">
-            <li>
-                <i class="fa fa-user"></i>
-                <select class="user-selector" multiple="multiple" data-placeholder="Benutzer">
-                    <option value="Al">Alice</option>
-                    <option value="Bo">Bob</option>
-                    <option value="Cy">Cindy</option>
-                </select>
-            </li>
-        </ol>
-        <ol class="input-area" style="display: none;" id="tags-selector">
-            <li>
-                <i class="fa fa-tags"></i>
-                    <input type="hidden" class="tags-selector" data-tags="Baustelle, Gewerk, Elektrik" data-placeholder="Tags" />
-            </li>
-        </ol>
-        <ol class="input-area" style="display: none;" id="location-selector">
-            <li>
-                <i class="fa fa-map-marker"></i>
-                <input type="hidden" class="location-selector" data-tags="Berlin, Kreuzberg, Oranienhof, Köln, Paris, London, Frankfurt, New York, Peking" data-placeholder="Ort" />
-            </li>
-        </ol>
-        <ol class="input-area" style="display: none;" id="attachments-selector">
-            <li>
-                <i class="fa fa-paperclip"></i>
-                <input type="hidden" class="attachments-selector" />
-            </li>
-        </ol>
-        <ol class="input-area" style="display: none;" id="topics-selector">
-            <li>
-                <i class="fa fa-fw fa-lightbulb-o"></i>
-                <select name="topic" multiple="multiple" placeholder="Themen">
-                    <option selected="selected" value="mobility">Mobilität</option>
-                    <option value="energy"></i>Energie</option>
-                    <option value="environment"></i>Umwelt</option>
-                    <option value="education"></i>Bildung</option>
-                    <option value="health"></i>Gesundheit</option>
-                    <option value="food-consumption"></i>Ernährung und Konsum</option>
-                    <option value="art-culture"></i>Kunst und Kultur</option>
-                    <option value="finance"></i>Geld und Finanzen</option>
-                    <option value="work-law"></i>Arbeit und Recht</option>
-                    <option value="building-habitation"></i>Bauen und Wohnen</option>
-                </select>
-            </li>
-        </ol>
-        <ol class="input-area">
-            <li>
-                <i class="fa fa-fw fa-bolt"></i>
-                <select name="actionfield">
-                    <option selected="selected" value="civil society">Zivilgesellschaft</option>
-                    <option value="politics">Politik</option>
-                    <option value="research">Forschung</option>
-                    <option value="corporation">Unternehmen</option>
-                    <option value="other">andere Initiative / Organisation</option>
-                </select>
-            </li>
-            <li>
-                <i class="fa fa-fw fa-globe"></i>
-                <select class="privacy-selector">
-                    <option selected="selected" value="public">Öffentlich</option>
-                    <option value="private"></i>Privat</option>
-                </select>
-            </li>
-        </ol><!-- input-area -->
-        <ol class="input-area">
-            <!-- When things are to be hidden by default,
-                simply invent an ID and add a link like these: -->
-            <li>
-                <a href="#" data-show-id="user-selector">
-                    <i class="fa fa-user"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" data-show-id="attachments-selector">
-                    <i class="fa fa-paperclip"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" data-show-id="location-selector">
-                    <i class="fa fa-map-marker"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" data-show-id="tags-selector">
-                    <i class="fa fa-tags"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" data-show-id="topics-selector">
-                    <i class="fa fa-lightbulb-o"></i>
-                </a>
-            </li>
-        </ol><!-- input-area -->
-
-    </div>
-
-    <button type="button" class="btn btn-emphasized">
+    
+    <button type="button" class="btn btn-emphasized dashboard-appwidget-morebutton" href="" data-target="widget-title-url">
         <ul class="media-list">
             <li class="media">
-                <a class="pull-left" href="#">
-                    <i class="fa fa-pencil"></i>
+                <a class="pull-right btn-extra-emphasized" href="#">
+                    <i class="fa fa-chevron-right "></i>
                 </a>
                 <div class="media-body">
-                    Posten
+                    {% trans "Mehr" %}
                 </div>
             </li>
         </ul>
-    </button>
-
-{% endblock fadedown_content %}
+    </button><!-- btn -->
+{% endblock base_widget_content %}
 
 
