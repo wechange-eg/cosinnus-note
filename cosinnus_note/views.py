@@ -33,6 +33,12 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     def form_valid(self, form):
         form.instance.creator = self.request.user
         return super(NoteCreateView, self).form_valid(form)
+    
+    def form_invalid(self, form):
+        """
+        If the form is invalid, we simply redirect to the success url anyway.
+        """
+        return HttpResponseRedirect(self.get_success_url())
 
     def get_success_url(self):
         return reverse('cosinnus:group-dashboard', kwargs={'group': self.group.slug})

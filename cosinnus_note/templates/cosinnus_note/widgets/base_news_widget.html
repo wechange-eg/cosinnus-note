@@ -9,13 +9,6 @@
                 {{ form.forms.obj.non_field_errors }}
                 <ol class="input-area">
                     <li class="w100">
-                        {{ form.forms.obj.title.errors }}
-                        {% captureas placeholder %}{% trans "Titel der Nachricht." %}{% endcaptureas %}
-                        {% render_field form.forms.obj.title class+="form-control" placeholder=placeholder id="etherpadTitle" %}
-                    </li>
-                </ol>
-                <ol class="input-area">
-                    <li class="w100">
                         {{ form.forms.obj.text.errors }}
                         {% captureas placeholder %}{% trans "Bitte Nachricht eingeben..." %}{% endcaptureas %}
                         {% render_field form.forms.obj.text class+="form-control" placeholder=placeholder id="etherpadTitle" %}
@@ -33,7 +26,7 @@
                             <i class="fa fa-pencil"></i>
                         </a>
                         <div class="media-body">
-                            Posten
+                            {% trans "Posten" %}
                         </div>
                     </li>
                 </ul>

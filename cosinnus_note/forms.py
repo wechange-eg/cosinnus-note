@@ -17,6 +17,16 @@ class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
     class Meta:
         model = Note
         fields = ('title', 'text', 'tags', 'video',)
+        
+    def clean(self):
+        """ Insert the first couple of characters from the text if no title is given """
+        title = self.cleaned_data.get('title', None)
+        if not title:
+            note_text = self.cleaned_data.get('text', None)
+            if note_text:
+                self.cleaned_data.update({'title': note_text[:20]},)
+                self.errors.pop('title', None)
+        return super(_NoteForm, self).clean()
 
 
 #: A django-multiform :class:`MultiModelForm`. Includs support for `group` and
