@@ -53,16 +53,6 @@ class BaseNotesWidget(DashboardWidget):
             'widget_title': self.title,
         }
 
-        # TODO: Refactor to use the ajax views. This would
-        #       allow proper error handling.
-        if self.config.group and self.request.user.is_authenticated():
-            if self.request.method == "POST":
-                view = NoteCreateView.as_view()
-                slug = self.config.group.slug
-                response = view(self.request, group=slug)
-                return response
-            else:
-                data['form'] = NoteForm(group=self.config.group)
         return render_to_string(self.get_template_name(), data,
                                 context_instance=RequestContext(self.request))
 

@@ -1,25 +1,47 @@
-{% extends "cosinnus/widgets/base_widget.html" %}
-{% load i18n cosinnus_tags %}
+{% extends "cosinnus/widgets/fadedown_base_widget.html" %}
+{% load i18n cosinnus_tags widget_tweaks %}
 
 
-{% block base_widget_content %}
 
+{% block fadedown_content %}
     
-    <div data-target="widget-content"></div>
+        <form action="{% url 'cosinnus:note:add' group=group.slug %}" method="POST" id="widgetform{{ widget_conf_id }}">{% csrf_token %}
+            <div>
+                {{ form.forms.obj.non_field_errors }}
+                <ol class="input-area">
+                    <li class="w100">
+                        {{ form.forms.obj.title.errors }}
+                        {% captureas placeholder %}{% trans "Titel der Nachricht." %}{% endcaptureas %}
+                        {% render_field form.forms.obj.title class+="form-control" placeholder=placeholder id="etherpadTitle" %}
+                    </li>
+                </ol>
+                <ol class="input-area">
+                    <li class="w100">
+                        {{ form.forms.obj.text.errors }}
+                        {% captureas placeholder %}{% trans "Bitte Nachricht eingeben..." %}{% endcaptureas %}
+                        {% render_field form.forms.obj.text class+="form-control" placeholder=placeholder id="etherpadTitle" %}
+                    </li>
+                </ol>
+                
+                {% include 'cosinnus/media_tags.html' %}
+                    
+            </div>
+
+            <button type="submit" class="btn btn-emphasized">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                        <div class="media-body">
+                            Posten
+                        </div>
+                    </li>
+                </ul>
+            </button>
+        </form>
     
-    
-    <button type="button" class="btn btn-emphasized dashboard-appwidget-morebutton" href="" data-target="widget-title-url">
-        <ul class="media-list">
-            <li class="media">
-                <a class="pull-right btn-extra-emphasized" href="#">
-                    <i class="fa fa-chevron-right "></i>
-                </a>
-                <div class="media-body">
-                    {% trans "Mehr" %}
-                </div>
-            </li>
-        </ul>
-    </button><!-- btn -->
-{% endblock base_widget_content %}
+        
+{% endblock fadedown_content %}
 
 
