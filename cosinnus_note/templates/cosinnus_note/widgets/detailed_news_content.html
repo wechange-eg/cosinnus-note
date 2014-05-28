@@ -3,7 +3,7 @@
 
 {% if notes %}
     {% for note in notes %}
-        <div type="button" class="btn btn-emphasized dashboard-appwidget-headline">
+        <div type="button" class="btn btn-emphasized dashboard-appwidget-headline ">
             <ul class="media-list">
                 <li class="media">
                     <a class="pull-left" href="#">
@@ -25,7 +25,7 @@
                 </li>
             </ul>
         </div><!-- btn -->
-        <div type="button" class="btn btn-default dashboard-appwidget-contentline-extra-indented large-space">
+        <div type="button" class="btn btn-default dashboard-appwidget-contentline-extra-indented">
             <ul class="media-list fine-space">
                 <li class="media">
                     <div class="media-body">
@@ -40,6 +40,9 @@
             </ul>
         </div><!-- btn -->
         
+        <div type="button" class="btn btn-default dashboard-appwidget-contentline-extra-indented large-space">
+            {% include 'cosinnus/media_tags_readonly.html' with object=note %}
+        </div>
         {% comment %}  
             Comments can be displayed like this:
             {{ note.comments.count }}
