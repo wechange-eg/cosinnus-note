@@ -10,6 +10,7 @@ from cosinnus.utils.dashboard import DashboardWidget, DashboardWidgetForm
 
 from cosinnus_note.models import Note
 from cosinnus_note.views import NoteCreateView
+from django.core.exceptions import ImproperlyConfigured
 
 
 class CompactNotesForm(DashboardWidgetForm):
@@ -45,6 +46,7 @@ class BaseNotesWidget(DashboardWidget):
 
         data = {
             'notes': qs,
+            'group': self.config.group,
             'no_data': _('No news'),
             'widget_id': self.id,
         }
@@ -77,6 +79,6 @@ class CompactNotes(BaseNotesWidget):
 
 class DetailedNotes(BaseNotesWidget):
     form_class = DetailedNotesForm
-    template_name = 'cosinnus_note/widgets/detailed_news.html'
-    title = _('Detailed News')
+    template_name = 'cosinnus_note/widgets/detailed_news_content.html'
+    title = _('Write a news post...')
     widget_name = 'detailed news list'
