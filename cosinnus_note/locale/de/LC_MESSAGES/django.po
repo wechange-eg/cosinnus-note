@@ -33,7 +33,7 @@ msgstr "Neuigkeiten"
 
 #: .\dashboard.py:75
 msgid "Write a news post..."
-msgstr ""
+msgstr "Neue Nachricht..."
 
 #: .\models.py:21 .\models.py:48
 msgid "Text"
