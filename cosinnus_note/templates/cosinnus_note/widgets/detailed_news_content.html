@@ -51,6 +51,17 @@
     {% endfor %}
   
 {% else %}
-  {{ no_data }}
+    <div type="button" class="btn btn-emphasized dashboard-appwidget-contentline fine-space">
+        <ul class="media-list">
+            <li class="media">
+                <a class="pull-left" href="#">
+                    <i class="fa fa-tasks"></i>
+                </a>
+                <div class="media-body">
+                    {% trans "There are news posts yet" %}
+                </div>
+            </li>
+        </ul>
+    </div><!-- btn -->
 {% endif %}
 
