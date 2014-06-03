@@ -7,11 +7,7 @@
             <ul class="media-list">
                 <li class="media">
                     <a class="pull-left" href="#">
-                        {% if note.creator.cosinnus_profile.avatar %}
-                            <img src="{{ note.creator.cosinnus_profile.avatar_url }}" />
-                        {% else %}
-                            <img src="{% static 'images/jane-doe.png' %}" title="{% trans 'You have not uploaded an avatar yet' %}"></img>
-                        {% endif %}
+                        {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
                     </a>
                     <div class="media-body">
                         <span class="annotation moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
