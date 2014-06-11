@@ -135,7 +135,7 @@ msgstr "Anzeigen"
 
 #: .\templates\cosinnus_note\note_list.html.py:72
 msgid "There are no notes."
-msgstr "Es gibt keine Neuigkeiten."
+msgstr "Es gibt noch keine Neuigkeiten."
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13
 msgid "Bitte Nachricht eingeben..."
