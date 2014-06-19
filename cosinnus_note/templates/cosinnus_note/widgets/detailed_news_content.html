@@ -13,8 +13,8 @@
                         <span class="annotation moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
                         {{ note.creator.first_name }} {{ note.creator.last_name }}
                         <div class="group-annotation">
-                        <i class="fa fa-users"></i>
-                            {{ group.name }}
+                            <i class="fa fa-users"></i>
+                            {{ note.group.name }}
                         </div>
 
                     </div>

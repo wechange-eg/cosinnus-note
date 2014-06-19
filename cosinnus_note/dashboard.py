@@ -70,7 +70,20 @@ class CompactNotes(BaseNotesWidget):
 
 
 class DetailedNotes(BaseNotesWidget):
+    """ This widget acts as a combined group and user widget.
+        Group widget: Contains a note-post form and the latest news
+        User widget: Contains the latest news posts from all the user's groups.
+            Note!: The user note widget need to get the base_widget.html template instead
+                    of the fadedown_base_widget.html template as it contains no form!
+     """
+    
     form_class = DetailedNotesForm
     template_name = 'cosinnus_note/widgets/detailed_news_content.html'
     title = _('Write a news post...')
     widget_name = 'detailed news list'
+    
+    def __init__(self, request, config_instance):
+        super(DetailedNotes, self).__init__(request, config_instance)
+        # Adjust title for user widget
+        if not self.config.group:
+            self.title = _('News stream')
