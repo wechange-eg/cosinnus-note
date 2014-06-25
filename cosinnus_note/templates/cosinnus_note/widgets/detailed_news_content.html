@@ -10,7 +10,6 @@
                         {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
                     </a>
                     <div class="media-body">
-                        <span class="annotation moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
                         {{ note.creator.first_name }} {{ note.creator.last_name }}
                         <div class="group-annotation">
                             <i class="fa fa-users"></i>
@@ -31,6 +30,7 @@
                         {% if note.attached_image %}
 				            <img src="{{ note.attached_image.static_image_url }}" />
 				        {% endif %}
+				        <div class="annotation moment-data-date" data-date="{{ note.created|date:'c' }}"></div>
                     </div>
                 </li>
             </ul>
