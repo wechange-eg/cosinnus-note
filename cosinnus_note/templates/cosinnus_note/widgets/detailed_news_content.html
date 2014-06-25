@@ -26,7 +26,7 @@
                 <li class="media">
                     <div class="media-body">
                         <div class="well">
-                            <p>{{ note.text }}</p>
+                            <p>{{ note.text|linebreaks|urlizetrunc:25}}</p>
                         </div>
                         {% if note.attached_image %}
 				            <img src="{{ note.attached_image.static_image_url }}" />
