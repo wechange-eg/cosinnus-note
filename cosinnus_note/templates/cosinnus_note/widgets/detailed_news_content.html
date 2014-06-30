@@ -6,11 +6,11 @@
         <div type="button" class="btn btn-emphasized btn-headline ">
             <ul class="media-list">
                 <li class="media">
-                    <a class="pull-left" href="#">
+                    <a class="pull-left" href="{{ note.creator.cosinnus_profile.get_absolute_url }}">
                         {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
                     </a>
                     <div class="media-body">
-                        {{ note.creator.first_name }} {{ note.creator.last_name }}
+                         <a href="{{ note.creator.cosinnus_profile.get_absolute_url }}">{{ note.creator|full_name }}</a>
                         <div class="group-annotation">
                             <i class="fa fa-users"></i>
                             {{ note.group.name }}
@@ -25,7 +25,7 @@
                 <li class="media">
                     <div class="media-body">
                         <div class="well">
-                            <p>{{ note.text|urlizetrunc:25|linebreaks }}</p>
+                            {{ note.text|urlizetrunc:25|linebreaks }}
                         </div>
                         {% if note.attached_image %}
 				            <img src="{{ note.attached_image.static_image_url }}" />

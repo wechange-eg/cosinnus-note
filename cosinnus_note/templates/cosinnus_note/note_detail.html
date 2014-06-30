@@ -35,7 +35,7 @@
   </a>
   <div class="media-body">
     <h5 class="media-heading muted pull-right">{{ object.created }}</h5>
-    <h4 class="media-heading"><a href="{% url 'cosinnus:user-detail' username=object.creator.get_username %}">{{ object.creator.get_full_name|default:object.creator.username }}</a></h4>
+    <h4 class="media-heading"><a href="{% url 'cosinnus:profile-detail' username=object.creator.get_username %}">{{ object.creator.get_full_name|default:object.creator.username }}</a></h4>
     {{ object.text }}
   </div>
 </div>
@@ -81,7 +81,7 @@
     <div class="media-body">
       <h5 class="media-heading muted pull-right">{{ comment.created_on }}</h5>
       <h4 class="media-heading">
-        <a href="{% url 'cosinnus:user-detail' username=comment.author.get_username %}">{{ comment.author.get_full_name|default:comment.author.username }}</a>
+        <a href="{% url 'cosinnus:profile-detail' username=comment.author.get_username %}">{{ comment.author.get_full_name|default:comment.author.username }}</a>
       </h4>
       {{ comment.text }}
       <div class="btn-group pull-right">
