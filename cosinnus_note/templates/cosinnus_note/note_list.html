@@ -16,7 +16,7 @@
 
 {% block content %}
 
-{% if user.is_superuser or user|is_group_member:object %}
+{% if user|has_write_access:object %}
     <ul class="nav nav-pills pull-right">
       <li class="active"><a href="{% url 'cosinnus:note:add' group=group.slug %}" class="btn"><span class="glyphicon glyphicon-plus"></span> {% trans "Add" %}</a></li>
     </ul>
@@ -55,7 +55,7 @@
             <td>
                 <div class="btn-group">
                     <a class="btn btn-primary btn-mini" href="{{ object.get_absolute_url }}"><i class="icon-eye-open icon-white"></i> {% trans "Show" %}</a>
-                    {% if user.is_superuser or user|is_group_member:object %}
+                    {% if user|has_write_access:object %}
                     <a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{% url 'cosinnus:note:update' group=group.slug slug=object.slug %}"><i class="icon-pencil"></i> {% trans "Edit" %}</a></li>
