@@ -16,7 +16,6 @@ from cosinnus.views.attached_object import (CreateViewAttachable,
 
 from cosinnus.views.mixins.group import (RequireReadMixin, RequireWriteMixin,
     FilterGroupMixin, GroupFormKwargsMixin)
-from cosinnus.views.mixins.tagged import TaggedListMixin
 from cosinnus.views.mixins.user import UserFormKwargsMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
@@ -72,7 +71,7 @@ class NoteIndexView(RequireReadMixin, RedirectView):
 note_index = NoteIndexView.as_view()
 
 
-class NoteListView(RequireReadMixin, FilterGroupMixin, TaggedListMixin,
+class NoteListView(RequireReadMixin, FilterGroupMixin,
                    SortableListMixin, ListView):
     model = Note
 

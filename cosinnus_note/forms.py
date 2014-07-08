@@ -16,7 +16,7 @@ class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
 
     class Meta:
         model = Note
-        fields = ('title', 'text', 'tags', 'video',)
+        fields = ('title', 'text', 'video',)
         
     def clean(self):
         """ Insert the first couple of characters from the text if no title is given """
