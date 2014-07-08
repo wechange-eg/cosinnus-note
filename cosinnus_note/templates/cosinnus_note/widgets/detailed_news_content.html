@@ -36,9 +36,15 @@
             </ul>
         </div><!-- btn -->
         
-        <div type="button" class="btn btn-default dashboard-appwidget-contentline-extra-indented large-space">
-            {% include 'cosinnus/media_tags_readonly.html' with object=note %}
-        </div>
+        <div type="button" class="btn btn-default w100">
+            <ul class="media-list">
+                <li class="media">
+                    <div class="media-body">
+                        {% include 'cosinnus/media_tags_readonly.html' with object=note %}
+                    </div>
+                </li>
+            </ul>
+        </div><!-- btn -->
         {% comment %}  
             Comments can be displayed like this:
             {{ note.comments.count }}
