@@ -38,11 +38,11 @@ class BaseNotesWidget(DashboardWidget):
     template_name = None
     user_model_attr = None
 
-    def get_data(self):
+    def get_data(self, offset=0):
         count = int(self.config['amount'])
         qs = self.get_queryset().all()
         if count != 0:
-            qs = qs[:count]
+            qs = qs[offset:offset+count]
 
         data = {
             'notes': qs,
@@ -52,8 +52,8 @@ class BaseNotesWidget(DashboardWidget):
             'widget_title': self.title,
         }
 
-        return render_to_string(self.get_template_name(), data,
-                                context_instance=RequestContext(self.request))
+        return (render_to_string(self.get_template_name(), data,
+                                context_instance=RequestContext(self.request)), len(qs))
 
     def get_template_name(self):
         if self.template_name is None:
