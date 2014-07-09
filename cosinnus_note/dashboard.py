@@ -41,7 +41,6 @@ class BaseNotesWidget(DashboardWidget):
     def get_data(self):
         count = int(self.config['amount'])
         qs = self.get_queryset().all()
-
         if count != 0:
             qs = qs[:count]
 
