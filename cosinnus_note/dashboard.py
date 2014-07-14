@@ -39,6 +39,9 @@ class BaseNotesWidget(DashboardWidget):
     user_model_attr = None
 
     def get_data(self, offset=0):
+        """ Returns a tuple (data, rows_returned, has_more) of the rendered data and how many items were returned.
+            if has_more == False, the receiving widget will assume no further data can be loaded.
+         """
         count = int(self.config['amount'])
         qs = self.get_queryset().all()
         if count != 0:
@@ -53,7 +56,7 @@ class BaseNotesWidget(DashboardWidget):
         }
 
         return (render_to_string(self.get_template_name(), data,
-                                context_instance=RequestContext(self.request)), len(qs))
+                                context_instance=RequestContext(self.request)), len(qs), len(qs) >= count)
 
     def get_template_name(self):
         if self.template_name is None:
