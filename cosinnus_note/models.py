@@ -38,12 +38,13 @@ class Note(BaseTaggableObjectModel):
             unique_aware_slugify(self, slug_source='title', slug_field='slug', group=self.group)
         
         # take the first youtube url from the textand save it as a video link
+        self.video = None
         urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', self.text)
         for url in urls:
             if 'youtube.com' in url:
                 self.video = url
                 break
-        
+            
         super(Note, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
