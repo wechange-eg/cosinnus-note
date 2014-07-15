@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import re
+
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
@@ -11,6 +13,7 @@ from embed_video.fields import EmbedVideoField
 
 from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
+from django.utils.functional import cached_property
 
 
 class Note(BaseTaggableObjectModel):
@@ -33,11 +36,39 @@ class Note(BaseTaggableObjectModel):
     def save(self, *args, **kwargs):
         if not self.slug:
             unique_aware_slugify(self, slug_source='title', slug_field='slug', group=self.group)
+        
+        # take the first youtube url from the textand save it as a video link
+        urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', self.text)
+        for url in urls:
+            if 'youtube.com' in url:
+                self.video = url
+                break
+        
         super(Note, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         kwargs = {'group': self.group.slug, 'slug': self.slug}
         return reverse('cosinnus:note:note', kwargs=kwargs)
+    
+    @cached_property
+    def video_id(self):
+        """ Returns the video id from a URL as such:
+        http://www.youtube.com/watch?v=CENF14Iloxw&hq=1
+        """
+        if self.video:
+            match = re.search(r'[?&]v=([a-zA-Z0-9-_]+)(&|$)', self.video)
+            if match:
+                vid = match.groups()[0]
+                return vid
+        return None
+
+    @property
+    def video_thumbnail(self):
+        vid = self.video_id
+        ret = None
+        if vid:
+            ret = 'http://img.youtube.com/vi/%s/hqdefault.jpg' % vid
+        return ret
 
 
 @python_2_unicode_compatible
