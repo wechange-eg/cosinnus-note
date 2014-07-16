@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-19 18:32+0200\n"
+"POT-Creation-Date: 2014-07-16 17:26+0200\n"
 "PO-Revision-Date: 2013-07-19 19:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -17,51 +17,57 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: .\cosinnus_app.py:15 .\models.py:27
+#: .\cosinnus_app.py:15 .\models.py:30
 #: .\templates\cosinnus_note\base.html.py:8
 #: .\templates\cosinnus_note\note_list.html.py:3
 msgid "Notes"
 msgstr "Neuigkeiten"
 
-#: .\dashboard.py:51
+# The Cosinnus App Name
+msgctxt "the_app"
+msgid "note"
+msgstr "Neuigkeiten"
+
+
+#: .\dashboard.py:53
 msgid "No news"
 msgstr "Keine Nachrichten vorhanden"
 
-#: .\dashboard.py:68
+#: .\dashboard.py:70
 msgid "News"
 msgstr "Neuigkeiten"
 
-#: .\dashboard.py:82
+#: .\dashboard.py:84
 msgid "Write a news post..."
 msgstr "Neue Nachricht..."
 
-#: .\dashboard.py:89
+#: .\dashboard.py:91
 msgid "News stream"
 msgstr "Mein Nachrichtenfeed"
 
-#: .\models.py:21 .\models.py:48
+#: .\models.py:24 .\models.py:80
 msgid "Text"
 msgstr "Text"
 
-#: .\models.py:26 .\templates\cosinnus_note\note_list.html.py:7
+#: .\models.py:29 .\templates\cosinnus_note\note_list.html.py:7
 msgid "Note"
 msgstr "Neuigkeit"
 
-#: .\models.py:31 .\models.py:45
+#: .\models.py:34 .\models.py:77
 #: .\templates\cosinnus_note\note_list.html.py:38
 msgid "Author"
 msgstr "Autor"
 
-#: .\models.py:46 .\templates\cosinnus_note\note_list.html.py:39
+#: .\models.py:78 .\templates\cosinnus_note\note_list.html.py:39
 msgid "Created"
 msgstr "Erstellt"
 
-#: .\models.py:52 .\templates\cosinnus_note\note_detail.html.py:52
+#: .\models.py:84 .\templates\cosinnus_note\note_detail.html.py:52
 #: .\templates\cosinnus_note\note_list.html.py:63
 msgid "Comment"
 msgstr "Kommentar"
 
-#: .\models.py:53
+#: .\models.py:85
 msgid "Comments"
 msgstr "Kommentare"
 
@@ -149,7 +155,7 @@ msgstr ""
 msgid "Posten"
 msgstr "Posten"
 
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:58
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:59
 msgid "There are news posts yet"
 msgstr "Es gibt keine Neuigkeiten."
 
