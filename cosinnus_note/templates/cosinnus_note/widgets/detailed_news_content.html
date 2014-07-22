@@ -4,49 +4,49 @@
 {% if notes %}
     {% for note in notes %}
         <div class="large-space">
-        <div type="button" class="btn btn-emphasized btn-headline">
-            <ul class="media-list">
-                <li class="media">
-                    <a class="pull-left" href="{{ note.creator.cosinnus_profile.get_absolute_url }}">
-                        {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
-                    </a>
-                    <div class="media-body">
-                         <a href="{{ note.creator.cosinnus_profile.get_absolute_url }}">{{ note.creator|full_name }}</a> –
-                         <span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span>
-						 <div class="group-annotation">
-						     <i class="fa fa-users"></i>
-						     {{ note.group.name }}
-						 </div>
-                    </div>
-                </li>
-            </ul>
-        </div><!-- btn -->
-        <div type="button" class="btn btn-default dashboard-appwidget-contentline-extra-indented">
-            <ul class="media-list fine-space">
-                <li class="media">
-                    <div class="media-body">
-                        <div class="well">
-                            {{ note.text|urlizetrunc:25|linebreaks }}
-                        </div>
-                        {% if note.attached_image %}
-				            <img src="{{ note.attached_image.static_image_url }}" />
-				        {% endif %}
-				        {% if note.video %}
-				            <a href="{{ note.video }}" target="_blank">
-				                <img src="{{ note.video_thumbnail }}">
-				            </a>
-				        {% endif %}
-                    </div>
-                </li>
-            </ul>
-        </div><!-- btn -->
-        
-        {% include 'cosinnus/media_tags_readonly.html' with object=note %}
-        
-        {% comment %}  
-            Comments can be displayed like this:
-            {{ note.comments.count }}
-        {% endcomment %}
+	        <div type="button" class="btn btn-emphasized btn-headline">
+	            <ul class="media-list">
+	                <li class="media">
+	                    <a class="pull-left" href="{{ note.creator.cosinnus_profile.get_absolute_url }}">
+	                        {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
+	                    </a>
+	                    <div class="media-body">
+	                         <a href="{{ note.creator.cosinnus_profile.get_absolute_url }}">{{ note.creator|full_name }}</a> –
+	                         <span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span>
+							 <div class="group-annotation">
+							     <i class="fa fa-users"></i>
+							     {{ note.group.name }}
+							 </div>
+	                    </div>
+	                </li>
+	            </ul>
+	        </div><!-- btn -->
+	        <div type="button" class="btn btn-default dashboard-appwidget-contentline-extra-indented">
+	            <ul class="media-list fine-space">
+	                <li class="media">
+	                    <div class="media-body">
+	                        <div class="well">
+	                            {{ note.text|urlizetrunc:25|linebreaks }}
+	                        </div>
+	                        {% if note.attached_image %}
+					            <img src="{{ note.attached_image.static_image_url }}" />
+					        {% endif %}
+					        {% if note.video %}
+					            <a href="{{ note.video }}" target="_blank">
+					                <img src="{{ note.video_thumbnail }}">
+					            </a>
+					        {% endif %}
+	                    </div>
+	                </li>
+	            </ul>
+	        </div><!-- btn -->
+	        
+	        {% include 'cosinnus/media_tags_readonly.html' with object=note %}
+	        
+	        {% comment %}  
+	            Comments can be displayed like this:
+	            {{ note.comments.count }}
+	        {% endcomment %}
         </div>
     {% endfor %}
   
