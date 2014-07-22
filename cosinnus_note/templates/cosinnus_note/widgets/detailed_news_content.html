@@ -41,9 +41,7 @@
             </ul>
         </div><!-- btn -->
         
-        {% if note.attached_objects.exists %}
-            {% include 'cosinnus/media_tags_readonly.html' with object=note %}
-        {% endif %}
+        {% include 'cosinnus/media_tags_readonly.html' with object=note %}
         
         {% comment %}  
             Comments can be displayed like this:
