@@ -74,7 +74,7 @@ class Note(BaseTaggableObjectModel):
 
 @python_2_unicode_compatible
 class Comment(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('Author'), on_delete=models.PROTECT)
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('Creator'), on_delete=models.PROTECT)
     created_on = models.DateTimeField(_('Created'), auto_now_add=True, editable=False)
     note = models.ForeignKey(Note, related_name='comments')
     text = models.TextField(_('Text'))
@@ -85,14 +85,13 @@ class Comment(models.Model):
         verbose_name_plural = _('Comments')
 
     def __str__(self):
-        return 'Comment on “%(note)s” by %(author)s' % {
+        return 'Comment on “%(note)s” by %(creator)s' % {
             'note': self.note.title,
-            'author': self.author.get_full_name(),
+            'creator': self.creator.get_full_name(),
         }
 
     def get_absolute_url(self):
         return '%s#comment-%d' % (self.note.get_absolute_url(), self.pk)
-
 
 import django
 if django.VERSION[:2] < (1, 7):

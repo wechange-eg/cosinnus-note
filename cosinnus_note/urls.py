@@ -35,7 +35,7 @@ cosinnus_group_patterns = patterns('cosinnus_note.views',
         'note_update',
         name='update'),
 
-    url(r'^(?P<slug>[^/]+)/comment/$',
+    url(r'^(?P<note_slug>[^/]+)/comment/$',
         'comment_create',
         name='comment'),
 

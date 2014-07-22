@@ -103,7 +103,7 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
     template_name_suffix = '_create'
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.creator = self.request.user
         form.instance.note = self.note
         return super(CommentCreateView, self).form_valid(form)
 
@@ -113,12 +113,17 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
         return context
 
     def get(self, request, *args, **kwargs):
-        self.note = get_object_or_404(Note, group=self.group, slug=self.kwargs.get('slug'))
+        self.note = get_object_or_404(Note, group=self.group, slug=self.kwargs.get('note_slug'))
         return super(CommentCreateView, self).get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        self.note = get_object_or_404(Note, group=self.group, slug=self.kwargs.get('slug'))
+        self.note = get_object_or_404(Note, group=self.group, slug=self.kwargs.get('note_slug'))
+        self.referer = request.META.get('HTTP_REFERER', self.note.group.get_absolute_url())
         return super(CommentCreateView, self).post(request, *args, **kwargs)
+    
+    def get_success_url(self):
+        # self.referer is set in post() method
+        return self.referer
 
 comment_create = CommentCreateView.as_view()
 
@@ -133,9 +138,15 @@ class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
         context = super(CommentDeleteView, self).get_context_data(**kwargs)
         context.update({'note': self.object.note})
         return context
+    
+    def post(self, request, *args, **kwargs):
+        self.comment = get_object_or_404(Comment, pk=self.kwargs.get('pk'))
+        self.referer = request.META.get('HTTP_REFERER', self.comment.note.group.get_absolute_url())
+        return super(CommentDeleteView, self).post(request, *args, **kwargs)
 
     def get_success_url(self):
-        return self.object.note.get_absolute_url()
+        # self.referer is set in post() method
+        return self.referer
 
 comment_delete = CommentDeleteView.as_view()
 
@@ -162,5 +173,14 @@ class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
         context = super(CommentUpdateView, self).get_context_data(**kwargs)
         context.update({'note': self.object.note})
         return context
+    
+    def post(self, request, *args, **kwargs):
+        self.comment = get_object_or_404(Comment, pk=self.kwargs.get('pk'))
+        self.referer = request.META.get('HTTP_REFERER', self.comment.note.group.get_absolute_url())
+        return super(CommentUpdateView, self).post(request, *args, **kwargs)
+
+    def get_success_url(self):
+        # self.referer is set in post() method
+        return self.referer
 
 comment_update = CommentUpdateView.as_view()

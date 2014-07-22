@@ -72,8 +72,8 @@
 {% for comment in object.comments.all %}
   <div class="media media-indent-small" id="comment-{{ comment.pk }}">
     <a class="pull-left" href="#">
-      {% if comment.author.cosinnus_profile.avatar %}
-        <img class="media-object avatar avatar-small" src="{{ comment.author.cosinnus_profile.avatar.url }}">
+      {% if comment.creator.cosinnus_profile.avatar %}
+        <img class="media-object avatar avatar-small" src="{{ comment.creator.cosinnus_profile.avatar.url }}">
       {% else %}
         <img class="media-object avatar avatar-small" src="http://placehold.it/32x32">
       {% endif %}
@@ -81,7 +81,7 @@
     <div class="media-body">
       <h5 class="media-heading muted pull-right">{{ comment.created_on }}</h5>
       <h4 class="media-heading">
-        <a href="{% url 'cosinnus:profile-detail' username=comment.author.get_username %}">{{ comment.author.get_full_name|default:comment.author.username }}</a>
+        <a href="{% url 'cosinnus:profile-detail' username=comment.creator.get_username %}">{{ comment.creator.get_full_name|default:comment.creator.username }}</a>
       </h4>
       {{ comment.text }}
       <div class="btn-group pull-right">

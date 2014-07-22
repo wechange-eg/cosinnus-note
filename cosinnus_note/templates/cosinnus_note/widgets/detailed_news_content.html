@@ -41,6 +41,33 @@
 	            </ul>
 	        </div><!-- btn -->
 	        
+	        {% comment %}  
+	        {% if note.comments.all %}
+		        <div>
+	                {% for comment in note.comments.all %}
+                        {{ comment }} <br/>
+                        {{ comment.text }} <br/>
+                        {% if user|has_write_access:comment %}
+                            <form action="{% url 'cosinnus:note:comment-delete' group=comment.note.group.slug pk=comment.pk %}" method="post" class="form-horizontal">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">Löschen</button>
+                            </form>
+                        {% endif %}
+                        <br/>
+	                {% endfor %}
+		        </div>
+	        {% endif %}
+	        
+	        <div>
+                <legend>Kommentar schreiben</legend>
+                <form action="{% url 'cosinnus:note:comment' group=note.group.slug note_slug=note.slug %}" method="post" class="form-horizontal">
+                    {% csrf_token %}
+                    <textarea cols="10" id="id_text" name="text" rows="4"></textarea>
+                    <button type="submit" class="btn btn-primary">Erstellen</button>
+                </form>
+	        </div>
+            {% endcomment %}
+	        
 	        {% include 'cosinnus/media_tags_readonly.html' with object=note %}
 	        
 	        {% comment %}  
