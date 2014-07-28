@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic.base import RedirectView
 from django.views.generic.detail import DetailView, SingleObjectMixin
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -20,6 +21,7 @@ from cosinnus.views.mixins.user import UserFormKwargsMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
 from cosinnus_note.models import Note, Comment
+from django.contrib import messages
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
@@ -101,10 +103,13 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
     group_field = 'note__group'
     model = Comment
     template_name_suffix = '_create'
+    
+    message_success = _('Your comment was added successfully.')
 
     def form_valid(self, form):
         form.instance.creator = self.request.user
         form.instance.note = self.note
+        messages.success(self.request, self.message_success)
         return super(CommentCreateView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
@@ -133,7 +138,9 @@ class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
     group_field = 'note__group'
     model = Comment
     template_name_suffix = '_delete'
-
+    
+    message_success = _('Your comment was deleted successfully.')
+    
     def get_context_data(self, **kwargs):
         context = super(CommentDeleteView, self).get_context_data(**kwargs)
         context.update({'note': self.object.note})
@@ -146,6 +153,7 @@ class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
 
     def get_success_url(self):
         # self.referer is set in post() method
+        messages.success(self.request, self.message_success)
         return self.referer
 
 comment_delete = CommentDeleteView.as_view()

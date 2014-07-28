@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-16 17:26+0200\n"
+"POT-Creation-Date: 2014-07-28 16:40+0200\n"
 "PO-Revision-Date: 2013-07-19 19:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -22,12 +22,6 @@ msgstr ""
 #: .\templates\cosinnus_note\note_list.html.py:3
 msgid "Notes"
 msgstr "Neuigkeiten"
-
-# The Cosinnus App Name
-msgctxt "the_app"
-msgid "note"
-msgstr "Neuigkeiten"
-
 
 #: .\dashboard.py:53
 msgid "No news"
@@ -53,10 +47,13 @@ msgstr "Text"
 msgid "Note"
 msgstr "Neuigkeit"
 
-#: .\models.py:34 .\models.py:77
-#: .\templates\cosinnus_note\note_list.html.py:38
+#: .\models.py:34 .\templates\cosinnus_note\note_list.html.py:38
 msgid "Author"
 msgstr "Autor"
+
+#: .\models.py:77
+msgid "Creator"
+msgstr "Ersteller"
 
 #: .\models.py:78 .\templates\cosinnus_note\note_list.html.py:39
 msgid "Created"
@@ -70,6 +67,14 @@ msgstr "Kommentar"
 #: .\models.py:85
 msgid "Comments"
 msgstr "Kommentare"
+
+#: .\views.py:107
+msgid "Your comment was added successfully."
+msgstr "Dein Kommentar wurde erfolgreich erstellt."
+
+#: .\views.py:142
+msgid "Your comment was deleted successfully."
+msgstr "Dein Kommentar wurde gelöscht."
 
 #: .\templates\cosinnus_note\comment_create.html.py:9
 #: .\templates\cosinnus_note\note_detail.html.py:16
@@ -155,9 +160,22 @@ msgstr ""
 msgid "Posten"
 msgstr "Posten"
 
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:59
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:109
+msgid "Löschen"
+msgstr ""
+
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:147
+msgid "Post"
+msgstr "Posten"
+
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:203
 msgid "There are news posts yet"
 msgstr "Es gibt keine Neuigkeiten."
+
+# The Cosinnus App Name
+#~ msgctxt "the_app"
+#~ msgid "note"
+#~ msgstr "Neuigkeiten"
 
 #~ msgid "Group"
 #~ msgstr "Gruppe"
