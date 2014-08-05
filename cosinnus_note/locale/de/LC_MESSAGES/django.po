@@ -17,6 +17,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
+# The Cosinnus App Name
+msgctxt "the_app"
+msgid "note"
+msgstr "Neuigkeiten"
+
 #: .\cosinnus_app.py:15 .\models.py:30
 #: .\templates\cosinnus_note\base.html.py:8
 #: .\templates\cosinnus_note\note_list.html.py:3
@@ -171,11 +176,6 @@ msgstr "Posten"
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:203
 msgid "There are news posts yet"
 msgstr "Es gibt keine Neuigkeiten."
-
-# The Cosinnus App Name
-#~ msgctxt "the_app"
-#~ msgid "note"
-#~ msgstr "Neuigkeiten"
 
 #~ msgid "Group"
 #~ msgstr "Gruppe"

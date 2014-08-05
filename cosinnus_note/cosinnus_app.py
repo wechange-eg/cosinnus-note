@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 def register():
     # Import here to prevent import side effects
     from django.utils.translation import ugettext_lazy as _
+    from django.utils.translation import pgettext_lazy
 
     from cosinnus.core.registries import (app_registry, url_registry,
         widget_registry)
@@ -17,3 +18,6 @@ def register():
         cosinnus_group_patterns)
     widget_registry.register('note', 'cosinnus_note.dashboard.DetailedNotes')
     #widget_registry.register('note', 'cosinnus_note.dashboard.CompactNotes')
+
+    # makemessages replacement protection
+    name = pgettext_lazy("the_app", "note")
