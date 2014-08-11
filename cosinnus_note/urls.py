@@ -15,17 +15,17 @@ cosinnus_group_patterns = patterns('cosinnus_note.views',
         'note_list',
         name='list'),
 
-    url(r'^list/(?P<tag>[^/]+)/$',
-        'note_list',
-        name='list-filtered'),
+    #url(r'^list/(?P<tag>[^/]+)/$',
+    #    'note_list',
+    #    name='list-filtered'),
 
     url(r'^add/$',
         'note_create',
         name='add'),
 
-    url(r'^(?P<slug>[^/]+)/$',
-        'note_detail',
-        name='note'),
+    #url(r'^(?P<slug>[^/]+)/$',
+    #    'note_detail',
+    #    name='note'),
 
     url(r'^(?P<slug>[^/]+)/delete/$',
         'note_delete',
