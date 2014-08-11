@@ -2,73 +2,226 @@
 {% load i18n cosinnus_tags %}
 {% block page_title %}{% trans "Notes" %}: {{group.name}} {% endblock %}
 
-{% block breadcrumbs %}
-    {{ block.super }}
-    <li class="active">{% trans "Note" %}</li>
+{% block breadcrumb %}
+        {{ block.super }}
+        {% if current_folder and current_folder.path != '/' %}
+            <li class="active">{{ current_folder.title }}</li>
+        {% endif %}
 {% endblock %}
 
-{% block subnav_add_right %}
-<a href="{% url 'cosinnus:note:add' group=group.slug %}" class="btn">
-  {% trans "Create note" %}
-</a>
-{{ block.super }}
-{% endblock %}
+{% block leftnav %}
+    {% include "cosinnus/leftnav_hierarchic_listview.html" %}
+{% endblock leftnav %}
+
 
 {% block content %}
+    
+    <!-- a box with semi transparent background -->
+    <div class="content-box">
+    
+        {% include 'cosinnus/common/filter_controls.html' %}        
+        
+    
+        <div class="app-main">
+            <div type="button" class="btn btn-default w100 large-space">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="{% url 'cosinnus:profile-detail' %}">
+	                        {% include "cosinnus/user/user_avatar_image.html" with user=user %}
+	                    </a>
+                        <div class="media-body no-horizontal-padding no-vertical-padding">
+                            <textarea class="form-control next-button-is-for-sending autogrow oneline"
+                                placeholder="{% trans "Schreibe einen Beitrag in diese Gruppe" %}" /></textarea>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-emphasized large-space" style="display: none;">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                        <div class="media-body">
+                            {% trans "Create" %}
+                        </div>
+                    </li>
+                </ul>
+            </button>
+        </div>
+        
+    
+        {% for note in object_list %}
+            <div> <!-- note-wrapper -->
 
-{% if user|has_write_access:object %}
-    <ul class="nav nav-pills pull-right">
-      <li class="active"><a href="{% url 'cosinnus:note:add' group=group.slug %}" class="btn"><span class="glyphicon glyphicon-plus"></span> {% trans "Add" %}</a></li>
-    </ul>
-{% endif %}
-
-{% if object_list %}
-
-{% if tags %}
-  {% for tag in tags %}
-    <a href="{% url 'cosinnus:note:list-filtered' group=group.slug tag=tag.slug %}"><span class="label">{{ tag.name }}</span></a>
-  {% endfor %}
-{% else %}
-  {% trans "No tags available." %}
-{% endif %}
-
-<table class="table table-striped">
-    <thead>
-        <td><a href="{{ request.path }}{{ sort_helper.get_sort_query_by_title }}">{% trans "Title" %}</a></td>
-        <td><a href="{{ request.path }}{{ sort_helper.get_sort_query_by_creator }}">{% trans "Author" %}</a></td>
-        <td><a href="{{ request.path }}{{ sort_helper.get_sort_query_by_created }}">{% trans "Created" %}</a></td>
-        <td>{% trans "Tags" %}</td>
-        <td>{% trans "Actions" %}</td>
-    </thead>
-    {% for object in object_list %}
-        <tr>
-            <td><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></td>
-            <td>{{ object.creator.get_full_name }}</td>
-            <td>{{ object.created }}</td>
-            <td>
-                {% for tag in object.tags.all %}
-                    <a href="{% url 'cosinnus:note:list-filtered' group=group.slug tag=tag.slug %}"><span class="label">{{ tag.name }}</span></a>
-                {% empty %}
-                -
-                {% endfor %}
-            </td>
-            <td>
-                <div class="btn-group">
-                    <a class="btn btn-primary btn-mini" href="{{ object.get_absolute_url }}"><i class="icon-eye-open icon-white"></i> {% trans "Show" %}</a>
-                    {% if user|has_write_access:object %}
-                    <a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{% url 'cosinnus:note:update' group=group.slug slug=object.slug %}"><i class="icon-pencil"></i> {% trans "Edit" %}</a></li>
-                        <li><a href="{% url 'cosinnus:note:delete' group=group.slug slug=object.slug %}"><i class="icon-trash"></i> {% trans "Delete" %}</a></li>
-                        <li><a href="{% url 'cosinnus:note:comment' group=group.slug slug=object.slug %}"><i class="icon-comment"></i> {% trans "Comment" %}</a></li>
-                    </ul>
-                    {% endif %}
+                <div class="app-main">
+                    <div type="button" class="btn btn-emphasized w100">
+                        <ul class="media-list">
+                            <li class="media">
+                                <a class="pull-left" href="{{ note.creator.cosinnus_profile.get_absolute_url }}">
+				                    {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
+				                </a>
+                                <div class="media-body">
+                                    <span class="annotation">
+                                        <a href="{{ note.group.get_absolute_url }}">
+                                            <i class="fa fa-users"></i>
+                                            {{ note.group.name }}
+                                        </a>
+                                    </span>
+                                    <strong><a href="{{ note.creator.cosinnus_profile.get_absolute_url }}">{{ note.creator|full_name }}</a></strong> <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </td>
-        </tr>
-    {% endfor %}
-</table>
-{% else %}
-    {% trans "There are no notes." %}
-{% endif %}
+
+                <div class="indented">
+                    {{ note.text|urlizetrunc:25|linebreaks }}
+                </div>
+
+                <div class="app-calendar indented">
+                    <button type="button" class="btn btn-emphasized w100">
+                        <ul class="media-list fine-space">
+                            <li class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-calendar"></i>
+                                </a>
+                                <a class="pull-right square-date-icon btn-extra-emphasized" href="#">
+                                    <div>19</div>
+                                    <div>Dez</div>
+                                </a>
+                                <div class="media-body">
+                                            <strong><a>de:groth Call for Papers</a></strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </button><!-- btn -->
+                </div>
+
+
+                <div type="button" class="btn btn-default w100 indented">
+                    <ul class="media-list">
+                        <li class="media">
+                            <div class="media-body no-vertical-padding">
+
+                                <ol class="input-area">
+                                    <li class="w100 font11px no-vertical-padding no-horizontal-padding">
+                                        <i class="fa fa-tags"></i>
+                                        <a href="#">Lorem</a>
+                                        <a href="#">Ipsum</a>
+                                        <a href="#">sed dolor</a>
+                                        <a href="#">sid amet</a>
+                                    </li>
+                                </ol>
+                                <ol class="input-area">
+                                    <li class="w100 font11px no-vertical-padding no-horizontal-padding">
+                                        <i class="fa fa-map-marker"></i>
+                                        <a href="#">Kreuzberg, Berlin</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div type="button" class="btn btn-default w100 indented">
+                    <ul class="media-list">
+                        <li class="media">
+                            <div class="media-body no-vertical-padding comment-background">
+
+                                <ol class="input-area comment-background">
+                                    <li class="w100 font11px no-vertical-padding no-horizontal-padding">
+                                            <a href="#" class="pull-right nounderline">
+                                                <i class="fa fa-heart"></i>
+                                                3
+                                            </a>
+                                            <a href="#" class="pull-right nounderline">
+                                                <i class="fa fa-comments"></i>
+                                                2
+                                            </a>
+                                            <a href="#">Empfehlen</a>
+                                            <a href="#">Kommentieren</a>
+
+                                    </li>
+                                </ol>
+                                <ol class="input-area comment-background">
+                                    <li class="w100 font11px no-vertical-padding no-horizontal-padding">
+                                            <i class="fa fa-heart"></i>
+                                            <a href="#">Simon Liedtke</a>
+                                            empfiehlt das
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div type="button" class="btn btn-default w100 indented">
+                    <ul class="media-list fine-space">
+                        <li class="media">
+                            <a class="pull-left" href="#">
+                                <img src="avatar.png" />
+                            </a>
+                            <div class="media-body comment-background">
+                                <strong><a href="#">Boris Woynowski</a></strong>
+                                <div class="font11px regular-space">letzten Mittwoch um 13:43</div>
+                                <p class="comment-background">Cosinnus heißt jetzt Imago. So wie Vattenfall Lichtblick heißt und Currywurst Tofu.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!-- btn -->
+
+                <div type="button" class="btn btn-default w100 indented">
+                    <ul class="media-list fine-space">
+                        <li class="media">
+                            <a class="pull-left" href="#">
+                                <img src="avatar2.png" />
+                            </a>
+                            <div class="media-body comment-background">
+                                <strong><a href="#">Anne Scharm</a></strong>
+                                <div class="font11px regular-space">letzten Mittwoch um 13:43</div>
+                                <p class="comment-background">Cosinnus heißt jetzt Imago. So wie Vattenfall Lichtblick heißt und Currywurst Tofu.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!-- btn -->
+
+
+                <div class="app-main">
+                    <div type="button" class="btn btn-default w100 indented">
+                        <ul class="media-list">
+                            <li class="media">
+                                <a class="pull-left" href="#">
+                                    <img src="avatar.png" />
+                                </a>
+                                <div class="media-body no-horizontal-padding no-vertical-padding">
+                                    <textarea class="form-control next-button-is-for-sending autogrow oneline" placeholder="Kommentar schreiben"></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!-- btn -->
+
+                    <button type="button" class="btn btn-emphasized" style="display:none;">
+                        <ul class="media-list">
+                            <li class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-save"></i>
+                                </a>
+                                <div class="media-body">
+                                    Posten
+                                </div>
+                            </li>
+                        </ul>
+                    </button><!-- btn -->
+                </div>
+
+            </div> <!-- note-wrapper -->
+            
+            
+        {% empty %}
+            {% include 'cosinnus/common/empty_button.html' with message="There are no notes." %}
+        {% endfor %}
+    
+    </div><!-- content-box -->
 {% endblock %}
