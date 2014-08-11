@@ -22,6 +22,8 @@ from cosinnus.views.mixins.user import UserFormKwargsMixin
 from cosinnus_note.forms import CommentForm, NoteForm
 from cosinnus_note.models import Note, Comment
 from django.contrib import messages
+from cosinnus.views.mixins.filters import CosinnusFilterMixin
+from cosinnus_note.filters import NoteFilter
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
@@ -81,8 +83,9 @@ class NoteIndexView(RequireReadMixin, RedirectView):
 note_index = NoteIndexView.as_view()
 
 
-class NoteListView(RequireReadMixin, FilterGroupMixin, ListView):
+class NoteListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, ListView):
     model = Note
+    filterset_class = NoteFilter
     
     def get_context_data(self, **kwargs):
         kwargs.update({
