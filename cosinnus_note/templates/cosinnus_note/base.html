@@ -1,10 +1,10 @@
 {% extends "cosinnus/base.html" %}
 {% load i18n static %}
 
-{% block breadcrumbs %}
+{% block breadcrumb %}
     {{ block.super }}
-    <li><a class="active" href="{% url 'cosinnus:note:index' group=group.slug %}">{% trans "Files" %}</a></li>
-{% endblock %}
+    <li><a class="active" href="{% url 'cosinnus:note:index' group=group.slug %}">{% trans "News" %}</a></li>
+{% endblock breadcrumb %}
 
 {% block extrahead %}
 <link rel="stylesheet" href="{% static 'css/note.css' %}">

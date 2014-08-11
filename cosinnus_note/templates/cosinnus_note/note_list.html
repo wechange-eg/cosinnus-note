@@ -4,13 +4,9 @@
 
 {% block breadcrumb %}
         {{ block.super }}
-        {% if current_folder and current_folder.path != '/' %}
-            <li class="active">{{ current_folder.title }}</li>
-        {% endif %}
 {% endblock %}
 
 {% block leftnav %}
-    {% include "cosinnus/leftnav_hierarchic_listview.html" %}
 {% endblock leftnav %}
 
 
@@ -27,8 +23,8 @@
                 <ul class="media-list">
                     <li class="media">
                         <a class="pull-left" href="{% url 'cosinnus:profile-detail' %}">
-	                        {% include "cosinnus/user/user_avatar_image.html" with user=user %}
-	                    </a>
+                            {% include "cosinnus/user/user_avatar_image.html" with user=user %}
+                        </a>
                         <div class="media-body no-horizontal-padding no-vertical-padding">
                             <textarea class="form-control next-button-is-for-sending autogrow oneline"
                                 placeholder="{% trans "Schreibe einen Beitrag in diese Gruppe" %}" /></textarea>
@@ -52,15 +48,15 @@
         
     
         {% for note in object_list %}
-            <div> <!-- note-wrapper -->
+            <div class="large-space"> <!-- note-wrapper -->
 
                 <div class="app-main">
                     <div type="button" class="btn btn-emphasized w100">
                         <ul class="media-list">
                             <li class="media">
                                 <a class="pull-left" href="{{ note.creator.cosinnus_profile.get_absolute_url }}">
-				                    {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
-				                </a>
+                                    {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
+                                </a>
                                 <div class="media-body">
                                     <span class="annotation">
                                         <a href="{{ note.group.get_absolute_url }}">
@@ -77,7 +73,17 @@
 
                 <div class="indented">
                     {{ note.text|urlizetrunc:25|linebreaks }}
+                    {% if note.attached_image %}
+                        <img src="{{ note.attached_image.static_image_url }}" />
+                    {% endif %}
+                    {% if note.video %}
+                        <a href="{{ note.video }}" target="_blank">
+                            <img src="{{ note.video_thumbnail }}">
+                        </a>
+                    {% endif %}
                 </div>
+                
+                {% include 'cosinnus/media_tags_readonly.html' with object=note list_view="True" %}
 
                 <div class="app-calendar indented">
                     <button type="button" class="btn btn-emphasized w100">
@@ -98,124 +104,8 @@
                     </button><!-- btn -->
                 </div>
 
-
-                <div type="button" class="btn btn-default w100 indented">
-                    <ul class="media-list">
-                        <li class="media">
-                            <div class="media-body no-vertical-padding">
-
-                                <ol class="input-area">
-                                    <li class="w100 font11px no-vertical-padding no-horizontal-padding">
-                                        <i class="fa fa-tags"></i>
-                                        <a href="#">Lorem</a>
-                                        <a href="#">Ipsum</a>
-                                        <a href="#">sed dolor</a>
-                                        <a href="#">sid amet</a>
-                                    </li>
-                                </ol>
-                                <ol class="input-area">
-                                    <li class="w100 font11px no-vertical-padding no-horizontal-padding">
-                                        <i class="fa fa-map-marker"></i>
-                                        <a href="#">Kreuzberg, Berlin</a>
-                                    </li>
-                                </ol>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div type="button" class="btn btn-default w100 indented">
-                    <ul class="media-list">
-                        <li class="media">
-                            <div class="media-body no-vertical-padding comment-background">
-
-                                <ol class="input-area comment-background">
-                                    <li class="w100 font11px no-vertical-padding no-horizontal-padding">
-                                            <a href="#" class="pull-right nounderline">
-                                                <i class="fa fa-heart"></i>
-                                                3
-                                            </a>
-                                            <a href="#" class="pull-right nounderline">
-                                                <i class="fa fa-comments"></i>
-                                                2
-                                            </a>
-                                            <a href="#">Empfehlen</a>
-                                            <a href="#">Kommentieren</a>
-
-                                    </li>
-                                </ol>
-                                <ol class="input-area comment-background">
-                                    <li class="w100 font11px no-vertical-padding no-horizontal-padding">
-                                            <i class="fa fa-heart"></i>
-                                            <a href="#">Simon Liedtke</a>
-                                            empfiehlt das
-                                    </li>
-                                </ol>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <div type="button" class="btn btn-default w100 indented">
-                    <ul class="media-list fine-space">
-                        <li class="media">
-                            <a class="pull-left" href="#">
-                                <img src="avatar.png" />
-                            </a>
-                            <div class="media-body comment-background">
-                                <strong><a href="#">Boris Woynowski</a></strong>
-                                <div class="font11px regular-space">letzten Mittwoch um 13:43</div>
-                                <p class="comment-background">Cosinnus heißt jetzt Imago. So wie Vattenfall Lichtblick heißt und Currywurst Tofu.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div><!-- btn -->
-
-                <div type="button" class="btn btn-default w100 indented">
-                    <ul class="media-list fine-space">
-                        <li class="media">
-                            <a class="pull-left" href="#">
-                                <img src="avatar2.png" />
-                            </a>
-                            <div class="media-body comment-background">
-                                <strong><a href="#">Anne Scharm</a></strong>
-                                <div class="font11px regular-space">letzten Mittwoch um 13:43</div>
-                                <p class="comment-background">Cosinnus heißt jetzt Imago. So wie Vattenfall Lichtblick heißt und Currywurst Tofu.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div><!-- btn -->
-
-
-                <div class="app-main">
-                    <div type="button" class="btn btn-default w100 indented">
-                        <ul class="media-list">
-                            <li class="media">
-                                <a class="pull-left" href="#">
-                                    <img src="avatar.png" />
-                                </a>
-                                <div class="media-body no-horizontal-padding no-vertical-padding">
-                                    <textarea class="form-control next-button-is-for-sending autogrow oneline" placeholder="Kommentar schreiben"></textarea>
-                                </div>
-                            </li>
-                        </ul>
-                    </div><!-- btn -->
-
-                    <button type="button" class="btn btn-emphasized" style="display:none;">
-                        <ul class="media-list">
-                            <li class="media">
-                                <a class="pull-left" href="#">
-                                    <i class="fa fa-save"></i>
-                                </a>
-                                <div class="media-body">
-                                    Posten
-                                </div>
-                            </li>
-                        </ul>
-                    </button><!-- btn -->
-                </div>
-
+                {% include 'cosinnus_note/note_comments.html' with note=note full_view="True" comments_expanded="True" %}
+                
             </div> <!-- note-wrapper -->
             
             
