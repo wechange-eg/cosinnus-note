@@ -1,0 +1,39 @@
+{% extends "cosinnus/widgets/fadedown_base_widget.html" %}
+{% load i18n cosinnus_tags widget_tweaks %}
+
+
+{% block fadedown_content %}
+    
+        <form action="{% url 'cosinnus:note:add' group=group.slug %}" method="POST" id="widgetform{{ widget_conf_id }}">{% csrf_token %}
+            <div>
+                {{ form.forms.obj.non_field_errors }}
+                <ol class="input-area">
+                    <li class="w100">
+                        {{ form.forms.obj.text.errors }}
+                        {% captureas placeholder %}{% trans "Bitte Nachricht eingeben..." %}{% endcaptureas %}
+                        {% render_field form.forms.obj.text class+="form-control autogrow" placeholder=placeholder id="etherpadTitle" %}
+                    </li>
+                </ol>
+                
+                {% include 'cosinnus/media_tags.html' %}
+                    
+            </div>
+
+            <button type="submit" class="btn btn-emphasized">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                        <div class="media-body">
+                            {% trans "Posten" %}
+                        </div>
+                    </li>
+                </ul>
+            </button>
+        </form>
+    
+        
+{% endblock fadedown_content %}
+
+
