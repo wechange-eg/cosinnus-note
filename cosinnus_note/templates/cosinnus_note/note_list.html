@@ -92,7 +92,8 @@
                 </div>
                 
                 {% include 'cosinnus/media_tags_readonly.html' with object=note list_view="True" %}
-
+                
+                {% comment %} This is how the proper attachment should be styled 
                 <div class="app-calendar indented">
                     <button type="button" class="btn btn-emphasized w100">
                         <ul class="media-list fine-space">
@@ -111,6 +112,7 @@
                         </ul>
                     </button><!-- btn -->
                 </div>
+                {% endcomment %}
 
                 {% include 'cosinnus_note/note_comments.html' with note=note full_view="True" comments_expanded="True" %}
                 
