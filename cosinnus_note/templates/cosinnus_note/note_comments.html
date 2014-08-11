@@ -25,7 +25,7 @@
                                         <a href="#">Empfehlen</a>
                                         {% endcomment %}
                                         {% if comments or user|can_create_objects_in:note.group %}
-                                            <a href="#">Kommentieren</a>
+                                            <a href="#">{% trans "Comment" context "the_verb" %}</a>
                                         {% endif %}
 
                                 </li>
@@ -59,7 +59,7 @@
                                     {% if user|has_write_access:comment %}
                                         <form id="delete_comment_form_{{ comment.pk }}" action="{% url 'cosinnus:note:comment-delete' group=comment.note.group.slug pk=comment.pk %}" method="post" class="form-horizontal">
                                             {% csrf_token %}
-                                            <a class="pull-right" href="#" onclick="$('#delete_comment_form_{{ comment.pk }}').submit(); return false;" title="{% trans "Löschen" %}">[X]</a>
+                                            <a class="pull-right" href="#" onclick="$('#delete_comment_form_{{ comment.pk }}').submit(); return false;" title="{% trans "Delete" %}">[X]</a>
                                         </form>
                                     {% endif %}
                                     <span class="moment-data-date" data-date="{{ comment.created_on|date:'c' }}" ></span>

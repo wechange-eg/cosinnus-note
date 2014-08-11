@@ -28,7 +28,7 @@
 	                        </a>
 	                        <div class="media-body no-horizontal-padding no-vertical-padding">
 	                            {{ form.forms.obj.text.errors }}
-		                        {% captureas placeholder %}{% trans "Schreibe einen Beitrag in diese Gruppe" %}{% endcaptureas %}
+		                        {% captureas placeholder %}{% trans "Write a news post in this group" %}{% endcaptureas %}
 		                        {% render_field form.forms.obj.text class+="form-control next-button-is-for-sending autogrow oneline" placeholder=placeholder id="etherpadTitle" %}
 	                        </div>
 		                        
@@ -118,7 +118,8 @@
             
             
         {% empty %}
-            {% include 'cosinnus/common/empty_button.html' with message="There are no notes." %}
+            <!-- {% trans "There are no news posts yet" %} -->
+            {% include 'cosinnus/common/empty_button.html' with message="There are no news posts yet" %}
         {% endfor %}
     
     </div><!-- content-box -->
