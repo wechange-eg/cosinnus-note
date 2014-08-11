@@ -14,6 +14,7 @@ from embed_video.fields import EmbedVideoField
 from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
 from django.utils.functional import cached_property
+from cosinnus.utils.permissions import get_tagged_object_filter_for_user
 
 
 class Note(BaseTaggableObjectModel):
@@ -50,6 +51,15 @@ class Note(BaseTaggableObjectModel):
     def get_absolute_url(self):
         kwargs = {'group': self.group.slug, 'slug': self.slug}
         return reverse('cosinnus:note:note', kwargs=kwargs)
+    
+    @classmethod
+    def get_current(self, group, user):
+        """ Returns a queryset of the current upcoming events """
+        qs = Note.objects.filter(group=group)
+        if user:
+            q = get_tagged_object_filter_for_user(user)
+            qs = qs.filter(q)
+        return qs
     
     @cached_property
     def video_id(self):
