@@ -1,5 +1,5 @@
 {% extends "cosinnus_note/base.html" %}
-{% load i18n cosinnus_tags %}
+{% load i18n cosinnus_tags widget_tweaks %}
 {% block page_title %}{% trans "Notes" %}: {{group.name}} {% endblock %}
 
 {% block breadcrumb %}
@@ -17,34 +17,42 @@
     
         {% include 'cosinnus/common/filter_controls.html' %}        
         
-    
-        <div class="app-main">
-            <div type="button" class="btn btn-default w100 large-space">
-                <ul class="media-list">
-                    <li class="media">
-                        <a class="pull-left" href="{% url 'cosinnus:profile-detail' %}">
-                            {% include "cosinnus/user/user_avatar_image.html" with user=user %}
-                        </a>
-                        <div class="media-body no-horizontal-padding no-vertical-padding">
-                            <textarea class="form-control next-button-is-for-sending autogrow oneline"
-                                placeholder="{% trans "Schreibe einen Beitrag in diese Gruppe" %}" /></textarea>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <button type="button" class="btn btn-emphasized large-space" style="display: none;">
-                <ul class="media-list">
-                    <li class="media">
-                        <a class="pull-left" href="#">
-                            <i class="fa fa-pencil"></i>
-                        </a>
-                        <div class="media-body">
-                            {% trans "Create" %}
-                        </div>
-                    </li>
-                </ul>
-            </button>
-        </div>
+        {% if user|can_create_objects_in:group %}
+        <form action="{% url 'cosinnus:note:add' group=group.slug %}" method="POST" id="note_create_form">{% csrf_token %}
+	        <div class="app-main large-space">
+	            <div type="button" class="btn btn-default w100">
+	                <ul class="media-list">
+	                    <li class="media">
+	                        <a class="pull-left" href="{% url 'cosinnus:profile-detail' %}">
+	                            {% include "cosinnus/user/user_avatar_image.html" with user=user %}
+	                        </a>
+	                        <div class="media-body no-horizontal-padding no-vertical-padding">
+	                            {{ form.forms.obj.text.errors }}
+		                        {% captureas placeholder %}{% trans "Schreibe einen Beitrag in diese Gruppe" %}{% endcaptureas %}
+		                        {% render_field form.forms.obj.text class+="form-control next-button-is-for-sending autogrow oneline" placeholder=placeholder id="etherpadTitle" %}
+	                        </div>
+		                        
+	                    </li>
+	                </ul>
+	            </div>
+	            <div class="indented">
+                   {% include 'cosinnus/media_tags.html' %}
+                </div>
+	            <button type="submit" class="btn btn-emphasized large-space" style="display: none;">
+	                <ul class="media-list">
+	                    <li class="media">
+	                        <a class="pull-left" href="#">
+	                            <i class="fa fa-pencil"></i>
+	                        </a>
+	                        <div class="media-body">
+	                            {% trans "Create" %}
+	                        </div>
+	                    </li>
+	                </ul>
+	            </button>
+	        </div>
+        </form>
+        {% endif %}
         
     
         {% for note in object_list %}

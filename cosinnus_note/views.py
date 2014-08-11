@@ -30,9 +30,12 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     form_class = NoteForm
     model = Note
     template_name_suffix = '_create'
+    
+    message_success = _('Your news post was added successfully.')
 
     def form_valid(self, form):
         form.instance.creator = self.request.user
+        messages.success(self.request, self.message_success)
         return super(NoteCreateView, self).form_valid(form)
     
     def form_invalid(self, form):
@@ -41,8 +44,13 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         """
         return HttpResponseRedirect(self.get_success_url())
 
+    def post(self, request, *args, **kwargs):
+        self.referer = request.META.get('HTTP_REFERER', reverse('cosinnus:note:list', kwargs={'group':self.group}))
+        return super(NoteCreateView, self).post(request, *args, **kwargs)
+    
     def get_success_url(self):
-        return reverse('cosinnus:group-dashboard', kwargs={'group': self.group.slug})
+        # self.referer is set in post() method
+        return self.referer
 
 note_create = NoteCreateView.as_view()
 
@@ -73,13 +81,14 @@ class NoteIndexView(RequireReadMixin, RedirectView):
 note_index = NoteIndexView.as_view()
 
 
-class NoteListView(RequireReadMixin, FilterGroupMixin,
-                   SortableListMixin, ListView):
+class NoteListView(RequireReadMixin, FilterGroupMixin, ListView):
     model = Note
-
-    def get(self, request, *args, **kwargs):
-        self.sort_fields_aliases = self.model.SORT_FIELDS_ALIASES
-        return super(NoteListView, self).get(request, *args, **kwargs)
+    
+    def get_context_data(self, **kwargs):
+        kwargs.update({
+            'form':  NoteForm(group=self.group)
+        })
+        return super(NoteListView, self).get_context_data(**kwargs)
 
 note_list = NoteListView.as_view()
 
