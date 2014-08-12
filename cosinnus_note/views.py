@@ -10,8 +10,6 @@ from django.views.generic.detail import DetailView, SingleObjectMixin
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 
-from extra_views import SortableListMixin
-
 from cosinnus.views.attached_object import (CreateViewAttachable,
     UpdateViewAttachable)
 
@@ -86,6 +84,11 @@ note_index = NoteIndexView.as_view()
 class NoteListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, ListView):
     model = Note
     filterset_class = NoteFilter
+    
+    def get_queryset(self, **kwargs):
+        qs = super(NoteListView, self).get_queryset()
+        qs = qs.prefetch_related('comments__creator__cosinnus_profile')
+        return qs
     
     def get_context_data(self, **kwargs):
         kwargs.update({
