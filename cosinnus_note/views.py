@@ -87,7 +87,7 @@ class NoteListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, List
     
     def get_queryset(self, **kwargs):
         qs = super(NoteListView, self).get_queryset()
-        qs = qs.prefetch_related('comments__creator__cosinnus_profile')
+        qs = qs.prefetch_related('comments__creator__cosinnus_profile', 'attached_objects')
         return qs
     
     def get_context_data(self, **kwargs):
