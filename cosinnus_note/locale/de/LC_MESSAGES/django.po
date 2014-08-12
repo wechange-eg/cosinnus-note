@@ -112,7 +112,7 @@ msgstr "Posten"
 
 #: .\templates\cosinnus_note\note_list.html.py:31
 msgid "Write a news post in this group"
-msgstr "Schreibe einen Beitrag in dieser Gruppe"
+msgstr "Schreibe einen Beitrag in diesem Projekt"
 
 #: .\templates\cosinnus_note\note_list.html.py:48
 msgid "Create"
