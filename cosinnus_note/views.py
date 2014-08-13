@@ -24,6 +24,8 @@ from django.contrib import messages
 from cosinnus.views.mixins.filters import CosinnusFilterMixin
 from cosinnus_note.filters import NoteFilter
 from cosinnus.core.registries import attached_object_registry as aor
+from cosinnus.models.tagged import BaseHierarchicalTaggableObjectModel
+from cosinnus.utils.permissions import get_tagged_object_filter_for_user
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
@@ -211,6 +213,7 @@ class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
 comment_update = CommentUpdateView.as_view()
 
 
+from django.db.models import get_model
 
 class StreamDetailView(DetailView):
     model = Note # TODO: Stream
@@ -222,20 +225,48 @@ class StreamDetailView(DetailView):
     
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
+        self.querysets = self.get_querysets_for_stream(self.object)
         self.objects = self.get_objectset()
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
     
     def get_objectset(self):
         stream = self.object
-        # [u'cosinnus_etherpad.Etherpad', u'cosinnus_event.Event', u'cosinnus_file.FileEntry', 'cosinnus_todo.TodoEntry']
         
         objects = []
-        for model in aor:
+        for queryset in self.querysets:
             objects.append(model)
         
-        
         return objects
+    
+    def get_querysets_for_stream(self, stream):
+        """ Returns all (still-lazy) querysets for models that will appear 
+            in the current stream """
+        querysets = []
+        # [u'cosinnus_etherpad.Etherpad', u'cosinnus_event.Event', u'cosinnus_file.FileEntry', 'cosinnus_todo.TodoEntry']
+        for registered_model in aor:
+            Renderer = aor[registered_model]
+            app_label, model_name = registered_model.split('.')
+            model_class = get_model(app_label, model_name)
+            
+            # get base collection of models for that type
+            if BaseHierarchicalTaggableObjectModel in model_class.__bases__:
+                queryset = model_class._default_manager.filter(is_container=False)
+            else:
+                queryset = model_class._default_manager.all()
+            
+            # filter for read permissions for user
+            queryset = queryset.filter(get_tagged_object_filter_for_user(self.request.user))
+            # filter for stream
+            queryset = self.filter_queryset_for_stream(queryset, stream)
+        return querysets
+    
+    def filter_queryset_for_stream(self, queryset, stream):
+        """ Filter a BaseTaggableObjectModel-queryset depending on the settings 
+            of the current stream """
+        #filter(group__slug=groupslug)
+        
+        return queryset
     
     def get_context_data(self, **kwargs):
         kwargs.update({
