@@ -4,7 +4,16 @@ from __future__ import unicode_literals
 from django.conf.urls import patterns, url
 
 
-cosinnus_root_patterns = patterns('', )
+cosinnus_root_patterns = patterns('cosinnus_note.views', 
+         
+    url(r'^stream/(?P<slug>[^/]+)/$',
+        'stream_detail',
+        name='stream'),
+                                   
+    url(r'^stream/$',
+        'stream_detail',
+        name='my_stream'),
+)
 
 cosinnus_group_patterns = patterns('cosinnus_note.views',
     url(r'^$',
@@ -14,14 +23,6 @@ cosinnus_group_patterns = patterns('cosinnus_note.views',
     url(r'^list/$',
         'note_list',
         name='list'),
-                                   
-    url(r'^stream/(?P<slug>[^/]+)/$',
-        'stream_detail',
-        name='stream'),
-                                   
-    url(r'^stream/$',
-        'stream_detail',
-        name='my_stream'),
 
     #url(r'^list/(?P<tag>[^/]+)/$',
     #    'note_list',
