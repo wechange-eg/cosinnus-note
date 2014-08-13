@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block leftnav %}
-    {% url 'cosinnus:note:my_stream' as my_stream_url %}
+    {% url 'cosinnus:my_stream' as my_stream_url %}
     {% captureas href %}{{ my_stream_url }}{% add_current_params %}{% endcaptureas %}
     {% captureas label %}{% trans "My Stream" %}{% endcaptureas %}
     {% captureas active %}{% if request.path == my_stream_url %}True{% endif %}{% endcaptureas %}
