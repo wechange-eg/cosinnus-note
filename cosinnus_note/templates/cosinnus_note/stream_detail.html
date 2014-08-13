@@ -15,7 +15,9 @@
     <!-- a box with semi transparent background -->
     <div class="content-box">
         
-        <p>{{ stream_objects }}</p>
+        {% for obj in stream_objects %}
+            {% cosinnus_render_single_object obj %}
+        {% endfor %}
     
     </div><!-- content-box -->
 {% endblock %}

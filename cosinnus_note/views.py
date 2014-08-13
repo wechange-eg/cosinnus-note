@@ -26,6 +26,7 @@ from cosinnus_note.filters import NoteFilter
 from cosinnus.core.registries import attached_object_registry as aor
 from cosinnus.models.tagged import BaseHierarchicalTaggableObjectModel
 from cosinnus.utils.permissions import get_tagged_object_filter_for_user
+from cosinnus.models.group import CosinnusGroup
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
@@ -223,6 +224,12 @@ class StreamDetailView(DetailView):
     def dispatch(self, request, *args, **kwargs):
         return super(StreamDetailView, self).dispatch(request, *args, **kwargs)
     
+    def get_object(self, queryset=None):
+        """ Allow queries without slug or pk """
+        if self.pk_url_kwarg in self.kwargs or self.slug_url_kwarg in self.kwargs:
+            return super(StreamDetailView, self).get_object(queryset)
+        return None
+    
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         self.querysets = self.get_querysets_for_stream(self.object)
@@ -235,7 +242,9 @@ class StreamDetailView(DetailView):
         
         objects = []
         for queryset in self.querysets:
-            objects.append(model)
+            if queryset.count() > 0:
+                #objects.append(queryset[0])
+                objects.extend(list(queryset.all()))
         
         return objects
     
@@ -259,13 +268,18 @@ class StreamDetailView(DetailView):
             queryset = queryset.filter(get_tagged_object_filter_for_user(self.request.user))
             # filter for stream
             queryset = self.filter_queryset_for_stream(queryset, stream)
+            querysets.append(queryset)
+            
         return querysets
     
-    def filter_queryset_for_stream(self, queryset, stream):
+    def filter_queryset_for_stream(self, queryset, stream=None):
         """ Filter a BaseTaggableObjectModel-queryset depending on the settings 
             of the current stream """
-        #filter(group__slug=groupslug)
         
+        # objects only from user-groups for My-Stream
+        if stream is None:
+            self.user_group_ids = getattr(self, 'user_group_ids', CosinnusGroup.objects.get_for_user_pks(self.request.user))
+            queryset = queryset.filter(group__pk__in=self.user_group_ids)
         return queryset
     
     def get_context_data(self, **kwargs):

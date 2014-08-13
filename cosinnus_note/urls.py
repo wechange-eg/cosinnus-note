@@ -18,6 +18,10 @@ cosinnus_group_patterns = patterns('cosinnus_note.views',
     url(r'^stream/(?P<slug>[^/]+)/$',
         'stream_detail',
         name='stream'),
+                                   
+    url(r'^stream/$',
+        'stream_detail',
+        name='my_stream'),
 
     #url(r'^list/(?P<tag>[^/]+)/$',
     #    'note_list',
