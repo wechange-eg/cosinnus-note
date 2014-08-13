@@ -5,7 +5,8 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic.base import RedirectView
+from django.views.generic.base import RedirectView, ContextMixin, View,\
+    TemplateResponseMixin
 from django.views.generic.detail import DetailView, SingleObjectMixin
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
@@ -22,6 +23,7 @@ from cosinnus_note.models import Note, Comment
 from django.contrib import messages
 from cosinnus.views.mixins.filters import CosinnusFilterMixin
 from cosinnus_note.filters import NoteFilter
+from cosinnus.core.registries import attached_object_registry as aor
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
@@ -207,3 +209,40 @@ class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
         return self.referer
 
 comment_update = CommentUpdateView.as_view()
+
+
+
+class StreamDetailView(DetailView):
+    model = Note # TODO: Stream
+    template_name = 'cosinnus_note/stream_detail.html'
+    
+    
+    def dispatch(self, request, *args, **kwargs):
+        return super(StreamDetailView, self).dispatch(request, *args, **kwargs)
+    
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.objects = self.get_objectset()
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
+    
+    def get_objectset(self):
+        stream = self.object
+        # [u'cosinnus_etherpad.Etherpad', u'cosinnus_event.Event', u'cosinnus_file.FileEntry', 'cosinnus_todo.TodoEntry']
+        
+        objects = []
+        for model in aor:
+            objects.append(model)
+        
+        
+        return objects
+    
+    def get_context_data(self, **kwargs):
+        kwargs.update({
+            'stream': self.object,
+            'stream_objects': self.objects,
+        })
+        return super(StreamDetailView, self).get_context_data(**kwargs)
+
+stream_detail = StreamDetailView.as_view()
+
