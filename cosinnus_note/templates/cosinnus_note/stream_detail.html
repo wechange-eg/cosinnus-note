@@ -3,10 +3,14 @@
 {% block page_title %}{% trans "Notes" %}: {{group.name}} {% endblock %}
 
 {% block breadcrumb %}
-        {{ block.super }}
 {% endblock %}
 
 {% block leftnav %}
+    {% url 'cosinnus:note:my_stream' as my_stream_url %}
+    {% captureas href %}{{ my_stream_url }}{% add_current_params %}{% endcaptureas %}
+    {% captureas label %}{% trans "My Stream" %}{% endcaptureas %}
+    {% captureas active %}{% if request.path == my_stream_url %}True{% endif %}{% endcaptureas %}
+    {% include "cosinnus/leftnav_button.html" with extra_classes="regular-space" icon="fa-paper-plane-o" label=label href=href  %}
 {% endblock leftnav %}
 
 
