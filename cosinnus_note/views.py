@@ -239,6 +239,11 @@ class StreamDetailView(DetailView):
     
     def get_objectset(self):
         stream = self.object
+        limit = 20
+        count = 0
+        
+        #while count < limit:
+        # TODO: next: weaving
         
         objects = []
         for queryset in self.querysets:
@@ -268,9 +273,15 @@ class StreamDetailView(DetailView):
             queryset = queryset.filter(get_tagged_object_filter_for_user(self.request.user))
             # filter for stream
             queryset = self.filter_queryset_for_stream(queryset, stream)
+            # sorting
+            queryset = self.sort_queryset(queryset, stream)
             querysets.append(queryset)
             
         return querysets
+    
+    def sort_queryset(self, queryset, stream):
+        queryset = queryset.order_by('-created')
+        return queryset
     
     def filter_queryset_for_stream(self, queryset, stream=None):
         """ Filter a BaseTaggableObjectModel-queryset depending on the settings 
