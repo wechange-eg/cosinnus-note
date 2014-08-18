@@ -207,3 +207,5 @@ class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
         return self.referer
 
 comment_update = CommentUpdateView.as_view()
+
+

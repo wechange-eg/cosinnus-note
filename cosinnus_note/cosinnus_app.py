@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from cosinnus.core.registries.attached_objects import attached_object_registry
 
 
 def register():
@@ -14,8 +15,9 @@ def register():
         cosinnus_root_patterns)
 
     app_registry.register('cosinnus_note', 'note', _('Notes'))
-    url_registry.register('cosinnus_note', cosinnus_root_patterns,
-        cosinnus_group_patterns)
+    attached_object_registry.register('cosinnus_note.Note',
+                         'cosinnus_note.utils.renderer.NoteRenderer')
+    url_registry.register_urlconf('cosinnus_note', 'cosinnus_note.urls')
     widget_registry.register('note', 'cosinnus_note.dashboard.DetailedNotes')
     #widget_registry.register('note', 'cosinnus_note.dashboard.CompactNotes')
 
