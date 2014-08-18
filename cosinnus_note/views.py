@@ -27,6 +27,8 @@ from cosinnus.core.registries import attached_object_registry as aor
 from cosinnus.models.tagged import BaseHierarchicalTaggableObjectModel
 from cosinnus.utils.permissions import get_tagged_object_filter_for_user
 from cosinnus.models.group import CosinnusGroup
+from copy import copy
+from django.utils.encoding import force_text
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
@@ -238,18 +240,57 @@ class StreamDetailView(DetailView):
         return self.render_to_response(context)
     
     def get_objectset(self):
+        def get_sort_key(item):
+            return item[1].sort_key
+
         stream = self.object
-        limit = 20
+        limit = 30
         count = 0
+        start = 0
+        slice_len = 10
         
-        #while count < limit:
-        # TODO: next: weaving
+        """ We sample the first-sorted item from each of the querysets in each run,
+            determining which of them is the overall-first-sorted.
+            We slice the querysets to reduce database hits during this sampling and only
+            evaluate a new slice as soon as we need to access older items from that queryset """
         
-        objects = []
+        # build iterator setlist to split-iterate over querysets
+        setlist = {}
         for queryset in self.querysets:
-            if queryset.count() > 0:
-                #objects.append(queryset[0])
-                objects.extend(list(queryset.all()))
+            setlist[queryset.model.__name__] = {
+                'qs': queryset,
+                'objs': [],
+                'offset': start
+            } 
+            
+        objects = []
+        
+        while count < limit:
+            first_items = {}
+            for key, cur_set in copy(setlist).items():
+                # if obj list in set is empty, sample new items from qs
+                if not cur_set['objs']:
+                    from_index = cur_set['offset']
+                    cur_set['objs'] = list(cur_set['qs'][from_index:from_index+slice_len])
+                    cur_set['offset'] = from_index+slice_len
+                    if not cur_set['objs']:
+                        # if queryset has no more items, remove it from the setlist of compilable sets
+                        del setlist[key]
+                        continue
+                # objs now guaranteed to contain an item
+                first_items[key] = cur_set['objs'][0]
+            
+            # stop collecting if all querysets are exhausted
+            if not first_items:
+                break
+            
+            # sort the list of each queryset's first item to get the very first
+            # remove it from the set and add it to the final items
+            first_item = sorted(first_items.iteritems(), key=get_sort_key, reverse=True)[0]
+            setlist[first_item[0]]['objs'].pop(0)
+            objects.append(first_item[1])
+            
+            count = len(objects)
         
         return objects
     
