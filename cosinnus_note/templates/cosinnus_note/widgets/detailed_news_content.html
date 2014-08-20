@@ -13,8 +13,10 @@
                          <a href="{{ note.creator.cosinnus_profile.get_absolute_url }}">{{ note.creator|full_name }}</a> –
                          <span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span>
 						 <div class="group-annotation">
-						     <i class="fa fa-users"></i>
-						     {{ note.group.name }}
+						     <a href="{{ note.group.get_absolute_url }}">
+							     <i class="fa fa-users"></i>
+							     {{ note.group.name }}
+							 </a>
 						 </div>
                     </div>
                 </li>
