@@ -56,68 +56,8 @@
         
     
         {% for note in object_list %}
-            <div class="large-space"> <!-- note-wrapper -->
-
-                <div class="app-main">
-                    <div type="button" class="btn btn-emphasized w100">
-                        <ul class="media-list">
-                            <li class="media">
-                                <a class="pull-left" href="{{ note.creator.cosinnus_profile.get_absolute_url }}">
-                                    {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
-                                </a>
-                                <div class="media-body">
-                                    <span class="annotation">
-                                        <a href="{{ note.group.get_absolute_url }}">
-                                            <i class="fa fa-users"></i>
-                                            {{ note.group.name }}
-                                        </a>
-                                    </span>
-                                    <strong><a href="{{ note.creator.cosinnus_profile.get_absolute_url }}">{{ note.creator|full_name }}</a></strong> <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="indented">
-                    {{ note.text|urlizetrunc:25|linebreaks }}
-                    {% if note.attached_image %}
-                        <img src="{{ note.attached_image.static_image_url }}" />
-                    {% endif %}
-                    {% if note.video %}
-                        <a href="{{ note.video }}" target="_blank">
-                            <img src="{{ note.video_thumbnail }}">
-                        </a>
-                    {% endif %}
-                </div>
-                
-                {% include 'cosinnus/media_tags_readonly.html' with object=note list_view="True" %}
-                
-                {% comment %} This is how the proper attachment should be styled 
-                <div class="app-calendar indented">
-                    <button type="button" class="btn btn-emphasized w100">
-                        <ul class="media-list fine-space">
-                            <li class="media">
-                                <a class="pull-left" href="#">
-                                    <i class="fa fa-calendar"></i>
-                                </a>
-                                <a class="pull-right square-date-icon btn-extra-emphasized" href="#">
-                                    <div>19</div>
-                                    <div>Dez</div>
-                                </a>
-                                <div class="media-body">
-                                            <strong><a>de:groth Call for Papers</a></strong>
-                                </div>
-                            </li>
-                        </ul>
-                    </button><!-- btn -->
-                </div>
-                {% endcomment %}
-
-                {% include 'cosinnus_note/note_comments.html' with note=note full_view="True" comments_expanded="True" %}
-                
-            </div> <!-- note-wrapper -->
             
+            {% include 'cosinnus_note/single_note_detailed.html' with object=note %}
             
         {% empty %}
             <!-- {% trans "There are no news posts yet" %} -->
