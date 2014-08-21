@@ -33,9 +33,7 @@
 				            <img src="{{ note.attached_image.static_image_url }}" />
 				        {% endif %}
 				        {% if note.video %}
-				            <a href="{{ note.video }}" target="_blank">
-				                <img src="{{ note.video_thumbnail }}">
-				            </a>
+				            {% include 'cosinnus/common/embed_youtube.html' with video_id=note.video_id %}
 				        {% endif %}
                     </div>
                 </li>
