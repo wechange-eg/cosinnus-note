@@ -23,16 +23,25 @@
 	            </ul>
 	        </div>
 	    </div>
-	
-	    <div class="indented">
+	    
+	    <div class="indented regular-space">
 	        {{ note.text|urlizetrunc:25|linebreaks }}
-	        {% if note.attached_image %}
-	            <img src="{{ note.attached_image.static_image_url }}" />
-	        {% endif %}
 	        {% if note.video %}
 	            {% include 'cosinnus/common/embed_youtube.html' with video_id=note.video_id %}
 	        {% endif %}
 	    </div>
+	    
+	    {% if note.attached_images %}
+	        <div class="indented row">
+	            {% for image in note.attached_images|slice:":3" %}
+		            <div class="col-sm-4">
+		                <a href="#" class="thumbnail">
+		                    <img src="{{ image.static_image_url }}" />
+		                </a>
+		            </div>
+	            {% endfor %}
+	        </div>
+        {% endif %}
 	    
 	    {% include 'cosinnus/media_tags_readonly.html' with object=note list_view="True" %}
 	    
