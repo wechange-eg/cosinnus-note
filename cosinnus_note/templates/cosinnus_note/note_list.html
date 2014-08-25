@@ -19,37 +19,56 @@
         
         {% if user|can_create_objects_in:group %}
         <form action="{% url 'cosinnus:note:add' group=group.slug %}" method="POST" id="note_create_form">{% csrf_token %}
-	        <div class="app-main large-space">
-	            <div type="button" class="btn btn-default w100">
-	                <ul class="media-list">
-	                    <li class="media">
-	                        <a class="pull-left" href="{% url 'cosinnus:profile-detail' %}">
-	                            {% include "cosinnus/user/user_avatar_image.html" with user=user %}
-	                        </a>
-	                        <div class="media-body no-horizontal-padding no-vertical-padding">
-	                            {{ form.forms.obj.text.errors }}
+	        <div class="app-main">
+	            <div class="fadedown large-space">
+	            
+			        <div class="btn btn-white btn-headline fadedown-clickarea">
+			            <ul class="media-list">
+			                <li class="media">
+			                    <a class="pull-left" href="{% url 'cosinnus:profile-detail' %}">
+			                        {% include "cosinnus/user/user_avatar_image.html" with user=user %}
+			                    </a>
+			                    <a class="pull-right" href="#">
+			                        <i class="fa fa-pencil"></i>
+			                    </a>
+			                    <div class="media-body">
+			                        {% trans "Write a news post in this group" %}
+			                    </div>
+			                </li>
+			            </ul>
+			        </div>
+	            
+	                
+		            <div>
+		                {{ form.forms.obj.non_field_errors }}
+		                <ol class="input-area">
+		                    <li class="w100">
+		                        {{ form.forms.obj.text.errors }}
 		                        {% captureas placeholder %}{% trans "Write a news post in this group" %}{% endcaptureas %}
-		                        {% render_field form.forms.obj.text class+="form-control next-button-is-for-sending autogrow oneline" placeholder=placeholder id="etherpadTitle" %}
-	                        </div>
-		                        
-	                    </li>
-	                </ul>
+		                        {% render_field form.forms.obj.text class+="form-control autogrow" placeholder=placeholder %}
+		                    </li>
+		                </ol>
+		                
+		                {% include 'cosinnus/media_tags.html' %}
+		                    
+		            </div>
+		
+		            <button type="submit" class="btn btn-emphasized">
+		                <ul class="media-list">
+		                    <li class="media">
+		                        <a class="pull-left" href="#">
+		                            <i class="fa fa-pencil"></i>
+		                        </a>
+		                        <div class="media-body">
+		                            {% trans "Posten" %}
+		                        </div>
+		                    </li>
+		                </ul>
+		            </button>
 	            </div>
-	            <div class="indented">
-                   {% include 'cosinnus/media_tags.html' %}
-                </div>
-	            <button type="submit" class="btn btn-emphasized large-space" style="display: none;">
-	                <ul class="media-list">
-	                    <li class="media">
-	                        <a class="pull-left" href="#">
-	                            <i class="fa fa-pencil"></i>
-	                        </a>
-	                        <div class="media-body">
-	                            {% trans "Create" %}
-	                        </div>
-	                    </li>
-	                </ul>
-	            </button>
+	            
+	            <!-- xxxxxx -->
+	        
 	        </div>
         </form>
         {% endif %}
