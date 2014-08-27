@@ -37,6 +37,7 @@ class BaseNotesWidget(DashboardWidget):
     model = Note
     template_name = None
     user_model_attr = None
+    widget_template_name = 'cosinnus_note/widgets/base_news_widget.html'
 
     def get_data(self, offset=0):
         """ Returns a tuple (data, rows_returned, has_more) of the rendered data and how many items were returned.
