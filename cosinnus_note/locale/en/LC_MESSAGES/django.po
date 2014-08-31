@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-31 18:11+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\cosinnus_app.py:17 .\models.py:31
+#: .\templates\cosinnus_note\note_list.html.py:3
+msgid "Notes"
+msgstr ""
+
+#: .\cosinnus_app.py:25
+msgctxt "the_app"
+msgid "note"
+msgstr ""
+
+#: .\dashboard.py:54
+msgid "No news"
+msgstr ""
+
+#: .\dashboard.py:71 .\templates\cosinnus_note\base.html.py:6
+#: .\templates\cosinnus_note\base.html.py:13
+msgid "News"
+msgstr ""
+
+#: .\dashboard.py:85
+msgid "Write a news post..."
+msgstr ""
+
+#: .\dashboard.py:92
+msgid "News stream"
+msgstr ""
+
+#: .\filters.py:18
+msgid "Created By"
+msgstr ""
+
+#: .\filters.py:24
+msgid "Newest Created"
+msgstr ""
+
+#: .\filters.py:25
+msgid "Popularity"
+msgstr ""
+
+#: .\models.py:25 .\models.py:90
+msgid "Text"
+msgstr ""
+
+#: .\models.py:30
+msgid "Note"
+msgstr ""
+
+#: .\models.py:35
+msgid "Author"
+msgstr ""
+
+#: .\models.py:87
+msgid "Creator"
+msgstr ""
+
+#: .\models.py:88
+msgid "Created"
+msgstr ""
+
+#: .\models.py:94
+msgid "Comment"
+msgstr ""
+
+#: .\models.py:95
+msgid "Comments"
+msgstr ""
+
+#: .\views.py:34
+msgid "Your news post was added successfully."
+msgstr ""
+
+#: .\views.py:122
+msgid "Your comment was added successfully."
+msgstr ""
+
+#: .\views.py:157
+msgid "Your comment was deleted successfully."
+msgstr ""
+
+#: .\templates\cosinnus_note\note_comments.html.py:30
+msgctxt "the_verb"
+msgid "Comment"
+msgstr ""
+
+#: .\templates\cosinnus_note\note_comments.html.py:65
+msgid "Delete"
+msgstr ""
+
+#: .\templates\cosinnus_note\note_comments.html.py:103
+msgid "Post"
+msgstr ""
+
+#: .\templates\cosinnus_note\note_list.html.py:35
+#: .\templates\cosinnus_note\note_list.html.py:47
+msgid "Write a news post in this group"
+msgstr ""
+
+#: .\templates\cosinnus_note\note_list.html.py:63
+#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:29
+msgid "Posten"
+msgstr ""
+
+#: .\templates\cosinnus_note\note_list.html.py:82
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:58
+msgid "There are no news posts yet"
+msgstr ""
+
+#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13
+msgid "Bitte Nachricht eingeben..."
+msgstr ""
