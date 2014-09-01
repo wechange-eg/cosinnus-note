@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-11 18:57+0200\n"
+"POT-Creation-Date: 2014-09-01 18:17+0200\n"
 "PO-Revision-Date: 2013-07-19 19:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -17,31 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: .\cosinnus_app.py:16 .\models.py:31
+#: .\cosinnus_app.py:17 .\models.py:31
 #: .\templates\cosinnus_note\note_list.html.py:3
 msgid "Notes"
 msgstr "Neuigkeiten"
 
 # The Cosinnus App Name
-#: .\cosinnus_app.py:23
+#: .\cosinnus_app.py:25
+#: .\templates\cosinnus_note\note_list_standalone.html.py:11
 msgctxt "the_app"
 msgid "note"
 msgstr "Neuigkeiten"
 
-#: .\dashboard.py:53
+#: .\dashboard.py:54
 msgid "No news"
 msgstr "Keine Nachrichten vorhanden"
 
-#: .\dashboard.py:70 .\templates\cosinnus_note\base.html.py:6
+#: .\dashboard.py:71 .\templates\cosinnus_note\base.html.py:6
 #: .\templates\cosinnus_note\base.html.py:13
 msgid "News"
 msgstr "Neuigkeiten"
 
-#: .\dashboard.py:84
+#: .\dashboard.py:85
 msgid "Write a news post..."
 msgstr "Neue Nachricht..."
 
-#: .\dashboard.py:91
+#: .\dashboard.py:92
 msgid "News stream"
 msgstr "Mein Nachrichtenfeed"
 
@@ -85,15 +86,15 @@ msgstr "Kommentar"
 msgid "Comments"
 msgstr "Kommentare"
 
-#: .\views.py:36
+#: .\views.py:34
 msgid "Your news post was added successfully."
 msgstr "Deine Neuigkeit wurde erfolgreich erstellt."
 
-#: .\views.py:119
+#: .\views.py:122
 msgid "Your comment was added successfully."
 msgstr "Dein Kommentar wurde erfolgreich erstellt."
 
-#: .\views.py:154
+#: .\views.py:157
 msgid "Your comment was deleted successfully."
 msgstr "Dein Kommentar wurde gelöscht."
 
@@ -110,15 +111,18 @@ msgstr "Löschen"
 msgid "Post"
 msgstr "Posten"
 
-#: .\templates\cosinnus_note\note_list.html.py:31
+#: .\templates\cosinnus_note\note_list.html.py:35
+#: .\templates\cosinnus_note\note_list.html.py:47
 msgid "Write a news post in this group"
 msgstr "Schreibe einen Beitrag in diesem Projekt"
 
-#: .\templates\cosinnus_note\note_list.html.py:48
-msgid "Create"
-msgstr "Erstellen"
+#: .\templates\cosinnus_note\note_list.html.py:63
+#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:29
+msgid "Posten"
+msgstr "Posten"
 
-#: .\templates\cosinnus_note\note_list.html.py:124
+#: .\templates\cosinnus_note\note_list.html.py:82
+#: .\templates\cosinnus_note\note_list_standalone.html.py:23
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:58
 msgid "There are no news posts yet"
 msgstr "Es gibt keine Neuigkeiten."
@@ -127,6 +131,5 @@ msgstr "Es gibt keine Neuigkeiten."
 msgid "Bitte Nachricht eingeben..."
 msgstr ""
 
-#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:29
-msgid "Posten"
-msgstr "Posten"
+#~ msgid "Create"
+#~ msgstr "Erstellen"
