@@ -1,0 +1,10 @@
+{% load i18n cosinnus_tags widget_tweaks %}
+    
+    
+{% for note in object_list %}
+    {% include 'cosinnus_note/single_note_detailed.html' with object=note %}
+{% empty %}
+    <!-- {% trans "There are no news posts yet" %} -->
+    {% include 'cosinnus/common/empty_button.html' with message="There are no news posts yet" %}
+{% endfor %}
+        
