@@ -1,0 +1,76 @@
+{% extends "cosinnus_note/base.html" %}
+{% load i18n cosinnus_tags widget_tweaks %}
+{% block page_title %}{% trans "Notes" %}: {{group.name}} {% endblock %}
+
+{% block breadcrumb %}
+        {{ block.super }}
+{% endblock %}
+
+{% block leftnav %}
+{% endblock leftnav %}
+
+
+{% block content %}
+    
+    <!-- a box with semi transparent background -->
+    <div class="content-box">
+    
+        
+        <form action="{% url 'cosinnus:note:update' group=object.group.slug slug=object.slug %}" method="POST" id="note_edit_form">{% csrf_token %}
+	        <div class="app-main">
+	            <div class="large-space">
+	            
+			        <div class="btn btn-white btn-headline">
+			            <ul class="media-list">
+			                <li class="media">
+			                    <a class="pull-left" href="{% url 'cosinnus:profile-detail' %}">
+			                        {% include "cosinnus/user/user_avatar_image.html" with user=user %}
+			                    </a>
+			                    <a class="pull-right" href="#">
+			                        <i class="fa fa-pencil"></i>
+			                    </a>
+			                    <div class="media-body">
+			                        {% trans "Edit news post" %}
+			                    </div>
+			                </li>
+			            </ul>
+			        </div>
+	            
+	                
+		            <div>
+		                {{ form.forms.obj.non_field_errors }}
+		                <ol class="input-area">
+		                    <li class="w100">
+		                        {{ form.forms.obj.text.errors }}
+		                        {% captureas placeholder %}{% trans "Write a news post in this group" %}{% endcaptureas %}
+		                        {% render_field form.forms.obj.text class+="form-control autogrow" placeholder=placeholder %}
+		                    </li>
+		                </ol>
+		                
+		                {% include 'cosinnus/media_tags.html' %}
+		                    
+		            </div>
+		
+		            <button type="submit" class="btn btn-emphasized">
+		                <ul class="media-list">
+		                    <li class="media">
+		                        <a class="pull-left" href="#">
+		                            <i class="fa fa-pencil"></i>
+		                        </a>
+		                        <div class="media-body">
+		                            {% trans "Save changes" %}
+		                        </div>
+		                    </li>
+		                </ul>
+		            </button>
+	            </div>
+	            
+	            <!-- xxxxxx -->
+	        
+	        </div>
+        </form>
+        
+    
+    
+    </div><!-- content-box -->
+{% endblock %}

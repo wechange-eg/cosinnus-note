@@ -104,8 +104,15 @@ class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
 
     form_class = NoteForm
     model = Note
-    template_name_suffix = '_update'
+    template_name = 'cosinnus_note/note_edit.html'
+    
+    message_success = _('Your news post was edited successfully.')
 
+    def form_valid(self, form):
+        messages.success(self.request, self.message_success)
+        return super(NoteUpdateView, self).form_valid(form)
+    
+    
     def get_success_url(self):
         return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 

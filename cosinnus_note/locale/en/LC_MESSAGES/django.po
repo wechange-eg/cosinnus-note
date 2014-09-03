@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-01 18:17+0200\n"
+"POT-Creation-Date: 2014-09-03 14:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: .\cosinnus_app.py:17 .\models.py:31
+#: .\templates\cosinnus_note\note_edit.html.py:3
 #: .\templates\cosinnus_note\note_list.html.py:3
 msgid "Notes"
 msgstr ""
@@ -88,11 +89,15 @@ msgstr ""
 msgid "Your news post was added successfully."
 msgstr ""
 
-#: .\views.py:122
+#: .\views.py:109
+msgid "Your news post was edited successfully."
+msgstr ""
+
+#: .\views.py:140
 msgid "Your comment was added successfully."
 msgstr ""
 
-#: .\views.py:157
+#: .\views.py:175
 msgid "Your comment was deleted successfully."
 msgstr ""
 
@@ -109,9 +114,18 @@ msgstr ""
 msgid "Post"
 msgstr ""
 
+#: .\templates\cosinnus_note\note_edit.html.py:33
+msgid "Edit news post"
+msgstr ""
+
+#: .\templates\cosinnus_note\note_edit.html.py:45
 #: .\templates\cosinnus_note\note_list.html.py:35
 #: .\templates\cosinnus_note\note_list.html.py:47
 msgid "Write a news post in this group"
+msgstr ""
+
+#: .\templates\cosinnus_note\note_edit.html.py:61
+msgid "Save changes"
 msgstr ""
 
 #: .\templates\cosinnus_note\note_list.html.py:63
@@ -121,8 +135,13 @@ msgstr ""
 
 #: .\templates\cosinnus_note\note_list.html.py:82
 #: .\templates\cosinnus_note\note_list_standalone.html.py:23
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:58
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:64
 msgid "There are no news posts yet"
+msgstr ""
+
+#: .\templates\cosinnus_note\single_note_detailed.html.py:24
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:23
+msgid "Edit"
 msgstr ""
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13

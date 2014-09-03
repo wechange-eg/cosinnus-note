@@ -12,11 +12,19 @@
 	                    </a>
 	                    <div class="media-body">
 	                        <span class="annotation">
-	                            <a href="{{ note.group.get_absolute_url }}">
-	                                <i class="fa fa-users"></i>
-	                                {{ note.group.name }}
-	                            </a>
-	                        </span>
+                                <a href="{{ note.group.get_absolute_url }}">
+                                    <i class="fa fa-users"></i>
+                                    {{ note.group.name }}
+                                </a>
+                            </span>
+                            {% if user|has_write_access:note %}
+	                            <span class="annotation">
+	                                <a href="{% url 'cosinnus:note:update' group=note.group.slug slug=note.slug %}">
+	                                    <i class="fa fa-pencil"></i>
+	                                    {% trans "Edit" %}
+	                                </a> &nbsp;
+	                            </span>
+                            {% endif %}
 	                        <strong><a href="{{ note.creator.cosinnus_profile.get_absolute_url }}">{{ note.creator|full_name }}</a></strong> <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
 	                    </div>
 	                </li>
