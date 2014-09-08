@@ -122,7 +122,7 @@ msgstr ""
 #: .\templates\cosinnus_note\note_list.html.py:35
 #: .\templates\cosinnus_note\note_list.html.py:47
 msgid "Write a news post in this group"
-msgstr ""
+msgstr "Write a news post in this project"
 
 #: .\templates\cosinnus_note\note_edit.html.py:61
 msgid "Save changes"
