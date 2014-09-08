@@ -7,7 +7,7 @@
 	        <div type="button" class="btn btn-emphasized w100">
 	            <ul class="media-list">
 	                <li class="media">
-	                    <a class="pull-left" href="{{ note.creator.cosinnus_profile.get_absolute_url }}">
+	                    <a class="pull-left" href="{{ note.creator|profile_url }}">
 	                        {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
 	                    </a>
 	                    <div class="media-body">
@@ -25,7 +25,7 @@
 	                                </a> &nbsp;
 	                            </span>
                             {% endif %}
-	                        <strong><a href="{{ note.creator.cosinnus_profile.get_absolute_url }}">{{ note.creator|full_name }}</a></strong> <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
+	                        <strong><a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a></strong> <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
 	                    </div>
 	                </li>
 	            </ul>
