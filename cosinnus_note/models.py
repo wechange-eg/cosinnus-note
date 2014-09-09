@@ -14,7 +14,7 @@ from embed_video.fields import EmbedVideoField
 from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
 from django.utils.functional import cached_property
-from cosinnus.utils.permissions import get_tagged_object_filter_for_user
+from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user
 
 
 class Note(BaseTaggableObjectModel):
@@ -57,8 +57,7 @@ class Note(BaseTaggableObjectModel):
         """ Returns a queryset of the current upcoming events """
         qs = Note.objects.filter(group=group)
         if user:
-            q = get_tagged_object_filter_for_user(user)
-            qs = qs.filter(q)
+            qs = filter_tagged_object_queryset_for_user(qs, user)
         return qs
     
     @cached_property
