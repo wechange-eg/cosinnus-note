@@ -15,7 +15,7 @@ class NoteRenderer(BaseRenderer):
     model = Note
 
     template = 'cosinnus_note/attached_notes.html'
-    template_single = 'cosinnus_note/single_note.html'
+    template_single = 'cosinnus_note/single_note_detailed.html'
     template_list = 'cosinnus_note/note_list_standalone.html'
     
 

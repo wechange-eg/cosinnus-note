@@ -1,1 +1,30 @@
-{% include 'cosinnus_note/single_note_detailed.html' %}
+{% load i18n cosinnus_tags %}
+
+{% with note=object %}
+    <div class="app-main">
+        <div class="btn btn-emphasized w100">
+            <ul class="media-list large-space">
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <i class="fa fa-book"></i>
+                    </a>
+                    <div class="media-body no-vertical-padding">
+                        <span class="annotation">
+                            {% with creator=note.creator %}
+                                von <strong><a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></strong> 
+                            {% endwith %}
+                            <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
+                        </span>
+                        <strong><a href="{{ note.get_absolute_url }}">{{ note.text|truncatechars:50 }}</a></strong>
+                        <div class="group-annotation">
+                            <a href="{{ note.group.get_absolute_url }}">
+                                <i class="fa fa-users"></i>
+                                {{ note.group.name }}
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div><!-- btn -->
+    </div>
+{% endwith %}
