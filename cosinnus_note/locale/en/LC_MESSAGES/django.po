@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-03 14:32+0200\n"
+"POT-Creation-Date: 2014-09-10 19:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: .\cosinnus_app.py:17 .\models.py:31
+#: .\templates\cosinnus_note\note_detail.html.py:3
 #: .\templates\cosinnus_note\note_edit.html.py:3
 #: .\templates\cosinnus_note\note_list.html.py:3
 msgid "Notes"
@@ -57,7 +58,7 @@ msgstr ""
 msgid "Popularity"
 msgstr ""
 
-#: .\models.py:25 .\models.py:90
+#: .\models.py:25 .\models.py:89
 msgid "Text"
 msgstr ""
 
@@ -69,35 +70,42 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: .\models.py:87
+#: .\models.py:86
 msgid "Creator"
 msgstr ""
 
-#: .\models.py:88
+#: .\models.py:87
 msgid "Created"
 msgstr ""
 
-#: .\models.py:94
+#: .\models.py:93
 msgid "Comment"
 msgstr ""
 
-#: .\models.py:95
+#: .\models.py:94
 msgid "Comments"
 msgstr ""
 
-#: .\views.py:34
+#: .\receivers.py:23
+#, python-format
+msgid ""
+"%(group_name)s: %(user_name)s has commented on one of your news posts on %"
+"(site_name)s!"
+msgstr ""
+
+#: .\views.py:35
 msgid "Your news post was added successfully."
 msgstr ""
 
-#: .\views.py:109
+#: .\views.py:111
 msgid "Your news post was edited successfully."
 msgstr ""
 
-#: .\views.py:140
+#: .\views.py:131
 msgid "Your comment was added successfully."
 msgstr ""
 
-#: .\views.py:175
+#: .\views.py:168
 msgid "Your comment was deleted successfully."
 msgstr ""
 
@@ -142,6 +150,32 @@ msgstr ""
 #: .\templates\cosinnus_note\single_note_detailed.html.py:24
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:23
 msgid "Edit"
+msgstr ""
+
+#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:3
+#, python-format
+msgid ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in group %"
+"(group_name)s:"
+msgstr ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %"
+"(group_name)s:"
+
+#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:10
+msgid "The news post you posted was:"
+msgstr ""
+
+#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:13
+msgid "Follow this link to see the comment:"
+msgstr ""
+
+#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:18
+#, python-format
+msgid "The %(site_name)s team"
 msgstr ""
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13

@@ -22,6 +22,7 @@ from cosinnus_note.models import Note, Comment
 from django.contrib import messages
 from cosinnus.views.mixins.filters import CosinnusFilterMixin
 from cosinnus_note.filters import NoteFilter
+from cosinnus_note import signals
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
@@ -133,6 +134,8 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
         form.instance.creator = self.request.user
         form.instance.note = self.note
         messages.success(self.request, self.message_success)
+        if not self.note.creator == self.request.user:
+            signals.note_comment_posted.send(sender=self, group=self.group, user=self.request.user, note=self.note, comment=form.instance)
         return super(CommentCreateView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
