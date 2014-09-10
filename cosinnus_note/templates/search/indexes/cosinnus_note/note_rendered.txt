@@ -3,12 +3,12 @@
     <ul class="media-list">
       <li class="media">
         <a class="pull-left" href="{{ object.get_absolute_url }}">
-          <i class="fa fa-envelope"></i>
+          <i class="fa fa-book"></i>
         </a>
         <div class="media-body">
           <a href="{{ object.get_absolute_url }}">
             <span class="annotation moment-data-date" data-date="{{ object.created|date:"c" }}"></span>
-            {{ object.title }}
+            {{ object.text|truncatechars:50 }}
           </a>
         </div>
       </li>
