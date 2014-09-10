@@ -23,9 +23,9 @@ cosinnus_group_patterns = patterns('cosinnus_note.views',
         'note_create',
         name='add'),
 
-    #url(r'^(?P<slug>[^/]+)/$',
-    #    'note_detail',
-    #    name='note'),
+    url(r'^(?P<slug>[^/]+)/$',
+        'note_detail',
+        name='note'),
 
     url(r'^(?P<slug>[^/]+)/delete/$',
         'note_delete',

@@ -1,0 +1,28 @@
+{% extends "cosinnus_note/base.html" %}
+{% load i18n cosinnus_tags widget_tweaks %}
+{% block page_title %}{% trans "Notes" %}: {{group.name}} {% endblock %}
+
+{% block breadcrumb %}
+        {{ block.super }}
+{% endblock %}
+
+{% block leftnav %}
+{% endblock leftnav %}
+
+
+{% block content %}
+    
+    <!-- a box with semi transparent background -->
+    <div class="content-box">
+    
+        
+	        <div class="app-main">
+                
+                {% include 'cosinnus_note/single_note_detailed.html' with object=object %}
+                	        
+	        </div>
+        
+    
+    
+    </div><!-- content-box -->
+{% endblock %}

@@ -69,6 +69,7 @@ note_delete = NoteDeleteView.as_view()
 class NoteDetailView(RequireReadMixin, FilterGroupMixin, DetailView):
 
     model = Note
+    template_name = 'cosinnus_note/note_detail.html'
 
 note_detail = NoteDetailView.as_view()
 
