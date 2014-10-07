@@ -23,6 +23,7 @@ from django.contrib import messages
 from cosinnus.views.mixins.filters import CosinnusFilterMixin
 from cosinnus_note.filters import NoteFilter
 from cosinnus_note import signals
+from cosinnus.utils.urls import group_aware_reverse
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
@@ -46,7 +47,7 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         return HttpResponseRedirect(self.get_success_url())
 
     def post(self, request, *args, **kwargs):
-        self.referer = request.META.get('HTTP_REFERER', reverse('cosinnus:note:list', kwargs={'group':self.group}))
+        self.referer = request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group}))
         return super(NoteCreateView, self).post(request, *args, **kwargs)
     
     def get_success_url(self):
@@ -62,7 +63,7 @@ class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
     template_name_suffix = '_delete'
 
     def get_success_url(self):
-        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
+        return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 note_delete = NoteDeleteView.as_view()
 
@@ -78,7 +79,7 @@ note_detail = NoteDetailView.as_view()
 class NoteIndexView(RequireReadMixin, RedirectView):
 
     def get_redirect_url(self, **kwargs):
-        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
+        return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 note_index = NoteIndexView.as_view()
 
@@ -116,7 +117,7 @@ class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     
     
     def get_success_url(self):
-        return reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
+        return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
 
 note_update = NoteUpdateView.as_view()
 
