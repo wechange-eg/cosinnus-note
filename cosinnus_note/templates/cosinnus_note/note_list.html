@@ -32,7 +32,7 @@
 			                        <i class="fa fa-pencil"></i>
 			                    </a>
 			                    <div class="media-body">
-			                        {% trans "Write a news post in this group" %}
+			                        {% trans "Write a news post" %}
 			                    </div>
 			                </li>
 			            </ul>
@@ -44,7 +44,7 @@
 		                <ol class="input-area">
 		                    <li class="w100">
 		                        {{ form.forms.obj.text.errors }}
-		                        {% captureas placeholder %}{% trans "Write a news post in this group" %}{% endcaptureas %}
+		                        {% captureas placeholder %}{% trans "Write a news post" %}{% endcaptureas %}
 		                        {% render_field form.forms.obj.text class+="form-control autogrow" placeholder=placeholder %}
 		                    </li>
 		                </ol>
