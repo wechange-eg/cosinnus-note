@@ -19,7 +19,7 @@
                             </span>
                             {% if user|has_write_access:note %}
 	                            <span class="annotation">
-	                                <a href="{% url 'cosinnus:note:update' group=note.group.slug slug=note.slug %}">
+	                                <a href="{% group_url 'cosinnus:note:update' group=note.group.slug slug=note.slug %}">
 	                                    <i class="fa fa-pencil"></i>
 	                                    {% trans "Edit" %}
 	                                </a> &nbsp;

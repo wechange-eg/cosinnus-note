@@ -18,7 +18,7 @@
         {% include 'cosinnus/common/filter_controls.html' %}        
         
         {% if user|can_create_objects_in:group %}
-        <form action="{% url 'cosinnus:note:add' group=group.slug %}" method="POST" id="note_create_form">{% csrf_token %}
+        <form action="{% group_url 'cosinnus:note:add' group=group.slug %}" method="POST" id="note_create_form">{% csrf_token %}
 	        <div class="app-main">
 	            <div class="fadedown large-space">
 	            

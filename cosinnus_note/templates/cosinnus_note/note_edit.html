@@ -16,7 +16,7 @@
     <div class="content-box">
     
         
-        <form action="{% url 'cosinnus:note:update' group=object.group.slug slug=object.slug %}" method="POST" id="note_edit_form">{% csrf_token %}
+        <form action="{% group_url 'cosinnus:note:update' group=object.group.slug slug=object.slug %}" method="POST" id="note_edit_form">{% csrf_token %}
 	        <div class="app-main">
 	            <div class="large-space">
 	            
