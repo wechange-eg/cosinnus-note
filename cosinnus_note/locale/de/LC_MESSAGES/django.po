@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-10 19:19+0200\n"
+"POT-Creation-Date: 2014-10-13 13:29+0200\n"
 "PO-Revision-Date: 2013-07-19 19:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: .\cosinnus_app.py:17 .\models.py:31
+#: .\cosinnus_app.py:17 .\models.py:32
 #: .\templates\cosinnus_note\note_detail.html.py:3
 #: .\templates\cosinnus_note\note_edit.html.py:3
 #: .\templates\cosinnus_note\note_list.html.py:3
@@ -60,31 +60,31 @@ msgstr "Zuletzt erstellt"
 msgid "Popularity"
 msgstr "Meist kommentiert"
 
-#: .\models.py:25 .\models.py:89
+#: .\models.py:26 .\models.py:90
 msgid "Text"
 msgstr "Text"
 
-#: .\models.py:30
+#: .\models.py:31
 msgid "Note"
 msgstr "Neuigkeit"
 
-#: .\models.py:35
+#: .\models.py:36
 msgid "Author"
 msgstr "Autor"
 
-#: .\models.py:86
+#: .\models.py:87
 msgid "Creator"
 msgstr "Ersteller"
 
-#: .\models.py:87
+#: .\models.py:88
 msgid "Created"
 msgstr "Erstellt"
 
-#: .\models.py:93
+#: .\models.py:94
 msgid "Comment"
 msgstr "Kommentar"
 
-#: .\models.py:94
+#: .\models.py:95
 msgid "Comments"
 msgstr "Kommentare"
 
@@ -97,19 +97,19 @@ msgstr ""
 "%(group_name)s: %(user_name)s hat eine Neuigkeit von dir kommentiert bei %"
 "(site_name)s!"
 
-#: .\views.py:35
+#: .\views.py:36
 msgid "Your news post was added successfully."
 msgstr "Deine Neuigkeit wurde erfolgreich erstellt."
 
-#: .\views.py:111
+#: .\views.py:112
 msgid "Your news post was edited successfully."
 msgstr "Deine Neuigkeit wurde erfolgreich bearbeitet."
 
-#: .\views.py:131
+#: .\views.py:132
 msgid "Your comment was added successfully."
 msgstr "Dein Kommentar wurde erfolgreich erstellt."
 
-#: .\views.py:168
+#: .\views.py:169
 msgid "Your comment was deleted successfully."
 msgstr "Dein Kommentar wurde gelöscht."
 
@@ -133,8 +133,8 @@ msgstr "Neuigkeit bearbeiten"
 #: .\templates\cosinnus_note\note_edit.html.py:45
 #: .\templates\cosinnus_note\note_list.html.py:35
 #: .\templates\cosinnus_note\note_list.html.py:47
-msgid "Write a news post in this group"
-msgstr "Schreibe einen Beitrag in diesem Projekt"
+msgid "Write a news post"
+msgstr "Was gibt es Neues?"
 
 #: .\templates\cosinnus_note\note_edit.html.py:61
 msgid "Save changes"
@@ -166,8 +166,8 @@ msgid ""
 msgstr ""
 "Hi, %(creator_name)s!\n"
 "\n"
-"%(user_name)s hat einen Kommentar auf eine deiner Neuigkeiten gepostet im Projekt %"
-"(group_name)s:"
+"%(user_name)s hat einen Kommentar auf eine deiner Neuigkeiten gepostet im "
+"Projekt %(group_name)s:"
 
 #: .\templates\cosinnus_note\mail\note_comment_posted.html.py:10
 msgid "The news post you posted was:"
@@ -185,6 +185,9 @@ msgstr "Das Team von %(site_name)s"
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13
 msgid "Bitte Nachricht eingeben..."
 msgstr ""
+
+#~ msgid "Write a news post in this group"
+#~ msgstr "Schreibe einen Beitrag in diesem Projekt"
 
 #~ msgid "Create"
 #~ msgstr "Erstellen"
