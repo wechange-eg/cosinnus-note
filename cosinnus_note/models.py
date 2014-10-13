@@ -15,6 +15,7 @@ from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
 from django.utils.functional import cached_property
 from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user
+from cosinnus.utils.urls import group_aware_reverse
 
 
 class Note(BaseTaggableObjectModel):
@@ -50,7 +51,7 @@ class Note(BaseTaggableObjectModel):
 
     def get_absolute_url(self):
         kwargs = {'group': self.group.slug, 'slug': self.slug}
-        return reverse('cosinnus:note:note', kwargs=kwargs)
+        return group_aware_reverse('cosinnus:note:note', kwargs=kwargs)
     
     @classmethod
     def get_current(self, group, user):

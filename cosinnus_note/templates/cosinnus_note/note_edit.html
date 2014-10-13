@@ -16,7 +16,7 @@
     <div class="content-box">
     
         
-        <form action="{% url 'cosinnus:note:update' group=object.group.slug slug=object.slug %}" method="POST" id="note_edit_form">{% csrf_token %}
+        <form action="{% group_url 'cosinnus:note:update' group=object.group.slug slug=object.slug %}" method="POST" id="note_edit_form">{% csrf_token %}
 	        <div class="app-main">
 	            <div class="large-space">
 	            
@@ -42,7 +42,7 @@
 		                <ol class="input-area">
 		                    <li class="w100">
 		                        {{ form.forms.obj.text.errors }}
-		                        {% captureas placeholder %}{% trans "Write a news post in this group" %}{% endcaptureas %}
+		                        {% captureas placeholder %}{% trans "Write a news post" %}{% endcaptureas %}
 		                        {% render_field form.forms.obj.text class+="form-control autogrow" placeholder=placeholder %}
 		                    </li>
 		                </ol>

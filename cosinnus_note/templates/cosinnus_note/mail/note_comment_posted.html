@@ -1,4 +1,4 @@
-{% load i18n %}{% autoescape off %}
+{% load i18n cosinnus_tags %}{% autoescape off %}
 
 {% blocktrans %}Hi, {{ creator_name }}!
 
@@ -11,7 +11,7 @@
 "{{ note_text }}"
 
 {% trans "Follow this link to see the comment:" %}
-{{ protocol }}://{{ site.domain }}{% url 'cosinnus:note:note' group=group.slug slug=note.slug %}
+{{ protocol }}://{{ site.domain }}{% group_url 'cosinnus:note:note' group=group.slug slug=note.slug %}
 
 
 

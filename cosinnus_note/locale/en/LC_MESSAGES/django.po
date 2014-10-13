@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-10 19:20+0200\n"
+"POT-Creation-Date: 2014-10-13 13:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\cosinnus_app.py:17 .\models.py:31
+#: .\cosinnus_app.py:17 .\models.py:32
 #: .\templates\cosinnus_note\note_detail.html.py:3
 #: .\templates\cosinnus_note\note_edit.html.py:3
 #: .\templates\cosinnus_note\note_list.html.py:3
@@ -58,31 +58,31 @@ msgstr ""
 msgid "Popularity"
 msgstr ""
 
-#: .\models.py:25 .\models.py:89
+#: .\models.py:26 .\models.py:90
 msgid "Text"
 msgstr ""
 
-#: .\models.py:30
+#: .\models.py:31
 msgid "Note"
 msgstr ""
 
-#: .\models.py:35
+#: .\models.py:36
 msgid "Author"
 msgstr ""
 
-#: .\models.py:86
+#: .\models.py:87
 msgid "Creator"
 msgstr ""
 
-#: .\models.py:87
+#: .\models.py:88
 msgid "Created"
 msgstr ""
 
-#: .\models.py:93
+#: .\models.py:94
 msgid "Comment"
 msgstr ""
 
-#: .\models.py:94
+#: .\models.py:95
 msgid "Comments"
 msgstr ""
 
@@ -93,19 +93,19 @@ msgid ""
 "(site_name)s!"
 msgstr ""
 
-#: .\views.py:35
+#: .\views.py:36
 msgid "Your news post was added successfully."
 msgstr ""
 
-#: .\views.py:111
+#: .\views.py:112
 msgid "Your news post was edited successfully."
 msgstr ""
 
-#: .\views.py:131
+#: .\views.py:132
 msgid "Your comment was added successfully."
 msgstr ""
 
-#: .\views.py:168
+#: .\views.py:169
 msgid "Your comment was deleted successfully."
 msgstr ""
 
@@ -129,8 +129,8 @@ msgstr ""
 #: .\templates\cosinnus_note\note_edit.html.py:45
 #: .\templates\cosinnus_note\note_list.html.py:35
 #: .\templates\cosinnus_note\note_list.html.py:47
-msgid "Write a news post in this group"
-msgstr "Write a news post in this project"
+msgid "Write a news post"
+msgstr "Write a news post..."
 
 #: .\templates\cosinnus_note\note_edit.html.py:61
 msgid "Save changes"
