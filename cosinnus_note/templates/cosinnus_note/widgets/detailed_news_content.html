@@ -12,6 +12,9 @@
                     <div class="media-body">
                          <a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a> –
                          <span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span>
+                         {% if user|has_write_access:note %}
+                             <a data-toggle="modal" data-target="#deleteNote_{{note.pk}}" href="#" title="{% trans "Delete note" %}"><i class="fa fa-times"></i></a>
+                         {% endif %}
                          <div class="group-annotation">
                              <a href="{{ note.group.get_absolute_url }}">
                                  <i class="fa fa-users"></i>
@@ -28,6 +31,15 @@
                 </li>
             </ul>
         </div><!-- btn -->
+        
+        {% if user|has_write_access:note %}
+            {% captureas modal_id %}deleteNote_{{note.pk}}{% endcaptureas %}
+            {% captureas title %}{% trans "Delete note" %}{% endcaptureas %}
+            {% captureas label %}{% trans "Do you really want to delete this note?" %}{% endcaptureas %}
+            {% captureas action %}{% group_url 'cosinnus:note:delete' group=note.group.slug slug=note.slug%}{% endcaptureas %}
+            {% include "cosinnus/modal_box.html" with id=modal_id label=label title=title form_action=action %}
+        {% endif %}
+        
         <div type="button" class="btn btn-default dashboard-appwidget-contentline-extra-indented">
             <ul class="media-list fine-space">
                 <li class="media">

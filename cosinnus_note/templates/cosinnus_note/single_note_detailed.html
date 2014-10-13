@@ -22,15 +22,27 @@
 	                                <a href="{% group_url 'cosinnus:note:update' group=note.group.slug slug=note.slug %}">
 	                                    <i class="fa fa-pencil"></i>
 	                                    {% trans "Edit" %}
-	                                </a> &nbsp;
+	                                </a>
+                                    <a data-toggle="modal" data-target="#deleteNote_{{note.pk}}" href="#" title="{% trans "Delete note" %}">
+                                        <i class="fa fa-times"></i>
+                                        {% trans "Delete" %}
+                                    </a> &nbsp;
 	                            </span>
-                            {% endif %}
+	                        {% endif %}
 	                        <strong><a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a></strong> <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
 	                    </div>
 	                </li>
 	            </ul>
 	        </div>
 	    </div>
+	    
+	    {% if user|has_write_access:note %}
+            {% captureas modal_id %}deleteNote_{{note.pk}}{% endcaptureas %}
+            {% captureas title %}{% trans "Delete note" %}{% endcaptureas %}
+            {% captureas label %}{% trans "Do you really want to delete this note?" %}{% endcaptureas %}
+            {% captureas action %}{% group_url 'cosinnus:note:delete' group=note.group.slug slug=note.slug%}{% endcaptureas %}
+            {% include "cosinnus/modal_box.html" with id=modal_id label=label title=title form_action=action %}
+        {% endif %}
 	    
 	    <div class="indented regular-space">
 	        {{ note.text|urlizetrunc:25|linebreaks }}

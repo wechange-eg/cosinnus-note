@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-13 13:29+0200\n"
+"POT-Creation-Date: 2014-10-13 17:12+0200\n"
 "PO-Revision-Date: 2013-07-19 19:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -101,15 +101,19 @@ msgstr ""
 msgid "Your news post was added successfully."
 msgstr "Deine Neuigkeit wurde erfolgreich erstellt."
 
-#: .\views.py:112
+#: .\views.py:65
+msgid "Your news post was deleted successfully."
+msgstr "Deine Neuigkeit wurde erfolgreich gelöscht.."
+
+#: .\views.py:120
 msgid "Your news post was edited successfully."
 msgstr "Deine Neuigkeit wurde erfolgreich bearbeitet."
 
-#: .\views.py:132
+#: .\views.py:140
 msgid "Your comment was added successfully."
 msgstr "Dein Kommentar wurde erfolgreich erstellt."
 
-#: .\views.py:169
+#: .\views.py:177
 msgid "Your comment was deleted successfully."
 msgstr "Dein Kommentar wurde gelöscht."
 
@@ -147,12 +151,12 @@ msgstr "Posten"
 
 #: .\templates\cosinnus_note\note_list.html.py:82
 #: .\templates\cosinnus_note\note_list_standalone.html.py:23
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:64
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:77
 msgid "There are no news posts yet"
 msgstr "Es gibt keine Neuigkeiten."
 
 #: .\templates\cosinnus_note\single_note_detailed.html.py:24
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:23
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:27
 msgid "Edit"
 msgstr ""
 
@@ -185,6 +189,15 @@ msgstr "Das Team von %(site_name)s"
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13
 msgid "Bitte Nachricht eingeben..."
 msgstr ""
+
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:17
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:38
+msgid "Delete note"
+msgstr "Neuigkeit löschen"
+
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:39
+msgid "Do you really want to delete this note?"
+msgstr "Willst du diese Neuigkeit wirklich löschen?"
 
 #~ msgid "Write a news post in this group"
 #~ msgstr "Schreibe einen Beitrag in diesem Projekt"

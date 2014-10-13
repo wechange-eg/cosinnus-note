@@ -61,9 +61,17 @@ class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
 
     model = Note
     template_name_suffix = '_delete'
+    
+    message_success = _('Your news post was deleted successfully.')
+    
+    def post(self, request, *args, **kwargs):
+        self.referer = request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group.slug}))
+        return super(NoteDeleteView, self).post(request, *args, **kwargs)
 
     def get_success_url(self):
-        return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
+        # self.referer is set in post() method
+        messages.success(self.request, self.message_success)
+        return self.referer
 
 note_delete = NoteDeleteView.as_view()
 
