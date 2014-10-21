@@ -66,10 +66,20 @@ class DetailedNotes(BaseNotesWidget):
     form_class = DetailedNotesForm
     template_name = 'cosinnus_note/widgets/detailed_news_content.html'
     title = _('Write a news post...')
-    widget_name = 'detailed news list'
+    widget_name = 'detailed_news_list'
     
     def __init__(self, request, config_instance):
         super(DetailedNotes, self).__init__(request, config_instance)
         # Adjust title for user widget
         if not self.config.group:
             self.title = _('News stream')
+            
+    def render(self, **kwargs):
+        # Only for the group dashboard:
+        group = getattr(self.config, 'group', None)
+        if group:  
+            kwargs.update({
+                'form':  NoteForm(group=group)
+            })
+        
+        return super(DetailedNotes, self).render(**kwargs)
