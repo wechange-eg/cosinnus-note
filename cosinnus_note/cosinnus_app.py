@@ -19,7 +19,6 @@ def register():
                          'cosinnus_note.utils.renderer.NoteRenderer')
     url_registry.register_urlconf('cosinnus_note', 'cosinnus_note.urls')
     widget_registry.register('note', 'cosinnus_note.dashboard.DetailedNotes')
-    #widget_registry.register('note', 'cosinnus_note.dashboard.CompactNotes')
 
     # makemessages replacement protection
     name = pgettext_lazy("the_app", "note")

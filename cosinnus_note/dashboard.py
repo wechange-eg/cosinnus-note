@@ -14,21 +14,10 @@ from django.core.exceptions import ImproperlyConfigured
 from cosinnus_note.forms import NoteForm
 
 
-class CompactNotesForm(DashboardWidgetForm):
-    amount = forms.IntegerField(label="Amount", initial=5, min_value=0,
-        help_text="0 means unlimited", required=False)
-
 
 class DetailedNotesForm(DashboardWidgetForm):
     amount = forms.IntegerField(label="Amount", initial=3, min_value=0,
         help_text="0 means unlimited", required=False)
-
-
-class NewNoteForm(forms.ModelForm):
-
-    class Meta:
-        fields = ('title', 'text')
-        model = Note
 
 
 class BaseNotesWidget(DashboardWidget):
@@ -64,12 +53,6 @@ class BaseNotesWidget(DashboardWidget):
             raise ImproperlyConfigured("No template_name given")
         return self.template_name
 
-
-class CompactNotes(BaseNotesWidget):
-    form_class = CompactNotesForm
-    template_name = 'cosinnus_note/widgets/compact_news.html'
-    title = _('News')
-    widget_name = 'compact news list'
 
 
 class DetailedNotes(BaseNotesWidget):
