@@ -10,7 +10,7 @@
                 <ol class="input-area">
                     <li class="w100">
                         {{ form.forms.obj.text.errors }}
-                        {% captureas placeholder %}{% trans "Bitte Nachricht eingeben..." %}{% endcaptureas %}
+                        {% captureas placeholder %}{% trans "Please enter a message..." %}{% endcaptureas %}
                         {% render_field form.forms.obj.text class+="autogrow" placeholder=placeholder id="etherpadTitle" %}
                     </li>
                 </ol>
@@ -26,7 +26,7 @@
                             <i class="fa fa-pencil"></i>
                         </a>
                         <div class="media-body">
-                            {% trans "Posten" %}
+                            {% trans "Post" %}
                         </div>
                     </li>
                 </ul>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-13 17:12+0200\n"
+"POT-Creation-Date: 2014-10-27 15:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,26 +23,21 @@ msgstr ""
 msgid "Notes"
 msgstr ""
 
-#: .\cosinnus_app.py:25
+#: .\cosinnus_app.py:24
 #: .\templates\cosinnus_note\note_list_standalone.html.py:11
 msgctxt "the_app"
 msgid "note"
 msgstr ""
 
-#: .\dashboard.py:54
+#: .\dashboard.py:43
 msgid "No news"
 msgstr ""
 
-#: .\dashboard.py:71 .\templates\cosinnus_note\base.html.py:6
-#: .\templates\cosinnus_note\base.html.py:13
-msgid "News"
-msgstr ""
-
-#: .\dashboard.py:85
+#: .\dashboard.py:68
 msgid "Write a news post..."
 msgstr ""
 
-#: .\dashboard.py:92
+#: .\dashboard.py:75
 msgid "News stream"
 msgstr ""
 
@@ -113,16 +108,24 @@ msgstr ""
 msgid "Your comment was deleted successfully."
 msgstr ""
 
+#: .\templates\cosinnus_note\base.html.py:6
+#: .\templates\cosinnus_note\base.html.py:13
+msgid "News"
+msgstr ""
+
 #: .\templates\cosinnus_note\note_comments.html.py:30
 msgctxt "the_verb"
 msgid "Comment"
 msgstr ""
 
 #: .\templates\cosinnus_note\note_comments.html.py:65
+#: .\templates\cosinnus_note\single_note_detailed.html.py:28
 msgid "Delete"
 msgstr ""
 
 #: .\templates\cosinnus_note\note_comments.html.py:103
+#: .\templates\cosinnus_note\note_list.html.py:63
+#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:29
 msgid "Post"
 msgstr ""
 
@@ -140,20 +143,27 @@ msgstr "Write a news post..."
 msgid "Save changes"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_list.html.py:63
-#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:29
-msgid "Posten"
-msgstr ""
-
 #: .\templates\cosinnus_note\note_list.html.py:82
 #: .\templates\cosinnus_note\note_list_standalone.html.py:23
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:77
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:76
 msgid "There are no news posts yet"
 msgstr ""
 
 #: .\templates\cosinnus_note\single_note_detailed.html.py:24
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:27
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:26
 msgid "Edit"
+msgstr ""
+
+#: .\templates\cosinnus_note\single_note_detailed.html.py:26
+#: .\templates\cosinnus_note\single_note_detailed.html.py:41
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:16
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:37
+msgid "Delete note"
+msgstr ""
+
+#: .\templates\cosinnus_note\single_note_detailed.html.py:42
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:38
+msgid "Do you really want to delete this note?"
 msgstr ""
 
 #: .\templates\cosinnus_note\mail\note_comment_posted.html.py:3
@@ -183,14 +193,5 @@ msgid "The %(site_name)s team"
 msgstr ""
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13
-msgid "Bitte Nachricht eingeben..."
-msgstr ""
-
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:17
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:38
-msgid "Delete note"
-msgstr ""
-
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:39
-msgid "Do you really want to delete this note?"
+msgid "Please enter a message..."
 msgstr ""
