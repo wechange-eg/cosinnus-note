@@ -7,6 +7,7 @@ from cosinnus_note.models import Note
 
 
 class NoteModelAdmin(AdminVideoMixin, admin.ModelAdmin):
-    pass
+    list_display = ('title', 'group', 'creator',)
+    list_filter = ('group',)
 
 admin.site.register(Note, NoteModelAdmin)
