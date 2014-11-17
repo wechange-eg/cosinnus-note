@@ -5,14 +5,14 @@ from django.utils.translation import ugettext_lazy as _
 
 from cosinnus.conf import settings
 from django.dispatch.dispatcher import receiver
-from django.contrib.auth import get_user_model
-from cosinnus.core.receivers import _get_common_mail_context, send_mail_or_fail
+
 from cosinnus_note.signals import note_comment_posted
+from cosinnus.core.mail import get_common_mail_context, send_mail_or_fail
 
 
 @receiver(note_comment_posted)
 def send_note_comment_mail(sender, group, user, note, comment, **kwargs):
-    context = _get_common_mail_context(sender.request, group=group, user=user)
+    context = get_common_mail_context(sender.request, group=group, user=user)
     creator = note.creator
     context.update({
         'note': note,
