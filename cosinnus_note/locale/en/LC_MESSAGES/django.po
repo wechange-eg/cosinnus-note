@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-27 15:30+0100\n"
+"POT-Creation-Date: 2014-11-18 16:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\cosinnus_app.py:17 .\models.py:32
+#: .\cosinnus_app.py:17 .\models.py:34
 #: .\templates\cosinnus_note\note_detail.html.py:3
 #: .\templates\cosinnus_note\note_edit.html.py:3
 #: .\templates\cosinnus_note\note_list.html.py:3
@@ -28,6 +28,15 @@ msgstr ""
 msgctxt "the_app"
 msgid "note"
 msgstr ""
+
+#: .\cosinnus_notifications.py:39
+msgid "A user commented on one of your news posts"
+msgstr ""
+
+#: .\cosinnus_notifications.py:46
+#, fuzzy
+msgid "A user created a news post"
+msgstr "Write a news post..."
 
 #: .\dashboard.py:43
 msgid "No news"
@@ -53,39 +62,32 @@ msgstr ""
 msgid "Popularity"
 msgstr ""
 
-#: .\models.py:26 .\models.py:90
+#: .\models.py:28 .\models.py:97
 msgid "Text"
 msgstr ""
 
-#: .\models.py:31
+#: .\models.py:33
 msgid "Note"
 msgstr ""
 
-#: .\models.py:36
+#: .\models.py:38
 msgid "Author"
 msgstr ""
 
-#: .\models.py:87
+#: .\models.py:94
 msgid "Creator"
 msgstr ""
 
-#: .\models.py:88
+#: .\models.py:95
 msgid "Created"
 msgstr ""
 
-#: .\models.py:94
+#: .\models.py:101
 msgid "Comment"
 msgstr ""
 
-#: .\models.py:95
+#: .\models.py:102
 msgid "Comments"
-msgstr ""
-
-#: .\receivers.py:23
-#, python-format
-msgid ""
-"%(group_name)s: %(user_name)s has commented on one of your news posts on %"
-"(site_name)s!"
 msgstr ""
 
 #: .\views.py:36
@@ -104,7 +106,7 @@ msgstr ""
 msgid "Your comment was added successfully."
 msgstr ""
 
-#: .\views.py:177
+#: .\views.py:179
 msgid "Your comment was deleted successfully."
 msgstr ""
 
@@ -166,30 +168,65 @@ msgstr ""
 msgid "Do you really want to delete this note?"
 msgstr ""
 
-#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:3
+#: .\templates\cosinnus_note\notifications\note_comment_posted.html.py:1
 #, python-format
 msgid ""
-"Hi, %(creator_name)s!\n"
+"Hi, %(receiver_name)s!\n"
 "\n"
-"%(user_name)s has posted a comment on a news post you wrote in group %"
-"(group_name)s:"
+"%(sender_name)s has posted a comment on a news post you wrote in group %"
+"(group_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"on your post:\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"Follow this link to see the comment: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s team.\n"
+"\n"
+msgstr ""
+
+#: .\templates\cosinnus_note\notifications\note_comment_posted_subject.txt.py:1
+#, fuzzy, python-format
+msgid "%(sender_name)s commented on one of your news posts in %(group_name)s."
 msgstr ""
 "Hi, %(creator_name)s!\n"
 "\n"
 "%(user_name)s has posted a comment on a news post you wrote in project %"
 "(group_name)s:"
 
-#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:10
-msgid "The news post you posted was:"
-msgstr ""
-
-#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:13
-msgid "Follow this link to see the comment:"
-msgstr ""
-
-#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:18
+#: .\templates\cosinnus_note\notifications\note_created.txt.py:1
 #, python-format
-msgid "The %(site_name)s team"
+msgid ""
+"Hi %(receiver_name)s,\n"
+"\n"
+"%(sender_name)s just posted an update in %(group_name)s:\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"You can find it by following this link: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s Team."
+msgstr ""
+
+#: .\templates\cosinnus_note\notifications\note_created_subject.txt.py:1
+#, python-format
+msgid "%(sender_name)s posted some news in %(group_name)s!"
 msgstr ""
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13

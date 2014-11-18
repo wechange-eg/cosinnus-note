@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-27 15:30+0100\n"
+"POT-Creation-Date: 2014-11-18 16:12+0100\n"
 "PO-Revision-Date: 2013-07-19 19:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: .\cosinnus_app.py:17 .\models.py:32
+#: .\cosinnus_app.py:17 .\models.py:34
 #: .\templates\cosinnus_note\note_detail.html.py:3
 #: .\templates\cosinnus_note\note_edit.html.py:3
 #: .\templates\cosinnus_note\note_list.html.py:3
@@ -30,6 +30,14 @@ msgstr "Neuigkeiten"
 msgctxt "the_app"
 msgid "note"
 msgstr "Neuigkeiten"
+
+#: .\cosinnus_notifications.py:39
+msgid "A user commented on one of your news posts"
+msgstr "Ein(e) Mitarbeiter_in hat auf einen deiner Beiträge kommentiert"
+
+#: .\cosinnus_notifications.py:46
+msgid "A user created a news post"
+msgstr "Ein(e) Mitarbeiter_in hat einen neuen Beitrag in die Gruppe gepostet"
 
 #: .\dashboard.py:43
 msgid "No news"
@@ -55,42 +63,33 @@ msgstr "Zuletzt erstellt"
 msgid "Popularity"
 msgstr "Meist kommentiert"
 
-#: .\models.py:26 .\models.py:90
+#: .\models.py:28 .\models.py:97
 msgid "Text"
 msgstr "Text"
 
-#: .\models.py:31
+#: .\models.py:33
 msgid "Note"
 msgstr "Neuigkeit"
 
-#: .\models.py:36
+#: .\models.py:38
 msgid "Author"
 msgstr "Autor"
 
-#: .\models.py:87
+#: .\models.py:94
 msgid "Creator"
 msgstr "Ersteller"
 
-#: .\models.py:88
+#: .\models.py:95
 msgid "Created"
 msgstr "Erstellt"
 
-#: .\models.py:94
+#: .\models.py:101
 msgid "Comment"
 msgstr "Kommentar"
 
-#: .\models.py:95
+#: .\models.py:102
 msgid "Comments"
 msgstr "Kommentare"
-
-#: .\receivers.py:23
-#, python-format
-msgid ""
-"%(group_name)s: %(user_name)s has commented on one of your news posts on %"
-"(site_name)s!"
-msgstr ""
-"%(group_name)s: %(user_name)s hat eine Neuigkeit von dir kommentiert bei %"
-"(site_name)s!"
 
 #: .\views.py:36
 msgid "Your news post was added successfully."
@@ -108,7 +107,7 @@ msgstr "Deine Neuigkeit wurde erfolgreich bearbeitet."
 msgid "Your comment was added successfully."
 msgstr "Dein Kommentar wurde erfolgreich erstellt."
 
-#: .\views.py:177
+#: .\views.py:179
 msgid "Your comment was deleted successfully."
 msgstr "Dein Kommentar wurde gelöscht."
 
@@ -170,35 +169,124 @@ msgstr "Neuigkeit löschen"
 msgid "Do you really want to delete this note?"
 msgstr "Willst du diese Neuigkeit wirklich löschen?"
 
-#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:3
+#: .\templates\cosinnus_note\notifications\note_comment_posted.html.py:1
 #, python-format
 msgid ""
-"Hi, %(creator_name)s!\n"
+"Hi, %(receiver_name)s!\n"
 "\n"
-"%(user_name)s has posted a comment on a news post you wrote in group %"
-"(group_name)s:"
+"%(sender_name)s has posted a comment on a news post you wrote in group %"
+"(group_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"on your post:\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"Follow this link to see the comment: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s team.\n"
+"\n"
 msgstr ""
-"Hi, %(creator_name)s!\n"
+"Hi, %(receiver_name)s!\n"
 "\n"
-"%(user_name)s hat einen Kommentar auf eine deiner Neuigkeiten gepostet im "
-"Projekt %(group_name)s:"
+"%(sender_name)s hat einen Kommentar auf einen Beitrag von dir in Gruppe %"
+"(group_name)s geschrieben:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"zu deinem Beitrag:\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"Folge diesem Link um den Kommentar zu sehen: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Dein %(site_name)s team.\n"
+"\n"
 
-#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:10
-msgid "The news post you posted was:"
-msgstr "Die Neuigkeit die du gepostet hattest war:"
-
-#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:13
-msgid "Follow this link to see the comment:"
-msgstr "Folge diesem Link um zum Kommentar zu gelangen:"
-
-#: .\templates\cosinnus_note\mail\note_comment_posted.html.py:18
+#: .\templates\cosinnus_note\notifications\note_comment_posted_subject.txt.py:1
 #, python-format
-msgid "The %(site_name)s team"
-msgstr "Das Team von %(site_name)s"
+msgid "%(sender_name)s commented on one of your news posts in %(group_name)s."
+msgstr "%(sender_name)s hat eine Neuigkeit von dir kommentiert in %(group_name)s!"
+
+#: .\templates\cosinnus_note\notifications\note_created.txt.py:1
+#, python-format
+msgid ""
+"Hi %(receiver_name)s,\n"
+"\n"
+"%(sender_name)s just posted an update in %(group_name)s:\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"You can find it by following this link: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s Team."
+msgstr ""
+"Hi %(receiver_name)s,\n"
+"\n"
+"%(sender_name)s hat gerade einen neuen Beitrag in %(group_name)s gepostet:\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"Du kannst es finden indem du folgenden Link aufrufst: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Dein %(site_name)s Team."
+
+
+#: .\templates\cosinnus_note\notifications\note_created_subject.txt.py:1
+#, python-format
+msgid "%(sender_name)s posted some news in %(group_name)s!"
+msgstr "%(sender_name)s hat einen neuen Beitrag gepostet in %(group_name)s!"
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13
 msgid "Please enter a message..."
 msgstr "Gib eine Nachricht ein..."
+
+#~ msgid ""
+#~ "Hi, %(creator_name)s!\n"
+#~ "\n"
+#~ "%(user_name)s has posted a comment on a news post you wrote in group %"
+#~ "(group_name)s:"
+#~ msgstr ""
+#~ "Hi, %(creator_name)s!\n"
+#~ "\n"
+#~ "%(user_name)s hat einen Kommentar auf eine deiner Neuigkeiten gepostet im "
+#~ "Projekt %(group_name)s:"
+
+#~ msgid "The news post you posted was:"
+#~ msgstr "Die Neuigkeit die du gepostet hattest war:"
+
+#~ msgid "Follow this link to see the comment:"
+#~ msgstr "Folge diesem Link um zum Kommentar zu gelangen:"
+
+#~ msgid "The %(site_name)s team"
+#~ msgstr "Das Team von %(site_name)s"
 
 #~ msgid "Posten"
 #~ msgstr "Posten"
