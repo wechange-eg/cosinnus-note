@@ -101,7 +101,9 @@ class Comment(models.Model):
         }
 
     def get_absolute_url(self):
-        return '%s#comment-%d' % (self.note.get_absolute_url(), self.pk)
+        if self.pk:
+            return '%s#comment-%d' % (self.note.get_absolute_url(), self.pk)
+        return self.note.get_absolute_url()
 
 import django
 if django.VERSION[:2] < (1, 7):
