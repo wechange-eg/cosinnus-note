@@ -10,6 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 
 """ Signal definitions """
 note_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
+note_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
 
 
 """ Notification definitions.
@@ -41,5 +42,11 @@ notifications = {
         'signals': [note_comment_posted],
         'default': True,
     },  
-                    
+    'note_created': {
+        'label': _('A user created a news post'), 
+        'mail_template': 'cosinnus_note/notifications/note_created.txt',
+        'subject_template': 'cosinnus_note/notifications/note_created.txt',
+        'signals': [note_created],
+        'default': False,
+    },  
 }

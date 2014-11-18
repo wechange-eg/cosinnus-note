@@ -1,0 +1,1 @@
+{% load i18n cosinnus_tags %}{% blocktrans %}{{ sender_name }} posted some news in {{ group_name }}!{% endblocktrans %}

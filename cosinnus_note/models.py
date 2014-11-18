@@ -16,6 +16,8 @@ from cosinnus.models.tagged import BaseTaggableObjectModel
 from django.utils.functional import cached_property
 from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user
 from cosinnus.utils.urls import group_aware_reverse
+from cosinnus_note import cosinnus_notifications
+from django.contrib.auth import get_user_model
 
 
 class Note(BaseTaggableObjectModel):
@@ -38,6 +40,7 @@ class Note(BaseTaggableObjectModel):
     def save(self, *args, **kwargs):
         if not self.slug:
             unique_aware_slugify(self, slug_source='title', slug_field='slug', group=self.group)
+        created = bool(self.pk) == False
         
         # take the first youtube url from the textand save it as a video link
         self.video = None
@@ -48,6 +51,10 @@ class Note(BaseTaggableObjectModel):
                 break
             
         super(Note, self).save(*args, **kwargs)
+        if created:
+            # todo was created
+            cosinnus_notifications.note_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
+        
 
     def get_absolute_url(self):
         kwargs = {'group': self.group.slug, 'slug': self.slug}
