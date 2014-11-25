@@ -45,7 +45,7 @@
         {% endif %}
 	    
 	    <div class="indented regular-space">
-	        {{ note.text|urlizetrunc:25|url_target_blank|linebreaks }}
+	        {{ note.text|urlizetrunc:25|url_target_blank|linebreaksbr }}
 	        {% if note.video %}
 	            {% include 'cosinnus/common/embed_youtube.html' with video_id=note.video_id %}
 	        {% endif %}
