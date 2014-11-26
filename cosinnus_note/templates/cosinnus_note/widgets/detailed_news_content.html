@@ -45,7 +45,7 @@
                 <li class="media">
                     <div class="media-body">
                         <div class="well">
-                            {{ note.text|urlizetrunc:25|url_target_blank|linebreaksbr }}
+                            <p>{{ note.text|urlizetrunc:25|url_target_blank|linebreaksbr }}</p>
                         </div>
                         {% if note.attached_image %}
                             <img src="{{ note.attached_image.static_image_url }}" />
