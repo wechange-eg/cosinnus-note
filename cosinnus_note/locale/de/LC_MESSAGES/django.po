@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-18 16:12+0100\n"
+"POT-Creation-Date: 2014-12-01 13:45+0100\n"
 "PO-Revision-Date: 2013-07-19 19:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -116,17 +116,17 @@ msgstr "Dein Kommentar wurde gelöscht."
 msgid "News"
 msgstr "Neuigkeiten"
 
-#: .\templates\cosinnus_note\note_comments.html.py:30
+#: .\templates\cosinnus_note\note_comments.html.py:34
 msgctxt "the_verb"
 msgid "Comment"
 msgstr "Kommentieren"
 
-#: .\templates\cosinnus_note\note_comments.html.py:65
+#: .\templates\cosinnus_note\note_comments.html.py:69
 #: .\templates\cosinnus_note\single_note_detailed.html.py:28
 msgid "Delete"
 msgstr "Löschen"
 
-#: .\templates\cosinnus_note\note_comments.html.py:103
+#: .\templates\cosinnus_note\note_comments.html.py:107
 #: .\templates\cosinnus_note\note_list.html.py:63
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:29
 msgid "Post"
@@ -148,7 +148,7 @@ msgstr "Übernehmen"
 
 #: .\templates\cosinnus_note\note_list.html.py:82
 #: .\templates\cosinnus_note\note_list_standalone.html.py:23
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:76
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:90
 msgid "There are no news posts yet"
 msgstr "Es gibt keine Neuigkeiten."
 
@@ -221,7 +221,8 @@ msgstr ""
 #: .\templates\cosinnus_note\notifications\note_comment_posted_subject.txt.py:1
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(group_name)s."
-msgstr "%(sender_name)s hat eine Neuigkeit von dir kommentiert in %(group_name)s!"
+msgstr ""
+"%(sender_name)s hat eine Neuigkeit von dir kommentiert in %(group_name)s!"
 
 #: .\templates\cosinnus_note\notifications\note_created.txt.py:1
 #, python-format
@@ -258,7 +259,6 @@ msgstr ""
 "\n"
 "Dein %(site_name)s Team."
 
-
 #: .\templates\cosinnus_note\notifications\note_created_subject.txt.py:1
 #, python-format
 msgid "%(sender_name)s posted some news in %(group_name)s!"
@@ -267,6 +267,10 @@ msgstr "%(sender_name)s hat einen neuen Beitrag gepostet in %(group_name)s!"
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13
 msgid "Please enter a message..."
 msgstr "Gib eine Nachricht ein..."
+
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:53
+msgid "Read more..."
+msgstr "Mehr anzeigen..."
 
 #~ msgid ""
 #~ "Hi, %(creator_name)s!\n"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-18 16:12+0100\n"
+"POT-Creation-Date: 2014-12-01 13:45+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,17 +115,17 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:30
+#: .\templates\cosinnus_note\note_comments.html.py:34
 msgctxt "the_verb"
 msgid "Comment"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:65
+#: .\templates\cosinnus_note\note_comments.html.py:69
 #: .\templates\cosinnus_note\single_note_detailed.html.py:28
 msgid "Delete"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:103
+#: .\templates\cosinnus_note\note_comments.html.py:107
 #: .\templates\cosinnus_note\note_list.html.py:63
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:29
 msgid "Post"
@@ -147,7 +147,7 @@ msgstr ""
 
 #: .\templates\cosinnus_note\note_list.html.py:82
 #: .\templates\cosinnus_note\note_list_standalone.html.py:23
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:76
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:90
 msgid "There are no news posts yet"
 msgstr ""
 
@@ -231,4 +231,8 @@ msgstr ""
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:13
 msgid "Please enter a message..."
+msgstr ""
+
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:53
+msgid "Read more..."
 msgstr ""
