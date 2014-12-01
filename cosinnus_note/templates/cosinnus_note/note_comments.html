@@ -19,7 +19,11 @@
                                         {% endcomment %}
                                         <a href="#" class="pull-right nounderline">
                                             <i class="fa fa-comments"></i>
-                                            {{ comments|length }}
+                                            {% if comments|length == "0" %}
+                                                0
+                                            {% else %}
+                                                <b>{{ comments|length }}</b>
+                                            {% endif %}
                                         </a>
                                         {% comment %} Like button
                                         <a href="#">Empfehlen</a>

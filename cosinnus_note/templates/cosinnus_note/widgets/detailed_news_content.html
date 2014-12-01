@@ -45,7 +45,21 @@
                 <li class="media">
                     <div class="media-body">
                         <div class="well">
-                            <p>{{ note.text|urlizetrunc:25|url_target_blank|linebreaksbr }}</p>
+                            {% with note_text=note.text|urlizetrunc:25|url_target_blank|linebreaksbr note_id=note.id %}
+                                {% if note.text|length|intify < 100 %}
+                                    <p>{{ note_text }}</p>
+                                {% else %}
+                                    <div class="hidden_text_shown" data-hidden-text-id="note_{{ note_id }}" >
+                                        <p>{{ note.text|truncatechars:100|urlizetrunc:25|url_target_blank|linebreaksbr }} <a class="hidden_text_button" data-hidden-text-id="note_{{ note_id }}">{% trans "Read more..." %}</a></p>
+                                    </div>
+                                    <div class="hidden_text_hidden" data-hidden-text-id="note_{{ note_id }}" style="display:none;">
+                                        <p>{{ note_text }}</p>
+                                    </div>
+                                    <script type="text/javascript">
+									    $.cosinnus.hidden_text();
+									</script>
+                                {% endif %}
+                            {% endwith %}
                         </div>
                         {% if note.attached_image %}
                             <img src="{{ note.attached_image.static_image_url }}" />
