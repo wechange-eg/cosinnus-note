@@ -45,6 +45,9 @@
         {% endif %}
 	    
 	    <div class="indented regular-space">
+	        {% if note.title and not note.title == '---' %}
+                <p><b>{{ note.title }}</b></p>
+            {% endif %}
 	        <p>{{ note.text|urlizetrunc:25|url_target_blank|linebreaksbr }}</p>
 	        {% if note.video %}
 	            {% include 'cosinnus/common/embed_youtube.html' with video_id=note.video_id %}

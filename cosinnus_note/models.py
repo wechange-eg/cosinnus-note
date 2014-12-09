@@ -21,6 +21,9 @@ from django.contrib.auth import get_user_model
 
 
 class Note(BaseTaggableObjectModel):
+    
+    EMPTY_TITLE_PLACEHOLDER = '---'
+    
     SORT_FIELDS_ALIASES = [
         ('title', 'title'), ('creator', 'creator'), ('created', 'created'),
     ]

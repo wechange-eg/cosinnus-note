@@ -18,13 +18,21 @@ class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
         model = Note
         fields = ('title', 'text', 'video',)
         
+    
+    def __init__(self, *args, **kwargs):
+        super(_NoteForm, self).__init__(*args, **kwargs)
+        if 'title' in self.initial and self.initial['title'] == Note.EMPTY_TITLE_PLACEHOLDER:
+            self.initial['title'] = ''
+        if self.fields['title'].initial == '---':
+            self.fields['title'].initial = ''
+        
     def clean(self):
-        """ Insert the first couple of characters from the text if no title is given """
+        """ Insert a placeholder title if no title is given """
         title = self.cleaned_data.get('title', None)
         if not title:
             note_text = self.cleaned_data.get('text', None)
             if note_text:
-                self.cleaned_data.update({'title': note_text[:20]},)
+                self.cleaned_data.update({'title': Note.EMPTY_TITLE_PLACEHOLDER},)
                 self.errors.pop('title', None)
         return super(_NoteForm, self).clean()
 

@@ -9,6 +9,11 @@
                 {{ form.forms.obj.non_field_errors }}
                 <ol class="input-area">
                     <li class="w100">
+                        {{ form.forms.obj.title.errors }}
+                        {% captureas placeholder %}{% trans "Title (optional)" %}{% endcaptureas %}
+                        {% render_field form.forms.obj.title class+=" form-control" style+="margin-left: 6px;" placeholder=placeholder id="note_title" %}
+                    </li>
+                    <li class="w100">
                         {{ form.forms.obj.text.errors }}
                         {% captureas placeholder %}{% trans "Please enter a message..." %}{% endcaptureas %}
                         {% render_field form.forms.obj.text class+="autogrow" placeholder=placeholder id="etherpadTitle" %}

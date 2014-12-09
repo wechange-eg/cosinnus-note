@@ -15,7 +15,7 @@
                             {% endwith %}
                             <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
                         </span>
-                        <strong><a href="{{ note.get_absolute_url }}">{{ note.text }}</a></strong>
+                        <strong><a href="{{ note.get_absolute_url }}">{% if note.title and not note.title == '---' %}{{ note.title }}{% endif %}{{ note.text }}</a></strong>
                         <div class="group-annotation">
                             <a href="{{ note.group.get_absolute_url }}">
                                 <i class="fa fa-users"></i>
