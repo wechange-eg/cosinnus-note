@@ -29,7 +29,11 @@
                                     </a> &nbsp;
 	                            </span>
 	                        {% endif %}
-	                        <strong><a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a></strong> <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
+	                        <strong><a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a></strong> 
+	                        <a class="light-link" target="_blank" href="{{ note.get_absolute_url }}"
+                            ><span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span> <i class="fa fa-external-link"></i>
+                            </a>
+	                        
 	                    </div>
 	                </li>
 	            </ul>
