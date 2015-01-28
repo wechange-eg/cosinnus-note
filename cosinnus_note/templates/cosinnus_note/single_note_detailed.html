@@ -62,7 +62,7 @@
 	        <div class="indented row">
 	            {% for image in note.attached_images|slice:":3" %}
 		            <div class="col-sm-4">
-		                <a href="#" class="thumbnail">
+		                <a href="{{ image.static_image_url }}" target="_blank" class="thumbnail">
 		                    <img src="{{ image.static_image_url }}" />
 		                </a>
 		            </div>
