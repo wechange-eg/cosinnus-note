@@ -31,10 +31,18 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
 
     form_class = NoteForm
     model = Note
-    template_name_suffix = '_create'
+    template_name = 'cosinnus_note/note_form.html'
+    form_view = 'add'
     
     message_success = _('Your news post was added successfully.')
-
+    
+    def get_context_data(self, **kwargs):
+        context = super(NoteCreateView, self).get_context_data(**kwargs)
+        context.update({
+            'form_view': self.form_view,
+        })
+        return context
+    
     def form_valid(self, form):
         form.instance.creator = self.request.user
         messages.success(self.request, self.message_success)
@@ -42,16 +50,17 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     
     def form_invalid(self, form):
         """
-        If the form is invalid, we simply redirect to the success url anyway.
+        If the form is invalid, we simply redirect to the success url, except if we come from the create view.
         """
-        return HttpResponseRedirect(self.get_success_url())
+        return super(NoteCreateView, self).form_invalid(form)
 
     def post(self, request, *args, **kwargs):
-        self.referer = request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group.slug}))
+        self.referer = self.request.GET.get('next', request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group.slug})))
         return super(NoteCreateView, self).post(request, *args, **kwargs)
     
     def get_success_url(self):
         # self.referer is set in post() method
+        print ">>> redir to ", self.referer
         return self.referer
 
 note_create = NoteCreateView.as_view()
@@ -67,7 +76,7 @@ class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
     def post(self, request, *args, **kwargs):
         self.referer = request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group.slug}))
         return super(NoteDeleteView, self).post(request, *args, **kwargs)
-
+    
     def get_success_url(self):
         # self.referer is set in post() method
         messages.success(self.request, self.message_success)
@@ -115,14 +124,21 @@ class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
 
     form_class = NoteForm
     model = Note
-    template_name = 'cosinnus_note/note_edit.html'
+    template_name = 'cosinnus_note/note_form.html'
+    form_view = 'edit'
     
     message_success = _('Your news post was edited successfully.')
+    
+    def get_context_data(self, **kwargs):
+        context = super(NoteUpdateView, self).get_context_data(**kwargs)
+        context.update({
+            'form_view': self.form_view,
+        })
+        return context
 
     def form_valid(self, form):
         messages.success(self.request, self.message_success)
         return super(NoteUpdateView, self).form_valid(form)
-    
     
     def get_success_url(self):
         return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
