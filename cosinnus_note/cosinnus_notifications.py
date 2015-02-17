@@ -45,7 +45,7 @@ notifications = {
     'note_created': {
         'label': _('A user created a news post'), 
         'mail_template': 'cosinnus_note/notifications/note_created.txt',
-        'subject_template': 'cosinnus_note/notifications/note_created.txt',
+        'subject_template': 'cosinnus_note/notifications/note_created_subject.txt',
         'signals': [note_created],
         'default': False,
     },  

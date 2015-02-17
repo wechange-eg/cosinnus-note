@@ -60,7 +60,6 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     
     def get_success_url(self):
         # self.referer is set in post() method
-        print ">>> redir to ", self.referer
         return self.referer
 
 note_create = NoteCreateView.as_view()
