@@ -114,6 +114,19 @@ class Comment(models.Model):
         if self.pk:
             return '%s#comment-%d' % (self.note.get_absolute_url(), self.pk)
         return self.note.get_absolute_url()
+    
+    def save(self, *args, **kwargs):
+        created = bool(self.pk) == False
+        super(Comment, self).save(*args, **kwargs)
+        if created:
+            # comment was created
+            if not self.note.creator == self.creator:
+                cosinnus_notifications.note_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.note.creator])
+    
+    @property
+    def group(self):
+        """ Needed by the notifications system """
+        return self.note.group
 
 import django
 if django.VERSION[:2] < (1, 7):

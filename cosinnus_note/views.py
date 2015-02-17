@@ -158,10 +158,6 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
         form.instance.creator = self.request.user
         form.instance.note = self.note
         messages.success(self.request, self.message_success)
-        if not self.note.creator == self.request.user:
-            obj = form.instance
-            obj.group = self.note.group # patch this for our notification system
-            cosinnus_notifications.note_comment_posted.send(sender=self, user=self.request.user, obj=obj, audience=[self.note.creator])
         return super(CommentCreateView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
