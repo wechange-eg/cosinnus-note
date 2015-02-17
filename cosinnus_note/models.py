@@ -3,9 +3,6 @@ from __future__ import unicode_literals
 
 import re
 
-import logging
-logger = logging.getLogger('cosinnus')
-
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
@@ -59,11 +56,7 @@ class Note(BaseTaggableObjectModel):
         super(Note, self).save(*args, **kwargs)
         if created:
             # todo was created
-            audience = get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk)
-            log_msg = "A note with id", self.pk, "was created. Triggering a notification for possible members \
-                    (depending on their preferences): ", ",".join([aud.email for aud in audience])
-            logger.info(log_msg)
-            cosinnus_notifications.note_created.send(sender=self, user=self.creator, obj=self, audience=audience)
+            cosinnus_notifications.note_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
         
 
     def get_absolute_url(self):
