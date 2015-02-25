@@ -12,10 +12,7 @@
 	                    </a>
 	                    <div class="media-body">
 	                        <span class="annotation">
-                                <a href="{{ note.group.get_absolute_url }}">
-                                    <i class="fa fa-users"></i>
-                                    {{ note.group.name }}
-                                </a>
+                                {% include 'cosinnus/group/group_label.html' with group=note.group %}
                             </span>
                             {% if user|has_write_access:note %}
 	                            <span class="annotation">
