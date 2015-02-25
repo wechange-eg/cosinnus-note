@@ -61,7 +61,7 @@
                                 <strong><a href="{{ comment.creator|profile_url }}">{{ comment.creator|full_name }}</a></strong>
                                 <div class="font11px regular-space">
                                     {% if user|has_write_access:comment %}
-                                        <form id="delete_comment_form_{{ comment.pk }}" action="{% group_url 'cosinnus:note:comment-delete' group=comment.note.group.slug pk=comment.pk %}" method="post" class="form-horizontal">
+                                        <form id="delete_comment_form_{{ comment.pk }}" action="{% group_url 'cosinnus:note:comment-delete' group=comment.note.group pk=comment.pk %}" method="post" class="form-horizontal">
                                             {% csrf_token %}
                                             <a class="pull-right" href="#" onclick="$('#delete_comment_form_{{ comment.pk }}').submit(); return false;" title="{% trans "Delete" %}"><i class="fa fa-times"></i></a>
                                         </form>
@@ -78,7 +78,7 @@
             {% endfor %}
             
             {% if user|can_create_objects_in:note.group %}
-                <form action="{% group_url 'cosinnus:note:comment' group=note.group.slug note_slug=note.slug %}" method="post" class="form-horizontal">
+                <form action="{% group_url 'cosinnus:note:comment' group=note.group note_slug=note.slug %}" method="post" class="form-horizontal">
                     {% csrf_token %}
             
                     <div type="button" class="{{ button_classes }}">

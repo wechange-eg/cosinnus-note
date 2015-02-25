@@ -55,7 +55,7 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         return super(NoteCreateView, self).form_invalid(form)
 
     def post(self, request, *args, **kwargs):
-        self.referer = self.request.GET.get('next', request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group.slug})))
+        self.referer = self.request.GET.get('next', request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group})))
         return super(NoteCreateView, self).post(request, *args, **kwargs)
     
     def get_success_url(self):
@@ -73,7 +73,7 @@ class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
     message_success = _('Your news post was deleted successfully.')
     
     def post(self, request, *args, **kwargs):
-        self.referer = request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group.slug}))
+        self.referer = request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group}))
         return super(NoteDeleteView, self).post(request, *args, **kwargs)
     
     def get_success_url(self):
@@ -95,7 +95,7 @@ note_detail = NoteDetailView.as_view()
 class NoteIndexView(RequireReadMixin, RedirectView):
 
     def get_redirect_url(self, **kwargs):
-        return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
+        return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group})
 
 note_index = NoteIndexView.as_view()
 
@@ -140,7 +140,7 @@ class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         return super(NoteUpdateView, self).form_valid(form)
     
     def get_success_url(self):
-        return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group.slug})
+        return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group})
 
 note_update = NoteUpdateView.as_view()
 

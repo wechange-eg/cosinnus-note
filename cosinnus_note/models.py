@@ -60,7 +60,7 @@ class Note(BaseTaggableObjectModel):
         
 
     def get_absolute_url(self):
-        kwargs = {'group': self.group.slug, 'slug': self.slug}
+        kwargs = {'group': self.group, 'slug': self.slug}
         return group_aware_reverse('cosinnus:note:note', kwargs=kwargs)
     
     @classmethod
