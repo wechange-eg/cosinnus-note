@@ -3,7 +3,8 @@
 
 
 {% block fadedown_content %}
-    
+
+        {% if user|can_create_objects_in:group %}
         <form action="{% group_url 'cosinnus:note:add' group=group %}" method="POST" id="widgetform{{ widget_conf_id }}">{% csrf_token %}
             <div>
                 {{ form.forms.obj.non_field_errors }}
@@ -31,12 +32,22 @@
                             <i class="fa fa-pencil"></i>
                         </a>
                         <div class="media-body">
-                            {% trans "Post" %}
+                            {% trans "Post" %}||{{ group }}
                         </div>
                     </li>
                 </ul>
             </button>
         </form>
+        {% else %}
+            <div>
+                <p>
+                    {% trans "To post in this group you need to" %}
+                    <a href="#" data-toggle="modal" data-target="#join_withdraw_modal">
+                        <i class="fa fa-sign-out"></i>
+                        <span>{% trans "request to join the group" %}</span></a>!
+                </p>
+            </div>
+        {% endif %}
     
         
 {% endblock fadedown_content %}
