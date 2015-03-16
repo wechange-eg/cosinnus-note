@@ -50,7 +50,8 @@
             
             <div {% if not comments_expanded == "True" %}style="display:none;"{% endif %}>
             {% for comment in comments %}
-            
+                
+                <a name="comment-{{ comment.id }}" />
                 <div type="button" class="{{ button_classes }}">
                     <ul class="media-list {% if not forloop.last %}fine-space{% endif %}">
                         <li class="media">
