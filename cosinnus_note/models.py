@@ -11,7 +11,6 @@ from django.utils.translation import ugettext_lazy as _
 
 from embed_video.fields import EmbedVideoField
 
-from cosinnus.utils.functions import unique_aware_slugify
 from cosinnus.models.tagged import BaseTaggableObjectModel
 from django.utils.functional import cached_property
 from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user
@@ -41,8 +40,6 @@ class Note(BaseTaggableObjectModel):
         self._meta.get_field('creator').verbose_name = _('Author')
 
     def save(self, *args, **kwargs):
-        if not self.slug:
-            unique_aware_slugify(self, slug_source='title', slug_field='slug', group=self.group)
         created = bool(self.pk) == False
         
         # take the first youtube url from the textand save it as a video link
