@@ -11,10 +11,7 @@ def register():
     from cosinnus.core.registries import (app_registry, url_registry,
         widget_registry)
 
-    from cosinnus_note.urls import (cosinnus_group_patterns,
-        cosinnus_root_patterns)
-
-    app_registry.register('cosinnus_note', 'note', _('Notes'))
+    app_registry.register('cosinnus_note', 'note', _('Notes'), deactivatable=True)
     attached_object_registry.register('cosinnus_note.Note',
                          'cosinnus_note.utils.renderer.NoteRenderer')
     url_registry.register_urlconf('cosinnus_note', 'cosinnus_note.urls')
