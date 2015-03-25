@@ -27,7 +27,7 @@ msgstr ""
 #: .\templates\cosinnus_note\note_list_standalone.html.py:11
 msgctxt "the_app"
 msgid "note"
-msgstr ""
+msgstr "News"
 
 #: .\cosinnus_notifications.py:39
 msgid "A user commented on one of your news posts"
