@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-03 18:50+0100\n"
+"POT-Creation-Date: 2015-04-01 15:48+0200\n"
 "PO-Revision-Date: 2013-07-19 19:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -17,15 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: .\cosinnus_app.py:17 .\models.py:37
-#: .\templates\cosinnus_note\note_detail.html.py:3
+#: .\cosinnus_app.py:14 .\templates\cosinnus_note\note_detail.html.py:3
 #: .\templates\cosinnus_note\note_form.html.py:3
 #: .\templates\cosinnus_note\note_list.html.py:3
 msgid "Notes"
 msgstr "Neuigkeiten"
 
 # The Cosinnus App Name
-#: .\cosinnus_app.py:24
+#: .\cosinnus_app.py:21
 #: .\templates\cosinnus_note\note_list_standalone.html.py:11
 msgctxt "the_app"
 msgid "note"
@@ -63,31 +62,35 @@ msgstr "Zuletzt erstellt"
 msgid "Popularity"
 msgstr "Meist kommentiert"
 
-#: .\models.py:31 .\models.py:100
+#: .\models.py:30 .\models.py:97
 msgid "Text"
 msgstr "Text"
 
-#: .\models.py:36
-msgid "Note"
+#: .\models.py:35
+msgid "Note Item"
 msgstr "Neuigkeit"
 
-#: .\models.py:41
+#: .\models.py:36
+msgid "Note Items"
+msgstr "Neuigkeiten"
+
+#: .\models.py:40
 msgid "Author"
 msgstr "Autor"
 
-#: .\models.py:97
+#: .\models.py:94
 msgid "Creator"
 msgstr "Ersteller"
 
-#: .\models.py:98
+#: .\models.py:95
 msgid "Created"
 msgstr "Erstellt"
 
-#: .\models.py:104
+#: .\models.py:101
 msgid "Comment"
 msgstr "Kommentar"
 
-#: .\models.py:105
+#: .\models.py:102
 msgid "Comments"
 msgstr "Kommentare"
 
@@ -107,7 +110,7 @@ msgstr "Deine Neuigkeit wurde erfolgreich bearbeitet."
 msgid "Your comment was added successfully."
 msgstr "Dein Kommentar wurde erfolgreich erstellt."
 
-#: .\views.py:190
+#: .\views.py:195
 msgid "Your comment was deleted successfully."
 msgstr "Dein Kommentar wurde gelöscht."
 
@@ -121,12 +124,12 @@ msgctxt "the_verb"
 msgid "Comment"
 msgstr "Kommentieren"
 
-#: .\templates\cosinnus_note\note_comments.html.py:69
-#: .\templates\cosinnus_note\single_note_detailed.html.py:25
+#: .\templates\cosinnus_note\note_comments.html.py:70
+#: .\templates\cosinnus_note\single_note_detailed.html.py:28
 msgid "Delete"
 msgstr "Löschen"
 
-#: .\templates\cosinnus_note\note_comments.html.py:107
+#: .\templates\cosinnus_note\note_comments.html.py:109
 #: .\templates\cosinnus_note\note_form.html.py:66
 #: .\templates\cosinnus_note\note_list.html.py:68
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:35
@@ -159,19 +162,19 @@ msgstr "Übernehmen"
 msgid "There are no news posts yet"
 msgstr "Es gibt keine Neuigkeiten."
 
-#: .\templates\cosinnus_note\single_note_detailed.html.py:21
+#: .\templates\cosinnus_note\single_note_detailed.html.py:24
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:23
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: .\templates\cosinnus_note\single_note_detailed.html.py:23
-#: .\templates\cosinnus_note\single_note_detailed.html.py:42
+#: .\templates\cosinnus_note\single_note_detailed.html.py:26
+#: .\templates\cosinnus_note\single_note_detailed.html.py:45
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:16
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:34
 msgid "Delete note"
 msgstr "Neuigkeit löschen"
 
-#: .\templates\cosinnus_note\single_note_detailed.html.py:43
+#: .\templates\cosinnus_note\single_note_detailed.html.py:46
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:35
 msgid "Do you really want to delete this note?"
 msgstr "Willst du diese Neuigkeit wirklich löschen?"

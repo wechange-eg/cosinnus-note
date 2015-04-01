@@ -32,8 +32,8 @@ class Note(BaseTaggableObjectModel):
 
     class Meta(BaseTaggableObjectModel.Meta):
         ordering = ['-created', 'title']
-        verbose_name = _('Note')
-        verbose_name_plural = _('Notes')
+        verbose_name = _('Note Item')
+        verbose_name_plural = _('Note Items')
 
     def __init__(self, *args, **kwargs):
         super(Note, self).__init__(*args, **kwargs)
