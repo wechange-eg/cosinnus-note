@@ -14,8 +14,11 @@
 	                        <span class="annotation">
                                 {% include 'cosinnus/group/group_label.html' with group=note.group %}
                             </span>
-                            {% if user|has_write_access:note %}
-	                            <span class="annotation">
+                            
+                            <span class="annotation">
+                                {% include 'cosinnus/feedback/report_button_a.html' with object=note %}
+                                
+                                {% if user|has_write_access:note %}
 	                                <a href="{% group_url 'cosinnus:note:update' group=note.group slug=note.slug %}">
 	                                    <i class="fa fa-pencil"></i>
 	                                    {% trans "Edit" %}
@@ -24,8 +27,8 @@
                                         <i class="fa fa-times"></i>
                                         {% trans "Delete" %}
                                     </a> &nbsp;
-	                            </span>
-	                        {% endif %}
+		                        {% endif %}
+                            </span>
 	                        <strong><a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a></strong> 
 	                        <a class="light-link" target="_blank" href="{{ note.get_absolute_url }}"
                             ><span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span> <i class="fa fa-external-link"></i>
