@@ -50,7 +50,7 @@
 	    
 	    <div class="indented regular-space">
 	        {% if note.title and not note.title == '---' %}
-                <p><b>{{ note.title }}</b></p>
+                <p><b>{{ note.title|urlizetrunc:25|url_target_blank }}</b></p>
             {% endif %}
 	        <p>{{ note.text|urlizetrunc:25|url_target_blank|linebreaksbr }}</p>
 	        {% if note.video %}

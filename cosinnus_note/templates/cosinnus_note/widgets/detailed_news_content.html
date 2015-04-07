@@ -44,7 +44,7 @@
                         <div class="well">
                             {% with note_text=note.text|urlizetrunc:25|url_target_blank|linebreaksbr note_id=note.id %}
                                 {% if note.title and not note.title == '---' %}
-                                    <p class="regular-space"><strong>{{ note.title }}</strong></p>
+                                    <p class="regular-space"><strong>{{ note.title|urlizetrunc:25|url_target_blank }}</strong></p>
                                 {% endif %}
                                 {% if note.text|length|intify < 200 %}
                                     <p>{{ note_text }}</p>
