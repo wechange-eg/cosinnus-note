@@ -18,6 +18,9 @@ from cosinnus.utils.urls import group_aware_reverse
 from cosinnus_note import cosinnus_notifications
 from django.contrib.auth import get_user_model
 
+import logging
+logger = logging.getLogger('cosinnus')
+
 
 class Note(BaseTaggableObjectModel):
     
@@ -116,10 +119,17 @@ class Comment(models.Model):
         created = bool(self.pk) == False
         super(Comment, self).save(*args, **kwargs)
         if created:
-            # comment was created
             if not self.note.creator == self.creator:
+                # comment was created in own post
                 cosinnus_notifications.note_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.note.creator])
-    
+            # comment was created, for other commenters posts (we skip the post creator because the previous notification precedes)
+            try:
+                commenter_ids = set(self.note.comments.exclude(creator__id__in=[self.creator_id, self.note.creator_id]).values_list('creator', flat=True))
+                commenters = get_user_model().objects.filter(id__in=commenter_ids)
+                cosinnus_notifications.note_comment_posted_on_commented_post.send(sender=self, user=self.creator, obj=self, audience=commenters)
+            except Exception, e:
+                logger.error('There was an error in the note_comments_commented notification. See extra', extra={'exc': e})
+                
     @property
     def group(self):
         """ Needed by the notifications system """

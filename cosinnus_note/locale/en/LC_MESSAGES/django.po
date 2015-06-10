@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 15:48+0200\n"
+"POT-Creation-Date: 2015-06-10 18:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,11 +28,16 @@ msgctxt "the_app"
 msgid "note"
 msgstr "News"
 
-#: .\cosinnus_notifications.py:39
+#: .\cosinnus_notifications.py:40
 msgid "A user commented on one of your news posts"
 msgstr ""
 
-#: .\cosinnus_notifications.py:46
+#: .\cosinnus_notifications.py:47
+#, fuzzy
+msgid "A user commented on a news posts you commented in"
+msgstr "Write a news post..."
+
+#: .\cosinnus_notifications.py:54
 #, fuzzy
 msgid "A user created a news post"
 msgstr "Write a news post..."
@@ -61,36 +66,36 @@ msgstr ""
 msgid "Popularity"
 msgstr ""
 
-#: .\models.py:30 .\models.py:97
+#: .\models.py:33 .\models.py:100
 msgid "Text"
 msgstr ""
 
-#: .\models.py:35
+#: .\models.py:38
 #, fuzzy
 msgid "Note Item"
 msgstr "News"
 
-#: .\models.py:36
+#: .\models.py:39
 msgid "Note Items"
 msgstr ""
 
-#: .\models.py:40
+#: .\models.py:43
 msgid "Author"
 msgstr ""
 
-#: .\models.py:94
+#: .\models.py:97
 msgid "Creator"
 msgstr ""
 
-#: .\models.py:95
+#: .\models.py:98
 msgid "Created"
 msgstr ""
 
-#: .\models.py:101
+#: .\models.py:104
 msgid "Comment"
 msgstr ""
 
-#: .\models.py:102
+#: .\models.py:105
 msgid "Comments"
 msgstr ""
 
@@ -205,6 +210,43 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
+
+#: .\templates\cosinnus_note\notifications\note_comment_posted_on_commented_post.html.py:1
+#, python-format
+msgid ""
+"Hi, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s has posted a comment on a news post you a commented in, in "
+"group %(group_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"on the post:\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"Follow this link to see the comment: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s team.\n"
+"\n"
+msgstr ""
+
+#: .\templates\cosinnus_note\notifications\note_comment_posted_on_commented_post_subject.txt.py:1
+#, fuzzy, python-format
+msgid ""
+"%(sender_name)s commented on a news post you commented in, in %(group_name)s."
+msgstr ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %"
+"(group_name)s:"
 
 #: .\templates\cosinnus_note\notifications\note_comment_posted_subject.txt.py:1
 #, fuzzy, python-format
