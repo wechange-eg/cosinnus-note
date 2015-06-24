@@ -55,6 +55,6 @@ notifications = {
         'mail_template': 'cosinnus_note/notifications/note_created.txt',
         'subject_template': 'cosinnus_note/notifications/note_created_subject.txt',
         'signals': [note_created],
-        'default': False,
+        'default': True,
     },  
 }
