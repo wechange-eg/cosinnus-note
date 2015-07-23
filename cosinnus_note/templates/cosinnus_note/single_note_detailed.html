@@ -62,8 +62,8 @@
 	        <div class="indented row">
 	            {% for image in note.attached_images|slice:":3" %}
 		            <div class="col-sm-4">
-		                <a href="{{ image.static_image_url }}" target="_blank" class="thumbnail">
-		                    <img src="{{ image.static_image_url }}" />
+		                <a href="{{ image.static_image_url }}" data-lightbox="image-{{ image.id }}" data-title="{{ image.title }}" class="thumbnail">
+		                    <img src="{{ image.static_image_url }}" title='{{ image.title }}'/>
 		                </a>
 		            </div>
 	            {% endfor %}
