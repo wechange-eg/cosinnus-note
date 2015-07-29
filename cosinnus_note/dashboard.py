@@ -65,7 +65,7 @@ class DetailedNotes(BaseNotesWidget):
     
     form_class = DetailedNotesForm
     template_name = 'cosinnus_note/widgets/detailed_news_content.html'
-    title = _('Write a news post...')
+    title = _('Write a news post')
     widget_name = 'detailed_news_list'
     
     def __init__(self, request, config_instance):
