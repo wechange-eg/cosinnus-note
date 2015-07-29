@@ -62,7 +62,9 @@
                             {% endwith %}
                         </div>
                         {% if note.attached_image %}
-                            <img src="{{ note.attached_image.static_image_url }}" />
+                            <a href="{{ note.attached_image.static_image_url }}" data-lightbox="image-note-{{ note.id }}" data-title="{{ note.attached_image.title }}">
+                            	<img src="{{ note.attached_image.static_image_url }}" />
+                            </a>
                         {% endif %}
                         {% if note.video %}
                             {% include 'cosinnus/common/embed_youtube.html' with video_id=note.video_id %}
