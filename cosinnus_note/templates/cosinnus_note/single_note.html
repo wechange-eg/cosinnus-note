@@ -13,7 +13,7 @@
                             {% with creator=note.creator %}
                                 von <strong><a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></strong> 
                             {% endwith %}
-                            <span class="moment-data-date" data-date="{{ note.created|date:'c' }}"></span>
+                            <span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span>
                         </span>
                         <strong><a href="{{ note.get_absolute_url }}">{% if note.title and not note.title == '---' %}{{ note.title }}{% endif %}{{ note.text }}</a></strong>
                         <div class="group-annotation">
