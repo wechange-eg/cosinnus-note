@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-10 18:09+0200\n"
+"POT-Creation-Date: 2015-07-30 12:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,8 +47,11 @@ msgid "No news"
 msgstr ""
 
 #: .\dashboard.py:68 .\templates\cosinnus_note\note_form.html.py:33
-msgid "Write a news post..."
-msgstr ""
+#: .\templates\cosinnus_note\note_form.html.py:50
+#: .\templates\cosinnus_note\note_list.html.py:35
+#: .\templates\cosinnus_note\note_list.html.py:52
+msgid "Write a news post"
+msgstr "Write a news post..."
 
 #: .\dashboard.py:75
 msgid "News stream"
@@ -134,7 +137,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:109
+#: .\templates\cosinnus_note\note_comments.html.py:108
 #: .\templates\cosinnus_note\note_form.html.py:66
 #: .\templates\cosinnus_note\note_list.html.py:68
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:35
@@ -151,19 +154,13 @@ msgstr ""
 msgid "Title (optional)"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_form.html.py:50
-#: .\templates\cosinnus_note\note_list.html.py:35
-#: .\templates\cosinnus_note\note_list.html.py:52
-msgid "Write a news post"
-msgstr "Write a news post..."
-
 #: .\templates\cosinnus_note\note_form.html.py:66
 msgid "Save changes"
 msgstr ""
 
 #: .\templates\cosinnus_note\note_list.html.py:87
 #: .\templates\cosinnus_note\note_list_standalone.html.py:23
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:90
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:92
 msgid "There are no news posts yet"
 msgstr ""
 
