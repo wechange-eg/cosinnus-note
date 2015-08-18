@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-30 12:36+0200\n"
+"POT-Creation-Date: 2015-08-18 15:57+0200\n"
 "PO-Revision-Date: 2013-07-19 19:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -132,12 +132,16 @@ msgctxt "the_verb"
 msgid "Comment"
 msgstr "Kommentieren"
 
-#: .\templates\cosinnus_note\note_comments.html.py:70
+#: .\templates\cosinnus_note\note_comments.html.py:73
 #: .\templates\cosinnus_note\single_note_detailed.html.py:28
 msgid "Delete"
 msgstr "Löschen"
 
-#: .\templates\cosinnus_note\note_comments.html.py:108
+#: .\templates\cosinnus_note\note_comments.html.py:101
+msgid "Write comment"
+msgstr "Kommentar schreiben"
+
+#: .\templates\cosinnus_note\note_comments.html.py:114
 #: .\templates\cosinnus_note\note_form.html.py:66
 #: .\templates\cosinnus_note\note_list.html.py:68
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:35

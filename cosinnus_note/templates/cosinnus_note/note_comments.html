@@ -93,7 +93,7 @@
                                 </a>
                                 <div class="media-body media-body-form-control">
 				                    {% if form and form.text and form.text.errors %}{{ form.text.errors }}{% endif %}
-                                    <textarea id="id_text" name="text" class="form-control next-button-is-for-sending autogrow oneline" placeholder="Kommentar schreiben"></textarea>
+                                    <textarea id="id_text" name="text" class="form-control next-button-is-for-sending autogrow oneline" placeholder="{% trans "Write comment" %}"></textarea>
                                 </div>
                             </li>
                         </ul>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-30 12:36+0200\n"
+"POT-Creation-Date: 2015-08-18 15:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,12 +132,16 @@ msgctxt "the_verb"
 msgid "Comment"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:70
+#: .\templates\cosinnus_note\note_comments.html.py:73
 #: .\templates\cosinnus_note\single_note_detailed.html.py:28
 msgid "Delete"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:108
+#: .\templates\cosinnus_note\note_comments.html.py:101
+msgid "Write comment"
+msgstr ""
+
+#: .\templates\cosinnus_note\note_comments.html.py:114
 #: .\templates\cosinnus_note\note_form.html.py:66
 #: .\templates\cosinnus_note\note_list.html.py:68
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:35
