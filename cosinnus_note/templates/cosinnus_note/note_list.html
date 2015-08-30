@@ -78,6 +78,10 @@
         </form>
         {% endif %}
         
+        
+        {% if not pagination.number == 1 %}
+        	{% include "cosinnus/utils/pagination.html" with widget=pagination %}
+        {% endif %}
     
         {% for note in object_list %}
             
@@ -87,6 +91,8 @@
             <!-- {% trans "There are no news posts yet" %} -->
             {% include 'cosinnus/common/empty_button.html' with message="There are no news posts yet" %}
         {% endfor %}
+        
+        {% include "cosinnus/utils/pagination.html" with widget=pagination %}
     
     </div><!-- content-box -->
 {% endblock %}

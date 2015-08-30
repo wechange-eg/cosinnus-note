@@ -24,6 +24,7 @@ from cosinnus.views.mixins.filters import CosinnusFilterMixin
 from cosinnus_note.filters import NoteFilter
 from cosinnus_note import cosinnus_notifications
 from cosinnus.utils.urls import group_aware_reverse
+from cosinnus.utils.pagination import PaginationTemplateMixin
 
 
 class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
@@ -100,9 +101,11 @@ class NoteIndexView(RequireReadMixin, RedirectView):
 note_index = NoteIndexView.as_view()
 
 
-class NoteListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, ListView):
+class NoteListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, 
+                   PaginationTemplateMixin, ListView):
     model = Note
     filterset_class = NoteFilter
+    per_page = 10
     
     def get_queryset(self, **kwargs):
         qs = super(NoteListView, self).get_queryset()
