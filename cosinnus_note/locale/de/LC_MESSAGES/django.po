@@ -32,16 +32,16 @@ msgstr "Neuigkeiten"
 
 #: .\cosinnus_notifications.py:40
 msgid "A user commented on one of your news posts"
-msgstr "Ein(e) Mitarbeiter_in hat einen deiner Beiträge kommentiert"
+msgstr "Ein Mitglied hat einen deiner Beiträge kommentiert"
 
 #: .\cosinnus_notifications.py:47
 msgid "A user commented on a news posts you commented in"
 msgstr ""
-"Ein(e) Mitarbeiter_in hat einen Beitrag kommentiert den du kommentiert hast"
+"Ein Mitglied hat einen Beitrag kommentiert den du kommentiert hast"
 
 #: .\cosinnus_notifications.py:54
 msgid "A user created a news post"
-msgstr "Ein(e) Mitarbeiter_in hat einen neuen Beitrag in die Gruppe gepostet"
+msgstr "Ein Mitglied hat einen neuen Beitrag in die Gruppe gepostet"
 
 #: .\dashboard.py:43
 msgid "No news"
@@ -354,7 +354,7 @@ msgstr "Um hier Beiträge zu erstellen musst du"
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:47
 msgid "request to join the group"
-msgstr "beantragen, Mitarbeiter_in zu werden"
+msgstr "beantragen, Mitglied zu werden"
 
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:53
 msgid "Read more..."
