@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-18 17:54+0200\n"
+"POT-Creation-Date: 2015-10-03 13:40+0200\n"
 "PO-Revision-Date: 2015-08-17 09:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -103,23 +103,23 @@ msgstr "Комментарий"
 msgid "Comments"
 msgstr "Комментарии"
 
-#: .\views.py:37
+#: .\views.py:38
 msgid "Your news post was added successfully."
 msgstr "Ваш пост новости был успешно добавлен."
 
-#: .\views.py:73
+#: .\views.py:74
 msgid "Your news post was deleted successfully."
 msgstr "Ваш пост новости был успешно удален."
 
-#: .\views.py:129
+#: .\views.py:132
 msgid "Your news post was edited successfully."
 msgstr "Ваш пост новости был успешно отредактирован."
 
-#: .\views.py:155
+#: .\views.py:158
 msgid "Your comment was added successfully."
 msgstr "Ваш пост новости был успешно добавлен."
 
-#: .\views.py:195
+#: .\views.py:198
 msgid "Your comment was deleted successfully."
 msgstr "Ваш комментарий был успешно удален."
 
@@ -163,7 +163,7 @@ msgstr "Заголовок (опционально)"
 msgid "Save changes"
 msgstr "Сохранить изменения"
 
-#: .\templates\cosinnus_note\note_list.html.py:87
+#: .\templates\cosinnus_note\note_list.html.py:91
 #: .\templates\cosinnus_note\note_list_standalone.html.py:23
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:92
 msgid "There are no news posts yet"
