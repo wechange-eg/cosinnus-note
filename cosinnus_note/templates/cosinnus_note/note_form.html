@@ -23,7 +23,7 @@
 			        <div class="btn btn-white btn-headline">
 			            <ul class="media-list">
 			                <li class="media">
-			                    <a class="pull-left" href="{% url 'cosinnus:profile-detail' user=user.username %}">
+			                    <a class="pull-left" href="{% url 'cosinnus:profile-detail' username=user.username %}">
 			                        {% include "cosinnus/user/user_avatar_image.html" with user=user %}
 			                    </a>
 			                    <a class="pull-right" href="#">
