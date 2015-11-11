@@ -71,7 +71,7 @@
                                     {% endif %}
                                     <span class="moment-data-date" data-date="{{ comment.created_on|date:'c' }}" ></span>
                                 </div>
-                                <p class="comment-background">{{ comment.text|linebreaksbr|urlizetrunc:25|url_target_blank }}</p>
+                                <p class="comment-background">{{ comment.text|textfield }}</p>
                             </div>
                         </li>
                     </ul>
