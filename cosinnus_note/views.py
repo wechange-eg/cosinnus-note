@@ -23,7 +23,7 @@ from django.contrib import messages
 from cosinnus.views.mixins.filters import CosinnusFilterMixin
 from cosinnus_note.filters import NoteFilter
 from cosinnus_note import cosinnus_notifications
-from cosinnus.utils.urls import group_aware_reverse
+from cosinnus.utils.urls import group_aware_reverse, safe_redirect
 from cosinnus.utils.pagination import PaginationTemplateMixin
 
 
@@ -61,7 +61,7 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     
     def get_success_url(self):
         # self.referer is set in post() method
-        return self.referer
+        return safe_redirect(self.referer, self.request)
 
 note_create = NoteCreateView.as_view()
 
