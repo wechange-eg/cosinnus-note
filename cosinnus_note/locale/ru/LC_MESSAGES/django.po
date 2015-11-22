@@ -8,41 +8,41 @@ msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-03 13:40+0200\n"
-"PO-Revision-Date: 2015-08-17 09:17+0200\n"
+"PO-Revision-Date: 2015-11-14 17:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.5\n"
 "Language: ru\n"
 
 #: .\cosinnus_app.py:14 .\templates\cosinnus_note\note_detail.html.py:3
 #: .\templates\cosinnus_note\note_form.html.py:3
 #: .\templates\cosinnus_note\note_list.html.py:3
 msgid "Notes"
-msgstr "Заметки"
+msgstr "Новости"
 
 #: .\cosinnus_app.py:21
 #: .\templates\cosinnus_note\note_list_standalone.html.py:11
 msgctxt "the_app"
 msgid "note"
-msgstr "Заметка"
+msgstr "Новость"
 
 #: .\cosinnus_notifications.py:40
 msgid "A user commented on one of your news posts"
-msgstr "Пользователь прокомментировал один из ваших постов Новости"
+msgstr "Пользователь прокомментировал одну из ваших новостей"
 
 #: .\cosinnus_notifications.py:47
 msgid "A user commented on a news posts you commented in"
 msgstr ""
-"Пользователь прокомментировал постов новостей, который Вы прокомментировали"
+"Пользователь оставил комментарий к новости, которую прокомментировали вы"
 
 #: .\cosinnus_notifications.py:54
 msgid "A user created a news post"
-msgstr "Пользователь создал новый пост новости"
+msgstr "Пользователь опубликовал новость"
 
 #: .\dashboard.py:43
 msgid "No news"
@@ -53,7 +53,7 @@ msgstr "Нет новостей"
 #: .\templates\cosinnus_note\note_list.html.py:35
 #: .\templates\cosinnus_note\note_list.html.py:52
 msgid "Write a news post"
-msgstr "Написать пост новости"
+msgstr "Написать новость"
 
 #: .\dashboard.py:75
 msgid "News stream"
@@ -65,7 +65,7 @@ msgstr "Создатель: "
 
 #: .\filters.py:24
 msgid "Newest Created"
-msgstr "Последний"
+msgstr "Последнее"
 
 #: .\filters.py:25
 msgid "Popularity"
@@ -77,11 +77,11 @@ msgstr "Текст"
 
 #: .\models.py:38
 msgid "Note Item"
-msgstr "Элемент Заметки"
+msgstr "Новость"
 
 #: .\models.py:39
 msgid "Note Items"
-msgstr "Элементы Заметки"
+msgstr "Новости"
 
 #: .\models.py:43
 msgid "Author"
@@ -105,23 +105,23 @@ msgstr "Комментарии"
 
 #: .\views.py:38
 msgid "Your news post was added successfully."
-msgstr "Ваш пост новости был успешно добавлен."
+msgstr "Ваша новость добавлена"
 
 #: .\views.py:74
 msgid "Your news post was deleted successfully."
-msgstr "Ваш пост новости был успешно удален."
+msgstr "Ваша новость удалена"
 
 #: .\views.py:132
 msgid "Your news post was edited successfully."
-msgstr "Ваш пост новости был успешно отредактирован."
+msgstr "Ваша новость отредактирована"
 
 #: .\views.py:158
 msgid "Your comment was added successfully."
-msgstr "Ваш пост новости был успешно добавлен."
+msgstr "Ваш комментарий добавлен"
 
 #: .\views.py:198
 msgid "Your comment was deleted successfully."
-msgstr "Ваш комментарий был успешно удален."
+msgstr "Ваш комментарий удален"
 
 #: .\templates\cosinnus_note\base.html.py:6
 #: .\templates\cosinnus_note\base.html.py:13
@@ -147,11 +147,11 @@ msgstr "Написать комментарий..."
 #: .\templates\cosinnus_note\note_list.html.py:68
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:35
 msgid "Post"
-msgstr "Пост"
+msgstr "Отправить"
 
 #: .\templates\cosinnus_note\note_form.html.py:33
 msgid "Edit news post"
-msgstr "Редактировать пост новостей"
+msgstr "Редактировать новость"
 
 #: .\templates\cosinnus_note\note_form.html.py:45
 #: .\templates\cosinnus_note\note_list.html.py:47
@@ -167,7 +167,7 @@ msgstr "Сохранить изменения"
 #: .\templates\cosinnus_note\note_list_standalone.html.py:23
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:92
 msgid "There are no news posts yet"
-msgstr "Нет постов новости пока"
+msgstr "Пока новостей нет"
 
 #: .\templates\cosinnus_note\single_note_detailed.html.py:24
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:23
@@ -179,20 +179,20 @@ msgstr "Редактировать"
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:16
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:34
 msgid "Delete note"
-msgstr "Удалить заметку"
+msgstr "Удалить новость"
 
 #: .\templates\cosinnus_note\single_note_detailed.html.py:46
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:35
 msgid "Do you really want to delete this note?"
-msgstr "Вы действительно хотите удалить эту заметку?"
+msgstr "Вы действительно хотите удалить эту новость?"
 
 #: .\templates\cosinnus_note\notifications\note_comment_posted.html.py:1
 #, python-format
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a news post you wrote in group %"
-"(group_name)s:\n"
+"%(sender_name)s has posted a comment on a news post you wrote in group "
+"%(group_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -206,30 +206,30 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %"
-"(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Привет %(receiver_name)s!\n"
+"Здравствуйте, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s опубликовал(а) комментарий на пост новости, который Вы "
-"написали в группе %(group_name)s:\n"
+"Пользователь %(sender_name)s опубликовал комментарий к вашей новости в "
+"группе %(group_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
 "\n"
-" на ваш пост: \n"
+"к вашему посту: \n"
 "\n"
 "\"%(note_text)s\"\n"
-"Переидите по этой ссылке, чтобы увидеть комментарий: \n"
+"Перейдите по этой ссылке, чтобы увидеть комментарий: \n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Переидите по этой ссылке, чтобы изменить Ваши настройки уведомлений: %"
-"(notification_settings_url)s )\n"
-"Ваша команда %(site_name)s.\n"
+"(Перейдите по этой ссылке, чтобы изменить ваши настройки уведомлений: "
+"%(notification_settings_url)s )\n"
+"Ваша команда %(site_name)s\n"
 "\n"
 
 #: .\templates\cosinnus_note\notifications\note_comment_posted_on_commented_post.html.py:1
@@ -252,31 +252,32 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %"
-"(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Привет %(receiver_name)s!\n"
+"Здравствуйте, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s опубликовал(а) комментарий на пост новости, который Вы "
-"прокомментировали, в группе %(group_name)s:\n"
+"Пользователь %(sender_name)s опубликовал комментарий к новости, которую вы "
+"прокомментировали в группе %(group_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
 "\n"
-" на Ваш пост: \n"
+"к новости: \n"
 "\n"
 "\"%(note_text)s\"\n"
 "\n"
 "\n"
-"Переидите по этой ссылке, чтобы увидеть комментарий: \n"
+"Перейдите по этой ссылке, чтобы увидеть комментарий: \n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Переидите по этой ссылке, чтобы изменить Ваши настройки уведомлений: %"
-"(notification_settings_url)s )\n"
+"(Перейдите по этой ссылке, чтобы изменить Ваши настройки уведомлений: "
+"%(notification_settings_url)s )\n"
+"\n"
 "Ваша команда %(site_name)s.\n"
 "\n"
 
@@ -285,15 +286,15 @@ msgstr ""
 msgid ""
 "%(sender_name)s commented on a news post you commented in, in %(group_name)s."
 msgstr ""
-"%(sender_name)s прокомментировал(а) пост новости, который Вы "
-"прокомментировали в %(group_name)s."
+"Пользователь %(sender_name)s оставил комментарий к новости, которую вы "
+"прокомментировали в %(group_name)s"
 
 #: .\templates\cosinnus_note\notifications\note_comment_posted_subject.txt.py:1
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(group_name)s."
 msgstr ""
-"%(sender_name)s прокомментировал(а) один из ваших постов новости в %"
-"(group_name)s."
+"Пользователь %(sender_name)s прокомментировал одну из ваших новостей в "
+"%(group_name)s."
 
 #: .\templates\cosinnus_note\notifications\note_created.txt.py:1
 #, python-format
@@ -302,9 +303,10 @@ msgid ""
 "\n"
 "%(sender_name)s just posted an update in %(group_name)s:\n"
 msgstr ""
-"Привет %(receiver_name)s,\n"
+"Здравствуйте, %(receiver_name)s,\n"
 "\n"
-"%(sender_name)s толко что писал(а) обновление пост в %(group_name)s:\n"
+"пользователь %(sender_name)s толко что обновил пост в проекте "
+"%(group_name)s:\n"
 
 #: .\templates\cosinnus_note\notifications\note_created.txt.py:8
 #, python-format
@@ -317,8 +319,8 @@ msgid ""
 "\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %"
-"(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
@@ -326,31 +328,31 @@ msgstr ""
 "\n"
 "\n"
 "\n"
-"Вы можете найти ее по следующей ссылке: %(object_url)s\n"
+"Вы можете найти весь пост по следующей ссылке: %(object_url)s\n"
 "\n"
 "\n"
 "\n"
-"(Переидите по этой ссылке, чтобы изменить Ваши настройки уведомлений: %"
-"(notification_settings_url)s )\n"
+"(Переидите по этой ссылке, чтобы изменить ваши настройки уведомлений: "
+"%(notification_settings_url)s )\n"
 "\n"
-"Ваша команда %(site_name)s."
+"Ваша команда %(site_name)s"
 
 #: .\templates\cosinnus_note\notifications\note_created_subject.txt.py:1
 #, python-format
 msgid "%(sender_name)s posted in %(group_name)s:"
-msgstr "%(sender_name)s опубликовал пост в %(group_name)s: "
+msgstr "Пользователь %(sender_name)s опубликовал пост в %(group_name)s:"
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:19
 msgid "Please enter a message..."
-msgstr "Введите, пожалуйста, Ваше сообщение..."
+msgstr "Пожалуйста, введите ваше сообщение..."
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:44
 msgid "To post in this group you need to"
-msgstr "Чтобы писать пост в этой группе, Вы должны"
+msgstr "Чтобы написать здесь пост, Вы должны"
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html.py:47
 msgid "request to join the group"
-msgstr "Запросить присоединиться к группе"
+msgstr "отправить запрос на вступление"
 
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:53
 msgid "Read more..."
