@@ -29,7 +29,7 @@ msgstr "Новости"
 #: .\templates\cosinnus_note\note_list_standalone.html.py:11
 msgctxt "the_app"
 msgid "note"
-msgstr "Новость"
+msgstr "Новости"
 
 #: .\cosinnus_notifications.py:40
 msgid "A user commented on one of your news posts"
@@ -140,7 +140,7 @@ msgstr "Удалить"
 
 #: .\templates\cosinnus_note\note_comments.html.py:101
 msgid "Write comment..."
-msgstr "Написать комментарий..."
+msgstr "Сохранить"
 
 #: .\templates\cosinnus_note\note_comments.html.py:114
 #: .\templates\cosinnus_note\note_form.html.py:66
