@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-03 13:40+0200\n"
+"POT-Creation-Date: 2016-03-30 11:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\cosinnus_app.py:14 .\templates\cosinnus_note\note_detail.html.py:3
-#: .\templates\cosinnus_note\note_form.html.py:3
-#: .\templates\cosinnus_note\note_list.html.py:3
+#: .\cosinnus_app.py:14 .\templates\cosinnus_note\note_detail.html:3
+#: .\templates\cosinnus_note\note_form.html:3
+#: .\templates\cosinnus_note\note_list.html:3
 msgid "Notes"
 msgstr ""
 
-#: .\cosinnus_app.py:21
-#: .\templates\cosinnus_note\note_list_standalone.html.py:11
+#: .\cosinnus_app.py:21 .\templates\cosinnus_note\note_list_standalone.html:11
 msgctxt "the_app"
 msgid "note"
 msgstr "News"
@@ -46,10 +45,10 @@ msgstr "Write a news post..."
 msgid "No news"
 msgstr ""
 
-#: .\dashboard.py:68 .\templates\cosinnus_note\note_form.html.py:33
-#: .\templates\cosinnus_note\note_form.html.py:50
-#: .\templates\cosinnus_note\note_list.html.py:35
-#: .\templates\cosinnus_note\note_list.html.py:52
+#: .\dashboard.py:68 .\templates\cosinnus_note\note_form.html:33
+#: .\templates\cosinnus_note\note_form.html:50
+#: .\templates\cosinnus_note\note_list.html:35
+#: .\templates\cosinnus_note\note_list.html:52
 msgid "Write a news post"
 msgstr "Write a news post..."
 
@@ -102,90 +101,53 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: .\views.py:38
-msgid "Your news post was added successfully."
-msgstr ""
-
-#: .\views.py:74
-msgid "Your news post was deleted successfully."
-msgstr ""
-
-#: .\views.py:132
-msgid "Your news post was edited successfully."
-msgstr ""
-
-#: .\views.py:158
-msgid "Your comment was added successfully."
-msgstr ""
-
-#: .\views.py:198
-msgid "Your comment was deleted successfully."
-msgstr ""
-
-#: .\templates\cosinnus_note\base.html.py:6
-#: .\templates\cosinnus_note\base.html.py:13
+#: .\templates\cosinnus_note\base.html:6
+#: .\templates\cosinnus_note\base.html:13
 msgid "News"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:34
+#: .\templates\cosinnus_note\note_comments.html:34
 msgctxt "the_verb"
 msgid "Comment"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:73
-#: .\templates\cosinnus_note\single_note_detailed.html.py:28
+#: .\templates\cosinnus_note\note_comments.html:73
+#: .\templates\cosinnus_note\single_note_detailed.html:28
 msgid "Delete"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:101
+#: .\templates\cosinnus_note\note_comments.html:101
 msgid "Write comment..."
 msgstr ""
 
-#: .\templates\cosinnus_note\note_comments.html.py:114
-#: .\templates\cosinnus_note\note_form.html.py:66
-#: .\templates\cosinnus_note\note_list.html.py:68
-#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:35
+#: .\templates\cosinnus_note\note_comments.html:114
+#: .\templates\cosinnus_note\note_form.html:66
+#: .\templates\cosinnus_note\note_list.html:68
+#: .\templates\cosinnus_note\widgets\base_news_widget.html:35
 msgid "Post"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_form.html.py:33
+#: .\templates\cosinnus_note\note_form.html:33
 msgid "Edit news post"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_form.html.py:45
-#: .\templates\cosinnus_note\note_list.html.py:47
-#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:14
+#: .\templates\cosinnus_note\note_form.html:45
+#: .\templates\cosinnus_note\note_list.html:47
+#: .\templates\cosinnus_note\widgets\base_news_widget.html:14
 msgid "Title (optional)"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_form.html.py:66
+#: .\templates\cosinnus_note\note_form.html:66
 msgid "Save changes"
 msgstr ""
 
-#: .\templates\cosinnus_note\note_list.html.py:91
-#: .\templates\cosinnus_note\note_list_standalone.html.py:23
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:92
+#: .\templates\cosinnus_note\note_list.html:91
+#: .\templates\cosinnus_note\note_list_standalone.html:23
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html:92
 msgid "There are no news posts yet"
 msgstr ""
 
-#: .\templates\cosinnus_note\single_note_detailed.html.py:24
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:23
-msgid "Edit"
-msgstr ""
-
-#: .\templates\cosinnus_note\single_note_detailed.html.py:26
-#: .\templates\cosinnus_note\single_note_detailed.html.py:45
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:16
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:34
-msgid "Delete note"
-msgstr ""
-
-#: .\templates\cosinnus_note\single_note_detailed.html.py:46
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:35
-msgid "Do you really want to delete this note?"
-msgstr ""
-
-#: .\templates\cosinnus_note\notifications\note_comment_posted.html.py:1
+#: .\templates\cosinnus_note\notifications\note_comment_posted.html:1
 #, python-format
 msgid ""
 "Hi, %(receiver_name)s!\n"
@@ -212,7 +174,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: .\templates\cosinnus_note\notifications\note_comment_posted_on_commented_post.html.py:1
+#: .\templates\cosinnus_note\notifications\note_comment_posted_on_commented_post.html:1
 #, python-format
 msgid ""
 "Hi, %(receiver_name)s!\n"
@@ -239,7 +201,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: .\templates\cosinnus_note\notifications\note_comment_posted_on_commented_post_subject.txt.py:1
+#: .\templates\cosinnus_note\notifications\note_comment_posted_on_commented_post_subject.txt:1
 #, fuzzy, python-format
 msgid ""
 "%(sender_name)s commented on a news post you commented in, in %(group_name)s."
@@ -249,7 +211,7 @@ msgstr ""
 "%(user_name)s has posted a comment on a news post you wrote in project %"
 "(group_name)s:"
 
-#: .\templates\cosinnus_note\notifications\note_comment_posted_subject.txt.py:1
+#: .\templates\cosinnus_note\notifications\note_comment_posted_subject.txt:1
 #, fuzzy, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(group_name)s."
 msgstr ""
@@ -258,7 +220,7 @@ msgstr ""
 "%(user_name)s has posted a comment on a news post you wrote in project %"
 "(group_name)s:"
 
-#: .\templates\cosinnus_note\notifications\note_created.txt.py:1
+#: .\templates\cosinnus_note\notifications\note_created.txt:1
 #, python-format
 msgid ""
 "Hi %(receiver_name)s,\n"
@@ -266,7 +228,7 @@ msgid ""
 "%(sender_name)s just posted an update in %(group_name)s:\n"
 msgstr ""
 
-#: .\templates\cosinnus_note\notifications\note_created.txt.py:8
+#: .\templates\cosinnus_note\notifications\note_created.txt:8
 #, python-format
 msgid ""
 "%(note_text)s\n"
@@ -283,7 +245,7 @@ msgid ""
 "Your %(site_name)s Team."
 msgstr ""
 
-#: .\templates\cosinnus_note\notifications\note_created_subject.txt.py:1
+#: .\templates\cosinnus_note\notifications\note_created_subject.txt:1
 #, fuzzy, python-format
 msgid "%(sender_name)s posted in %(group_name)s:"
 msgstr ""
@@ -292,18 +254,55 @@ msgstr ""
 "%(user_name)s has posted a comment on a news post you wrote in project %"
 "(group_name)s:"
 
-#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:19
+#: .\templates\cosinnus_note\single_note_detailed.html:24
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html:23
+msgid "Edit"
+msgstr ""
+
+#: .\templates\cosinnus_note\single_note_detailed.html:26
+#: .\templates\cosinnus_note\single_note_detailed.html:45
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html:16
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html:34
+msgid "Delete note"
+msgstr ""
+
+#: .\templates\cosinnus_note\single_note_detailed.html:46
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html:35
+msgid "Do you really want to delete this note?"
+msgstr ""
+
+#: .\templates\cosinnus_note\widgets\base_news_widget.html:19
 msgid "Please enter a message..."
 msgstr ""
 
-#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:44
+#: .\templates\cosinnus_note\widgets\base_news_widget.html:44
 msgid "To post in this group you need to"
 msgstr ""
 
-#: .\templates\cosinnus_note\widgets\base_news_widget.html.py:47
+#: .\templates\cosinnus_note\widgets\base_news_widget.html:47
 msgid "request to join the group"
 msgstr ""
 
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html.py:53
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html:53
 msgid "Read more..."
+msgstr ""
+
+#: .\views.py:38
+msgid "Your news post was added successfully."
+msgstr ""
+
+#: .\views.py:74
+msgid "Your news post was deleted successfully."
+msgstr ""
+
+#: .\views.py:132
+msgid "Your news post was edited successfully."
+msgstr ""
+
+#: .\views.py:158
+msgid "Your comment was added successfully."
+msgstr ""
+
+#: .\views.py:198
+msgid "Your comment was deleted successfully."
 msgstr ""
