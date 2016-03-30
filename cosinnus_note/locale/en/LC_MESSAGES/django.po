@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-30 15:12+0200\n"
+"POT-Creation-Date: 2016-03-30 18:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,7 +276,7 @@ msgid "Please enter a message..."
 msgstr ""
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html:44
-msgid "To post in this group you need to"
+msgid "To post in this team you need to"
 msgstr ""
 
 #: .\templates\cosinnus_note\widgets\base_news_widget.html:47
