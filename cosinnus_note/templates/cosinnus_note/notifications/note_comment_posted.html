@@ -1,6 +1,6 @@
 {% load i18n cosinnus_tags %}{% autoescape off %}{% blocktrans with comment_text=object.text note_text=object.note.text %}Hi, {{ receiver_name }}!
 
-{{ sender_name }} has posted a comment on a news post you wrote in group {{ team_name }}:
+{{ sender_name }} has posted a comment on a news post you wrote in {{ team_name }}:
 
 "{{ comment_text }}"
 
