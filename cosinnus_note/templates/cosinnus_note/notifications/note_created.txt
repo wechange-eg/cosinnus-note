@@ -1,6 +1,6 @@
 {% load i18n cosinnus_tags %}{% blocktrans %}Hi {{ receiver_name }},
 
-{{ sender_name }} just posted an update in {{ group_name }}:
+{{ sender_name }} just posted an update in {{ team_name }}:
 {% endblocktrans %}
 {% if object.title and not object.title == '---' %}
 "{{ object.title }}"

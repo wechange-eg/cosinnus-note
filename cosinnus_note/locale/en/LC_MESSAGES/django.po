@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-30 11:52+0200\n"
+"POT-Creation-Date: 2016-03-30 14:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,7 +153,7 @@ msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
 "%(sender_name)s has posted a comment on a news post you wrote in group %"
-"(group_name)s:\n"
+"(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -180,7 +180,7 @@ msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
 "%(sender_name)s has posted a comment on a news post you a commented in, in "
-"group %(group_name)s:\n"
+"group %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -204,28 +204,28 @@ msgstr ""
 #: .\templates\cosinnus_note\notifications\note_comment_posted_on_commented_post_subject.txt:1
 #, fuzzy, python-format
 msgid ""
-"%(sender_name)s commented on a news post you commented in, in %(group_name)s."
+"%(sender_name)s commented on a news post you commented in, in %(team_name)s."
 msgstr ""
 "Hi, %(creator_name)s!\n"
 "\n"
 "%(user_name)s has posted a comment on a news post you wrote in project %"
-"(group_name)s:"
+"(team_name)s:"
 
 #: .\templates\cosinnus_note\notifications\note_comment_posted_subject.txt:1
 #, fuzzy, python-format
-msgid "%(sender_name)s commented on one of your news posts in %(group_name)s."
+msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
 msgstr ""
 "Hi, %(creator_name)s!\n"
 "\n"
 "%(user_name)s has posted a comment on a news post you wrote in project %"
-"(group_name)s:"
+"(team_name)s:"
 
 #: .\templates\cosinnus_note\notifications\note_created.txt:1
 #, python-format
 msgid ""
 "Hi %(receiver_name)s,\n"
 "\n"
-"%(sender_name)s just posted an update in %(group_name)s:\n"
+"%(sender_name)s just posted an update in %(team_name)s:\n"
 msgstr ""
 
 #: .\templates\cosinnus_note\notifications\note_created.txt:8
@@ -247,12 +247,12 @@ msgstr ""
 
 #: .\templates\cosinnus_note\notifications\note_created_subject.txt:1
 #, fuzzy, python-format
-msgid "%(sender_name)s posted in %(group_name)s:"
+msgid "%(sender_name)s posted in %(team_name)s:"
 msgstr ""
 "Hi, %(creator_name)s!\n"
 "\n"
 "%(user_name)s has posted a comment on a news post you wrote in project %"
-"(group_name)s:"
+"(team_name)s:"
 
 #: .\templates\cosinnus_note\single_note_detailed.html:24
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html:23
