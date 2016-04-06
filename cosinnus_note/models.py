@@ -47,8 +47,7 @@ class Note(BaseTaggableObjectModel):
         
         # take the first youtube url from the textand save it as a video link
         self.video = None
-        urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', self.text)
-        for url in urls:
+        for url in self.urls:
             if 'youtube.com' in url:
                 self.video = url
                 break
@@ -90,7 +89,12 @@ class Note(BaseTaggableObjectModel):
         if vid:
             ret = 'http://img.youtube.com/vi/%s/hqdefault.jpg' % vid
         return ret
-
+    
+    @property
+    def urls(self):
+        """ Returns a list of all URLs contained in the note's text """
+        return re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', self.text)
+    
 
 @python_2_unicode_compatible
 class Comment(models.Model):

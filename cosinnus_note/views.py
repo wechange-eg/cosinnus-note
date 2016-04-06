@@ -25,10 +25,11 @@ from cosinnus_note.filters import NoteFilter
 from cosinnus_note import cosinnus_notifications
 from cosinnus.utils.urls import group_aware_reverse, safe_redirect
 from cosinnus.utils.pagination import PaginationTemplateMixin
+from cosinnus.views.facebook_integration import FacebookIntegrationViewMixin
 
 
-class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
-                     UserFormKwargsMixin, CreateViewAttachable):
+class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
+                     GroupFormKwargsMixin, UserFormKwargsMixin, CreateViewAttachable):
 
     form_class = NoteForm
     model = Note
@@ -47,8 +48,20 @@ class NoteCreateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     def form_valid(self, form):
         form.instance.creator = self.request.user
         messages.success(self.request, self.message_success)
-        return super(NoteCreateView, self).form_valid(form)
-    
+        ret = super(NoteCreateView, self).form_valid(form)
+        
+        # check if the user wants to post this note to facebook
+        if form.data.get('facebook_integration_post_to_timeline', None):
+            facebook_success = super(NoteCreateView, self).post_to_facebook(self.request.user.cosinnus_profile, self.object.text, urls=self.object.urls)
+            if facebook_success is not None:
+                
+                # TODO: SASCHA: Save returned post id and mark this note as shared to facebook
+                
+                messages.success(self.request, _('Your news post was also posted on your Facebook timeline.'))
+            else:
+                messages.warning(self.request, _('Your news post could not be posted on your Facebook timeline because of a problem. You can use the Facebook-Button under your post to try again.'))
+        return ret
+        
     def form_invalid(self, form):
         """
         If the form is invalid, we simply redirect to the success url, except if we come from the create view.
