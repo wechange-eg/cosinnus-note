@@ -3,11 +3,9 @@ from __future__ import unicode_literals
 
 from django.conf.urls import patterns, url
 
-
 cosinnus_root_patterns = patterns('', 
-    url(r'^fb-integration/save-auth-tokens/$', 'cosinnus_note.facebook_integration.save_auth_tokens',  name='facebook-save-auth-tokens'),
 )
-
+    
 cosinnus_group_patterns = patterns('cosinnus_note.views',
     url(r'^$',
         'note_index',

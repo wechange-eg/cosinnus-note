@@ -23,7 +23,9 @@
                 
                 {% include 'cosinnus/media_tags.html' %}
                 
-                {% include 'cosinnus_note/facebook_integration.html' %}
+                {% if SETTINGS.COSINNUS_FACEBOOK_INTEGRATION_ENABLED %}
+                	{% include 'cosinnus/utils/facebook_integration.html' %}
+                {% endif %}
                     
             </div>
 
