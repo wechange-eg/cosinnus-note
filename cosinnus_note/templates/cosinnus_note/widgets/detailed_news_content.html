@@ -12,6 +12,11 @@
                     <div class="media-body">
                          <a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a> –<a class="light-link" target="_blank" href="{{ note.get_absolute_url }}"
                          ><span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span> <i class="fa fa-external-link"></i></a>
+                         {% if note.get_facebook_post_url %}
+                            <a target="_blank" href="{{ note.get_facebook_post_url }}"
+                            ><i class="fa fa-facebook-square"></i> 
+                            </a>
+                        {% endif %}
                          {% if user|has_write_access:note %}
                              <a data-toggle="modal" data-target="#deleteNote_{{note.pk}}" href="#" title="{% trans "Delete note" %}"><i class="fa fa-times"></i></a>
                          {% endif %}

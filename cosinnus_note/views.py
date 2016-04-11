@@ -54,9 +54,10 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
         if form.data.get('facebook_integration_post_to_timeline', None):
             facebook_success = super(NoteCreateView, self).post_to_facebook(self.request.user.cosinnus_profile, self.object.text, urls=self.object.urls)
             if facebook_success is not None:
-                
-                # TODO: SASCHA: Save returned post id and mark this note as shared to facebook
-                
+                if facebook_success:
+                    # save facebook id if not empty to mark this note as shared to facebook
+                    self.object.facebook_post_id = facebook_success
+                    self.object.save()
                 messages.success(self.request, _('Your news post was also posted on your Facebook timeline.'))
             else:
                 messages.warning(self.request, _('Your news post could not be posted on your Facebook timeline because of a problem. You can use the Facebook-Button under your post to try again.'))

@@ -33,7 +33,12 @@
 	                        <a class="light-link" target="_blank" href="{{ note.get_absolute_url }}"
                             ><span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span> <i class="fa fa-external-link"></i>
                             </a>
-	                        
+                            {% if note.get_facebook_post_url %}
+	                            <a target="_blank" href="{{ note.get_facebook_post_url }}"
+	                            ><i class="fa fa-facebook-square"></i> 
+	                            <span>{% trans "View on Facebook" %}</span>
+	                            </a>
+                            {% endif %}
 	                    </div>
 	                </li>
 	            </ul>

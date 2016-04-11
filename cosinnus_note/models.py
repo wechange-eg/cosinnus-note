@@ -21,6 +21,8 @@ from django.contrib.auth import get_user_model
 import logging
 logger = logging.getLogger('cosinnus')
 
+FACEBOOK_POST_URL = 'https://www.facebook.com/%s/posts/%s' # %s, %s :  user_id, post_id
+
 
 class Note(BaseTaggableObjectModel):
     
@@ -32,6 +34,7 @@ class Note(BaseTaggableObjectModel):
 
     text = models.TextField(_('Text'))
     video = EmbedVideoField(blank=True, null=True)
+    facebook_post_id = models.CharField(_('Facebook Share'), max_length=255, null=True, blank=True)
 
     class Meta(BaseTaggableObjectModel.Meta):
         ordering = ['-created', 'title']
@@ -56,11 +59,21 @@ class Note(BaseTaggableObjectModel):
         if created:
             # todo was created
             cosinnus_notifications.note_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
-        
 
     def get_absolute_url(self):
         kwargs = {'group': self.group, 'slug': self.slug}
         return group_aware_reverse('cosinnus:note:note', kwargs=kwargs)
+    
+    def get_facebook_post_url(self):
+        """ If this post has been posted to facebook and its id is known, returns the URL to the facebook post. 
+            @return: A string URL to a facebook post or None """
+        if self.facebook_post_id:
+            try:
+                return FACEBOOK_POST_URL % tuple(self.facebook_post_id.split('_'))
+            except:
+                if settings.DEBUG:
+                    raise
+        return None
     
     @classmethod
     def get_current(self, group, user):
