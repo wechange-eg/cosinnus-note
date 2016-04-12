@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-12 16:21+0200\n"
+"POT-Creation-Date: 2016-04-12 17:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -291,8 +291,9 @@ msgstr ""
 
 #: .\views.py:64
 msgid ""
-"Your news post was not posted on your Facebook timeline because of an "
-"unexpected problem."
+"We could not post this news post on your Facebook timeline. If this problem "
+"persists, please make sure you have granted us all required Facebook "
+"permissions, or try disconnecting and re-connecting your Facebook account!"
 msgstr ""
 
 #: .\views.py:90

@@ -61,7 +61,7 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
                     self.object.save()
                 message_success_addition = ' ' + force_text(_('Your news post was also posted on your Facebook timeline.'))
             else:
-                messages.warning(self.request, _('Your news post was not posted on your Facebook timeline because of an unexpected problem.'))
+                messages.warning(self.request, _('We could not post this news post on your Facebook timeline. If this problem persists, please make sure you have granted us all required Facebook permissions, or try disconnecting and re-connecting your Facebook account!'))
         messages.success(self.request, force_text(self.message_success) + message_success_addition)
         return ret
         
