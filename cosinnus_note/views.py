@@ -26,6 +26,7 @@ from cosinnus_note import cosinnus_notifications
 from cosinnus.utils.urls import group_aware_reverse, safe_redirect
 from cosinnus.utils.pagination import PaginationTemplateMixin
 from cosinnus.views.facebook_integration import FacebookIntegrationViewMixin
+from django.utils.encoding import force_text
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
@@ -47,9 +48,9 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
     
     def form_valid(self, form):
         form.instance.creator = self.request.user
-        messages.success(self.request, self.message_success)
         ret = super(NoteCreateView, self).form_valid(form)
         
+        message_success_addition = ''
         # check if the user wants to post this note to facebook
         if form.data.get('facebook_integration_post_to_timeline', None):
             facebook_success = super(NoteCreateView, self).post_to_facebook(self.request.user.cosinnus_profile, self.object.text, urls=self.object.urls)
@@ -58,9 +59,10 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
                     # save facebook id if not empty to mark this note as shared to facebook
                     self.object.facebook_post_id = facebook_success
                     self.object.save()
-                messages.success(self.request, _('Your news post was also posted on your Facebook timeline.'))
+                message_success_addition = ' ' + force_text(_('Your news post was also posted on your Facebook timeline.'))
             else:
-                messages.warning(self.request, _('Your news post could not be posted on your Facebook timeline because of a problem. You can use the Facebook-Button under your post to try again.'))
+                messages.warning(self.request, _('Your news post was not posted on your Facebook timeline because of an unexpected problem.'))
+        messages.success(self.request, force_text(self.message_success) + message_success_addition)
         return ret
         
     def form_invalid(self, form):

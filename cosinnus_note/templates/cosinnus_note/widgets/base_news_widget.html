@@ -21,12 +21,12 @@
                     </li>
                 </ol>
                 
-                {% include 'cosinnus/media_tags.html' %}
-                
                 {% if SETTINGS.COSINNUS_FACEBOOK_INTEGRATION_ENABLED %}
                 	{% include 'cosinnus/utils/facebook_integration.html' %}
                 {% endif %}
                     
+                {% include 'cosinnus/media_tags.html' with do_include_facebook_button=1 %}
+                
             </div>
 
             <button type="submit" class="btn btn-emphasized">
