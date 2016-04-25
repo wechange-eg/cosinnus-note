@@ -14,6 +14,10 @@ cosinnus_group_patterns = patterns('cosinnus_note.views',
     url(r'^list/$',
         'note_list',
         name='list'),
+                                   
+    url(r'^embed/$',
+        'note_embed',
+        name='embed'),
 
     #url(r'^list/(?P<tag>[^/]+)/$',
     #    'note_list',

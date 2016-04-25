@@ -14,7 +14,7 @@ from cosinnus.views.attached_object import (CreateViewAttachable,
     UpdateViewAttachable)
 
 from cosinnus.views.mixins.group import (RequireReadMixin, RequireWriteMixin,
-    FilterGroupMixin, GroupFormKwargsMixin)
+    FilterGroupMixin, GroupFormKwargsMixin, DipatchGroupURLMixin)
 from cosinnus.views.mixins.user import UserFormKwargsMixin
 
 from cosinnus_note.forms import CommentForm, NoteForm
@@ -27,6 +27,7 @@ from cosinnus.utils.urls import group_aware_reverse, safe_redirect
 from cosinnus.utils.pagination import PaginationTemplateMixin
 from cosinnus.views.facebook_integration import FacebookIntegrationViewMixin
 from django.utils.encoding import force_text
+from cosinnus.models.tagged import BaseTagObject
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
@@ -135,6 +136,20 @@ class NoteListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin,
         return super(NoteListView, self).get_context_data(**kwargs)
 
 note_list = NoteListView.as_view()
+
+
+class NoteEmbedView(DipatchGroupURLMixin, FilterGroupMixin, PaginationTemplateMixin, ListView):
+    model = Note
+    per_page = 10
+    template_name = 'cosinnus_note/note_embed.html'
+    
+    def get_queryset(self, **kwargs):
+        """ Only ever show public notes """
+        qs = super(NoteEmbedView, self).get_queryset()
+        qs = qs.filter(media_tag__visibility=BaseTagObject.VISIBILITY_ALL).prefetch_related('comments__creator__cosinnus_profile', 'attached_objects')
+        return qs
+    
+note_embed = NoteEmbedView.as_view()
 
 
 class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,

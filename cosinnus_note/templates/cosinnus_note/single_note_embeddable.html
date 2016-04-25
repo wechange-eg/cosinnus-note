@@ -1,0 +1,60 @@
+{% load i18n cosinnus_tags %}
+
+{% with note=object %}
+	<div class="large-space"> <!-- note-wrapper -->
+	
+	    <div class="app-main">
+	        <div type="button" class="btn btn-emphasized w100">
+	            <ul class="media-list">
+	                <li class="media">
+	                    <a class="pull-left" href="{{ note.creator|profile_url }}">
+	                        {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
+	                    </a>
+	                    <div class="media-body media-body-normalwrap">
+	                        <span class="annotation">
+                                {% include 'cosinnus/group/group_label.html' with group=note.group %}
+                            </span>
+                            
+	                        <strong><a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a></strong> 
+	                        <a class="light-link" target="_blank" href="{{ note.get_absolute_url }}"
+                            ><span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span> <i class="fa fa-external-link"></i>
+                            </a>
+                            {% if note.get_facebook_post_url %}
+	                            <a target="_blank" href="{{ note.get_facebook_post_url }}"
+	                            ><i class="fa fa-facebook-square"></i> 
+	                            <span>{% trans "View on Facebook" %}</span>
+	                            </a>
+                            {% endif %}
+	                    </div>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	    
+	    <div class="indented">
+	        {% if note.title and not note.title == '---' %}
+                <p><b>{{ note.title|urlizetrunc:25|url_target_blank }}</b></p>
+            {% endif %}
+	        <p>{{ note.text|urlizetrunc:25|url_target_blank|linebreaksbr }}</p>
+	        {% if note.video %}
+	            {% include 'cosinnus/common/embed_youtube.html' with video_id=note.video_id %}
+	        {% endif %}
+	    </div>
+	    
+	    {% if note.attached_images %}
+	        <div class="indented row">
+	            {% for image in note.attached_images|slice:":3" %}
+		            <div class="col-sm-4">
+		                <a href="{{ image.static_image_url }}" data-lightbox="image-note-detailed" data-title="{{ image.title }}" class="thumbnail">
+		                    <img src="{{ image.static_image_url }}" title='{{ image.title }}'/>
+		                </a>
+		            </div>
+	            {% endfor %}
+	        </div>
+        {% endif %}
+	    
+	    {% include 'cosinnus/media_tags_readonly.html' with object=note list_view="True" %}
+	    
+	</div> <!-- note-wrapper -->
+	
+{% endwith %}
