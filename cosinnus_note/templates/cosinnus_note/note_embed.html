@@ -29,8 +29,8 @@
 	        {% for note in object_list %}
 	            {% include 'cosinnus_note/single_note_embeddable.html' with object=note %}
 	        {% empty %}
-	            <!-- {% trans "There are no news posts yet" %} -->
-	            {% include 'cosinnus/common/empty_button.html' with message="There are no news posts yet" %}
+	            <!-- {% trans "There are no public news posts" %} -->
+	            {% include 'cosinnus/common/empty_button.html' with message="There are no public news posts" %}
 	        {% endfor %}
 	        
 	        {% comment %}  
