@@ -152,6 +152,22 @@ class NoteEmbedView(DipatchGroupURLMixin, FilterGroupMixin, PaginationTemplateMi
 note_embed = NoteEmbedView.as_view()
 
 
+class NoteEmbedGlobalView(PaginationTemplateMixin, ListView):
+    """ Displays all notes in this Portal in an embeddable view, not just from a specific group """
+    
+    model = Note
+    per_page = 10
+    template_name = 'cosinnus_note/note_embed.html'
+    
+    def get_queryset(self, **kwargs):
+        """ Only ever show public notes """
+        qs = Note.objects.all()
+        qs = qs.filter(media_tag__visibility=BaseTagObject.VISIBILITY_ALL).prefetch_related('comments__creator__cosinnus_profile', 'attached_objects')
+        return qs
+    
+note_embed_global = NoteEmbedGlobalView.as_view()
+
+
 class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
                      UserFormKwargsMixin, UpdateViewAttachable):
 

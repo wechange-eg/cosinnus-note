@@ -3,7 +3,10 @@ from __future__ import unicode_literals
 
 from django.conf.urls import patterns, url
 
-cosinnus_root_patterns = patterns('', 
+cosinnus_root_patterns = patterns('cosinnus_note.views', 
+    url(r'^notes/embed/$',
+        'note_embed_global',
+        name='embed-global'),
 )
     
 cosinnus_group_patterns = patterns('cosinnus_note.views',
