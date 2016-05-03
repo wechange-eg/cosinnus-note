@@ -60,9 +60,25 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
                     # save facebook id if not empty to mark this note as shared to facebook
                     self.object.facebook_post_id = facebook_success
                     self.object.save()
-                message_success_addition = ' ' + force_text(_('Your news post was also posted on your Facebook timeline.'))
+                message_success_addition += ' ' + force_text(_('Your news post was also posted on your Facebook timeline.'))
             else:
                 messages.warning(self.request, _('We could not post this news post on your Facebook timeline. If this problem persists, please make sure you have granted us all required Facebook permissions, or try disconnecting and re-connecting your Facebook account!'))
+        
+        # check if the user wants to post this note to the group's facebook fan-page/group
+        group = self.group
+        if form.data.get('facebook_integration_post_to_group_page', None) and group.facebook_group_id:
+            facebook_success = super(NoteCreateView, self).post_to_facebook(self.request.user.cosinnus_profile, 
+                                    self.object.text, urls=self.object.urls, fb_post_target_id=group.facebook_group_id)
+            if facebook_success is not None:
+                if facebook_success:
+                    # don't mark anything. we don't care if this was posted to the gorup
+                    pass
+                    #self.object.facebook_post_id = facebook_success
+                    #self.object.save()
+                message_success_addition += ' ' + force_text(_('Your news post was also posted on the Facebook Group/Fan-Page.'))
+            else:
+                messages.warning(self.request, _('We could not post this news post on your Facebook Group/Fan-Page. If this problem persists, please try disconnecting and re-connecting your Facebook account or contacting this project/group\'s administrator!'))
+        
         messages.success(self.request, force_text(self.message_success) + message_success_addition)
         return ret
         
