@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-26 16:21+0200\n"
+"POT-Creation-Date: 2016-05-04 13:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -316,18 +316,31 @@ msgid ""
 "permissions, or try disconnecting and re-connecting your Facebook account!"
 msgstr ""
 
-#: .\views.py:91
+#: .\views.py:78
+msgid "Your news post was also posted on the Facebook Group/Fan-Page."
+msgstr ""
+
+#: .\views.py:80
+msgid ""
+"We could not post this news post on your Facebook Group/Fan-Page. If this "
+"problem persists, please try disconnecting and re-connecting your Facebook "
+"account and make sure you allow us to post with a visibility of at least "
+"\"Friends\". If this doesn't work, contact this project/group's "
+"administrator!"
+msgstr ""
+
+#: .\views.py:107
 msgid "Your news post was deleted successfully."
 msgstr ""
 
-#: .\views.py:179
+#: .\views.py:195
 msgid "Your news post was edited successfully."
 msgstr ""
 
-#: .\views.py:205
+#: .\views.py:221
 msgid "Your comment was added successfully."
 msgstr ""
 
-#: .\views.py:245
+#: .\views.py:261
 msgid "Your comment was deleted successfully."
 msgstr ""
