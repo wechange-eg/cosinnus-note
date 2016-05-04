@@ -77,7 +77,7 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
                     #self.object.save()
                 message_success_addition += ' ' + force_text(_('Your news post was also posted on the Facebook Group/Fan-Page.'))
             else:
-                messages.warning(self.request, _('We could not post this news post on your Facebook Group/Fan-Page. If this problem persists, please try disconnecting and re-connecting your Facebook account or contacting this project/group\'s administrator!'))
+                messages.warning(self.request, _('We could not post this news post on your Facebook Group/Fan-Page. If this problem persists, please try disconnecting and re-connecting your Facebook account and make sure you allow us to post with a visibility of at least "Friends". If this doesn\'t work, contact this project/group\'s administrator!'))
         
         messages.success(self.request, force_text(self.message_success) + message_success_addition)
         return ret
