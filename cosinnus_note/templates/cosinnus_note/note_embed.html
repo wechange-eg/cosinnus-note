@@ -30,7 +30,8 @@
 	            {% include 'cosinnus_note/single_note_embeddable.html' with object=note %}
 	        {% empty %}
 	            <!-- {% trans "There are no public news posts" %} -->
-	            {% include 'cosinnus/common/empty_button.html' with message="There are no public news posts" %}
+	            {# {% include 'cosinnus/common/empty_button.html' with message="There are no public news posts" %} #}
+	            <p><i>{% trans "There are no public news posts" %}</i><p>
 	        {% endfor %}
 	        
 	        {% comment %}  
