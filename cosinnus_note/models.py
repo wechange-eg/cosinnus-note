@@ -51,7 +51,7 @@ class Note(BaseTaggableObjectModel):
         # take the first youtube url from the textand save it as a video link
         self.video = None
         for url in self.urls:
-            if 'youtube.com' in url:
+            if 'youtube.com' in url or 'youtu.be' in url:
                 self.video = url
                 break
             
@@ -90,6 +90,8 @@ class Note(BaseTaggableObjectModel):
         """
         if self.video:
             match = re.search(r'[?&]v=([a-zA-Z0-9-_]+)(&|$)', self.video)
+            if not match:
+                match = re.search(r'youtu.be/([a-zA-Z0-9-_]+)(&|$)', self.video)
             if match:
                 vid = match.groups()[0]
                 return vid
