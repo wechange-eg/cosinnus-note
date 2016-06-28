@@ -5,7 +5,7 @@
 {% if object.title and not object.title == '---' %}
 "{{ object.title }}"
 {% endif %}
-{% blocktrans with note_text=object.text %}{{ note_text }}
+{% blocktrans with note_text=object.text|safe %}{{ note_text }}
 
 
 
