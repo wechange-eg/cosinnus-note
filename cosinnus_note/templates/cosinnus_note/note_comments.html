@@ -69,7 +69,7 @@
                                             <a class="pull-right" href="#" onclick="$('#delete_comment_form_{{ comment.pk }}').submit(); return false;" title="{% trans "Delete" %}"><i class="fa fa-times"></i></a>
                                         </form>
                                     {% endif %}
-                                    <span class="moment-data-date" data-date="{{ comment.created_on|date:'c' }}" ></span>
+                                    <a href="{{ comment.get_absolute_url }}"><span class="moment-data-date" data-date="{{ comment.created_on|date:'c' }}" ></span></a>
                                 </div>
                                 <p class="comment-background">{{ comment.text|textfield }}</p>
                             </div>
