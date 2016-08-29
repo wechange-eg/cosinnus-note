@@ -56,5 +56,18 @@ notifications = {
         'subject_template': 'cosinnus_note/notifications/note_created_subject.txt',
         'signals': [note_created],
         'default': True,
+        
+        'is_html': True,
+        'snippet_template': 'cosinnus/html_mail/summary_item.html',
+        'snippet_type': 'news',
+        'event_text': _('New news post'),
+        'subject_text': '%(sender_name)s posted in %(team_name)s:',
+        'notification_reason': None, 
+        'data_attributes': {
+            'object_name': 'title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'text',
+            'image_url': None, # default: <event creator: avatar url>
+        },
     },  
 }
