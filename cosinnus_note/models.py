@@ -75,6 +75,10 @@ class Note(BaseTaggableObjectModel):
                     raise
         return None
     
+    def get_readable_title(self):
+        """ Returns either the title if set, or the text of this news post """
+        return self.title if not self.title == self.EMPTY_TITLE_PLACEHOLDER else self.text[:255]
+    
     @classmethod
     def get_current(self, group, user):
         """ Returns a queryset of the current upcoming events """

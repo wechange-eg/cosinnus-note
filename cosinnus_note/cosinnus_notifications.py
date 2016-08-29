@@ -64,7 +64,7 @@ notifications = {
         'subject_text': '%(sender_name)s posted in %(team_name)s:',
         'notification_reason': None, 
         'data_attributes': {
-            'object_name': 'title', 
+            'object_name': 'get_readable_title', 
             'object_url': 'get_absolute_url', 
             'object_text': 'text',
             'image_url': None, # default: <event creator: avatar url>
