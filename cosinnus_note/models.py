@@ -19,6 +19,7 @@ from cosinnus_note import cosinnus_notifications
 from django.contrib.auth import get_user_model
 
 import logging
+from django.template.defaultfilters import truncatechars
 logger = logging.getLogger('cosinnus')
 
 FACEBOOK_POST_URL = 'https://www.facebook.com/%s/posts/%s' # %s, %s :  user_id, post_id
@@ -77,7 +78,7 @@ class Note(BaseTaggableObjectModel):
     
     def get_readable_title(self):
         """ Returns either the title if set, or the text of this news post """
-        return self.title if not self.title == self.EMPTY_TITLE_PLACEHOLDER else self.text[:255]
+        return self.title if not self.title == self.EMPTY_TITLE_PLACEHOLDER else truncatechars(self.text, 35)
     
     @classmethod
     def get_current(self, group, user):
