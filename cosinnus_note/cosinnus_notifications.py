@@ -42,6 +42,21 @@ notifications = {
         'subject_template': 'cosinnus_note/notifications/note_comment_posted_subject.txt',
         'signals': [note_comment_posted],
         'default': True,
+        
+        'is_html': False,
+        'snippet_type': 'news',
+        'event_text': _('$(sender_name)s commented on your news post'),
+        'subject_text': _('A comment on one of your news posts'),
+        'data_attributes': {
+            'object_name': 'note.get_readable_title', 
+            'object_url': 'get_absolute_url', 
+            # TODO: follow these paths when resolving the attribute
+            'image_url': 'note.creator.avatar.URL-func', # TODO: this should be receiver avatar, not sender avatar
+            'sub_event_text': _('$(sender_name)s'),
+            'sub_event_meta': 'on [humanized date]', # TODO
+            'sub_image_url': 'TODO', # TODO: make this the sender avatar!
+            'sub_object_text': 'text',
+        },
     },  
     'note_comment_posted_in_commented_post': {
         'label': _('A user commented on a news posts you commented in'), 
@@ -49,6 +64,7 @@ notifications = {
         'subject_template': 'cosinnus_note/notifications/note_comment_posted_on_commented_post_subject.txt',
         'signals': [note_comment_posted_on_commented_post],
         'default': True,
+        
     },  
     'note_created': {
         'label': _('A user created a news post'), 
@@ -60,9 +76,8 @@ notifications = {
         'is_html': True,
         'snippet_template': 'cosinnus/html_mail/summary_item.html',
         'snippet_type': 'news',
-        'event_text': _('New news post'),
-        'subject_text': '%(sender_name)s posted in %(team_name)s:',
-        'notification_reason': None, 
+        'event_text': _('New news post by %(sender_name)s'),
+        'subject_text': _('%(sender_name)s posted in %(team_name)s:'),
         'data_attributes': {
             'object_name': 'get_readable_title', 
             'object_url': 'get_absolute_url', 
