@@ -278,7 +278,7 @@ msgid ""
 msgstr ""
 "Здравствуйте, %(receiver_name)s,\n"
 "\n"
-"пользователь %(sender_name)s толко что обновил пост в проекте %(team_name)"
+"пользователь %(sender_name)s только что обновил пост в проекте %(team_name)"
 "s:\n"
 
 #: .\templates\cosinnus_note\notifications\note_created.txt:8
