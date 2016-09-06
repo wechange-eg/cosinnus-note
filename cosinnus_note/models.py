@@ -79,7 +79,7 @@ class Note(BaseTaggableObjectModel):
     
     def get_readable_title(self):
         """ Returns either the title if set, or the text of this news post """
-        return self.title if not self.title == self.EMPTY_TITLE_PLACEHOLDER else truncatechars(self.text, 35)
+        return self.title if not self.title == self.EMPTY_TITLE_PLACEHOLDER else truncatechars(self.text, 40)
     
     @classmethod
     def get_current(self, group, user):

@@ -52,7 +52,7 @@ notifications = {
             'object_name': 'note.get_readable_title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
-            'sub_event_meta': 'created', # created date
+            'sub_event_meta': 'created_on', # created date
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
@@ -64,6 +64,19 @@ notifications = {
         'signals': [note_comment_posted_on_commented_post],
         'default': True,
         
+        'is_html': True,
+        'snippet_type': 'news',
+        'event_text': _('%(sender_name)s commented on a news post you commented in'),
+        'subject_text': _('%(sender_name)s commented on a news post you commented in'),
+        'sub_event_text': _('%(sender_name)s'),
+        'data_attributes': {
+            'object_name': 'note.get_readable_title', 
+            'object_url': 'get_absolute_url', 
+            'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'sub_event_meta': 'created_on', # created date
+            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
+            'sub_object_text': 'text',
+        },
     },  
     'note_created': {
         'label': _('A user created a news post'), 
