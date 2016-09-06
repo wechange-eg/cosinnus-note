@@ -52,7 +52,8 @@ notifications = {
             'object_name': 'note.get_readable_title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
-            'sub_event_meta': 'created_on', # created date
+            # no event in comment meta for now. looks ugly
+            #'sub_event_meta': 'created_on', # created date
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
@@ -73,7 +74,8 @@ notifications = {
             'object_name': 'note.get_readable_title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
-            'sub_event_meta': 'created_on', # created date
+            # no event in comment meta for now. looks ugly
+            #'sub_event_meta': 'created_on', # created date
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
