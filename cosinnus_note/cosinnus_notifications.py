@@ -43,18 +43,17 @@ notifications = {
         'signals': [note_comment_posted],
         'default': True,
         
-        'is_html': False,
+        'is_html': True,
         'snippet_type': 'news',
         'event_text': _('$(sender_name)s commented on your news post'),
-        'subject_text': _('A comment on one of your news posts'),
+        'subject_text': _('$(sender_name)s commented on one of your news posts'),
+        'sub_event_text': _('$(sender_name)s'),
         'data_attributes': {
             'object_name': 'note.get_readable_title', 
             'object_url': 'get_absolute_url', 
-            # TODO: follow these paths when resolving the attribute
-            'image_url': 'note.creator.avatar.URL-func', # TODO: this should be receiver avatar, not sender avatar
-            'sub_event_text': _('$(sender_name)s'),
-            'sub_event_meta': 'on [humanized date]', # TODO
-            'sub_image_url': 'TODO', # TODO: make this the sender avatar!
+            'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'sub_event_meta': 'created', # created date
+            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
     },  
@@ -82,7 +81,6 @@ notifications = {
             'object_name': 'get_readable_title', 
             'object_url': 'get_absolute_url', 
             'object_text': 'text',
-            'image_url': None, # default: <event creator: avatar url>
         },
     },  
 }
