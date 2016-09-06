@@ -45,9 +45,9 @@ notifications = {
         
         'is_html': True,
         'snippet_type': 'news',
-        'event_text': _('$(sender_name)s commented on your news post'),
-        'subject_text': _('$(sender_name)s commented on one of your news posts'),
-        'sub_event_text': _('$(sender_name)s'),
+        'event_text': _('%(sender_name)s commented on your news post'),
+        'subject_text': _('%(sender_name)s commented on one of your news posts'),
+        'sub_event_text': _('%(sender_name)s'),
         'data_attributes': {
             'object_name': 'note.get_readable_title', 
             'object_url': 'get_absolute_url', 
