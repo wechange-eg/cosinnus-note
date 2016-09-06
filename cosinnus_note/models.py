@@ -13,7 +13,8 @@ from embed_video.fields import EmbedVideoField
 
 from cosinnus.models.tagged import BaseTaggableObjectModel
 from django.utils.functional import cached_property
-from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user
+from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user,\
+    check_object_read_access
 from cosinnus.utils.urls import group_aware_reverse
 from cosinnus_note import cosinnus_notifications
 from django.contrib.auth import get_user_model
@@ -158,6 +159,10 @@ class Comment(models.Model):
     def group(self):
         """ Needed by the notifications system """
         return self.note.group
+    
+    def grant_extra_read_permissions(self, user):
+        """ Comments inherit their visibility from their commented on parent """
+        return check_object_read_access(self.note, user)
 
 import django
 if django.VERSION[:2] < (1, 7):
