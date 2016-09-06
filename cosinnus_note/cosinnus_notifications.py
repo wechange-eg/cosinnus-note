@@ -86,7 +86,6 @@ notifications = {
         'default': True,
         
         'is_html': True,
-        'snippet_template': 'cosinnus/html_mail/summary_item.html',
         'snippet_type': 'news',
         'event_text': _('New news post by %(sender_name)s'),
         'subject_text': _('%(sender_name)s posted in %(team_name)s:'),
