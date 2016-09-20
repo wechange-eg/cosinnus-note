@@ -1,4 +1,3 @@
-﻿# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -8,21 +7,18 @@ msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-04 13:13+0200\n"
-"PO-Revision-Date: 2015-11-14 17:11+0100\n"
+"PO-Revision-Date: 2016-09-20 13:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.4\n"
 "Language: ru\n"
 
-#: .\cosinnus_app.py:14 .\templates\cosinnus_note\note_detail.html:3
-#: .\templates\cosinnus_note\note_embed.html:3
-#: .\templates\cosinnus_note\note_form.html:3
-#: .\templates\cosinnus_note\note_list.html:3
+#: .\cosinnus_app.py:14 .\templates\cosinnus_note\note_detail.html:3 .\templates\cosinnus_note\note_embed.html:3
+#: .\templates\cosinnus_note\note_form.html:3 .\templates\cosinnus_note\note_list.html:3
 msgid "Notes"
 msgstr "Новости"
 
@@ -37,8 +33,7 @@ msgstr "Пользователь прокомментировал одну из 
 
 #: .\cosinnus_notifications.py:47
 msgid "A user commented on a news posts you commented in"
-msgstr ""
-"Пользователь оставил комментарий к новости, которую прокомментировали вы"
+msgstr "Пользователь оставил комментарий к новости, которую прокомментировали вы"
 
 #: .\cosinnus_notifications.py:54
 msgid "A user created a news post"
@@ -48,10 +43,8 @@ msgstr "Пользователь опубликовал новость"
 msgid "No news"
 msgstr "Нет новостей"
 
-#: .\dashboard.py:68 .\templates\cosinnus_note\note_form.html:33
-#: .\templates\cosinnus_note\note_form.html:50
-#: .\templates\cosinnus_note\note_list.html:35
-#: .\templates\cosinnus_note\note_list.html:52
+#: .\dashboard.py:68 .\templates\cosinnus_note\note_form.html:33 .\templates\cosinnus_note\note_form.html:50
+#: .\templates\cosinnus_note\note_list.html:35 .\templates\cosinnus_note\note_list.html:52
 msgid "Write a news post"
 msgstr "Написать новость"
 
@@ -107,8 +100,7 @@ msgstr "Комментарий"
 msgid "Comments"
 msgstr "Комментарии"
 
-#: .\templates\cosinnus_note\base.html:6
-#: .\templates\cosinnus_note\base.html:13
+#: .\templates\cosinnus_note\base.html:6 .\templates\cosinnus_note\base.html:13
 msgid "News"
 msgstr "Новости"
 
@@ -117,8 +109,7 @@ msgctxt "the_verb"
 msgid "Comment"
 msgstr "Комментировать"
 
-#: .\templates\cosinnus_note\note_comments.html:73
-#: .\templates\cosinnus_note\single_note_detailed.html:28
+#: .\templates\cosinnus_note\note_comments.html:73 .\templates\cosinnus_note\single_note_detailed.html:28
 msgid "Delete"
 msgstr "Удалить"
 
@@ -126,10 +117,8 @@ msgstr "Удалить"
 msgid "Write comment..."
 msgstr "Сохранить"
 
-#: .\templates\cosinnus_note\note_comments.html:114
-#: .\templates\cosinnus_note\note_form.html:70
-#: .\templates\cosinnus_note\note_list.html:72
-#: .\templates\cosinnus_note\widgets\base_news_widget.html:39
+#: .\templates\cosinnus_note\note_comments.html:114 .\templates\cosinnus_note\note_form.html:70
+#: .\templates\cosinnus_note\note_list.html:72 .\templates\cosinnus_note\widgets\base_news_widget.html:39
 msgid "Post"
 msgstr "Отправить"
 
@@ -143,8 +132,7 @@ msgstr "Пока новостей нет"
 msgid "Edit news post"
 msgstr "Редактировать новость"
 
-#: .\templates\cosinnus_note\note_form.html:45
-#: .\templates\cosinnus_note\note_list.html:47
+#: .\templates\cosinnus_note\note_form.html:45 .\templates\cosinnus_note\note_list.html:47
 #: .\templates\cosinnus_note\widgets\base_news_widget.html:14
 msgid "Title (optional)"
 msgstr "Заголовок (опционально)"
@@ -153,8 +141,7 @@ msgstr "Заголовок (опционально)"
 msgid "Save changes"
 msgstr "Сохранить изменения"
 
-#: .\templates\cosinnus_note\note_list.html:95
-#: .\templates\cosinnus_note\note_list_standalone.html:23
+#: .\templates\cosinnus_note\note_list.html:95 .\templates\cosinnus_note\note_list_standalone.html:23
 #: .\templates\cosinnus_note\widgets\detailed_news_content.html:97
 msgid "There are no news posts yet"
 msgstr "Пока новостей нет"
@@ -164,8 +151,7 @@ msgstr "Пока новостей нет"
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a news post you wrote in %(team_name)"
-"s:\n"
+"%(sender_name)s has posted a comment on a news post you wrote in %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -179,16 +165,14 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %"
-"(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
 "Здравствуйте, %(receiver_name)s!\n"
 "\n"
-"Пользователь %(sender_name)s опубликовал комментарий к вашей новости в "
-"группе %(team_name)s:\n"
+"Пользователь %(sender_name)s опубликовал комментарий к вашей новости в группе %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -200,8 +184,7 @@ msgstr ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Перейдите по этой ссылке, чтобы изменить ваши настройки уведомлений: %"
-"(notification_settings_url)s )\n"
+"(Перейдите по этой ссылке, чтобы изменить ваши настройки уведомлений: %(notification_settings_url)s )\n"
 "Ваша команда %(site_name)s\n"
 "\n"
 
@@ -210,8 +193,7 @@ msgstr ""
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a news post you a commented in, in %"
-"(team_name)s:\n"
+"%(sender_name)s has posted a comment on a news post you a commented in, in %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -225,16 +207,14 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %"
-"(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
 "Здравствуйте, %(receiver_name)s!\n"
 "\n"
-"Пользователь %(sender_name)s опубликовал комментарий к новости, которую вы "
-"прокомментировали в группе %(team_name)s:\n"
+"Пользователь %(sender_name)s опубликовал комментарий к новости, которую вы прокомментировали в группе %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -248,26 +228,20 @@ msgstr ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Перейдите по этой ссылке, чтобы изменить Ваши настройки уведомлений: %"
-"(notification_settings_url)s )\n"
+"(Перейдите по этой ссылке, чтобы изменить Ваши настройки уведомлений: %(notification_settings_url)s )\n"
 "\n"
 "Ваша команда %(site_name)s.\n"
 "\n"
 
 #: .\templates\cosinnus_note\notifications\note_comment_posted_on_commented_post_subject.txt:1
 #, python-format
-msgid ""
-"%(sender_name)s commented on a news post you commented in, in %(team_name)s."
-msgstr ""
-"Пользователь %(sender_name)s оставил комментарий к новости, которую вы "
-"прокомментировали в %(team_name)s"
+msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
+msgstr "Пользователь %(sender_name)s оставил комментарий к новости, которую вы прокомментировали в %(team_name)s"
 
 #: .\templates\cosinnus_note\notifications\note_comment_posted_subject.txt:1
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
-msgstr ""
-"Пользователь %(sender_name)s прокомментировал одну из ваших новостей в %"
-"(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал одну из ваших новостей в %(team_name)s."
 
 #: .\templates\cosinnus_note\notifications\note_created.txt:1
 #, python-format
@@ -278,8 +252,7 @@ msgid ""
 msgstr ""
 "Здравствуйте, %(receiver_name)s,\n"
 "\n"
-"пользователь %(sender_name)s только что обновил пост в проекте %(team_name)"
-"s:\n"
+"пользователь %(sender_name)s только что обновил пост в проекте %(team_name)s:\n"
 
 #: .\templates\cosinnus_note\notifications\note_created.txt:8
 #, python-format
@@ -292,8 +265,7 @@ msgid ""
 "\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %"
-"(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
@@ -305,8 +277,7 @@ msgstr ""
 "\n"
 "\n"
 "\n"
-"(Перейдите по этой ссылке, чтобы изменить ваши настройки уведомлений: %"
-"(notification_settings_url)s )\n"
+"(Перейдите по этой ссылке, чтобы изменить ваши настройки уведомлений: %(notification_settings_url)s )\n"
 "\n"
 "Ваша команда %(site_name)s"
 
@@ -315,25 +286,20 @@ msgstr ""
 msgid "%(sender_name)s posted in %(team_name)s:"
 msgstr "Пользователь %(sender_name)s опубликовал пост в %(team_name)s:"
 
-#: .\templates\cosinnus_note\single_note_detailed.html:24
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html:28
+#: .\templates\cosinnus_note\single_note_detailed.html:24 .\templates\cosinnus_note\widgets\detailed_news_content.html:28
 msgid "Edit"
 msgstr "Редактировать"
 
-#: .\templates\cosinnus_note\single_note_detailed.html:26
-#: .\templates\cosinnus_note\single_note_detailed.html:50
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html:21
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html:39
+#: .\templates\cosinnus_note\single_note_detailed.html:26 .\templates\cosinnus_note\single_note_detailed.html:50
+#: .\templates\cosinnus_note\widgets\detailed_news_content.html:21 .\templates\cosinnus_note\widgets\detailed_news_content.html:39
 msgid "Delete note"
 msgstr "Удалить новость"
 
-#: .\templates\cosinnus_note\single_note_detailed.html:39
-#: .\templates\cosinnus_note\single_note_embeddable.html:25
+#: .\templates\cosinnus_note\single_note_detailed.html:39 .\templates\cosinnus_note\single_note_embeddable.html:25
 msgid "View on Facebook"
 msgstr "Посмотреть на Фейсбуке"
 
-#: .\templates\cosinnus_note\single_note_detailed.html:51
-#: .\templates\cosinnus_note\widgets\detailed_news_content.html:40
+#: .\templates\cosinnus_note\single_note_detailed.html:51 .\templates\cosinnus_note\widgets\detailed_news_content.html:40
 msgid "Do you really want to delete this note?"
 msgstr "Вы действительно хотите удалить эту новость?"
 
@@ -363,12 +329,12 @@ msgstr "Ваша новость была опубликована на Фейс�
 
 #: .\views.py:65
 msgid ""
-"We could not post this news post on your Facebook timeline. If this problem "
-"persists, please make sure you have granted us all required Facebook "
-"permissions, or try disconnecting and re-connecting your Facebook account!"
-msgstr "Мы не смогли опубликовать эту новость в вашей ленте-новостей на Фейсбуке. Если "
-"проблема повторяется, то проверьте, пожалуйста, предоставили ли вы нам все необходимые данные доступа к вашему Фейсбук-аккаунту."
-"или попробуйте "прервать соединение с вашим Фейсбук-аккаунтом и установить его заново"
+"We could not post this news post on your Facebook timeline. If this problem persists, please make sure you have granted us all "
+"required Facebook permissions, or try disconnecting and re-connecting your Facebook account!"
+msgstr ""
+"Мы не смогли опубликовать эту новость в вашей ленте-новостей на Фейсбуке. Если проблема повторяется, то проверьте, пожалуйста, "
+"предоставили ли вы нам все необходимые данные доступа к вашему Фейсбук-аккаунту.или попробуйте \"прервать соединение с вашим "
+"Фейсбук-аккаунтом и установить его заново"
 
 #: .\views.py:78
 msgid "Your news post was also posted on the Facebook Group/Fan-Page."
@@ -376,16 +342,13 @@ msgstr "Ваша новость была опубликована на Facebook 
 
 #: .\views.py:80
 msgid ""
-"We could not post this news post on your Facebook Group/Fan-Page. If this "
-"problem persists, please try disconnecting and re-connecting your Facebook "
-"account and make sure you allow us to post with a visibility of at least "
-"\"Friends\". If this doesn't work, contact this project/group's "
-"administrator!"
-msgstr "Мы не смогли опубликовать вашу новость на Facebook Group/Fan-Page." Если"
-"эта проблема повторяется, то попробуйте выйти из вашего Фейсбук-аккаунта и снова зайти в него"
-"убедитесь, что вы дали нам полномочия размещать посты с видмостью, по крайней мере, как \"Друзья\"."
-"Если это не работает, то обратитесь к администратору этого проекта/группы."
-
+"We could not post this news post on your Facebook Group/Fan-Page. If this problem persists, please try disconnecting and re-"
+"connecting your Facebook account and make sure you allow us to post with a visibility of at least \"Friends\". If this doesn't "
+"work, contact this project/group's administrator!"
+msgstr ""
+"Мы не смогли опубликовать вашу новость на Facebook Group/Fan-Page.\" Еслиэта проблема повторяется, то попробуйте выйти из "
+"вашего Фейсбук-аккаунта и снова зайти в негоубедитесь, что вы дали нам полномочия размещать посты с видмостью, по крайней мере, "
+"как \"Друзья\".Если это не работает, то обратитесь к администратору этого проекта/группы."
 
 #: .\views.py:107
 msgid "Your news post was deleted successfully."
