@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-20 13:27+0200\n"
+"POT-Creation-Date: 2016-09-27 17:57+0200\n"
 "PO-Revision-Date: 2015-11-11 10:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -56,6 +56,11 @@ msgstr "Член опублікував/-ла новий допис у спіл�
 #, python-format
 msgid "New news post by %(sender_name)s"
 msgstr ""
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s created a new news post"
+msgstr "%(sender_name)s прокоментував/-ла одну з новин, які ви також прокоментували, у %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
