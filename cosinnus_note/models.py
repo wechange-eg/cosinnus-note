@@ -21,6 +21,7 @@ from django.contrib.auth import get_user_model
 
 import logging
 from django.template.defaultfilters import truncatechars
+from cosinnus.models.group import CosinnusPortal
 logger = logging.getLogger('cosinnus')
 
 FACEBOOK_POST_URL = 'https://www.facebook.com/%s/posts/%s' # %s, %s :  user_id, post_id
@@ -87,6 +88,12 @@ class Note(BaseTaggableObjectModel):
         qs = Note.objects.filter(group=group)
         if user:
             qs = filter_tagged_object_queryset_for_user(qs, user)
+        return qs
+    
+    @classmethod
+    def get_current_for_portal(self):
+        """ Returns a queryset of the current Notes for this portal """
+        qs = Note.objects.filter(group__portal=CosinnusPortal.get_current())
         return qs
     
     @cached_property
