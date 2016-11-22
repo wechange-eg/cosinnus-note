@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-27 17:57+0200\n"
-"PO-Revision-Date: 2016-09-20 13:08+0200\n"
+"POT-Creation-Date: 2016-11-02 11:31+0100\n"
+"PO-Revision-Date: 2016-11-02 11:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,29 +25,29 @@ msgid "note"
 msgstr "Новости"
 
 msgid "A user commented on one of your news posts"
-msgstr "Пользователь прокомментировал одну из ваших новостей"
+msgstr "Пользователь прокомментировал одну из Ваших новостей"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
 msgid "%(sender_name)s commented on your news post"
-msgstr "Пользователь %(sender_name)s прокомментировал одну из ваших новостей в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал одну из Ваших новостей в %(team_name)s."
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
 msgid "%(sender_name)s commented on one of your news posts"
-msgstr "Пользователь %(sender_name)s прокомментировал одну из ваших новостей в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал одну из Ваших новостей в %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s"
 msgstr ""
 
 msgid "A user commented on a news posts you commented in"
-msgstr "Пользователь оставил комментарий к новости, которую прокомментировали вы"
+msgstr "Пользователь оставил комментарий к новости, которую прокомментировали Вы"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr "Пользователь %(sender_name)s оставил комментарий к новости, которую вы прокомментировали в %(team_name)s"
+msgstr "Пользователь %(sender_name)s оставил комментарий к новости, которую Вы прокомментировали в %(team_name)s"
 
 msgid "A user created a news post"
 msgstr "Пользователь опубликовал новость"
@@ -57,9 +57,9 @@ msgid "New news post by %(sender_name)s"
 msgstr ""
 
 #, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#| msgid "A user created a news post"
 msgid "%(sender_name)s created a new news post"
-msgstr "Пользователь %(sender_name)s прокомментировал одну из ваших новостей в %(team_name)s."
+msgstr "Пользователь опубликовал новость"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
@@ -115,7 +115,7 @@ msgstr "Новости"
 
 msgctxt "the_verb"
 msgid "Comment"
-msgstr "Комментировать"
+msgstr "Комментарий"
 
 msgid "Delete"
 msgstr "Удалить"
@@ -168,19 +168,19 @@ msgid ""
 msgstr ""
 "Здравствуйте, %(receiver_name)s!\n"
 "\n"
-"Пользователь %(sender_name)s опубликовал комментарий к вашей новости в группе %(team_name)s:\n"
+"Пользователь %(sender_name)s опубликовал комментарий к Вашей новости в группе %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
 "\n"
-"к вашему посту: \n"
+"к Вашему посту: \n"
 "\n"
 "\"%(note_text)s\"\n"
 "Перейдите по этой ссылке, чтобы увидеть комментарий: \n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Перейдите по этой ссылке, чтобы изменить ваши настройки уведомлений: %(notification_settings_url)s )\n"
+"(Перейдите по этой ссылке, чтобы изменить Ваши настройки уведомлений: %(notification_settings_url)s )\n"
 "Ваша команда %(site_name)s\n"
 "\n"
 
@@ -209,7 +209,7 @@ msgid ""
 msgstr ""
 "Здравствуйте, %(receiver_name)s!\n"
 "\n"
-"Пользователь %(sender_name)s опубликовал комментарий к новости, которую вы прокомментировали в группе %(team_name)s:\n"
+"Пользователь %(sender_name)s опубликовал комментарий к новости, которую Вы прокомментировали в группе %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -230,11 +230,11 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
-msgstr "Пользователь %(sender_name)s оставил комментарий к новости, которую вы прокомментировали в %(team_name)s"
+msgstr "Пользователь %(sender_name)s оставил комментарий к новости, которую Вы прокомментировали в %(team_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
-msgstr "Пользователь %(sender_name)s прокомментировал одну из ваших новостей в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал одну из Ваших новостей в %(team_name)s."
 
 #, python-format
 msgid ""
@@ -268,7 +268,7 @@ msgstr ""
 "\n"
 "\n"
 "\n"
-"(Перейдите по этой ссылке, чтобы изменить ваши настройки уведомлений: %(notification_settings_url)s )\n"
+"(Перейдите по этой ссылке, чтобы изменить Ваши настройки уведомлений: %(notification_settings_url)s )\n"
 "\n"
 "Ваша команда %(site_name)s"
 
@@ -312,13 +312,13 @@ msgid "Your comment was deleted successfully."
 msgstr "Ваш комментарий удален"
 
 #~ msgid "Your news post was also posted on your Facebook timeline."
-#~ msgstr "Ваша новость была опубликована на Фейсбуке в вашей ленте новостей"
+#~ msgstr "Ваша новость была опубликована на Фейсбуке в Вашей ленте новостей."
 
 #~ msgid "We could not post this news post on your Facebook timeline. If this problem persists, please make sure you have granted us all required Facebook permissions, or try disconnecting and re-connecting your Facebook account!"
-#~ msgstr "Мы не смогли опубликовать эту новость в вашей ленте-новостей на Фейсбуке. Если проблема повторяется, то проверьте, пожалуйста, предоставили ли вы нам все необходимые данные доступа к вашему Фейсбук-аккаунту.или попробуйте \"прервать соединение с вашим Фейсбук-аккаунтом и установить его заново"
+#~ msgstr "Мы не смогли опубликовать эту новость в Вашей ленте-новостей на Фейсбуке. Если проблема повторяется, то проверьте, пожалуйста, предоставили ли Вы нам все необходимые данные доступа к вашему Фейсбук-аккаунту.или попробуйте \"прервать соединение с вашим Фейсбук-аккаунтом и установить его заново."
 
 #~ msgid "Your news post was also posted on the Facebook Group/Fan-Page."
-#~ msgstr "Ваша новость была опубликована на Facebook Group/Fan-Page"
+#~ msgstr "Ваша новость была опубликована в Фейсбук-группе или Фан-странице."
 
 #~ msgid "We could not post this news post on your Facebook Group/Fan-Page. If this problem persists, please try disconnecting and re-connecting your Facebook account and make sure you allow us to post with a visibility of at least \"Friends\". If this doesn't work, contact this project/group's administrator!"
-#~ msgstr "Мы не смогли опубликовать вашу новость на Facebook Group/Fan-Page.\" Еслиэта проблема повторяется, то попробуйте выйти из вашего Фейсбук-аккаунта и снова зайти в негоубедитесь, что вы дали нам полномочия размещать посты с видмостью, по крайней мере, как \"Друзья\".Если это не работает, то обратитесь к администратору этого проекта/группы."
+#~ msgstr "Мы не смогли опубликовать вашу новость в Фейсбук-группе или Фан-странице.\" Еслиэта проблема повторяется, то попробуйте выйти из Вашего Фейсбук-аккаунта и снова зайти в негоубедитесь, что Вы дали нам полномочия размещать посты с видмостью, по крайней мере, как \"Друзья\".Если это не работает, то обратитесь к администратору этого проекта/группы."

@@ -2,8 +2,12 @@
 from __future__ import unicode_literals
 from cosinnus.core.registries.attached_objects import attached_object_registry
 
+from cosinnus.conf import settings
 
 def register():
+    if 'cosinnus_note' in getattr(settings, 'COSINNUS_DISABLED_COSINNUS_APPS', []):
+        return
+    
     # Import here to prevent import side effects
     from django.utils.translation import ugettext_lazy as _
     from django.utils.translation import pgettext_lazy
