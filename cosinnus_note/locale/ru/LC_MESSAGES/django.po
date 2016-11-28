@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-02 11:31+0100\n"
-"PO-Revision-Date: 2016-11-02 11:15+0100\n"
+"PO-Revision-Date: 2016-11-28 15:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,39 +27,35 @@ msgstr "Новости"
 msgid "A user commented on one of your news posts"
 msgstr "Пользователь прокомментировал одну из Ваших новостей"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on your news post"
-msgstr "Пользователь %(sender_name)s прокомментировал одну из Ваших новостей в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал одну из Ваших новостей."
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on one of your news posts"
-msgstr "Пользователь %(sender_name)s прокомментировал одну из Ваших новостей в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал одну из Ваших новостей."
 
 #, python-format
 msgid "%(sender_name)s"
-msgstr ""
+msgstr "%(sender_name)s"
 
 msgid "A user commented on a news posts you commented in"
 msgstr "Пользователь оставил комментарий к новости, которую прокомментировали Вы"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr "Пользователь %(sender_name)s оставил комментарий к новости, которую Вы прокомментировали в %(team_name)s"
+msgstr "Пользователь %(sender_name)s оставил комментарий к новости, которую Вы прокомментировали "
 
 msgid "A user created a news post"
 msgstr "Пользователь опубликовал новость"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
-msgstr ""
+msgstr "Пользователь %(sender_name)s опубликовал пост"
 
-#, fuzzy, python-format
-#| msgid "A user created a news post"
+#, python-format
 msgid "%(sender_name)s created a new news post"
-msgstr "Пользователь опубликовал новость"
+msgstr "Пользователь %(sender_name)s опубликовал пост"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
@@ -126,8 +122,6 @@ msgstr "Сохранить"
 msgid "Post"
 msgstr "Отправить"
 
-#, fuzzy
-#| msgid "There are no news posts yet"
 msgid "There are no public news posts"
 msgstr "Пока новостей нет"
 
