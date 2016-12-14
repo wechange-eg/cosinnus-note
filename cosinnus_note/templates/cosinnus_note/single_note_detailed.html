@@ -1,7 +1,7 @@
 {% load i18n cosinnus_tags %}
 
 {% with note=object %}
-	<div class="large-space"> <!-- note-wrapper -->
+	<div class="{% if no_space %}fine-space{% else %}large-space{% endif %}"> <!-- note-wrapper -->
 	
 	    <div class="app-main">
 	        <div type="button" class="btn btn-emphasized w100">
