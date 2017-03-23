@@ -28,6 +28,7 @@ from cosinnus.utils.pagination import PaginationTemplateMixin
 from cosinnus.views.facebook_integration import FacebookIntegrationViewMixin
 from django.utils.encoding import force_text
 from cosinnus.models.tagged import BaseTagObject
+from cosinnus.models.group import CosinnusPortal
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
@@ -134,7 +135,7 @@ note_embed = NoteEmbedView.as_view()
 
 
 class NoteEmbedGlobalView(PaginationTemplateMixin, ListView):
-    """ Displays all notes in this Portal in an embeddable view, not just from a specific group """
+    """ Displays all notes in all Portals in an embeddable view, not just from a specific group """
     
     model = Note
     per_page = 10
@@ -147,6 +148,18 @@ class NoteEmbedGlobalView(PaginationTemplateMixin, ListView):
         return qs
     
 note_embed_global = NoteEmbedGlobalView.as_view()
+
+
+class NoteEmbedCurrentPortalView(NoteEmbedGlobalView):
+    """ Displays all notes in this Portal in an embeddable view, not just from a specific group """
+    
+    def get_queryset(self, **kwargs):
+        """ Only ever show public notes """
+        qs = super(NoteEmbedCurrentPortalView, self).get_queryset()
+        qs = qs.filter(group__portal=CosinnusPortal.get_current())
+        return qs
+    
+note_embed_current_portal = NoteEmbedCurrentPortalView.as_view()
 
 
 class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,

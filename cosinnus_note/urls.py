@@ -4,9 +4,13 @@ from __future__ import unicode_literals
 from django.conf.urls import patterns, url
 
 cosinnus_root_patterns = patterns('cosinnus_note.views', 
-    url(r'^notes/embed/$',
+    url(r'^notes/embed/all/$',
         'note_embed_global',
         name='embed-global'),
+                                  
+    url(r'^notes/embed/$',
+        'note_embed_current_portal',
+        name='embed-current-portal'),
 )
     
 cosinnus_group_patterns = patterns('cosinnus_note.views',
