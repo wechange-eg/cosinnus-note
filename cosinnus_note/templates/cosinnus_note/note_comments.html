@@ -71,7 +71,7 @@
                                     {% endif %}
                                     <a href="{{ comment.get_absolute_url }}"><span class="moment-data-date" data-date="{{ comment.created_on|date:'c' }}" ></span></a>
                                 </div>
-                                <p class="comment-background">{{ comment.text|textfield }}</p>
+                                <p class="comment-background">{{ comment.text|textfield:"simple" }}</p>
                             </div>
                         </li>
                     </ul>

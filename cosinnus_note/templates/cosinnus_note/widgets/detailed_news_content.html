@@ -44,18 +44,18 @@
                 <li class="media">
                     <div class="media-body">
                         <div class="well">
-                            {% with note_text=note.text|urlizetrunc:25|url_target_blank|linebreaksbr note_id=note.id %}
+                            {% with note_text=note.text|textfield note_id=note.id %}
                                 {% if note.title and not note.title == '---' %}
                                     <p class="regular-space"><strong>{{ note.title|urlizetrunc:25|url_target_blank }}</strong></p>
                                 {% endif %}
                                 {% if note.text|length|intify < 200 %}
-                                    <p>{{ note_text }}</p>
+                                    <div class="textfield">{{ note_text }}</div>
                                 {% else %}
                                     <div class="hidden_text_shown" data-hidden-text-id="note_{{ note_id }}" >
-                                        <p>{{ note.text|truncatechars:200|urlizetrunc:25|url_target_blank|linebreaksbr }} <a class="hidden_text_button" data-hidden-text-id="note_{{ note_id }}">{% trans "Read more..." %}</a></p>
+                                        <div class="textfield">{{ note.text|truncatechars:200|textfield }} <a class="hidden_text_button" data-hidden-text-id="note_{{ note_id }}">{% trans "Read more..." %}</a></div>
                                     </div>
                                     <div class="hidden_text_hidden" data-hidden-text-id="note_{{ note_id }}" style="display:none;">
-                                        <p>{{ note_text }}</p>
+                                        <div class="textfield">{{ note_text}}</div>
                                     </div>
                                     <script type="text/javascript">
 									    $.cosinnus.hidden_text();
