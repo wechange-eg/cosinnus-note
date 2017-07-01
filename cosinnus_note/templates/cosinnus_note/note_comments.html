@@ -58,7 +58,7 @@
                             <a class="pull-left" href="{{ comment.creator|profile_url }}">
                                 {% include 'cosinnus/user/user_avatar_image.html' with user=comment.creator %}
                             </a>
-                            <div class="media-body comment-background">
+                            <div class="media-body comment-background textfield">
                                 <strong><a href="{{ comment.creator|profile_url }}">{{ comment.creator|full_name }}</a></strong>
                                 <div class="font11px regular-space">
                                     {% if user|has_write_access:comment %}
@@ -71,7 +71,7 @@
                                     {% endif %}
                                     <a href="{{ comment.get_absolute_url }}"><span class="moment-data-date" data-date="{{ comment.created_on|date:'c' }}" ></span></a>
                                 </div>
-                                <p class="comment-background">{{ comment.text|textfield:"simple" }}</p>
+                                <p class="comment-background">{{ comment.text|textfield }}</p>
                             </div>
                         </li>
                     </ul>
