@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 11:31+0100\n"
+"POT-Creation-Date: 2017-07-03 15:27+0200\n"
 "PO-Revision-Date: 2016-11-28 15:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -24,6 +24,20 @@ msgctxt "the_app"
 msgid "note"
 msgstr "Новости"
 
+#, fuzzy
+#| msgid "A user created a news post"
+msgid "A user commented on a news post"
+msgstr "Пользователь опубликовал новость"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your news post"
+msgid "%(sender_name)s commented on a news post"
+msgstr "Пользователь %(sender_name)s прокомментировал одну из Ваших новостей."
+
+#, python-format
+msgid "%(sender_name)s"
+msgstr "%(sender_name)s"
+
 msgid "A user commented on one of your news posts"
 msgstr "Пользователь прокомментировал одну из Ваших новостей"
 
@@ -34,10 +48,6 @@ msgstr "Пользователь %(sender_name)s прокомментирова�
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts"
 msgstr "Пользователь %(sender_name)s прокомментировал одну из Ваших новостей."
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on a news posts you commented in"
 msgstr "Пользователь оставил комментарий к новости, которую прокомментировали Вы"

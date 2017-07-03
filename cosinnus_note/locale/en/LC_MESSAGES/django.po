@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 11:31+0100\n"
+"POT-Creation-Date: 2017-07-03 15:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,21 @@ msgstr ""
 msgctxt "the_app"
 msgid "note"
 msgstr "News"
+
+#, fuzzy
+msgid "A user commented on a news post"
+msgstr "Write a news post..."
+
+#, fuzzy, python-format
+msgid "%(sender_name)s commented on a news post"
+msgstr ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+
+#, python-format
+msgid "%(sender_name)s"
+msgstr ""
 
 msgid "A user commented on one of your news posts"
 msgstr ""
@@ -39,10 +54,6 @@ msgstr ""
 "Hi, %(creator_name)s!\n"
 "\n"
 "%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr ""
 
 #, fuzzy
 msgid "A user commented on a news posts you commented in"

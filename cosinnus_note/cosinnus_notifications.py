@@ -9,6 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 """
 
 """ Signal definitions """
+note_comment_posted_on_any = dispatch.Signal(providing_args=["user", "obj", "audience"])
 note_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 note_comment_posted_on_commented_post = dispatch.Signal(providing_args=["user", "obj", "audience"])
 note_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
@@ -36,6 +37,29 @@ note_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
     
 """ 
 notifications = {
+    'note_comment_posted_on_any': {
+        'label': _('A user commented on a news post'), 
+        'mail_template': 'cosinnus_note/notifications/note_comment_posted.html',
+        'subject_template': 'cosinnus_note/notifications/note_comment_posted_subject.txt',
+        'signals': [note_comment_posted_on_any],
+        'default': False,
+        
+        'is_html': True,
+        'snippet_type': 'news',
+        'event_text': _('%(sender_name)s commented on a news post'),
+        'notification_text': _('%(sender_name)s commented on a news post'),
+        'subject_text': _('%(sender_name)s commented on a news post'),
+        'sub_event_text': _('%(sender_name)s'),
+        'data_attributes': {
+            'object_name': 'note.get_readable_title', 
+            'object_url': 'get_absolute_url', 
+            'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            # no event in comment meta for now. looks ugly
+            #'sub_event_meta': 'created_on', # created date
+            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
+            'sub_object_text': 'text',
+        },
+    },  
     'note_comment_posted': {
         'label': _('A user commented on one of your news posts'), 
         'mail_template': 'cosinnus_note/notifications/note_comment_posted.html',
