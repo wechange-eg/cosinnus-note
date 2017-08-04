@@ -9,6 +9,11 @@
 {% block leftnav %}
 {% endblock leftnav %}
 
+{% block extrahead %}
+    {{ block.super }}
+    {% include 'cosinnus/common/simplemde_dependencies.html' with element_id=form.forms.obj.text.id_for_label %}
+{% endblock %}
+
 
 {% block content %}
     
@@ -50,7 +55,7 @@
 		                    <li class="w100">
 		                        {{ form.forms.obj.text.errors }}
 		                        {% captureas placeholder %}{% trans "Write a news post" %}{% endcaptureas %}
-		                        {% render_field form.forms.obj.text class+=" autogrow" placeholder=placeholder %}
+		                        {% render_field form.forms.obj.text placeholder=placeholder %}
 		                    </li>
 		                </ol>
 		                

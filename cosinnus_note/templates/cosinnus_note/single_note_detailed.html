@@ -59,7 +59,7 @@
 	        {% if note.title and not note.title == '---' %}
                 <p><b>{{ note.title|urlizetrunc:25|url_target_blank }}</b></p>
             {% endif %}
-	        <p>{{ note.text|urlizetrunc:25|url_target_blank|linebreaksbr }}</p>
+	        <div class="textfield">{{ note.text|textfield }}</div>
 	        {% if note.video %}
 	            {% include 'cosinnus/common/embed_youtube.html' with video_id=note.video_id %}
 	        {% endif %}

@@ -156,9 +156,15 @@ class Comment(models.Model):
                 cosinnus_notifications.note_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.note.creator])
             # comment was created, for other commenters posts (we skip the post creator because the previous notification precedes)
             try:
+                # notifications for people who also commented on the note of this comment
                 commenter_ids = set(self.note.comments.exclude(creator__id__in=[self.creator_id, self.note.creator_id]).values_list('creator', flat=True))
                 commenters = get_user_model().objects.filter(id__in=commenter_ids)
                 cosinnus_notifications.note_comment_posted_on_commented_post.send(sender=self, user=self.creator, obj=self, audience=commenters)
+                
+                # notification for any members in this group, excepting thos who already commented on the note (because they already received a notification)
+                group_members_without_commenters_ids = [member_id for member_id in self.note.group.members if member_id not in [self.creator_id, self.note.creator_id]]
+                all_members = get_user_model().objects.filter(id__in=group_members_without_commenters_ids)
+                cosinnus_notifications.note_comment_posted_on_any.send(sender=self, user=self.creator, obj=self, audience=all_members)
             except Exception, e:
                 logger.error('There was an error in the note_comments_commented notification. See extra', extra={'exc': e})
                 

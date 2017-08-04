@@ -3,6 +3,8 @@
 
 
 {% block fadedown_content %}
+		{# sadly we have no practical way of a block to extend for this #}
+		{% include 'cosinnus/common/simplemde_dependencies.html' with element_id=form.forms.obj.text.id_for_label %}
 
         {% if user|can_create_objects_in:group %}
         <form action="{% group_url 'cosinnus:note:add' group=group %}" method="POST" id="widgetform{{ widget_conf_id }}">{% csrf_token %}
@@ -17,7 +19,7 @@
                     <li class="w100">
                         {{ form.forms.obj.text.errors }}
                         {% captureas placeholder %}{% trans "Please enter a message..." %}{% endcaptureas %}
-                        {% render_field form.forms.obj.text class+="autogrow" placeholder=placeholder id="etherpadTitle" %}
+                        {% render_field form.forms.obj.text placeholder=placeholder id="etherpadTitle" %}
                     </li>
                 </ol>
                 
