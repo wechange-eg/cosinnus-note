@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-03 15:27+0200\n"
-"PO-Revision-Date: 2015-11-11 10:40+0200\n"
+"PO-Revision-Date: 2017-09-05 16:41+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Language: uk\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 2.0.3\n"
 
 msgid "Notes"
 msgstr "Новини"
@@ -25,56 +25,49 @@ msgctxt "the_app"
 msgid "note"
 msgstr "Новини"
 
-#, fuzzy
-#| msgid "A user created a news post"
 msgid "A user commented on a news post"
-msgstr "Член опублікував/-ла новий допис у спільноті"
+msgstr "Користувач прокоментував новину"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on a news post"
-msgstr "%(sender_name)s прокоментував/-ла одну з новин, які ви також прокоментували, у %(team_name)s."
+msgstr "%(sender_name)s прокоментував новий допис"
 
 #, python-format
 msgid "%(sender_name)s"
-msgstr ""
+msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
-msgstr "Член прокоментував/-ла один з ваших дописів"
+msgstr "Користувач прокоментував/-ла одну ваших новин"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on your news post"
-msgstr "%(sender_name)s прокоментував/-ла одну з новин, які ви також прокоментували, у %(team_name)s."
+msgstr "Користувач %(sender_name)s прокоментував Вашу новину"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on one of your news posts"
-msgstr "%(sender_name)s прокоментував/-ла одну з новин, які ви також прокоментували, у %(team_name)s."
+msgstr "Користувач %(sender_name)s прокоментував одну з Ваших новин"
 
 msgid "A user commented on a news posts you commented in"
-msgstr "Член прокоментував/-ла допис, який ви прокоментували"
+msgstr "Користувач прокоментував(ла) новину, яку Ви прокоментували"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr "%(sender_name)s прокоментував/-ла новину, яку ви прокоментували, у %(team_name)s."
+msgstr "%(sender_name)s прокоментував(ла) новину, яку ви прокоментували в"
 
 msgid "A user created a news post"
-msgstr "Член опублікував/-ла новий допис у спільноті"
+msgstr "Користувач опублікував(ла) новий допис у спільноті"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
-msgstr ""
+msgstr "Новина від %(sender_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s created a new news post"
-msgstr "%(sender_name)s прокоментував/-ла одну з новин, які ви також прокоментували, у %(team_name)s."
+msgstr "%(sender_name)s створив нову новину"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
-msgstr "%(sender_name)s опублікував/-ла допис у %(team_name)s:"
+msgstr "%(sender_name)s опублікував(ла) допис у %(team_name)s:"
 
 msgid "No news"
 msgstr "Жодних новин"
@@ -98,7 +91,7 @@ msgid "Text"
 msgstr "Текст"
 
 msgid "Facebook Share"
-msgstr ""
+msgstr "Поділитися на Facebook"
 
 msgid "Note Item"
 msgstr "Новина"
@@ -110,7 +103,7 @@ msgid "Author"
 msgstr "Автор"
 
 msgid "Creator"
-msgstr "Автор"
+msgstr "Творець"
 
 msgid "Created"
 msgstr "Створено"
@@ -137,10 +130,8 @@ msgstr "Коментувати..."
 msgid "Post"
 msgstr "Публікувати"
 
-#, fuzzy
-#| msgid "There are no news posts yet"
 msgid "There are no public news posts"
-msgstr "Немає жодних новин"
+msgstr "Поки що новин немає"
 
 msgid "Edit news post"
 msgstr "Редагувати новину"
@@ -292,7 +283,7 @@ msgid "Delete note"
 msgstr "Видалити новину"
 
 msgid "View on Facebook"
-msgstr ""
+msgstr "Переглянути на Facebook"
 
 msgid "Do you really want to delete this note?"
 msgstr "Ви дійсно бажаєте видалити цю новину?"
