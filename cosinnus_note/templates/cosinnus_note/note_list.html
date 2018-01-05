@@ -11,7 +11,6 @@
 
 {% block extrahead %}
     {{ block.super }}
-    {% include 'cosinnus/common/simplemde_dependencies.html' with element_id=form.forms.obj.text.id_for_label %}
 {% endblock %}
 
 
@@ -23,11 +22,9 @@
         {% include 'cosinnus/common/filter_controls.html' %}        
         
         {% if user|can_create_objects_in:group %}
-        <form action="{% group_url 'cosinnus:note:add' group=group %}" method="POST" id="note_create_form">{% csrf_token %}
-	        <div class="app-main">
-	            <div class="fadedown large-space">
+	        <div class="app-main large-space">
 	            
-			        <div class="btn btn-white btn-headline fadedown-clickarea">
+			        <div class="btn btn-white btn-headline cursor-text" data-toggle="modal" data-target="#write-news-modal">
 			            <ul class="media-list">
 			                <li class="media">
 			                    <a class="pull-left" href="{% url 'cosinnus:profile-detail' username=user.username %}">
@@ -42,49 +39,11 @@
 			                </li>
 			            </ul>
 			        </div>
-	            
 	                
-		            <div>
-		                {{ form.forms.obj.non_field_errors }}
-		                <ol class="input-area">
-			                <li class="w100">
-		                        {{ form.forms.obj.title.errors }}
-		                        {% captureas placeholder %}{% trans "Title (optional)" %}{% endcaptureas %}
-		                        {% render_field form.forms.obj.title class+=" form-control" style+="margin-left: 6px;" placeholder=placeholder id="note_title" %}
-		                    </li>
-		                    <li class="w100">
-		                        {{ form.forms.obj.text.errors }}
-		                        {% captureas placeholder %}{% trans "Write a news post" %}{% endcaptureas %}
-		                        {% render_field form.forms.obj.text placeholder=placeholder %}
-		                    </li>
-		                </ol>
-		                
-		                {% if SETTINGS.COSINNUS_FACEBOOK_INTEGRATION_ENABLED %}
-		                	{% include 'cosinnus/utils/facebook_integration.html' %}
-		                {% endif %}
-		                    
-		                {% include 'cosinnus/media_tags.html' with do_include_facebook_button=1 %}
-		                    
-		            </div>
-		
-		            <button type="submit" class="btn btn-emphasized">
-		                <ul class="media-list">
-		                    <li class="media">
-		                        <a class="pull-left" href="#">
-		                            <i class="fa fa-pencil"></i>
-		                        </a>
-		                        <div class="media-body">
-		                            {% trans "Post" %}
-		                        </div>
-		                    </li>
-		                </ul>
-		            </button>
+                    {% include 'cosinnus_note/note_form_modal.html' %}
+	                
 	            </div>
 	            
-	            <!-- xxxxxx -->
-	        
-	        </div>
-        </form>
         {% endif %}
         
         

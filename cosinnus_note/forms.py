@@ -23,7 +23,7 @@ class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
         super(_NoteForm, self).__init__(*args, **kwargs)
         if 'title' in self.initial and self.initial['title'] == Note.EMPTY_TITLE_PLACEHOLDER:
             self.initial['title'] = ''
-        if self.fields['title'].initial == '---':
+        if self.fields['title'].initial == Note.EMPTY_TITLE_PLACEHOLDER:
             self.fields['title'].initial = ''
         
     def clean(self):

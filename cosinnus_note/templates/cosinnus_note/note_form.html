@@ -10,7 +10,14 @@
 {% block page_title %}{% trans "Notes" %}: {{group.name}} {% endblock %}
 
 {% block breadcrumb %}
-        {{ block.super }}
+    {{ block.super }}
+    <li class="active">
+        {% if form_view == "add" %}
+            {% trans "Write a news post" %}
+        {% elif form_view == "edit" %}
+            {% trans "Edit news post" %}
+        {% endif %}
+    </li>
 {% endblock %}
 
 {% block leftnav %}
@@ -21,50 +28,13 @@
     
     <!-- a box with semi transparent background -->
     <div class="content-box">
-    
         
         <form action="{% if form_view == 'add' %}{% group_url 'cosinnus:note:add' group=group.slug %}?next={% group_url 'cosinnus:note:list' group=group.slug %}{% else %}{% group_url 'cosinnus:note:update' group=object.group slug=object.slug %}{% endif %}" method="POST" id="note_edit_form">{% csrf_token %}
 	        <div class="app-main">
 	            <div class="large-space">
 	            
-			        <div class="btn btn-white btn-headline">
-			            <ul class="media-list">
-			                <li class="media">
-			                    <a class="pull-left" href="{% url 'cosinnus:profile-detail' username=user.username %}">
-			                        {% include "cosinnus/user/user_avatar_image.html" with user=user %}
-			                    </a>
-			                    <a class="pull-right" href="#">
-			                        <i class="fa fa-pencil"></i>
-			                    </a>
-			                    <div class="media-body">
-			                        {% if form_view == 'add' %}{% trans "Write a news post" %}{% else %}{% trans "Edit news post" %}{% endif %}
-			                    </div>
-			                </li>
-			            </ul>
-			        </div>
-	            
-	                
 		            <div>
-		                {{ form.forms.obj.non_field_errors }}
-		                <ol class="input-area">
-		                    <li class="w100">
-		                        {{ form.forms.obj.title.errors }}
-		                        {% captureas placeholder %}{% trans "Title (optional)" %}{% endcaptureas %}
-		                        {% render_field form.forms.obj.title class+=" form-control" style+="margin-left: 6px;" placeholder=placeholder id="note_title" %}
-		                    </li>
-		                    <li class="w100">
-		                        {{ form.forms.obj.text.errors }}
-		                        {% captureas placeholder %}{% trans "Write a news post" %}{% endcaptureas %}
-		                        {% render_field form.forms.obj.text class+="form-control" placeholder=placeholder %}
-		                    </li>
-		                </ol>
-		                
-		                {% if SETTINGS.COSINNUS_FACEBOOK_INTEGRATION_ENABLED %}
-		                	{% include 'cosinnus/utils/facebook_integration.html' %}
-		                {% endif %}
-		                    
-		                {% include 'cosinnus/media_tags.html' with do_include_facebook_button=1 %}
-		                    
+                        {% include 'cosinnus_note/note_form_core.html' %}
 		            </div>
 		
 		            <button type="submit" class="btn btn-emphasized">
