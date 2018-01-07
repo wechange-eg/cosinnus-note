@@ -1,0 +1,17 @@
+{% load i18n cosinnus_tags widget_tweaks %}
+
+{{ form.forms.obj.non_field_errors }}
+        
+{# Regular Field #}
+{% trans "Title (optional)" as title_placeholder %}
+{% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.title placeholder=title_placeholder %}
+
+{# Large Field #}
+{% trans "Please enter a message..." as text_placeholder %}
+{% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.text placeholder=text_placeholder large_field=True %}
+
+{% if SETTINGS.COSINNUS_FACEBOOK_INTEGRATION_ENABLED %}
+    {% include 'cosinnus/utils/facebook_integration.html' %}
+{% endif %}
+    
+{% include 'cosinnus/media_tags.html' with do_include_facebook_button=1 %}

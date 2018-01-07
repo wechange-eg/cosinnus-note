@@ -1,61 +1,12 @@
 {% extends "cosinnus/widgets/fadedown_base_widget.html" %}
 {% load i18n cosinnus_tags widget_tweaks %}
 
+{% block fadedown_class %}{% endblock %}
+{% block headline_properties %}data-toggle="modal" data-target="#write-news-modal"{% endblock %}
+
 
 {% block fadedown_content %}
-		{# sadly we have no practical way of a block to extend for this #}
-		{% include 'cosinnus/common/simplemde_dependencies.html' with element_id=form.forms.obj.text.id_for_label %}
 
-        {% if user|can_create_objects_in:group %}
-        <form action="{% group_url 'cosinnus:note:add' group=group %}" method="POST" id="widgetform{{ widget_conf_id }}">{% csrf_token %}
-            <div>
-                {{ form.forms.obj.non_field_errors }}
-                <ol class="input-area">
-                    <li class="w100">
-                        {{ form.forms.obj.title.errors }}
-                        {% captureas placeholder %}{% trans "Title (optional)" %}{% endcaptureas %}
-                        {% render_field form.forms.obj.title class+=" form-control" style+="margin-left: 6px;" placeholder=placeholder id="note_title" %}
-                    </li>
-                    <li class="w100">
-                        {{ form.forms.obj.text.errors }}
-                        {% captureas placeholder %}{% trans "Please enter a message..." %}{% endcaptureas %}
-                        {% render_field form.forms.obj.text placeholder=placeholder id="etherpadTitle" %}
-                    </li>
-                </ol>
-                
-                {% if SETTINGS.COSINNUS_FACEBOOK_INTEGRATION_ENABLED %}
-                	{% include 'cosinnus/utils/facebook_integration.html' %}
-                {% endif %}
-                    
-                {% include 'cosinnus/media_tags.html' with do_include_facebook_button=1 %}
-                
-            </div>
-
-            <button type="submit" class="btn btn-emphasized">
-                <ul class="media-list">
-                    <li class="media">
-                        <a class="pull-left" href="#">
-                            <i class="fa fa-pencil"></i>
-                        </a>
-                        <div class="media-body">
-                            {% trans "Post" %}
-                        </div>
-                    </li>
-                </ul>
-            </button>
-        </form>
-        {% else %}
-            <div>
-                <p>
-                    {% trans "To post in this team you need to" %}
-                    <a href="#" data-toggle="modal" data-target="#join_withdraw_modal">
-                        <i class="fa fa-sign-out"></i>
-                        <span>{% trans "request to join" %}</span></a>!
-                </p>
-            </div>
-        {% endif %}
-    
+    {% include 'cosinnus_note/note_form_modal.html' %}
         
 {% endblock fadedown_content %}
-
-
