@@ -25,4 +25,4 @@
 {% trans "Cancel" as cancel_button_label %}
 {% captureas submit_button_label %}{% trans "Post" %}{% endcaptureas %}
 {% captureas action %}{% group_url 'cosinnus:note:add' group=group %}{% endcaptureas %}
-{% include "cosinnus/modal_box.html" with id="write-news-modal" label=label form_action=action title=title title_icon="fa-write" %}
+{% include "cosinnus/modal_box.html" with id="write-news-modal" label=label form_action=action title=title title_icon="fa-write" extra_modal_classes="modal-lg" %}
