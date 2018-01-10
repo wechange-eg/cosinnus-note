@@ -4,11 +4,13 @@
         
 {# Regular Field #}
 {% trans "Title (optional)" as title_placeholder %}
-{% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.title placeholder=title_placeholder %}
+{% trans "Title" as title_label %}
+{% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.title label=title_label placeholder=title_placeholder first=True %}
 
 {# Large Field #}
+{% trans "News text" context "label for the form text input" as text_label %}
 {% trans "Please enter a message..." as text_placeholder %}
-{% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.text placeholder=text_placeholder large_field=True %}
+{% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.text label=text_label placeholder=text_placeholder large_field=True %}
 
 {% if SETTINGS.COSINNUS_FACEBOOK_INTEGRATION_ENABLED %}
     {% include 'cosinnus/utils/facebook_integration.html' %}
