@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-03 15:27+0200\n"
+"POT-Creation-Date: 2018-01-10 16:48+0100\n"
 "PO-Revision-Date: 2017-08-16 14:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -135,11 +135,32 @@ msgstr "Пока новостей нет"
 msgid "Edit news post"
 msgstr "Редактировать новость"
 
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
 msgid "Title (optional)"
 msgstr "Заголовок (опционально)"
 
-msgid "Save changes"
-msgstr "Сохранить изменения"
+msgid "Title"
+msgstr ""
+
+#, fuzzy
+#| msgid "News stream"
+msgctxt "label for the form text input"
+msgid "News text"
+msgstr "Лента новостей"
+
+msgid "Please enter a message..."
+msgstr "Пожалуйста, введите ваше сообщение..."
+
+msgid "To post in this team you need to"
+msgstr "Чтобы написать здесь пост, Вы должны"
+
+msgid "request to join"
+msgstr "отправить запрос на вступление"
+
+msgid "Cancel"
+msgstr ""
 
 msgid "There are no news posts yet"
 msgstr "Пока новостей нет"
@@ -284,15 +305,6 @@ msgstr "Посмотреть на Фейсбуке"
 
 msgid "Do you really want to delete this note?"
 msgstr "Вы действительно хотите удалить эту новость?"
-
-msgid "Please enter a message..."
-msgstr "Пожалуйста, введите ваше сообщение..."
-
-msgid "To post in this team you need to"
-msgstr "Чтобы написать здесь пост, Вы должны"
-
-msgid "request to join"
-msgstr "отправить запрос на вступление"
 
 msgid "Read more..."
 msgstr "Подробнее..."
