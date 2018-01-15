@@ -30,7 +30,7 @@
     <!-- a box with semi transparent background -->
     <div class="content-box">
         
-        <form action="{% if form_view == 'add' %}{% group_url 'cosinnus:note:add' group=group.slug %}?next={% group_url 'cosinnus:note:list' group=group.slug %}{% else %}{% group_url 'cosinnus:note:update' group=object.group slug=object.slug %}{% endif %}" method="POST" id="note_edit_form">{% csrf_token %}
+        <form action="{% if form_view == 'add' %}{% group_url 'cosinnus:note:add' group=group.slug %}?next={% group_url 'cosinnus:note:list' group=group.slug %}{% else %}{% group_url 'cosinnus:note:update' group=object.group slug=object.slug %}{% endif %}" method="POST" id="note_edit_form" class="cosinnus-form form-horizontal">{% csrf_token %}
 	        <div class="app-main">
 	            <div class="large-space">
 	            
