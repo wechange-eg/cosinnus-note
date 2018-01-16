@@ -26,6 +26,13 @@
 
 
 {% block content %}
+
+    {% if form.forms.obj.errors or form.forms.media_tag.errors %}
+        <div class="alert alert-danger alert-dismissable">
+            <i class="fa fa-exclamation-triangle fa-3x"></i>
+            <p>{% trans "There was an error in one of the fields you entered. Please correct it before saving!" %}</p>
+        </div>
+    {% endif %}
     
     <!-- a box with semi transparent background -->
     <div class="content-box">
