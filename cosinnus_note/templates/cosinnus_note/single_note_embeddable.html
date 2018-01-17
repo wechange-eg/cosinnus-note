@@ -42,15 +42,7 @@
 	    </div>
 	    
 	    {% if note.attached_images %}
-	        <div class="indented row">
-	            {% for image in note.attached_images|slice:":3" %}
-		            <div class="col-sm-4">
-		                <a href="{{ image.static_image_url }}" data-lightbox="image-note-detailed" data-title="{{ image.title }}" class="thumbnail">
-		                    <img src="{{ image.static_image_url }}" title='{{ image.title }}'/>
-		                </a>
-		            </div>
-	            {% endfor %}
-	        </div>
+	        {% include 'cosinnus/common/attached_images_gallery.html' with object=note max_images=3 %}
         {% endif %}
 	    
 	    {% include 'cosinnus/media_tags_readonly.html' with object=note list_view="True" hide_visibility_tag="True" %}
