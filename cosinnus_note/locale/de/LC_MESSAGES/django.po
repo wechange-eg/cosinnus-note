@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-10 16:48+0100\n"
+"POT-Creation-Date: 2018-02-05 13:07+0100\n"
 "PO-Revision-Date: 2018-01-10 17:44+0100\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -135,6 +135,9 @@ msgstr "Bisher gibt es keine Neuigkeiten."
 
 msgid "Edit news post"
 msgstr "Neuigkeit bearbeiten"
+
+msgid "There was an error in one of the fields you entered. Please correct it before saving!"
+msgstr ""
 
 msgid "Save changes"
 msgstr "Übernehmen"
