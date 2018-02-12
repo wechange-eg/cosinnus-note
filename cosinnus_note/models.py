@@ -157,7 +157,7 @@ class Comment(models.Model):
             # comment was created, for other commenters posts (we skip the post creator because the previous notification precedes)
             try:
                 # notifications for people who also commented on the note of this comment
-                commenter_ids = set(self.note.comments.exclude(creator__id__in=[self.creator_id, self.note.creator_id]).values_list('creator', flat=True))
+                commenter_ids = list(set(self.note.comments.exclude(creator__id__in=[self.creator_id, self.note.creator_id]).values_list('creator', flat=True)))
                 commenters = get_user_model().objects.filter(id__in=commenter_ids)
                 cosinnus_notifications.note_comment_posted_on_commented_post.send(sender=self, user=self.creator, obj=self, audience=commenters)
                 
