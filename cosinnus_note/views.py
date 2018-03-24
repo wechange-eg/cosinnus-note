@@ -123,7 +123,7 @@ class NoteListView(RequireReadMixin, CosinnusFilterMixin, MixReflectedObjectsMix
 note_list = NoteListView.as_view()
 
 
-class NoteEmbedView(DipatchGroupURLMixin, FilterGroupMixin, PaginationTemplateMixin, ListView):
+class NoteEmbedView(DipatchGroupURLMixin, MixReflectedObjectsMixin, FilterGroupMixin, PaginationTemplateMixin, ListView):
     model = Note
     per_page = 10
     template_name = 'cosinnus_note/note_embed.html'
