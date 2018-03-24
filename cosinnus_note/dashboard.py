@@ -12,6 +12,8 @@ from cosinnus_note.models import Note
 from cosinnus_note.views import NoteCreateView
 from django.core.exceptions import ImproperlyConfigured
 from cosinnus_note.forms import NoteForm
+from cosinnus.views.mixins.reflected_objects import MixReflectedObjectsMixin,\
+    ReflectedObjectSelectMixin
 
 
 
@@ -20,7 +22,7 @@ class DetailedNotesForm(DashboardWidgetForm):
         help_text="0 means unlimited", required=False)
 
 
-class BaseNotesWidget(DashboardWidget):
+class BaseNotesWidget(MixReflectedObjectsMixin, ReflectedObjectSelectMixin, DashboardWidget):
 
     app_name = 'note'
     model = Note
@@ -44,6 +46,7 @@ class BaseNotesWidget(DashboardWidget):
             'widget_id': self.id,
             'widget_title': self.title,
         }
+        data.update(self.get_reflect_data(self.request, self.config.group))
 
         return (render_to_string(self.get_template_name(), data,
                                 context_instance=RequestContext(self.request)), len(qs), len(qs) >= count)

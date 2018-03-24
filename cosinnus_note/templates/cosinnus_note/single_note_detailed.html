@@ -13,11 +13,27 @@
 	                    <div class="media-body media-body-normalwrap">
 	                        {% if not hide_group_name %}
 			                	<span class="annotation">
-	                                {% include 'cosinnus/group/group_label.html' with group=note.group %}
+			                	    {% if group != note.group %}
+	                                    {% include 'cosinnus/common/reflect/reflected_group_display_link.html' %}
+	                                {% else %}
+	                                    {% include 'cosinnus/group/group_label.html' with group=note.group %}
+	                                {% endif %}
 	                            </span>
                             {% endif %}
                             
                             <span class="annotation">
+                                {% if may_reflect and reflectable_groups %}
+                                    {# ***********  Reflect event in projects *************** #}
+                                    {% include 'cosinnus/common/reflect/reflected_object_select_link.html' with only_link=True select_icon="fa-calendar-plus-o" unique_id=note.id %}
+                                {% endif %}
+                                {% if may_reflect and not reflectable_groups %}
+                                    {# Simplification so we don't overload the page with modals: For reflecting in lists we link to the detail page and open the modal #}
+                                    <a href="{{ note.get_absolute_url }}?select_reflect=1">
+							            <i class="fa fa-fw fa-book"></i>
+						                {% trans "Show in my projects..." %}
+					                <a>
+                                {% endif %}
+                                
                                 {% include 'cosinnus/feedback/report_button_a.html' with object=note %}
                                 
                                 {% if user|has_write_access:note %}
@@ -46,6 +62,11 @@
 	            </ul>
 	        </div>
 	    </div>
+	    
+	    {% if may_reflect and reflectable_groups %}
+            {# ***********  Reflect event in projects *************** #}
+            {% include 'cosinnus/common/reflect/reflected_object_select_link.html' with only_modal=True select_icon="fa-calendar-plus-o" unique_id=note.id %}
+        {% endif %}
 	    
 	    {% if user|has_write_access:note %}
             {% captureas modal_id %}deleteNote_{{note.pk}}{% endcaptureas %}

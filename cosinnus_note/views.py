@@ -29,6 +29,8 @@ from cosinnus.views.facebook_integration import FacebookIntegrationViewMixin
 from django.utils.encoding import force_text
 from cosinnus.models.tagged import BaseTagObject
 from cosinnus.models.group import CosinnusPortal
+from cosinnus.views.mixins.reflected_objects import MixReflectedObjectsMixin,\
+    ReflectedObjectRedirectNoticeMixin, ReflectedObjectSelectMixin
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
@@ -84,7 +86,8 @@ class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
 note_delete = NoteDeleteView.as_view()
 
 
-class NoteDetailView(RequireReadMixin, FilterGroupMixin, DetailView):
+class NoteDetailView(ReflectedObjectRedirectNoticeMixin, ReflectedObjectSelectMixin, 
+         RequireReadMixin, FilterGroupMixin, DetailView):
 
     model = Note
     template_name = 'cosinnus_note/note_detail.html'
@@ -100,7 +103,7 @@ class NoteIndexView(RequireReadMixin, RedirectView):
 note_index = NoteIndexView.as_view()
 
 
-class NoteListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, 
+class NoteListView(RequireReadMixin, CosinnusFilterMixin, MixReflectedObjectsMixin, ReflectedObjectSelectMixin, FilterGroupMixin, 
                    PaginationTemplateMixin, ListView):
     model = Note
     filterset_class = NoteFilter

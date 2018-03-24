@@ -22,6 +22,7 @@ from django.contrib.auth import get_user_model
 import logging
 from django.template.defaultfilters import truncatechars
 from cosinnus.models.group import CosinnusPortal
+from cosinnus.views.mixins.reflected_objects import MixReflectedObjectsMixin
 logger = logging.getLogger('cosinnus')
 
 FACEBOOK_POST_URL = 'https://www.facebook.com/%s/posts/%s' # %s, %s :  user_id, post_id
@@ -86,6 +87,10 @@ class Note(BaseTaggableObjectModel):
     def get_current(self, group, user):
         """ Returns a queryset of the current upcoming events """
         qs = Note.objects.filter(group=group)
+        # mix in reflected objects
+        if "%s.%s" % (self._meta.app_label, self._meta.model_name) in settings.COSINNUS_REFLECTABLE_OBJECTS:
+            mixin = MixReflectedObjectsMixin()
+            qs = mixin.mix_queryset(qs, self._meta.model, group)
         if user:
             qs = filter_tagged_object_queryset_for_user(qs, user)
         return qs
