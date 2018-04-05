@@ -29,7 +29,7 @@
                                 {% if may_reflect and not reflectable_groups %}
                                     {# Simplification so we don't overload the page with modals: For reflecting in lists we link to the detail page and open the modal #}
                                     <a href="{{ note.get_absolute_url }}?select_reflect=1">
-							            <i class="fa fa-fw fa-book"></i>
+							            <i class="fa fa-fw fa-share"></i>
 						                {% trans "Show in my projects..." %}
 					                <a>
                                 {% endif %}
