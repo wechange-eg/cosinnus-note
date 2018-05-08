@@ -53,7 +53,6 @@ setup(
     data_files=data_files,
     install_requires=[
         'cosinnus>=0.4.2.dev0',
-        'django-embed-video>=0.7',
         'django-extra-views>=0.6.0',
     ],
     classifiers=[
