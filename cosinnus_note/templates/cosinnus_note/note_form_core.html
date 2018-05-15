@@ -12,8 +12,4 @@
 {% trans "Please enter a message..." as text_placeholder %}
 {% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.text label=text_label placeholder=text_placeholder large_field=True %}
 
-{% if SETTINGS.COSINNUS_FACEBOOK_INTEGRATION_ENABLED %}
-    {% include 'cosinnus/utils/facebook_integration.html' %}
-{% endif %}
-    
 {% include 'cosinnus/media_tags.html' with do_include_facebook_button=1 show_files=True %}
