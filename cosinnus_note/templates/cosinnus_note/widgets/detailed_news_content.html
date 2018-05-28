@@ -24,6 +24,9 @@
                                  {% trans "Edit" %}
                              </a>
                          {% endif %}
+                         
+                         {% include 'cosinnus/feedback/report_button_a.html' with object=note %}
+                                
                          <div class="group-annotation">
                              {% include 'cosinnus/common/reflect/reflected_group_display_link.html' %}
                              
