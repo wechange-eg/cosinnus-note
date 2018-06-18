@@ -3,168 +3,166 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-05 13:07+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2018-01-10 16:48+0100\n"
+"PO-Revision-Date: 2018-05-14 23:51+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.0.5\n"
 
 msgid "Notes"
-msgstr ""
+msgstr "Notes"
 
 msgctxt "the_app"
 msgid "note"
-msgstr ""
+msgstr "note"
 
 msgid "A user commented on a news post"
-msgstr ""
+msgstr "Un utilisateur a commenté un post"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post"
-msgstr ""
+msgstr "%(sender_name)s a commenté un post"
 
 #, python-format
 msgid "%(sender_name)s"
-msgstr ""
+msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
-msgstr ""
+msgstr "Un utilisateur a commenté un de tes posts"
 
 #, python-format
 msgid "%(sender_name)s commented on your news post"
-msgstr ""
+msgstr "%(sender_name)s a commenté ton post"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts"
-msgstr ""
+msgstr "%(sender_name)s a commenté un de tes posts"
 
 msgid "A user commented on a news posts you commented in"
-msgstr ""
+msgstr "Un utilisateur a commenté un post que tu a commenté"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr ""
+msgstr "%(sender_name)s a commenté un post que tu as commenté"
 
 msgid "A user created a news post"
-msgstr ""
+msgstr "Un utilisateur a créé un post"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
-msgstr ""
+msgstr "Nouveau post par %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new news post"
-msgstr ""
+msgstr "%(sender_name)s a créé un nouveau post"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
-msgstr ""
+msgstr "%(sender_name)s a posté dans %(team_name)s."
 
 msgid "No news"
-msgstr ""
+msgstr "Pas de nouveaux posts"
 
 msgid "Write a news post"
-msgstr ""
+msgstr "Ecrire un post"
 
 msgid "News stream"
-msgstr ""
+msgstr "Fil d'actualité"
 
 msgid "Created By"
-msgstr ""
+msgstr "Créé par"
 
 msgid "Newest Created"
-msgstr ""
+msgstr "Créé le plus récemment"
 
 msgid "Popularity"
-msgstr ""
+msgstr "Popularité"
 
 msgid "Text"
-msgstr ""
+msgstr "Texte"
 
 msgid "Facebook Share"
-msgstr ""
+msgstr "Partager sur Facebook"
 
 msgid "Note Item"
-msgstr ""
+msgstr "Item de note"
 
 msgid "Note Items"
-msgstr ""
+msgstr "Items de note"
 
 msgid "Author"
-msgstr ""
+msgstr "Auteur"
 
 msgid "Creator"
-msgstr ""
+msgstr "Créateur"
 
 msgid "Created"
-msgstr ""
+msgstr "Créé"
 
 msgid "Comment"
-msgstr ""
+msgstr "Commentaire"
 
 msgid "Comments"
-msgstr ""
+msgstr "Commentaires"
 
 msgid "News"
-msgstr ""
+msgstr "Actualités"
 
 msgctxt "the_verb"
 msgid "Comment"
-msgstr ""
+msgstr "Commenter"
 
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 msgid "Write comment..."
-msgstr ""
+msgstr "Ecrire un commentaire..."
 
 msgid "Post"
-msgstr ""
+msgstr "Post"
 
 msgid "There are no public news posts"
-msgstr ""
+msgstr "Il n'y a pas de posts publics"
 
 msgid "Edit news post"
-msgstr ""
-
-msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "Modifier post"
 
 msgid "Save changes"
-msgstr ""
+msgstr "Enregistrer les modifications"
 
 msgid "Title (optional)"
-msgstr ""
+msgstr "Titre (optionnel)"
 
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 msgctxt "label for the form text input"
 msgid "News text"
-msgstr ""
+msgstr "Texte"
 
 msgid "Please enter a message..."
-msgstr ""
+msgstr "Saisir un message..."
 
 msgid "To post in this team you need to"
-msgstr ""
+msgstr "Pour poster dans cette équipe tu dois"
 
 msgid "request to join"
-msgstr ""
+msgstr "demander à rejoindre"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 msgid "There are no news posts yet"
-msgstr ""
+msgstr "Il n'y a pas encore de posts"
 
 #, python-format
 msgid ""
@@ -189,6 +187,26 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
+"Salut %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s a écrit un commentaire sur un post que tu as rédigé dans %(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"sur ton post :\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"Suis ce lien pour voir le commentaire : \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"\n"
+"L'équipe %(site_name)s.\n"
+"\n"
 
 #, python-format
 msgid ""
@@ -213,14 +231,34 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
+"Salut %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s a écrit un commentaire sur un post que tu as également commenté dans %(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"sur le post :\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"Suis ce lien pour voir le commentaire : \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"\n"
+"L'équipe %(site_name)s.\n"
+"\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
-msgstr ""
+msgstr "%(sender_name)s a commenté un post que tu as également commenté dans %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
-msgstr ""
+msgstr "%(sender_name)s a commenté un de tes posts dans %(team_name)s."
 
 #, python-format
 msgid ""
@@ -228,6 +266,9 @@ msgid ""
 "\n"
 "%(sender_name)s just posted an update in %(team_name)s:\n"
 msgstr ""
+"Salut %(receiver_name)s,\n"
+"\n"
+"%(sender_name)s vient de poster une mise à jour dans %(team_name)s :\n"
 
 #, python-format
 msgid ""
@@ -243,33 +284,44 @@ msgid ""
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
+"%(note_text)s\n"
+"\n"
+"\n"
+"\n"
+"Tu peux le trouver en suivant ce lien : %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"\n"
+"L'équipe %(site_name)s."
 
 msgid "Edit"
-msgstr ""
+msgstr "Modifier"
 
 msgid "Delete note"
-msgstr ""
+msgstr "Supprimer la note"
 
 msgid "View on Facebook"
-msgstr ""
+msgstr "Voir sur Facebook"
 
 msgid "Do you really want to delete this note?"
-msgstr ""
+msgstr "Souhaites-tu vraiment supprimer cette note ?"
 
 msgid "Read more..."
-msgstr ""
+msgstr "Lire plus..."
 
 msgid "Your news post was added successfully."
-msgstr ""
+msgstr "Ton post a été ajouté."
 
 msgid "Your news post was deleted successfully."
-msgstr ""
+msgstr "Ton post a été supprimé."
 
 msgid "Your news post was edited successfully."
-msgstr ""
+msgstr "Ton post a été modifié."
 
 msgid "Your comment was added successfully."
-msgstr ""
+msgstr "Ton commentaire a été ajouté."
 
 msgid "Your comment was deleted successfully."
-msgstr ""
+msgstr "Ton commentaire a été supprimé."
