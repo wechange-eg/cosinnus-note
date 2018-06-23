@@ -8,164 +8,163 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-23 16:59+0200\n"
-"PO-Revision-Date: 2018-05-14 23:51+0200\n"
+"PO-Revision-Date: 2018-06-23 16:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
-"X-Generator: Poedit 2.0.5\n"
+"Language: pl\n"
+"X-Generator: Poedit 1.8.4\n"
 
 msgid "Notes"
-msgstr "Notes"
+msgstr "Notki"
 
 msgctxt "the_app"
 msgid "note"
-msgstr "note"
+msgstr "notka"
 
 msgid "A user commented on a news post"
-msgstr "Un utilisateur a commenté un post"
+msgstr "Użytkownik skomentował wpis wiadomości"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post"
-msgstr "%(sender_name)s a commenté un post"
+msgstr "%(sender_name)s skomentował/a wpis wiadomości"
 
 #, python-format
 msgid "%(sender_name)s"
 msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
-msgstr "Un utilisateur a commenté un de tes posts"
+msgstr "Użytkownik skomentował jeden z Twoich wpisów wiadomości"
 
 #, python-format
 msgid "%(sender_name)s commented on your news post"
-msgstr "%(sender_name)s a commenté ton post"
+msgstr "%(sender_name)s skomentował/a Twój wpis wiadomości"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts"
-msgstr "%(sender_name)s a commenté un de tes posts"
+msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów wiadomości"
 
 msgid "A user commented on a news posts you commented in"
-msgstr "Un utilisateur a commenté un post que tu a commenté"
+msgstr "Użytkownik skomentował wpis wiadomości, który Ty skomentowałeś/aś"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr "%(sender_name)s a commenté un post que tu as commenté"
+msgstr "%(sender_name)s skomentował/a wpis wiadomości, który Ty skomentowałeś/aś"
 
 msgid "A user created a news post"
-msgstr "Un utilisateur a créé un post"
+msgstr "Użytkownik utworzył wpis wiadomości"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
-msgstr "Nouveau post par %(sender_name)s"
+msgstr "Wpis wiadomości utworzony przez %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new news post"
-msgstr "%(sender_name)s a créé un nouveau post"
+msgstr "%(sender_name)s stworzył nowy wpis wiadomości"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
-msgstr "%(sender_name)s a posté dans %(team_name)s."
+msgstr "%(sender_name)s dodał wpis w %(team_name)s:"
 
 msgid "No news"
-msgstr "Pas de nouveaux posts"
+msgstr "Brak wiadomości"
 
 msgid "Write a news post"
-msgstr "Ecrire un post"
+msgstr "Stwórz wpis wiadomości"
 
 msgid "News stream"
-msgstr "Fil d'actualité"
+msgstr "Transmisja wiadomości"
 
 msgid "Created By"
-msgstr "Créé par"
+msgstr "Stworzone przez"
 
 msgid "Newest Created"
-msgstr "Créé le plus récemment"
+msgstr "Najnowsze stworzone"
 
 msgid "Popularity"
-msgstr "Popularité"
+msgstr "Popularność"
 
 msgid "Text"
-msgstr "Texte"
+msgstr "Treść"
 
 msgid "Facebook Share"
-msgstr "Partager sur Facebook"
+msgstr "Udostępnienie na Facebooku"
 
 msgid "Note Item"
-msgstr "Item de note"
+msgstr "Element notki"
 
 msgid "Note Items"
-msgstr "Items de note"
+msgstr "Elementy notki"
 
 msgid "Author"
-msgstr "Auteur"
+msgstr "Autor"
 
 msgid "Creator"
-msgstr "Créateur"
+msgstr "Twórca"
 
 msgid "Created"
-msgstr "Créé"
+msgstr "Stworzył/a"
 
 msgid "Comment"
-msgstr "Commentaire"
+msgstr "Komentarz"
 
 msgid "Comments"
-msgstr "Commentaires"
+msgstr "Komentarze"
 
 msgid "News"
-msgstr "Actualités"
+msgstr "Aktualności"
 
 msgctxt "the_verb"
 msgid "Comment"
-msgstr "Commenter"
+msgstr "Komentarz"
 
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Usuń"
 
 msgid "Write comment..."
-msgstr "Ecrire un commentaire..."
+msgstr "Dodaj komentarz..."
 
 msgid "Post"
-msgstr "Post"
+msgstr "Opublikuj"
 
 msgid "There are no public news posts"
-msgstr "Il n'y a pas de posts publics"
+msgstr "Nie ma publicznych wpisów wiadomości"
 
 msgid "Edit news post"
-msgstr "Modifier post"
+msgstr "Edytuj wpis wiadomości"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "W jednym z wypełnionych pól jest błąd. Popraw go przed zapisaniem!"
 
 msgid "Save changes"
-msgstr "Enregistrer les modifications"
+msgstr "Zapisz zmiany"
 
 msgid "Title (optional)"
-msgstr "Titre (optionnel)"
+msgstr "Tytuł (opcjonalnie)"
 
 msgid "Title"
-msgstr "Titre"
+msgstr "Tytuł"
 
 msgctxt "label for the form text input"
 msgid "News text"
-msgstr "Texte"
+msgstr "Tekst wiadomości"
 
 msgid "Please enter a message..."
-msgstr "Saisir un message..."
+msgstr "Wpisz wiadomość..."
 
 msgid "To post in this team you need to"
-msgstr "Pour poster dans cette équipe tu dois"
+msgstr "Aby opublikować w tym zespole, musisz wysłać"
 
 msgid "request to join"
-msgstr "demander à rejoindre"
+msgstr "prośbę o dołączenie"
 
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Anuluj"
 
 msgid "There are no news posts yet"
-msgstr "Il n'y a pas encore de posts"
+msgstr "Nie ma nowych wpisów"
 
 #, python-format
 msgid ""
@@ -190,25 +189,25 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Salut %(receiver_name)s!\n"
+"Cześć, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s a écrit un commentaire sur un post que tu as rédigé dans %(team_name)s:\n"
+"%(sender_name)s dodał/a komentarz do wpisu wiadomości, który utworzyłeś/aś w zespole %(team_name)s:\n"
 "\n"
-"\"%(comment_text)s\"\n"
-"\n"
-"\n"
-"sur ton post :\n"
-"\n"
-"\"%(note_text)s\"\n"
+"\\’’%(comment_text)s\\’’\n"
 "\n"
 "\n"
-"Suis ce lien pour voir le commentaire : \n"
+"we wpisie:\n"
+"\n"
+"\\’’%(note_text)s\\’’\n"
+"\n"
+"\n"
+"Kliknij tutaj, aby zobaczyć komentarz:\n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
 "\n"
-"L'équipe %(site_name)s.\n"
+"Twój Zespół %(site_name)s.\n"
 "\n"
 
 #, python-format
@@ -234,34 +233,34 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Salut %(receiver_name)s!\n"
+"Cześć, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s a écrit un commentaire sur un post que tu as également commenté dans %(team_name)s:\n"
+"%(sender_name)s dodał/a komentarz do wpisu wiadomości, który skomentowałeś/aś w zespole %(team_name)s:\n"
 "\n"
-"\"%(comment_text)s\"\n"
-"\n"
-"\n"
-"sur le post :\n"
-"\n"
-"\"%(note_text)s\"\n"
+"\\’’%(comment_text)s\\’’\n"
 "\n"
 "\n"
-"Suis ce lien pour voir le commentaire : \n"
+"we wpisie:\n"
+"\n"
+"\\’’%(note_text)s\\’’\n"
+"\n"
+"\n"
+"Kliknij tutaj, aby zobaczyć komentarz:\n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
 "\n"
-"L'équipe %(site_name)s.\n"
+"Twój Zespół %(site_name)s.\n"
 "\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
-msgstr "%(sender_name)s a commenté un post que tu as également commenté dans %(team_name)s."
+msgstr "%(sender_name)s skomentował/a wpis wiadomości, który Ty skomentowałeś/aś w zespole %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
-msgstr "%(sender_name)s a commenté un de tes posts dans %(team_name)s."
+msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów wiadomości w zespole %(team_name)s."
 
 #, python-format
 msgid ""
@@ -269,9 +268,9 @@ msgid ""
 "\n"
 "%(sender_name)s just posted an update in %(team_name)s:\n"
 msgstr ""
-"Salut %(receiver_name)s,\n"
+"Cześć %(receiver_name)s,\n"
 "\n"
-"%(sender_name)s vient de poster une mise à jour dans %(team_name)s :\n"
+"%(sender_name)s opublikował/a aktualizację w zespole %(team_name)s:\n"
 
 #, python-format
 msgid ""
@@ -291,43 +290,43 @@ msgstr ""
 "\n"
 "\n"
 "\n"
-"Tu peux le trouver en suivant ce lien : %(object_url)s\n"
+"Dostępna jest pod następującym adresem:\n"
+"%(object_url)s\n"
 "\n"
 "\n"
+"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
 "\n"
-"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
-"\n"
-"L'équipe %(site_name)s."
+"Twój Zespół %(site_name)s."
 
 msgid "Show in my projects..."
-msgstr ""
+msgstr "Pokaż w moich projektach..."
 
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Edytuj"
 
 msgid "Delete note"
-msgstr "Supprimer la note"
+msgstr "Usuń notkę"
 
 msgid "View on Facebook"
-msgstr "Voir sur Facebook"
+msgstr "Wyświetl na Facebooku"
 
 msgid "Do you really want to delete this note?"
-msgstr "Souhaites-tu vraiment supprimer cette note ?"
+msgstr "Czy na pewno chcesz usunąć tę notkę?"
 
 msgid "Read more..."
-msgstr "Lire plus..."
+msgstr "Czytaj więcej..."
 
 msgid "Your news post was added successfully."
-msgstr "Ton post a été ajouté."
+msgstr "Twój wpis wiadomości został dodany pomyślnie."
 
 msgid "Your news post was deleted successfully."
-msgstr "Ton post a été supprimé."
+msgstr "Twój wpis wiadomości został usunięty pomyślnie."
 
 msgid "Your news post was edited successfully."
-msgstr "Ton post a été modifié."
+msgstr "Twój wpis wiadomości został edytowany pomyślnie."
 
 msgid "Your comment was added successfully."
-msgstr "Ton commentaire a été ajouté."
+msgstr "Twój komentarz został dodany pomyślnie."
 
 msgid "Your comment was deleted successfully."
-msgstr "Ton commentaire a été supprimé."
+msgstr "Twój komentarz został usunięty pomyślnie."
