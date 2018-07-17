@@ -121,6 +121,7 @@ notifications = {
             'object_name': 'get_readable_title', 
             'object_url': 'get_absolute_url', 
             'object_text': 'text',
+            'image_url': 'attached_image.static_image_url_thumbnail',
         },
     },  
 }
