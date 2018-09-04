@@ -43,6 +43,7 @@ notifications = {
         'subject_template': 'cosinnus_note/notifications/note_comment_posted_subject.txt',
         'signals': [note_comment_posted_on_any],
         'default': False,
+        'moderatable_content': True,
         
         'is_html': True,
         'snippet_type': 'news',
@@ -111,6 +112,7 @@ notifications = {
         'subject_template': 'cosinnus_note/notifications/note_created_subject.txt',
         'signals': [note_created],
         'default': True,
+        'moderatable_content': True,
         
         'is_html': True,
         'snippet_type': 'news',
