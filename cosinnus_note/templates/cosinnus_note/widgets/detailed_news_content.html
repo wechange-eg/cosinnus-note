@@ -79,7 +79,7 @@
                             {% include 'cosinnus/common/attached_images_gallery_single.html' with object=note %}
                         {% endif %}
                         {% if note.video %}
-                            {% include 'cosinnus/common/embed_youtube.html' with video_id=note.video_id %}
+                            {% include 'cosinnus/common/embed_video.html' with video_id=note.video_id %}
                         {% endif %}
                     </div>
                 </li>

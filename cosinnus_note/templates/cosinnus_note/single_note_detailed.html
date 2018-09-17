@@ -82,7 +82,7 @@
             {% endif %}
 	        <div class="textfield">{{ note.text|textfield }}</div>
 	        {% if note.video %}
-	            {% include 'cosinnus/common/embed_youtube.html' with video_id=note.video_id %}
+	            {% include 'cosinnus/common/embed_video.html' with video_id=note.video_id %}
 	        {% endif %}
 	    </div>
 	    
