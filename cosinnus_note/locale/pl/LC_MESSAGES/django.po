@@ -7,81 +7,81 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-22 13:19+0200\n"
-"PO-Revision-Date: 2018-06-23 16:54+0200\n"
+"POT-Creation-Date: 2018-09-18 22:51+0200\n"
+"PO-Revision-Date: 2018-08-31 13:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 2.0.4\n"
 
 msgid "Notes"
-msgstr "Notki"
+msgstr "Notatki"
 
 msgctxt "the_app"
 msgid "note"
-msgstr "notka"
+msgstr "notatka"
 
 msgid "A user commented on a news post"
-msgstr "Użytkownik skomentował wpis wiadomości"
+msgstr "Użytkownik skomentował wpis"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post"
-msgstr "%(sender_name)s skomentował/a wpis wiadomości"
+msgstr "%(sender_name)s skomentował/a wpis"
 
 #, python-format
 msgid "%(sender_name)s"
 msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
-msgstr "Użytkownik skomentował jeden z Twoich wpisów wiadomości"
+msgstr "Użytkownik skomentował jeden z Twoich wpisów"
 
 #, python-format
 msgid "%(sender_name)s commented on your news post"
-msgstr "%(sender_name)s skomentował/a Twój wpis wiadomości"
+msgstr "%(sender_name)s skomentował/a Twój wpis"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts"
-msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów wiadomości"
+msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów"
 
 msgid "A user commented on a news posts you commented in"
-msgstr "Użytkownik skomentował wpis wiadomości, który Ty skomentowałeś/aś"
+msgstr "Użytkownik skomentował wpis, który skomentowałeś/aś"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr "%(sender_name)s skomentował/a wpis wiadomości, który Ty skomentowałeś/aś"
+msgstr "%(sender_name)s skomentował/a wpis, który skomentowałeś/aś"
 
 msgid "A user created a news post"
-msgstr "Użytkownik utworzył wpis wiadomości"
+msgstr "Użytkownik utworzył wpis"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
-msgstr "Wpis wiadomości utworzony przez %(sender_name)s"
+msgstr "Post utworzony przez %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new news post"
-msgstr "%(sender_name)s stworzył nowy wpis wiadomości"
+msgstr "%(sender_name)s stworzył nowy wpis"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
 msgstr "%(sender_name)s dodał wpis w %(team_name)s:"
 
 msgid "No news"
-msgstr "Brak wiadomości"
+msgstr "Brak wpisów"
 
 msgid "Write a news post"
-msgstr "Stwórz wpis wiadomości"
+msgstr "Dodaj wpis"
 
 msgid "News stream"
-msgstr "Transmisja wiadomości"
+msgstr "Stream"
 
 msgid "Created By"
-msgstr "Stworzone przez"
+msgstr "Utworzone Przez"
 
 msgid "Newest Created"
-msgstr "Najnowsze stworzone"
+msgstr "Najnowsze"
 
 msgid "Popularity"
 msgstr "Popularność"
@@ -93,10 +93,10 @@ msgid "Facebook Share"
 msgstr "Udostępnienie na Facebooku"
 
 msgid "Note Item"
-msgstr "Element notki"
+msgstr "Element Notatki"
 
 msgid "Note Items"
-msgstr "Elementy notki"
+msgstr "Elementy Notatki"
 
 msgid "Author"
 msgstr "Autor"
@@ -105,7 +105,7 @@ msgid "Creator"
 msgstr "Twórca"
 
 msgid "Created"
-msgstr "Stworzył/a"
+msgstr "Utworzone"
 
 msgid "Comment"
 msgstr "Komentarz"
@@ -118,7 +118,7 @@ msgstr "Aktualności"
 
 msgctxt "the_verb"
 msgid "Comment"
-msgstr "Komentarz"
+msgstr "Skomentuj"
 
 msgid "Delete"
 msgstr "Usuń"
@@ -130,10 +130,10 @@ msgid "Post"
 msgstr "Opublikuj"
 
 msgid "There are no public news posts"
-msgstr "Nie ma publicznych wpisów wiadomości"
+msgstr "Nie ma publicznych wpisów"
 
 msgid "Edit news post"
-msgstr "Edytuj wpis wiadomości"
+msgstr "Edytuj wpis"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
 msgstr "W jednym z wypełnionych pól jest błąd. Popraw go przed zapisaniem!"
@@ -149,13 +149,13 @@ msgstr "Tytuł"
 
 msgctxt "label for the form text input"
 msgid "News text"
-msgstr "Tekst wiadomości"
+msgstr "Tekst"
 
 msgid "Please enter a message..."
 msgstr "Wpisz wiadomość..."
 
 msgid "To post in this team you need to"
-msgstr "Aby opublikować w tym zespole, musisz wysłać"
+msgstr "Aby publikować w tym zespole, musisz wysłać"
 
 msgid "request to join"
 msgstr "prośbę o dołączenie"
@@ -189,16 +189,16 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Cześć, %(receiver_name)s!\n"
+"Cześć %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s dodał/a komentarz do wpisu wiadomości, który utworzyłeś/aś w zespole %(team_name)s:\n"
+"%(sender_name)s dodał/a komentarz do wpisu, który utworzyłeś/aś w zespole %(team_name)s:\n"
 "\n"
-"\\’’%(comment_text)s\\’’\n"
+"\"%(comment_text)s\"\n"
 "\n"
 "\n"
 "we wpisie:\n"
 "\n"
-"\\’’%(note_text)s\\’’\n"
+"\"%(note_text)s\"\n"
 "\n"
 "\n"
 "Kliknij tutaj, aby zobaczyć komentarz:\n"
@@ -233,16 +233,16 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Cześć, %(receiver_name)s!\n"
+"Cześć %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s dodał/a komentarz do wpisu wiadomości, który skomentowałeś/aś w zespole %(team_name)s:\n"
+"%(sender_name)s dodał/a komentarz do wpisu, który skomentowałeś/aś w zespole %(team_name)s:\n"
 "\n"
-"\\’’%(comment_text)s\\’’\n"
+"\"%(comment_text)s\"\n"
 "\n"
 "\n"
 "we wpisie:\n"
 "\n"
-"\\’’%(note_text)s\\’’\n"
+"\"%(note_text)s\"\n"
 "\n"
 "\n"
 "Kliknij tutaj, aby zobaczyć komentarz:\n"
@@ -256,11 +256,11 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
-msgstr "%(sender_name)s skomentował/a wpis wiadomości, który Ty skomentowałeś/aś w zespole %(team_name)s."
+msgstr "%(sender_name)s skomentował/a wpis, który Ty skomentowałeś/aś w zespole %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
-msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów wiadomości w zespole %(team_name)s."
+msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów w zespole %(team_name)s."
 
 #, python-format
 msgid ""
@@ -305,25 +305,25 @@ msgid "Edit"
 msgstr "Edytuj"
 
 msgid "Delete note"
-msgstr "Usuń notkę"
+msgstr "Usuń notatkę"
 
 msgid "View on Facebook"
 msgstr "Wyświetl na Facebooku"
 
 msgid "Do you really want to delete this note?"
-msgstr "Czy na pewno chcesz usunąć tę notkę?"
+msgstr "Czy na pewno chcesz usunąć tę notatkę?"
 
 msgid "Read more..."
 msgstr "Czytaj więcej..."
 
 msgid "Your news post was added successfully."
-msgstr "Twój wpis wiadomości został dodany pomyślnie."
+msgstr "Twój wpis został dodany pomyślnie."
 
 msgid "Your news post was deleted successfully."
-msgstr "Twój wpis wiadomości został usunięty pomyślnie."
+msgstr "Twój wpis został usunięty pomyślnie."
 
 msgid "Your news post was edited successfully."
-msgstr "Twój wpis wiadomości został edytowany pomyślnie."
+msgstr "Twój wpis został edytowany pomyślnie."
 
 msgid "Your comment was added successfully."
 msgstr "Twój komentarz został dodany pomyślnie."
