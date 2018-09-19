@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from builtins import object
 import re
 
 from django.conf import settings
@@ -136,7 +137,7 @@ class Comment(models.Model):
     note = models.ForeignKey(Note, related_name='comments')
     text = models.TextField(_('Text'))
 
-    class Meta:
+    class Meta(object):
         ordering = ['created_on']
         verbose_name = _('Comment')
         verbose_name_plural = _('Comments')
@@ -170,7 +171,7 @@ class Comment(models.Model):
                 group_members_without_commenters_ids = [member_id for member_id in self.note.group.members if member_id not in [self.creator_id, self.note.creator_id] + commenter_ids]
                 all_members = get_user_model().objects.filter(id__in=group_members_without_commenters_ids)
                 cosinnus_notifications.note_comment_posted_on_any.send(sender=self, user=self.creator, obj=self, audience=all_members)
-            except Exception, e:
+            except Exception as e:
                 logger.error('There was an error in the note_comments_commented notification. See extra', extra={'exc': e})
                 
     @property

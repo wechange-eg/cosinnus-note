@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from builtins import object
 from django import forms
 
 from cosinnus.forms.attached_object import FormAttachableMixin
@@ -14,7 +15,7 @@ from cosinnus_note.models import Comment, Note
 class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
                 FormAttachableMixin, BaseTaggableObjectForm):
 
-    class Meta:
+    class Meta(object):
         model = Note
         fields = ('title', 'text', 'video',)
         
@@ -45,6 +46,6 @@ NoteForm = get_form(_NoteForm)
 
 class CommentForm(forms.ModelForm):
 
-    class Meta:
+    class Meta(object):
         model = Comment
         fields = ('text',)
