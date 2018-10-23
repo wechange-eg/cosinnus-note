@@ -14,7 +14,10 @@ from cosinnus_note.models import Comment, Note
 
 class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
                 FormAttachableMixin, BaseTaggableObjectForm):
-
+    
+    # HTML required attribute disabled because of the model-required but form-optional field 'title'
+    use_required_attribute = False 
+    
     class Meta(object):
         model = Note
         fields = ('title', 'text', 'video',)

@@ -48,8 +48,7 @@ class BaseNotesWidget(MixReflectedObjectsMixin, ReflectedObjectSelectMixin, Dash
         }
         data.update(self.get_reflect_data(self.request, self.config.group))
 
-        return (render_to_string(self.get_template_name(), data,
-                                context_instance=RequestContext(self.request)), len(qs), len(qs) >= count)
+        return (render_to_string(self.get_template_name(), data, self.request), len(qs), len(qs) >= count)
 
     def get_template_name(self):
         if self.template_name is None:
