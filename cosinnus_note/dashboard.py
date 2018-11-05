@@ -2,14 +2,12 @@
 from __future__ import unicode_literals
 
 from django import forms
-from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
 
 from cosinnus.utils.dashboard import DashboardWidget, DashboardWidgetForm
 
 from cosinnus_note.models import Note
-from cosinnus_note.views import NoteCreateView
 from django.core.exceptions import ImproperlyConfigured
 from cosinnus_note.forms import NoteForm
 from cosinnus.views.mixins.reflected_objects import MixReflectedObjectsMixin,\
