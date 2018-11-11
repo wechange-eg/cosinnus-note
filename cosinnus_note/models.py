@@ -134,7 +134,7 @@ class Note(BaseTaggableObjectModel):
 class Comment(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('Creator'), on_delete=models.PROTECT)
     created_on = models.DateTimeField(_('Created'), auto_now_add=True, editable=False)
-    note = models.ForeignKey(Note, related_name='comments')
+    note = models.ForeignKey(Note, related_name='comments', on_delete=models.CASCADE)
     text = models.TextField(_('Text'))
 
     class Meta(object):

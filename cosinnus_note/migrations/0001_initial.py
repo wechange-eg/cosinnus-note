@@ -37,8 +37,8 @@ class Migration(migrations.Migration):
                 ('text', models.TextField(verbose_name='Text')),
                 ('video', embed_video.fields.EmbedVideoField(null=True, blank=True)),
                 ('attached_objects', models.ManyToManyField(to='cosinnus.AttachedObject', null=True, blank=True)),
-                ('creator', models.ForeignKey(related_name='cosinnus_note_note_set', verbose_name='Creator', to=settings.AUTH_USER_MODEL, null=True)),
-                ('group', models.ForeignKey(related_name='cosinnus_note_note_set', verbose_name='Group', to='cosinnus.CosinnusGroup')),
+                ('creator', models.ForeignKey(related_name='cosinnus_note_note_set', verbose_name='Creator', to=settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)),
+                ('group', models.ForeignKey(related_name='cosinnus_note_note_set', verbose_name='Group', to='cosinnus.CosinnusGroup', on_delete=models.CASCADE)),
             ],
             options={
                 'ordering': ['-created', 'title'],

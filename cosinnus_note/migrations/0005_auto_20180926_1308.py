@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='note',
             name='group',
-            field=models.ForeignKey(verbose_name='Team', related_name='cosinnus_note_note_set', to=settings.COSINNUS_GROUP_OBJECT_MODEL),
+            field=models.ForeignKey(verbose_name='Team', related_name='cosinnus_note_note_set', to=settings.COSINNUS_GROUP_OBJECT_MODEL, on_delete=models.CASCADE),
         ),
     ]

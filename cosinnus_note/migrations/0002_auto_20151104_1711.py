@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='comment',
             name='note',
-            field=models.ForeignKey(related_name='comments', to='cosinnus_note.Note'),
+            field=models.ForeignKey(related_name='comments', to='cosinnus_note.Note', on_delete=models.CASCADE),
         ),
         migrations.AlterUniqueTogether(
             name='note',
