@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.conf.urls import url
 from cosinnus_note import views
 
+app_name = 'note'
+
 cosinnus_root_patterns = [ 
     url(r'^notes/embed/all/$', views.note_embed_global, name='embed-global'),
     url(r'^notes/embed/$', views.note_embed_current_portal, name='embed-current-portal'),
