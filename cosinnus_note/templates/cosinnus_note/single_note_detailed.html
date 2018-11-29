@@ -112,7 +112,15 @@
 	        </button><!-- btn -->
 	    </div>
 	    {% endcomment %}
-	
+	    
+	    <div class=" indented">
+		    <div class="white-content">
+		        {% include 'cosinnus/common/likefollow/like_button.html' with object=note %}
+		        {% include 'cosinnus/common/likefollow/follow_button.html' with object=note %}
+		        {% include 'cosinnus/common/likefollow/confirm_likefollow_modal.html' %}
+		    </div>
+	    </div>
+	    
 	    {% include 'cosinnus_note/note_comments.html' with note=note full_view="True" comments_expanded="True" %}
 	    
 	</div> <!-- note-wrapper -->

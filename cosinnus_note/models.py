@@ -12,7 +12,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from embed_video.fields import EmbedVideoField
 
-from cosinnus.models.tagged import BaseTaggableObjectModel
+from cosinnus.models.tagged import BaseTaggableObjectModel, LikableObjectMixin
 from django.utils.functional import cached_property
 from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user,\
     check_object_read_access
@@ -29,7 +29,7 @@ logger = logging.getLogger('cosinnus')
 FACEBOOK_POST_URL = 'https://www.facebook.com/%s/posts/%s' # %s, %s :  user_id, post_id
 
 
-class Note(BaseTaggableObjectModel):
+class Note(LikableObjectMixin, BaseTaggableObjectModel):
     
     EMPTY_TITLE_PLACEHOLDER = '---'
     
