@@ -31,6 +31,7 @@ from cosinnus.models.tagged import BaseTagObject
 from cosinnus.models.group import CosinnusPortal
 from cosinnus.views.mixins.reflected_objects import MixReflectedObjectsMixin,\
     ReflectedObjectRedirectNoticeMixin, ReflectedObjectSelectMixin
+from cosinnus.views.common import apply_likefollow_object
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
@@ -52,7 +53,10 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
     
     def form_valid(self, form):
         form.instance.creator = self.request.user
-        return super(NoteCreateView, self).form_valid(form)
+        ret = super(NoteCreateView, self).form_valid(form)
+        # creator follows their own note
+        apply_likefollow_object(form.instance, self.request.user, follow=True)
+        return ret
         
     def form_invalid(self, form):
         """
