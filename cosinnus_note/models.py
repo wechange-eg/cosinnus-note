@@ -153,6 +153,10 @@ class Comment(models.Model):
             return '%s#comment-%d' % (self.note.get_absolute_url(), self.pk)
         return self.note.get_absolute_url()
     
+    def is_user_following(self, user):
+        """ Delegates to parent object """
+        return self.note.is_user_following(user)
+    
     def save(self, *args, **kwargs):
         created = bool(self.pk) == False
         super(Comment, self).save(*args, **kwargs)
