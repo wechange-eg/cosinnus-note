@@ -151,6 +151,8 @@ notifications = {
             'object_text': 'text',
             'image_url': 'attached_image.static_image_url_thumbnail',
         },
+        'show_like_button': True,
+        'show_follow_button': True,
     },  
     'following_note_changed': {
         'label': _('A user updated a news post'), 
