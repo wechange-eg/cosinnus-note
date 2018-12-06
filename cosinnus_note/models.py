@@ -24,6 +24,7 @@ import logging
 from django.template.defaultfilters import truncatechars
 from cosinnus.models.group import CosinnusPortal
 from cosinnus.views.mixins.reflected_objects import MixReflectedObjectsMixin
+from uuid import uuid1
 logger = logging.getLogger('cosinnus')
 
 FACEBOOK_POST_URL = 'https://www.facebook.com/%s/posts/%s' # %s, %s :  user_id, post_id
@@ -62,8 +63,12 @@ class Note(LikeableObjectMixin, BaseTaggableObjectModel):
             
         super(Note, self).save(*args, **kwargs)
         if created:
-            # todo was created
-            cosinnus_notifications.note_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
+            session_id = uuid1().int
+            group_followers_except_creator_ids = [pk for pk in self.group.get_followed_user_ids() if not pk in [self.creator_id]]
+            group_followers_except_creator = get_user_model().objects.filter(id__in=group_followers_except_creator_ids)
+            cosinnus_notifications.followed_group_note_created.send(sender=self, user=self.creator, obj=self, audience=group_followers_except_creator, session_id=session_id)
+            cosinnus_notifications.note_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk), session_id=session_id, end_session=True)
+            
 
     def get_absolute_url(self):
         kwargs = {'group': self.group, 'slug': self.slug}
@@ -161,20 +166,26 @@ class Comment(models.Model):
         created = bool(self.pk) == False
         super(Comment, self).save(*args, **kwargs)
         if created:
+            session_id = uuid1().int
             if not self.note.creator == self.creator:
                 # comment was created in own post
-                cosinnus_notifications.note_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.note.creator])
+                cosinnus_notifications.note_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.note.creator], session_id=session_id)
+                
             # comment was created, for other commenters posts (we skip the post creator because the previous notification precedes)
             try:
+                # message all followers of the note
+                followers_except_creator = [pk for pk in self.note.get_followed_user_ids() if not pk in [self.creator_id, self.note.creator_id]]
+                cosinnus_notifications.following_note_comment_posted.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=followers_except_creator), session_id=session_id)
+                
                 # notifications for people who also commented on the note of this comment
                 commenter_ids = list(set(self.note.comments.exclude(creator__id__in=[self.creator_id, self.note.creator_id]).values_list('creator', flat=True)))
                 commenters = get_user_model().objects.filter(id__in=commenter_ids)
-                cosinnus_notifications.note_comment_posted_on_commented_post.send(sender=self, user=self.creator, obj=self, audience=commenters)
+                cosinnus_notifications.note_comment_posted_on_commented_post.send(sender=self, user=self.creator, obj=self, audience=commenters, session_id=session_id)
                 
                 # notification for any members in this group, excepting thos who already commented on the note (because they already received a notification)
                 group_members_without_commenters_ids = [member_id for member_id in self.note.group.members if member_id not in [self.creator_id, self.note.creator_id] + commenter_ids]
                 all_members = get_user_model().objects.filter(id__in=group_members_without_commenters_ids)
-                cosinnus_notifications.note_comment_posted_on_any.send(sender=self, user=self.creator, obj=self, audience=all_members)
+                cosinnus_notifications.note_comment_posted_on_any.send(sender=self, user=self.creator, obj=self, audience=all_members, session_id=session_id, end_session=True)
             except Exception as e:
                 logger.error('There was an error in the note_comments_commented notification. See extra', extra={'exc': e})
                 

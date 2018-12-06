@@ -13,6 +13,10 @@ note_comment_posted_on_any = dispatch.Signal(providing_args=["user", "obj", "aud
 note_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 note_comment_posted_on_commented_post = dispatch.Signal(providing_args=["user", "obj", "audience"])
 note_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
+followed_group_note_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
+following_note_changed = dispatch.Signal(providing_args=["user", "obj", "audience"])
+following_note_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
+
 
 
 """ Notification definitions.
@@ -127,5 +131,68 @@ notifications = {
         },
         'show_like_button': True,
         'show_follow_button': True,
+    },
+    'followed_group_note_created': {
+        'label': _('A user created a news post in a team you are following'), 
+        'signals': [followed_group_note_created],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'supercedes_notifications': ['note_created'],
+        'requires_object_state_check': 'group.is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'news',
+        'event_text': _('New news post by %(sender_name)s in %(team_name)s (which you follow)'),
+        'notification_text': _('%(sender_name)s created a new news post in %(team_name)s (which you follow)'),
+        'subject_text': _('%(sender_name)s posted in %(team_name)s: (which you follow)'),
+        'data_attributes': {
+            'object_name': 'get_readable_title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'text',
+            'image_url': 'attached_image.static_image_url_thumbnail',
+        },
     },  
+    'following_note_changed': {
+        'label': _('A user updated a news post'), 
+        'signals': [following_note_changed],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'requires_object_state_check': 'is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'news',
+        'event_text': _('%(sender_name)s updated a news post you are following'),
+        'notification_text': _('%(sender_name)s updated a news post you are following'),
+        'subject_text': _('A news post you follow by %(sender_name)s was updated %(team_name)s:'),
+        'data_attributes': {
+            'object_name': 'get_readable_title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'text',
+            'image_url': 'attached_image.static_image_url_thumbnail',
+        },
+    },  
+    'following_note_comment_posted': {
+        'label': _('A user commented on a news posts you are following'), 
+        'signals': [following_note_comment_posted],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'supercedes_notifications': ['note_comment_posted_on_commented_post', 'note_comment_posted', 'note_comment_posted_on_any'],
+        'requires_object_state_check': 'note.is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'news',
+        'event_text': _('%(sender_name)s commented on a news posts you are following'),
+        'notification_text': _('%(sender_name)s commented on a news posts you are following'),
+        'subject_text': _('%(sender_name)s commented on a news posts you are following'),
+        'sub_event_text': _('%(sender_name)s'),
+        'data_attributes': {
+            'object_name': 'note.get_readable_title', 
+            'object_url': 'get_absolute_url', 
+            'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            # no event in comment meta for now. looks ugly
+            #'sub_event_meta': 'created_on', # created date
+            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
+            'sub_object_text': 'text',
+        },
+    }, 
 }
