@@ -31,6 +31,9 @@ from cosinnus.models.tagged import BaseTagObject
 from cosinnus.models.group import CosinnusPortal
 from cosinnus.views.mixins.reflected_objects import MixReflectedObjectsMixin,\
     ReflectedObjectRedirectNoticeMixin, ReflectedObjectSelectMixin
+from cosinnus.views.common import apply_likefollow_object
+from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin
+from django.contrib.auth import get_user_model
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
@@ -52,7 +55,10 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
     
     def form_valid(self, form):
         form.instance.creator = self.request.user
-        return super(NoteCreateView, self).form_valid(form)
+        ret = super(NoteCreateView, self).form_valid(form)
+        # creator follows their own note
+        apply_likefollow_object(form.instance, self.request.user, follow=True)
+        return ret
         
     def form_invalid(self, form):
         """
@@ -165,13 +171,15 @@ class NoteEmbedCurrentPortalView(NoteEmbedGlobalView):
 note_embed_current_portal = NoteEmbedCurrentPortalView.as_view()
 
 
-class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
+class NoteUpdateView(EditViewWatchChangesMixin, RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
                      UserFormKwargsMixin, UpdateViewAttachable):
 
     form_class = NoteForm
     model = Note
     template_name = 'cosinnus_note/note_form.html'
     form_view = 'edit'
+    
+    changed_attr_watchlist = ['title', 'text', 'get_attached_objects_hash', 'get_tagged_persons_hash']
     
     message_success = _('Your news post was edited successfully.')
     
@@ -186,6 +194,11 @@ class NoteUpdateView(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         messages.success(self.request, self.message_success)
         return super(NoteUpdateView, self).form_valid(form)
     
+    def on_save_changed_attrs(self, obj, changed_attr_dict):
+        # send out a notification to all followers for the change
+        followers_except_creator = [pk for pk in obj.get_followed_user_ids() if not pk in [obj.creator_id]]
+        cosinnus_notifications.following_note_changed.send(sender=self, user=obj.creator, obj=obj, audience=get_user_model().objects.filter(id__in=followers_except_creator))
+        
     def get_success_url(self):
         return group_aware_reverse('cosinnus:note:list', kwargs={'group': self.group})
 
