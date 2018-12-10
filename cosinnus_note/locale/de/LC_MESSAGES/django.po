@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:51+0200\n"
+"POT-Creation-Date: 2018-12-10 12:53+0100\n"
 "PO-Revision-Date: 2018-07-22 13:30+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -68,6 +68,51 @@ msgstr "%(sender_name)s hat eine Neuigkeit gepostet"
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
 msgstr "%(sender_name)s hat in %(team_name)s gepostet:"
+
+#, fuzzy
+#| msgid "A user created a news post"
+msgid "A user created a news post in a team you are following"
+msgstr "Ein Mitglied hat einen neuen Beitrag in die Gruppe gepostet"
+
+#, fuzzy, python-format
+#| msgid "New news post by %(sender_name)s"
+msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+msgstr "Neue Neuigkeit von %(sender_name)s"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
+msgstr "%(sender_name)s hat eine Neuigkeit von dir kommentiert in %(team_name)s!"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s posted in %(team_name)s:"
+msgid "%(sender_name)s posted in %(team_name)s: (which you follow)"
+msgstr "%(sender_name)s hat in %(team_name)s gepostet:"
+
+#, fuzzy
+#| msgid "A user created a news post"
+msgid "A user updated a news post"
+msgstr "Ein Mitglied hat einen neuen Beitrag in die Gruppe gepostet"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s updated a news post you are following"
+msgstr "%(sender_name)s hat eine Neuigkeit kommentiert, die du kommentiert hast"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s posted in %(team_name)s:"
+msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
+msgstr "%(sender_name)s hat in %(team_name)s gepostet:"
+
+#, fuzzy
+#| msgid "A user commented on a news posts you commented in"
+msgid "A user commented on a news posts you are following"
+msgstr "Ein Mitglied hat einen Beitrag kommentiert den du kommentiert hast"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s commented on a news posts you are following"
+msgstr "%(sender_name)s hat eine Neuigkeit kommentiert, die du kommentiert hast"
 
 msgid "No news"
 msgstr "Keine Neuigkeiten vorhanden"
