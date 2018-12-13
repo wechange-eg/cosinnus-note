@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:51+0200\n"
-"PO-Revision-Date: 2018-06-17 21:59+0200\n"
+"POT-Creation-Date: 2018-12-10 12:53+0100\n"
+"PO-Revision-Date: 2018-12-11 20:51+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -68,6 +68,39 @@ msgstr "%(sender_name)s створив нову новину"
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
 msgstr "%(sender_name)s опублікував(ла) допис у %(team_name)s:"
+
+msgid "A user created a news post in a team you are following"
+msgstr "Користувач опублікував(ла) новий допис у команді, яку Ви відстежуєте"
+
+#, python-format
+msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+msgstr "Новина від %(sender_name)s в %(team_name)s (яку Ви відстежуєте)"
+
+#, python-format
+msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
+msgstr "%(sender_name)s створив новий пост з новиною в %(team_name)s (яку Ви відстежуєте)"
+
+#, python-format
+msgid "%(sender_name)s posted in %(team_name)s: (which you follow)"
+msgstr "%(sender_name)s дописав у %(team_name)s: (яку Ви відстежуєте)"
+
+msgid "A user updated a news post"
+msgstr "Користувач оновив допис з новиною"
+
+#, python-format
+msgid "%(sender_name)s updated a news post you are following"
+msgstr "%(sender_name)s поновив(ла) новину, яку ви відстежуєте"
+
+#, python-format
+msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
+msgstr "Допис з новиною, який ви відстежуєте, від %(sender_name)s було оновлено у %(team_name)s:"
+
+msgid "A user commented on a news posts you are following"
+msgstr "Користувач прокоментував(ла) новину, яку Ви відстежуєте"
+
+#, python-format
+msgid "%(sender_name)s commented on a news posts you are following"
+msgstr "%(sender_name)s прокоментував(ла) лопис з новиною, який Ви відстежуєте"
 
 msgid "No news"
 msgstr "Жодних новин"
@@ -137,7 +170,7 @@ msgid "Edit news post"
 msgstr "Редагувати новину"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "В одному з заповнених полів сталася помилка. Будь ласка, виправте перед збереженням!"
 
 msgid "Save changes"
 msgstr "Зберегти зміни"
@@ -299,7 +332,7 @@ msgstr ""
 "З повагою, команда %(site_name)s."
 
 msgid "Show in my projects..."
-msgstr ""
+msgstr "Відобразити в моїх проектах…"
 
 msgid "Edit"
 msgstr "Редагувати"

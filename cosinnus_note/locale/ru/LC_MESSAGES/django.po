@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:51+0200\n"
-"PO-Revision-Date: 2018-06-17 23:43+0200\n"
+"POT-Creation-Date: 2018-12-10 12:53+0100\n"
+"PO-Revision-Date: 2018-12-11 19:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -67,6 +67,39 @@ msgstr "Пользователь %(sender_name)s опубликовал пост
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
 msgstr "Пользователь %(sender_name)s опубликовал пост в %(team_name)s:"
+
+msgid "A user created a news post in a team you are following"
+msgstr "Пользователь создал новость в команде, за которой Вы следите"
+
+#, python-format
+msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+msgstr "Новость от %(sender_name)s в %(team_name)s (за которой Вы следите)"
+
+#, python-format
+msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
+msgstr "%(sender_name)s создал новость в %(team_name)s (за которой Вы следите)"
+
+#, python-format
+msgid "%(sender_name)s posted in %(team_name)s: (which you follow)"
+msgstr "%(sender_name)s опубликовал пост в %(team_name)s: (за которой Вы следите)"
+
+msgid "A user updated a news post"
+msgstr "Пользователь обновил новость"
+
+#, python-format
+msgid "%(sender_name)s updated a news post you are following"
+msgstr "%(sender_name)s обновил пост, за которым Вы следите"
+
+#, python-format
+msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
+msgstr "Пост с новостью, за которой Вы следите, обновил %(sender_name)s в %(team_name)s:"
+
+msgid "A user commented on a news posts you are following"
+msgstr "Пользователь оставил комментарий к новости, за которой Вы следите"
+
+#, python-format
+msgid "%(sender_name)s commented on a news posts you are following"
+msgstr "%(sender_name)s оставил комментарий к новости, за которой Вы следите"
 
 msgid "No news"
 msgstr "Нет новостей"
@@ -136,7 +169,7 @@ msgid "Edit news post"
 msgstr "Редактировать новость"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "Ошибка в одном из заполненных полей. Пожалуйста, исправьте перед сохранением!"
 
 msgid "Save changes"
 msgstr "Сохранить изменения"
@@ -296,7 +329,7 @@ msgstr ""
 "Ваша команда %(site_name)s."
 
 msgid "Show in my projects..."
-msgstr ""
+msgstr "Отобразить в моих проектах…"
 
 msgid "Edit"
 msgstr "Редактировать"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:51+0200\n"
+"POT-Creation-Date: 2018-12-10 12:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,6 +66,39 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
+msgstr ""
+
+msgid "A user created a news post in a team you are following"
+msgstr ""
+
+#, python-format
+msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s posted in %(team_name)s: (which you follow)"
+msgstr ""
+
+msgid "A user updated a news post"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s updated a news post you are following"
+msgstr ""
+
+#, python-format
+msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
+msgstr ""
+
+msgid "A user commented on a news posts you are following"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s commented on a news posts you are following"
 msgstr ""
 
 msgid "No news"
