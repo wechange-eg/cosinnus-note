@@ -134,6 +134,10 @@ class Note(LikeableObjectMixin, BaseTaggableObjectModel):
         """ Returns a list of all URLs contained in the note's text """
         return re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', self.text)
     
+    @property
+    def short_text(self):
+        return truncatechars(self.text, 100)
+    
 
 @python_2_unicode_compatible
 class Comment(models.Model):
