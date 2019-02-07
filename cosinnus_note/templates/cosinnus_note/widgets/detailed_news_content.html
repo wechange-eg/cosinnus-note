@@ -53,27 +53,15 @@
                 <li class="media">
                     <div class="media-body">
                         <div class="well textfield">
-                            {% with note_text=note.text|textfield note_id=note.id %}
-                                {% if note.title and not note.title == '---' %}
-                                    <p class="regular-space"><strong>{{ note.title|urlizetrunc:25|url_target_blank }}</strong></p>
-                                {% endif %}
-                                {% if note.text|length|intify < 200 %}
-                                    {{ note_text }}
-                                {% else %}
-                                    <div class="hidden_text_shown" data-hidden-text-id="note_{{ note_id }}" >
-                                        {{ note.text|truncatechars:200|textfield }}
-                                        <p>
-                                            <a class="hidden_text_button" data-hidden-text-id="note_{{ note_id }}">{% trans "Read more..." %}</a>
-                                        </p>
-                                    </div>
-                                    <div class="hidden_text_hidden" data-hidden-text-id="note_{{ note_id }}" style="display:none;">
-                                        {{ note_text}}
-                                    </div>
-                                    <script type="text/javascript">
-									    $.cosinnus.hidden_text();
-									</script>
-                                {% endif %}
-                            {% endwith %}
+                            {% if note.title and not note.title == '---' %}
+                                <p class="regular-space"><strong>{{ note.title|urlizetrunc:25|url_target_blank }}</strong></p>
+                            {% endif %}
+                            <div class="truncated-textfield">
+                                {{ note.text|textfield }}
+                            </div>
+                            <script type="text/javascript">
+								$.cosinnus.truncatedTextfield();
+                            </script>
                         </div>
                         {% if note.attached_images %}
                             {% include 'cosinnus/common/attached_images_gallery_single.html' with object=note %}
