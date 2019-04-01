@@ -113,7 +113,7 @@ class Note(LikeableObjectMixin, BaseTaggableObjectModel):
         http://www.youtube.com/watch?v=CENF14Iloxw&hq=1
         """
         if self.video:
-            match = re.search(r'[?&]v=([a-zA-Z0-9-_]+)(&|$)', self.video)
+            match = re.search(r'[?&]v=([a-zA-Z0-9-_]+)[^a-zA-Z0-9-_]', self.video)
             if not match:
                 match = re.search(r'youtu.be/([a-zA-Z0-9-_]+)(&|$)', self.video)
             if match:
