@@ -41,6 +41,8 @@ class Note(LikeableObjectMixin, BaseTaggableObjectModel):
     text = models.TextField(_('Text'))
     video = EmbedVideoField(blank=True, null=True)
     facebook_post_id = models.CharField(_('Facebook Share'), max_length=255, null=True, blank=True)
+    
+    timeline_template = 'cosinnus_note/v2/timeline_item.html'
 
     class Meta(BaseTaggableObjectModel.Meta):
         ordering = ['-created', 'title']
