@@ -19,7 +19,11 @@
 	{% include 'cosinnus/v2/dashboard/timeline_button_follow.html' with item=item %}
 {% endblock %}
 
-{% block comments %}{% include 'cosinnus/v2/dashboard/timeline_item_comments.html' with item=item %}{% endblock %}
+{% comment %}  
+{% block comments %}
+	{% include 'cosinnus/v2/dashboard/timeline_item_comments.html' with item=item %}
+{% endblock %}
+{% endcomment %}
 
 
 
