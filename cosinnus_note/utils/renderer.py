@@ -15,10 +15,11 @@ class NoteRenderer(BaseRenderer):
     model = Note
 
     template = 'cosinnus_note/attached_notes.html'
+    template_v2 = 'cosinnus_note/v2/attached_notes.html'
     template_single = 'cosinnus_note/single_note_detailed.html'
     template_list = 'cosinnus_note/note_list_standalone.html'
     
 
     @classmethod
-    def render(cls, context, myobjs):
-        return super(NoteRenderer, cls).render(context, notes=myobjs)
+    def render(cls, context, myobjs, **kwargs):
+        return super(NoteRenderer, cls).render(context, notes=myobjs, **kwargs)

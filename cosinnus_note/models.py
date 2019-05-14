@@ -140,6 +140,9 @@ class Note(LikeableObjectMixin, BaseTaggableObjectModel):
     def short_text(self):
         return truncatechars(self.text, 100)
     
+    def get_comment_post_url(self):
+        return group_aware_reverse('cosinnus:note:comment', kwargs={'group': self.group, 'note_slug': self.slug})
+    
 
 @python_2_unicode_compatible
 class Comment(models.Model):

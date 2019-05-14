@@ -3,7 +3,7 @@
 
 {% block container_class %}timeline-item-note{% endblock %}
 
-{% block creation_label %}{% trans "has added a post" %}{% endblock %}
+{% block creation_label %}{% trans "added a post" %}{% endblock %}
 
 {% block icon %}fa-quote-right{% endblock %}
 
@@ -18,12 +18,6 @@
 	{% include 'cosinnus/v2/dashboard/timeline_button_like.html' with item=item %}
 	{% include 'cosinnus/v2/dashboard/timeline_button_follow.html' with item=item %}
 {% endblock %}
-
-{% comment %}  
-{% block comments %}
-	{% include 'cosinnus/v2/dashboard/timeline_item_comments.html' with item=item %}
-{% endblock %}
-{% endcomment %}
 
 
 
