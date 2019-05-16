@@ -76,6 +76,14 @@ class Note(LikeableObjectMixin, BaseTaggableObjectModel):
         kwargs = {'group': self.group, 'slug': self.slug}
         return group_aware_reverse('cosinnus:note:note', kwargs=kwargs)
     
+    def get_edit_url(self):
+        kwargs = {'group': self.group, 'slug': self.slug}
+        return group_aware_reverse('cosinnus:note:update', kwargs=kwargs)
+    
+    def get_delete_url(self):
+        kwargs = {'group': self.group, 'slug': self.slug}
+        return group_aware_reverse('cosinnus:note:delete', kwargs=kwargs)
+    
     def get_facebook_post_url(self):
         """ If this post has been posted to facebook and its id is known, returns the URL to the facebook post. 
             @return: A string URL to a facebook post or None """
@@ -166,6 +174,12 @@ class Comment(models.Model):
         if self.pk:
             return '%s#comment-%d' % (self.note.get_absolute_url(), self.pk)
         return self.note.get_absolute_url()
+        
+    def get_edit_url(self):
+        return group_aware_reverse('cosinnus:note:comment-update', kwargs={'group': self.note.group, 'pk': self.pk})
+
+    def get_delete_url(self):
+        return group_aware_reverse('cosinnus:note:comment-delete', kwargs={'group': self.note.group, 'pk': self.pk})
     
     def is_user_following(self, user):
         """ Delegates to parent object """
