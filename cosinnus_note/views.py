@@ -34,6 +34,7 @@ from cosinnus.views.mixins.reflected_objects import MixReflectedObjectsMixin,\
 from cosinnus.views.common import apply_likefollow_object
 from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin
 from django.contrib.auth import get_user_model
+from django.utils.timezone import now
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
@@ -219,7 +220,9 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
         form.instance.creator = self.request.user
         form.instance.note = self.note
         messages.success(self.request, self.message_success)
-        return super(CommentCreateView, self).form_valid(form)
+        ret = super(CommentCreateView, self).form_valid(form)
+        self.note.update_last_action(now(), self.request.user, save=True)
+        return ret
 
     def get_context_data(self, **kwargs):
         context = super(CommentCreateView, self).get_context_data(**kwargs)
