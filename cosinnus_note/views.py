@@ -35,10 +35,13 @@ from cosinnus.views.common import apply_likefollow_object
 from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin
 from django.contrib.auth import get_user_model
 from django.utils.timezone import now
+from ajax_forms.ajax_forms import AjaxFormsCommentCreateViewMixin,\
+    AjaxFormsDeleteViewMixin, AjaxFormsCreateViewMixin
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
-                     GroupFormKwargsMixin, UserFormKwargsMixin, CreateViewAttachable):
+                     GroupFormKwargsMixin, UserFormKwargsMixin, AjaxFormsCreateViewMixin,
+                     CreateViewAttachable):
 
     form_class = NoteForm
     model = Note
@@ -46,6 +49,9 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
     form_view = 'add'
     
     message_success = _('Your news post was added successfully.')
+    
+    ajax_form_partial = 'cosinnus_note/v2/note_form_core.html'
+    ajax_result_partial = 'cosinnus_note/v2/dashboard/timeline_item_ajax_partial.html'
     
     def get_context_data(self, **kwargs):
         context = super(NoteCreateView, self).get_context_data(**kwargs)
@@ -78,7 +84,7 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
 note_create = NoteCreateView.as_view()
 
 
-class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
+class NoteDeleteView(RequireWriteMixin, FilterGroupMixin, AjaxFormsDeleteViewMixin, DeleteView):
 
     model = Note
     template_name_suffix = '_delete'
@@ -207,7 +213,8 @@ class NoteUpdateView(EditViewWatchChangesMixin, RequireWriteMixin, FilterGroupMi
 note_update = NoteUpdateView.as_view()
 
 
-class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
+class CommentCreateView(RequireWriteMixin, FilterGroupMixin, AjaxFormsCommentCreateViewMixin,
+        CreateView):
 
     form_class = CommentForm
     group_field = 'note__group'
@@ -250,7 +257,7 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
 comment_create = CommentCreateView.as_view()
 
 
-class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
+class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, AjaxFormsDeleteViewMixin, DeleteView):
 
     group_field = 'note__group'
     model = Comment
