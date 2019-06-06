@@ -1,7 +1,7 @@
 {% load i18n cosinnus_tags widget_tweaks %}
 
 <form id="{{ form_id }}" action="{{ action_url }}" method="post" 
-		class="form-horizontal" data-target="ajax-form" data-ajax-oncomplete="$('#write-news-modal').modal('hide');init_simplemde();">
+		class="form-horizontal" data-target="ajax-form" data-ajax-oncomplete="$('#write-news-modal').modal('hide');init_simplemde();$.cosinnus.truncatedTextfield();">
 	{% csrf_token %}
 
     <div class="modal-body">
