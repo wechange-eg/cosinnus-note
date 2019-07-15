@@ -70,7 +70,6 @@ class Note(LikeableObjectMixin, BaseTaggableObjectModel):
             group_followers_except_creator = get_user_model().objects.filter(id__in=group_followers_except_creator_ids)
             cosinnus_notifications.followed_group_note_created.send(sender=self, user=self.creator, obj=self, audience=group_followers_except_creator, session_id=session_id)
             cosinnus_notifications.note_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk), session_id=session_id, end_session=True)
-            
 
     def get_absolute_url(self):
         kwargs = {'group': self.group, 'slug': self.slug}
