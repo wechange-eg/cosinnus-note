@@ -122,10 +122,14 @@ class Note(LikeableObjectMixin, BaseTaggableObjectModel):
         """ Returns the video id from a URL as such:
         http://www.youtube.com/watch?v=CENF14Iloxw&hq=1
         """
-        if self.video:
-            match = re.search(r'[?&]v=([a-zA-Z0-9-_]+)[^a-zA-Z0-9-_]', self.video)
+        video = self.video
+        if video:
+            # remove a single trailing space, that can exist because of markdown, and is never used in an actual URL
+            if video.endswith(')'):
+                video = video[:-1]
+            match = re.search(r'[?&]v=([a-zA-Z0-9-_]+)[^a-zA-Z0-9-_]', video)
             if not match:
-                match = re.search(r'youtu.be/([a-zA-Z0-9-_]+)(&|$)', self.video)
+                match = re.search(r'youtu.be/([a-zA-Z0-9-_]+)(&|$)', video)
             if match:
                 vid = match.groups()[0]
                 return vid
