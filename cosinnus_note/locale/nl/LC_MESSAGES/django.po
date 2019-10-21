@@ -3,202 +3,202 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-03 17:47+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2019-09-05 13:50+0200\n"
+"PO-Revision-Date: 2019-09-22 17:45+0200\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.3\n"
 
 msgid "Notes"
-msgstr ""
+msgstr "Notities"
 
 msgctxt "the_app"
 msgid "note"
-msgstr ""
+msgstr "notitie"
 
 msgid "A user commented on a news post"
-msgstr ""
+msgstr "Een gebruiker heeft gereageerd op een nieuwspost"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op een nieuwspost"
 
 #, python-format
 msgid "%(sender_name)s"
-msgstr ""
+msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
-msgstr ""
+msgstr "Een gebruiker heeft op een van uw nieuwspost gereageerd"
 
 #, python-format
 msgid "%(sender_name)s commented on your news post"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op uw nieuwspost"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op één van uw nieuwsposts"
 
 msgid "A user commented on a news posts you commented in"
-msgstr ""
+msgstr "Een gebruiker heeft gereageerd op een nieuwspost waar u op heeft gereageerd"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op een nieuwspost waarop u heeft gereageerd"
 
 msgid "A user created a news post"
-msgstr ""
+msgstr "Een gebruiker heeft een nieuwspost aangemaakt"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
-msgstr ""
+msgstr "Nieuw nieuwsbericht door %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new news post"
-msgstr ""
+msgstr "%(sender_name)s heeft een nieuws nieuwbericht geplaatst"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
-msgstr ""
+msgstr "%(sender_name)s plaatste in %(team_name)s:"
 
 msgid "A user created a news post in a team you are following"
-msgstr ""
+msgstr "Een gebruiker heeft een nieuwsbericht geplaatst in een team die u volgt"
 
 #, python-format
 msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr ""
+msgstr "Nieuw nieuwsbericht geplaatst door %(sender_name)s in %(team_name)s (die u volgt)"
 
 #, python-format
 msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
-msgstr ""
+msgstr "%(sender_name)s heeft een nieuw nieuwsbericht geplaatst in %(team_name)s (die u volgt)"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s: (which you follow)"
-msgstr ""
+msgstr "%(sender_name)s plaatste in %(team_name)s: (die u volgt)"
 
 msgid "A user updated a news post"
-msgstr ""
+msgstr "Een gebruiker heeft een nieuwsbericht geplaatst"
 
 #, python-format
 msgid "%(sender_name)s updated a news post you are following"
-msgstr ""
+msgstr "%(sender_name)s heeft een nieuwbericht die u volgt bijgewerkt"
 
 #, python-format
 msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
-msgstr ""
+msgstr "Een nieuwsbericht dat u volgt door %(sender_name)s is bijgewerkt %(team_name)s:"
 
 msgid "A user commented on a news posts you are following"
-msgstr ""
+msgstr "Een gebruiker heeft gereageerd op nieuwsberichten die u volgt"
 
 #, python-format
 msgid "%(sender_name)s commented on a news posts you are following"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op nieuwsberichten die u volgt"
 
 msgid "No news"
-msgstr ""
+msgstr "Geen nieuws"
 
 msgid "Write a news post"
-msgstr ""
+msgstr "Schrijf een nieuw bericht"
 
 msgid "News stream"
-msgstr ""
+msgstr "Nieuws stream"
 
 msgid "Created By"
-msgstr ""
+msgstr "Gemaakt door"
 
 msgid "Newest Created"
-msgstr ""
+msgstr "Nieuwst aangemaakt"
 
 msgid "Popularity"
-msgstr ""
+msgstr "Populariteit"
 
 msgid "Text"
-msgstr ""
+msgstr "Tekst"
 
 msgid "Facebook Share"
-msgstr ""
+msgstr "Facebook Delen"
 
 msgid "Note Item"
-msgstr ""
+msgstr "Notitie Item"
 
 msgid "Note Items"
-msgstr ""
+msgstr "Notitie Items"
 
 msgid "Author"
-msgstr ""
+msgstr "Auteur"
 
 msgid "Creator"
-msgstr ""
+msgstr "Aanmaker"
 
 msgid "Created"
-msgstr ""
+msgstr "Aangemaakt"
 
 msgid "Comment"
-msgstr ""
+msgstr "Reactie"
 
 msgid "Comments"
-msgstr ""
+msgstr "Reacties"
 
 msgid "News"
-msgstr ""
+msgstr "Nieuws"
 
 msgctxt "the_verb"
 msgid "Comment"
-msgstr ""
+msgstr "Reageer"
 
 msgid "Delete"
-msgstr ""
+msgstr "Verwijder"
 
 msgid "Write comment..."
-msgstr ""
+msgstr "Schrijf een reactie…"
 
 msgid "Post"
-msgstr ""
+msgstr "Plaats"
 
 msgid "There are no public news posts"
-msgstr ""
+msgstr "Er zijn geen openbare nieuwsberichten"
 
 msgid "Edit news post"
-msgstr ""
+msgstr "Wijzig nieuwsbericht"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "Er is een fout opgetreden in een van de velden die u hebt ingevoerd. Corrigeer dit voordat u opslaat!"
 
 msgid "Save changes"
-msgstr ""
+msgstr "Sla wijzigen op"
 
 msgid "Title (optional)"
-msgstr ""
+msgstr "Titel (optioneel)"
 
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 msgctxt "label for the form text input"
 msgid "News text"
-msgstr ""
+msgstr "Nieuwstekst"
 
 msgid "Please enter a message..."
-msgstr ""
+msgstr "Voer een bericht in …"
 
 msgid "To post in this team you need to"
-msgstr ""
+msgstr "Om in dit team te posten moet u"
 
 msgid "request to join"
-msgstr ""
+msgstr "verzoek om lid te worden"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleer"
 
 msgid "There are no news posts yet"
-msgstr ""
+msgstr "Er zijn nog gene nieuwsberichten"
 
 #, python-format
 msgid ""
@@ -223,6 +223,26 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
+"Hi, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s heeft gereageerd op een nieuwsbericht die u heeft geschreven in %(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"op uw post:\n"
+"\n"
+"\"%(note_text)s\"\n"
+"\n"
+"\n"
+"Volg deze link om de opmerking te bekijken: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Volg deze link om uw notificatie voorkeuren te wijzigen: %(notification_settings_url)s )\n"
+"\n"
+"Uw %(site_name)s team.\n"
+"\n"
 
 #, python-format
 msgid ""
@@ -247,14 +267,34 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
+"Hi, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s heeft gereageerd op een nieuwsbericht die u heeft geschreven in %(team_name)s:\n"
+"\n"
+"“%(comment_text)s”\n"
+"\n"
+"\n"
+"op uw post:\n"
+"\n"
+"“%(note_text)s”\n"
+"\n"
+"\n"
+"Volg deze link om de opmerking te bekijken: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Volg deze link om uw notificatie voorkeuren te wijzigen: %(notification_settings_url)s )\n"
+"\n"
+"Uw %(site_name)s team.\n"
+"\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op een nieuwsbericht in %(team_name)s waarop u heeft gereageerd."
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
-msgstr ""
+msgstr "%(sender_name)s heeft op één van uw nieuwsberichten gereageerd in %(team_name)s."
 
 #, python-format
 msgid ""
@@ -262,6 +302,9 @@ msgid ""
 "\n"
 "%(sender_name)s just posted an update in %(team_name)s:\n"
 msgstr ""
+"Hallo %(receiver_name)s,\n"
+"\n"
+"%(sender_name)s heeft net een bijwerking geplaatst in %(team_name)s:\n"
 
 #, python-format
 msgid ""
@@ -277,40 +320,51 @@ msgid ""
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
+"%(note_text)s\n"
+"\n"
+"\n"
+"\n"
+"U kunt het via de volgende link vinden: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Volg deze link om uw notificatie voorkeuren te wijzigen: %(notification_settings_url)s )\n"
+"\n"
+"Uw %(site_name)s Team."
 
 msgid "Show in my projects..."
-msgstr ""
+msgstr "Laat in mijn projecten zien…"
 
 msgid "Edit"
-msgstr ""
+msgstr "Wijzig"
 
 msgid "Delete note"
-msgstr ""
+msgstr "Verwijder notitie"
 
 msgid "View on Facebook"
-msgstr ""
+msgstr "Bekijk op Facebook"
 
 msgid "Do you really want to delete this note?"
-msgstr ""
+msgstr "Weet u zeker dat u deze notitie wilt verwijderen?"
 
 msgid "You added a post"
-msgstr ""
+msgstr "U heeft een post toegevoegd"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "added a post"
-msgstr ""
+msgstr "een post toegevoegd"
 
 msgid "Your news post was added successfully."
-msgstr ""
+msgstr "Uw nieuwsbericht is succesvol toegevoegd."
 
 msgid "Your news post was deleted successfully."
-msgstr ""
+msgstr "Uw nieuwsbericht is succesvol verwijderd."
 
 msgid "Your news post was edited successfully."
-msgstr ""
+msgstr "Uw nieuwsbericht is succesvol bewerkt."
 
 msgid "Your comment was added successfully."
-msgstr ""
+msgstr "Uw reactie is succesvol toegevoegd."
 
 msgid "Your comment was deleted successfully."
-msgstr ""
+msgstr "Uw reactie is succesvol verwijderd."
