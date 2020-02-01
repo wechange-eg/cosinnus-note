@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 import django.dispatch as dispatch
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, ngettext_lazy as n_
 
 """ Cosinnus:Notifications configuration file. 
     See http://git.sinnwerkstatt.com/cosinnus/cosinnus-core/wikis/cosinnus-notifications-guidelines.
@@ -48,6 +48,7 @@ notifications = {
         'signals': [note_comment_posted_on_any],
         'default': False,
         'moderatable_content': True,
+        'can_be_alert': False,
         
         'is_html': True,
         'snippet_type': 'news',
@@ -59,6 +60,7 @@ notifications = {
             'object_name': 'note.get_readable_title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             # no event in comment meta for now. looks ugly
             #'sub_event_meta': 'created_on', # created date
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
@@ -72,6 +74,11 @@ notifications = {
         'signals': [note_comment_posted],
         'default': True,
         
+        'alert_text': _('%(sender_name)s commented on your news post %(object_name)s'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s',
+                               '%(sender_name)s and %(count_minus_one)d others commented on your news post %(object_name)s', 'count_minus_one'),
+        'alert_multi_type': 1,
+        
         'is_html': True,
         'snippet_type': 'news',
         'event_text': _('%(sender_name)s commented on your news post'),
@@ -82,6 +89,7 @@ notifications = {
             'object_name': 'note.get_readable_title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             # no event in comment meta for now. looks ugly
             #'sub_event_meta': 'created_on', # created date
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
@@ -95,6 +103,11 @@ notifications = {
         'signals': [note_comment_posted_on_commented_post],
         'default': True,
         
+        'alert_text': _('%(sender_name)s commented on the news post %(object_name)s you commented in'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in',
+                               '%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s you commented in', 'count_minus_one'),
+        'alert_multi_type': 1,
+        
         'is_html': True,
         'snippet_type': 'news',
         'event_text': _('%(sender_name)s commented on a news post you commented in'),
@@ -104,6 +117,7 @@ notifications = {
             'object_name': 'note.get_readable_title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             # no event in comment meta for now. looks ugly
             #'sub_event_meta': 'created_on', # created date
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
@@ -117,6 +131,10 @@ notifications = {
         'signals': [note_created],
         'default': True,
         'moderatable_content': True,
+        
+        'alert_text': _('%(sender_name)s created the news post %(object_name)s'),
+        'alert_text_multi': _('%(sender_name)s created %(count)d news posts'),
+        'alert_multi_type': 2,
         
         'is_html': True,
         'snippet_type': 'news',
@@ -140,6 +158,10 @@ notifications = {
         'requires_object_state_check': 'group.is_user_following',
         'hidden': True,
         
+        'alert_text': _('%(sender_name)s created the news post %(object_name)s'),
+        'alert_text_multi': _('%(sender_name)s created %(count)d news posts'),
+        'alert_multi_type': 2,
+        
         'is_html': True,
         'snippet_type': 'news',
         'event_text': _('New news post by %(sender_name)s in %(team_name)s (which you follow)'),
@@ -161,6 +183,10 @@ notifications = {
         'requires_object_state_check': 'is_user_following',
         'hidden': True,
         
+        'alert_text': _('%(sender_name)s updated the news post %(object_name)s'),
+        'alert_multi_type': 1,
+        'alert_reason': _('You are following this news post'),
+        
         'is_html': True,
         'snippet_type': 'news',
         'event_text': _('%(sender_name)s updated a news post you are following'),
@@ -174,12 +200,18 @@ notifications = {
         },
     },  
     'following_note_comment_posted': {
-        'label': _('A user commented on a news posts you are following'), 
+        'label': _('A user commented on a news post you are following'), 
         'signals': [following_note_comment_posted],
         'multi_preference_set': 'MULTI_followed_object_notification',
         'supercedes_notifications': ['note_comment_posted_on_commented_post', 'note_comment_posted', 'note_comment_posted_on_any'],
         'requires_object_state_check': 'note.is_user_following',
         'hidden': True,
+        
+        'alert_text': _('%(sender_name)s commented on the news post %(object_name)s'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s',
+                               '%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s', 'count_minus_one'),
+        'alert_multi_type': 1,
+        'alert_reason': _('You are following this news post'),
         
         'is_html': True,
         'snippet_type': 'news',
@@ -191,6 +223,7 @@ notifications = {
             'object_name': 'note.get_readable_title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             # no event in comment meta for now. looks ugly
             #'sub_event_meta': 'created_on', # created date
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
