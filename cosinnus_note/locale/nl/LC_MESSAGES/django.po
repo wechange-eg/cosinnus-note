@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2019-09-22 17:45+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -39,6 +39,18 @@ msgstr "%(sender_name)s"
 msgid "A user commented on one of your news posts"
 msgstr "Een gebruiker heeft op een van uw nieuwspost gereageerd"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s commented on your news post %(object_name)s"
+msgstr "%(sender_name)s heeft op één van uw nieuwsberichten gereageerd in %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your news post %(object_name)s"
+msgstr[0] "%(sender_name)s heeft op één van uw nieuwsberichten gereageerd in %(team_name)s."
+msgstr[1] "%(sender_name)s heeft op één van uw nieuwsberichten gereageerd in %(team_name)s."
+
 #, python-format
 msgid "%(sender_name)s commented on your news post"
 msgstr "%(sender_name)s heeft gereageerd op uw nieuwspost"
@@ -50,12 +62,34 @@ msgstr "%(sender_name)s heeft gereageerd op één van uw nieuwsposts"
 msgid "A user commented on a news posts you commented in"
 msgstr "Een gebruiker heeft gereageerd op een nieuwspost waar u op heeft gereageerd"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s commented on the news post %(object_name)s you commented in"
+msgstr "%(sender_name)s heeft gereageerd op een nieuwspost waarop u heeft gereageerd"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s you commented in"
+msgstr[0] "%(sender_name)s heeft gereageerd op een nieuwspost waarop u heeft gereageerd"
+msgstr[1] "%(sender_name)s heeft gereageerd op een nieuwspost waarop u heeft gereageerd"
+
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
 msgstr "%(sender_name)s heeft gereageerd op een nieuwspost waarop u heeft gereageerd"
 
 msgid "A user created a news post"
 msgstr "Een gebruiker heeft een nieuwspost aangemaakt"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new news post"
+msgid "%(sender_name)s created the news post %(object_name)s"
+msgstr "%(sender_name)s heeft een nieuws nieuwbericht geplaatst"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new news post"
+msgid "%(sender_name)s created %(count)d news posts"
+msgstr "%(sender_name)s heeft een nieuws nieuwbericht geplaatst"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
@@ -87,6 +121,14 @@ msgstr "%(sender_name)s plaatste in %(team_name)s: (die u volgt)"
 msgid "A user updated a news post"
 msgstr "Een gebruiker heeft een nieuwsbericht geplaatst"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s updated a news post you are following"
+msgid "%(sender_name)s updated the news post %(object_name)s"
+msgstr "%(sender_name)s heeft een nieuwbericht die u volgt bijgewerkt"
+
+msgid "You are following this news post"
+msgstr ""
+
 #, python-format
 msgid "%(sender_name)s updated a news post you are following"
 msgstr "%(sender_name)s heeft een nieuwbericht die u volgt bijgewerkt"
@@ -95,8 +137,22 @@ msgstr "%(sender_name)s heeft een nieuwbericht die u volgt bijgewerkt"
 msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
 msgstr "Een nieuwsbericht dat u volgt door %(sender_name)s is bijgewerkt %(team_name)s:"
 
-msgid "A user commented on a news posts you are following"
+#, fuzzy
+#| msgid "A user commented on a news posts you are following"
+msgid "A user commented on a news post you are following"
 msgstr "Een gebruiker heeft gereageerd op nieuwsberichten die u volgt"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s commented on the news post %(object_name)s"
+msgstr "%(sender_name)s heeft op één van uw nieuwsberichten gereageerd in %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s"
+msgstr[0] "%(sender_name)s heeft op één van uw nieuwsberichten gereageerd in %(team_name)s."
+msgstr[1] "%(sender_name)s heeft op één van uw nieuwsberichten gereageerd in %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s commented on a news posts you are following"

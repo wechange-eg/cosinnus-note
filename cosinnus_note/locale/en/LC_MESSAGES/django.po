@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: news\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2019-09-24 17:42+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,25 @@ msgid "A user commented on one of your news posts"
 msgstr ""
 
 #, fuzzy, python-format
+msgid "%(sender_name)s commented on your news post %(object_name)s"
+msgstr ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+
+#, fuzzy, python-format
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your news post %(object_name)s"
+msgstr[0] ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+msgstr[1] ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+
+#, fuzzy, python-format
 msgid "%(sender_name)s commented on your news post"
 msgstr ""
 "Hi, %(creator_name)s!\n"
@@ -61,6 +80,25 @@ msgid "A user commented on a news posts you commented in"
 msgstr "Write a news post..."
 
 #, fuzzy, python-format
+msgid "%(sender_name)s commented on the news post %(object_name)s you commented in"
+msgstr ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+
+#, fuzzy, python-format
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s you commented in"
+msgstr[0] ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+msgstr[1] ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+
+#, fuzzy, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
 msgstr ""
 "Hi, %(creator_name)s!\n"
@@ -70,6 +108,20 @@ msgstr ""
 #, fuzzy
 msgid "A user created a news post"
 msgstr "Write a news post..."
+
+#, fuzzy, python-format
+msgid "%(sender_name)s created the news post %(object_name)s"
+msgstr ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+
+#, fuzzy, python-format
+msgid "%(sender_name)s created %(count)d news posts"
+msgstr ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
@@ -116,6 +168,16 @@ msgid "A user updated a news post"
 msgstr "Write a news post..."
 
 #, fuzzy, python-format
+msgid "%(sender_name)s updated the news post %(object_name)s"
+msgstr ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+
+msgid "You are following this news post"
+msgstr ""
+
+#, fuzzy, python-format
 msgid "%(sender_name)s updated a news post you are following"
 msgstr ""
 "Hi, %(creator_name)s!\n"
@@ -130,8 +192,27 @@ msgstr ""
 "%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
 
 #, fuzzy
-msgid "A user commented on a news posts you are following"
+msgid "A user commented on a news post you are following"
 msgstr "Write a news post..."
+
+#, fuzzy, python-format
+msgid "%(sender_name)s commented on the news post %(object_name)s"
+msgstr ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+
+#, fuzzy, python-format
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s"
+msgstr[0] ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
+msgstr[1] ""
+"Hi, %(creator_name)s!\n"
+"\n"
+"%(user_name)s has posted a comment on a news post you wrote in project %(team_name)s:"
 
 #, fuzzy, python-format
 msgid "%(sender_name)s commented on a news posts you are following"

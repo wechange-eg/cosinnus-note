@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2018-08-31 13:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -38,6 +38,18 @@ msgstr "%(sender_name)s"
 msgid "A user commented on one of your news posts"
 msgstr "Użytkownik skomentował jeden z Twoich wpisów"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s commented on your news post %(object_name)s"
+msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów w zespole %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your news post %(object_name)s"
+msgstr[0] "%(sender_name)s skomentował/a jeden z Twoich wpisów w zespole %(team_name)s."
+msgstr[1] "%(sender_name)s skomentował/a jeden z Twoich wpisów w zespole %(team_name)s."
+
 #, python-format
 msgid "%(sender_name)s commented on your news post"
 msgstr "%(sender_name)s skomentował/a Twój wpis"
@@ -49,12 +61,34 @@ msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów"
 msgid "A user commented on a news posts you commented in"
 msgstr "Użytkownik skomentował wpis, który skomentowałeś/aś"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s commented on the news post %(object_name)s you commented in"
+msgstr "%(sender_name)s skomentował/a wpis, który skomentowałeś/aś"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s you commented in"
+msgstr[0] "%(sender_name)s skomentował/a wpis, który skomentowałeś/aś"
+msgstr[1] "%(sender_name)s skomentował/a wpis, który skomentowałeś/aś"
+
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
 msgstr "%(sender_name)s skomentował/a wpis, który skomentowałeś/aś"
 
 msgid "A user created a news post"
 msgstr "Użytkownik utworzył wpis"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new news post"
+msgid "%(sender_name)s created the news post %(object_name)s"
+msgstr "%(sender_name)s stworzył nowy wpis"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new news post"
+msgid "%(sender_name)s created %(count)d news posts"
+msgstr "%(sender_name)s stworzył nowy wpis"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
@@ -95,6 +129,14 @@ msgstr "Użytkownik utworzył wpis"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s updated the news post %(object_name)s"
+msgstr "%(sender_name)s skomentował/a wpis, który skomentowałeś/aś"
+
+msgid "You are following this news post"
+msgstr ""
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
 msgid "%(sender_name)s updated a news post you are following"
 msgstr "%(sender_name)s skomentował/a wpis, który skomentowałeś/aś"
 
@@ -105,8 +147,20 @@ msgstr "%(sender_name)s dodał wpis w %(team_name)s:"
 
 #, fuzzy
 #| msgid "A user commented on a news posts you commented in"
-msgid "A user commented on a news posts you are following"
+msgid "A user commented on a news post you are following"
 msgstr "Użytkownik skomentował wpis, który skomentowałeś/aś"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s commented on the news post %(object_name)s"
+msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów w zespole %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s"
+msgstr[0] "%(sender_name)s skomentował/a jeden z Twoich wpisów w zespole %(team_name)s."
+msgstr[1] "%(sender_name)s skomentował/a jeden z Twoich wpisów w zespole %(team_name)s."
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on a news post you commented in"

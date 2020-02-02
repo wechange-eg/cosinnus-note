@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2019-05-01 23:00+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -39,6 +39,20 @@ msgstr "%(sender_name)s"
 msgid "A user commented on one of your news posts"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) адзін з Вашых допісаў"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s commented on your news post %(object_name)s"
+msgstr "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your news post %(object_name)s"
+msgstr[0] "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
+msgstr[1] "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
+msgstr[2] "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
+msgstr[3] "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
+
 #, python-format
 msgid "%(sender_name)s commented on your news post"
 msgstr "%(sender_name)s пракаментаваў(-ла) Ваш допіс"
@@ -51,12 +65,36 @@ msgstr "%(sender_name)s пракаментаваў(-ла) адзін з Вашы
 msgid "A user commented on a news posts you commented in"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) допіс, які Вы таксама каментавалі"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s commented on the news post %(object_name)s you commented in"
+msgstr "%(sender_name)s пракаментаваў(-ла) допіс, які Вы таксама каментавалі"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s you commented in"
+msgstr[0] "%(sender_name)s пракаментаваў(-ла) допіс, які Вы таксама каментавалі"
+msgstr[1] "%(sender_name)s пракаментаваў(-ла) допіс, які Вы таксама каментавалі"
+msgstr[2] "%(sender_name)s пракаментаваў(-ла) допіс, які Вы таксама каментавалі"
+msgstr[3] "%(sender_name)s пракаментаваў(-ла) допіс, які Вы таксама каментавалі"
+
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
 msgstr "%(sender_name)s пракаментаваў(-ла) допіс, які Вы таксама каментавалі"
 
 msgid "A user created a news post"
 msgstr "Карыстальнік(-ца) стварыў(-ла) допіс"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new news post"
+msgid "%(sender_name)s created the news post %(object_name)s"
+msgstr "%(sender_name)s стварыў(-ла) новы допіс"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new news post"
+msgid "%(sender_name)s created %(count)d news posts"
+msgstr "%(sender_name)s стварыў(-ла) новы допіс"
 
 #, python-format
 msgid "New news post by %(sender_name)s"
@@ -88,6 +126,14 @@ msgstr "%(sender_name)s апублікаваў(-ла) допіс у %(team_name)
 msgid "A user updated a news post"
 msgstr "Карыстальнік(-ца) абнавіў(-ла) допіс"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s updated a news post you are following"
+msgid "%(sender_name)s updated the news post %(object_name)s"
+msgstr "%(sender_name)s абнавіў(-ла) допіс, за якім Вы сочыце"
+
+msgid "You are following this news post"
+msgstr ""
+
 #, python-format
 msgid "%(sender_name)s updated a news post you are following"
 msgstr "%(sender_name)s абнавіў(-ла) допіс, за якім Вы сочыце"
@@ -96,8 +142,24 @@ msgstr "%(sender_name)s абнавіў(-ла) допіс, за якім Вы с�
 msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
 msgstr "Допіс ад %(sender_name)s, за якім вы сочыце, абноўлены ў %(team_name)s:"
 
-msgid "A user commented on a news posts you are following"
+#, fuzzy
+#| msgid "A user commented on a news posts you are following"
+msgid "A user commented on a news post you are following"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) допіс, за якім Вы сочыце"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s commented on the news post %(object_name)s"
+msgstr "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s"
+msgstr[0] "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
+msgstr[1] "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
+msgstr[2] "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
+msgstr[3] "%(sender_name)s пракаментаваў(-ла) адзін з Вашых допісаў у %(team_name)s."
 
 # EN > news post
 #, python-format
