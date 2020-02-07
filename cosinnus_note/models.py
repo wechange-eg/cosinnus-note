@@ -71,7 +71,10 @@ class Note(LikeableObjectMixin, BaseTaggableObjectModel):
             cosinnus_notifications.followed_group_note_created.send(sender=self, user=self.creator, obj=self, audience=group_followers_except_creator, session_id=session_id)
             cosinnus_notifications.note_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk), session_id=session_id, end_session=True)
             
-
+    def get_icon(self):
+        """ Returns the font-awesome icon specific to this object type """
+        return 'fa-quote-right'
+    
     def get_absolute_url(self):
         kwargs = {'group': self.group, 'slug': self.slug}
         return group_aware_reverse('cosinnus:note:note', kwargs=kwargs)
