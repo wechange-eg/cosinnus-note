@@ -51,20 +51,18 @@ notifications = {
         'can_be_alert': False,
         
         'is_html': True,
-        'snippet_type': 'news',
         'event_text': _('%(sender_name)s commented on a news post'),
-        'notification_text': _('%(sender_name)s commented on a news post'),
         'subject_text': _('%(sender_name)s commented on a news post'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'note.get_readable_title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            # no event in comment meta for now. looks ugly
-            #'sub_event_meta': 'created_on', # created date
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'note.title', 
+            'sub_object_text': 'note.text',
+            'sub_object_icon': 'note.get_icon',
         },
     },  
     'note_comment_posted': {
@@ -80,20 +78,18 @@ notifications = {
         'alert_multi_type': 1,
         
         'is_html': True,
-        'snippet_type': 'news',
         'event_text': _('%(sender_name)s commented on your news post'),
-        'notification_text': _('%(sender_name)s commented on one of your news posts'),
         'subject_text': _('%(sender_name)s commented on one of your news posts'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'note.get_readable_title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            # no event in comment meta for now. looks ugly
-            #'sub_event_meta': 'created_on', # created date
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'note.title', 
+            'sub_object_text': 'note.text',
+            'sub_object_icon': 'note.get_icon',
         },
     },  
     'note_comment_posted_in_commented_post': {
@@ -109,19 +105,18 @@ notifications = {
         'alert_multi_type': 1,
         
         'is_html': True,
-        'snippet_type': 'news',
         'event_text': _('%(sender_name)s commented on a news post you commented in'),
         'subject_text': _('%(sender_name)s commented on a news post you commented in'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'note.get_readable_title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            # no event in comment meta for now. looks ugly
-            #'sub_event_meta': 'created_on', # created date
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'note.title', 
+            'sub_object_text': 'note.text',
+            'sub_object_icon': 'note.get_icon',
         },
     },  
     'note_created': {
@@ -137,9 +132,7 @@ notifications = {
         'alert_multi_type': 2,
         
         'is_html': True,
-        'snippet_type': 'news',
-        'event_text': _('New news post by %(sender_name)s'),
-        'notification_text': _('%(sender_name)s created a new news post'),
+        'event_text': _('%(sender_name)s created a new news post'),
         'subject_text': _('%(sender_name)s posted in %(team_name)s:'),
         'data_attributes': {
             'object_name': 'get_readable_title', 
@@ -163,9 +156,7 @@ notifications = {
         'alert_multi_type': 2,
         
         'is_html': True,
-        'snippet_type': 'news',
-        'event_text': _('New news post by %(sender_name)s in %(team_name)s (which you follow)'),
-        'notification_text': _('%(sender_name)s created a new news post in %(team_name)s (which you follow)'),
+        'event_text': _('%(sender_name)s created a new news post in %(team_name)s (which you follow)'),
         'subject_text': _('%(sender_name)s posted in %(team_name)s: (which you follow)'),
         'data_attributes': {
             'object_name': 'get_readable_title', 
@@ -188,9 +179,7 @@ notifications = {
         'alert_reason': _('You are following this news post'),
         
         'is_html': True,
-        'snippet_type': 'news',
         'event_text': _('%(sender_name)s updated a news post you are following'),
-        'notification_text': _('%(sender_name)s updated a news post you are following'),
         'subject_text': _('A news post you follow by %(sender_name)s was updated %(team_name)s:'),
         'data_attributes': {
             'object_name': 'get_readable_title', 
@@ -214,20 +203,18 @@ notifications = {
         'alert_reason': _('You are following this news post'),
         
         'is_html': True,
-        'snippet_type': 'news',
         'event_text': _('%(sender_name)s commented on a news posts you are following'),
-        'notification_text': _('%(sender_name)s commented on a news posts you are following'),
         'subject_text': _('%(sender_name)s commented on a news posts you are following'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
-            'object_name': 'note.get_readable_title', 
+            'object_name': 'note.get_readable_title',
+            'object_text': 'text', 
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            # no event in comment meta for now. looks ugly
-            #'sub_event_meta': 'created_on', # created date
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'note.title', 
+            'sub_object_text': 'note.text',
+            'sub_object_icon': 'note.get_icon',
         },
     }, 
 }
