@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-02 16:09+0100\n"
+"POT-Creation-Date: 2020-04-03 15:52+0200\n"
 "PO-Revision-Date: 2018-08-31 13:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,10 +30,6 @@ msgstr "Użytkownik skomentował wpis"
 #, python-format
 msgid "%(sender_name)s commented on a news post"
 msgstr "%(sender_name)s skomentował/a wpis"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
 msgstr "Użytkownik skomentował jeden z Twoich wpisów"
@@ -91,10 +87,6 @@ msgid "%(sender_name)s created %(count)d news posts"
 msgstr "%(sender_name)s stworzył nowy wpis"
 
 #, python-format
-msgid "New news post by %(sender_name)s"
-msgstr "Post utworzony przez %(sender_name)s"
-
-#, python-format
 msgid "%(sender_name)s created a new news post"
 msgstr "%(sender_name)s stworzył nowy wpis"
 
@@ -106,11 +98,6 @@ msgstr "%(sender_name)s dodał wpis w %(team_name)s:"
 #| msgid "A user created a news post"
 msgid "A user created a news post in a team you are following"
 msgstr "Użytkownik utworzył wpis"
-
-#, fuzzy, python-format
-#| msgid "New news post by %(sender_name)s"
-msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Post utworzony przez %(sender_name)s"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
@@ -433,6 +420,17 @@ msgstr "Twój komentarz został dodany pomyślnie."
 
 msgid "Your comment was deleted successfully."
 msgstr "Twój komentarz został usunięty pomyślnie."
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New news post by %(sender_name)s"
+#~ msgstr "Post utworzony przez %(sender_name)s"
+
+#, fuzzy
+#~| msgid "New news post by %(sender_name)s"
+#~ msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Post utworzony przez %(sender_name)s"
 
 #~ msgid "Read more..."
 #~ msgstr "Czytaj więcej..."
