@@ -15,7 +15,8 @@ def register():
     from cosinnus.core.registries import (app_registry, url_registry,
         widget_registry)
 
-    app_registry.register('cosinnus_note', 'note', _('Notes'), deactivatable=True)
+    active_by_default = "cosinnus_note" in settings.COSINNUS_DEFAULT_ACTIVE_GROUP_APPS
+    app_registry.register('cosinnus_note', 'note', _('Notes'), deactivatable=True, active_by_default=active_by_default)
     attached_object_registry.register('cosinnus_note.Note',
                          'cosinnus_note.utils.renderer.NoteRenderer')
     url_registry.register_urlconf('cosinnus_note', 'cosinnus_note.urls')
