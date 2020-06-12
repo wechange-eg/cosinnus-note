@@ -60,7 +60,7 @@ notifications = {
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_object_name': 'note.title', 
+            'sub_object_name': 'note.get_readable_title', 
             'sub_object_text': 'note.text',
             'sub_object_icon': 'note.get_icon',
         },
@@ -87,7 +87,7 @@ notifications = {
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_object_name': 'note.title', 
+            'sub_object_name': 'note.get_readable_title', 
             'sub_object_text': 'note.text',
             'sub_object_icon': 'note.get_icon',
         },
@@ -114,7 +114,7 @@ notifications = {
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_object_name': 'note.title', 
+            'sub_object_name': 'note.get_readable_title', 
             'sub_object_text': 'note.text',
             'sub_object_icon': 'note.get_icon',
         },
@@ -212,7 +212,7 @@ notifications = {
             'object_url': 'get_absolute_url', 
             'image_url': 'note.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_object_name': 'note.title', 
+            'sub_object_name': 'note.get_readable_title', 
             'sub_object_text': 'note.text',
             'sub_object_icon': 'note.get_icon',
         },
