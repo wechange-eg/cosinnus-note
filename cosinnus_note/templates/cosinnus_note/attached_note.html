@@ -7,7 +7,7 @@
                         <i class="fa fa-pencil"></i>
                     </a>
                     <div class="media-body no-vertical-padding ">
-                        <strong><a href="{{ note.get_absolute_url }}" target="_blank">{{ note.title|truncatechars:25 }}</a></strong>
+                        <strong><a href="{{ note.get_absolute_url }}" target="_blank">{{ note.title }}</a></strong>
                         <div class="group-annotation">
                             {% include 'cosinnus/group/group_label.html' with group=note.group %}
                         </div>
