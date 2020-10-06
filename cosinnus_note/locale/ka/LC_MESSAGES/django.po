@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-23 12:30+0100\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2020-04-05 21:13+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
 
 msgid "Notes"
@@ -31,10 +31,6 @@ msgstr "მომხმარებელმა კომენტარი გ�
 #, python-format
 msgid "%(sender_name)s commented on a news post"
 msgstr "%(sender_name)s კომენტარი გააკეთა სიახლეებისპოსტზე"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
 msgstr "მომხმარებელმა კომენტარი გააკეთა თქვენი სიახლეების პოსტზე"
@@ -84,10 +80,6 @@ msgid "%(sender_name)s created %(count)d news posts"
 msgstr "%(sender_name)s შექმნა %(count)d სიახლეების პოსტი"
 
 #, python-format
-msgid "New news post by %(sender_name)s"
-msgstr "ახალი სიახლეების პოსტი %(sender_name)s-ის მიერ"
-
-#, python-format
 msgid "%(sender_name)s created a new news post"
 msgstr "%(sender_name)s შექმნა ახალი სიახლეების პოსტი"
 
@@ -97,10 +89,6 @@ msgstr "%(sender_name)s-მა დაპოსტა %(team_name)s-ში:"
 
 msgid "A user created a news post in a team you are following"
 msgstr "მომხმარებელმა შექმნა სიახლეების პოსტი იმ გუნდში, რომელსაც თქვენ მიყვებით"
-
-#, python-format
-msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "ახალი სიახლეების პოსტი %(sender_name)s -ის მიერ %(team_name)s-ში (რომელსაც თქვენ მიყვებით)"
 
 #, python-format
 msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
@@ -416,3 +404,12 @@ msgstr "თქვენი სიახლეების პოსტი წა
 
 msgid "Your comment was deleted successfully."
 msgstr "თქვენი სიახლეების პოსტი წარმატებით წაიშალა."
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New news post by %(sender_name)s"
+#~ msgstr "ახალი სიახლეების პოსტი %(sender_name)s-ის მიერ"
+
+#~ msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "ახალი სიახლეების პოსტი %(sender_name)s -ის მიერ %(team_name)s-ში (რომელსაც თქვენ მიყვებით)"

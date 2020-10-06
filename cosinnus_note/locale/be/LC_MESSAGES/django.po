@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2019-05-01 23:00+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -31,10 +31,6 @@ msgstr "Карыстальнік(-ца) пракаментаваў(-ла) доп
 #, python-format
 msgid "%(sender_name)s commented on a news post"
 msgstr "%(sender_name)s пракаментаваў(-ла) допіс"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) адзін з Вашых допісаў"
@@ -97,10 +93,6 @@ msgid "%(sender_name)s created %(count)d news posts"
 msgstr "%(sender_name)s стварыў(-ла) новы допіс"
 
 #, python-format
-msgid "New news post by %(sender_name)s"
-msgstr "Новы допіс ад %(sender_name)s"
-
-#, python-format
 msgid "%(sender_name)s created a new news post"
 msgstr "%(sender_name)s стварыў(-ла) новы допіс"
 
@@ -110,10 +102,6 @@ msgstr "%(sender_name)s апублікаваў(-ла) допіс у %(team_name)
 
 msgid "A user created a news post in a team you are following"
 msgstr "Карыстальнік(-ца) стварыў(-ла) допіс ў камандзе, за якой вы сочыце"
-
-#, python-format
-msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Новы допіс ад %(sender_name)s у %(team_name)s (за якой вы сочыце)"
 
 #, python-format
 msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
@@ -432,6 +420,15 @@ msgstr "Ваш каментар паспяхова дададзены."
 
 msgid "Your comment was deleted successfully."
 msgstr "Ваш каментар паспяхова выдалены."
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New news post by %(sender_name)s"
+#~ msgstr "Новы допіс ад %(sender_name)s"
+
+#~ msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Новы допіс ад %(sender_name)s у %(team_name)s (за якой вы сочыце)"
 
 #~ msgid "Read more..."
 #~ msgstr "Чытаць далей..."

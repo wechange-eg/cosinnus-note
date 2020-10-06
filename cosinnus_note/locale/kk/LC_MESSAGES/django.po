@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 12:12+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2020-04-14 14:04+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
 
 msgid "Notes"
@@ -32,12 +32,19 @@ msgstr "Пайдаланушы жаңалық жазбасына пікір қа
 msgid "%(sender_name)s commented on a news post"
 msgstr "%(sender_name)s жаңалық жазбасына пікір қалдырды"
 
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
-
 msgid "A user commented on one of your news posts"
 msgstr "Пайдаланушы сіздің жаңалықтарыңыздың біріне пікір қалдырды"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s commented on your news post %(object_name)s"
+msgstr "%(team_name)s хабарламаларыңызға %(sender_name)s пікір жазды."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your news post %(object_name)s"
+msgstr[0] "%(team_name)s хабарламаларыңызға %(sender_name)s пікір жазды."
 
 #, python-format
 msgid "%(sender_name)s commented on your news post"
@@ -50,6 +57,17 @@ msgstr "%(sender_name)s сіздің жаңалықтар жазбаңыздың
 msgid "A user commented on a news posts you commented in"
 msgstr "Пайдаланушы сіз сайтта пікір қалдырған жаңалықтар жазбаларына пікір қалдырды"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s commented on the news post %(object_name)s you commented in"
+msgstr "%(sender_name)s сіз пікір жазған жаңалыққа пікір қалдырды"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a news post you commented in"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s you commented in"
+msgstr[0] "%(sender_name)s сіз пікір жазған жаңалыққа пікір қалдырды"
+
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
 msgstr "%(sender_name)s сіз пікір жазған жаңалыққа пікір қалдырды"
@@ -57,9 +75,15 @@ msgstr "%(sender_name)s сіз пікір жазған жаңалыққа пік
 msgid "A user created a news post"
 msgstr "Пайдаланушы жаңалық жазбасын жасады"
 
-#, python-format
-msgid "New news post by %(sender_name)s"
-msgstr "%(sender_name)s жаңа жазба"
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new news post"
+msgid "%(sender_name)s created the news post %(object_name)s"
+msgstr "%(sender_name)s жаңа жаңалық жазбасын жасады"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new news post"
+msgid "%(sender_name)s created %(count)d news posts"
+msgstr "%(sender_name)s жаңа жаңалық жазбасын жасады"
 
 #, python-format
 msgid "%(sender_name)s created a new news post"
@@ -73,10 +97,6 @@ msgid "A user created a news post in a team you are following"
 msgstr "Пайдаланушы сіз бақылайтын топта пост қалдырды"
 
 #, python-format
-msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "%(sender_name)s %(team_name)s (сіз бақылайтын) жаңа пост қалдырды"
-
-#, python-format
 msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s %(team_name)s ішінде жаңа пост қалдырды (сіз бақылайтын)"
 
@@ -87,6 +107,14 @@ msgstr "%(sender_name)s %(team_name)s де (сіз бақылайтын) пос�
 msgid "A user updated a news post"
 msgstr "Пайдаланушы өзіңің постын жаңартты"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s updated a news post you are following"
+msgid "%(sender_name)s updated the news post %(object_name)s"
+msgstr "%(sender_name)s сіз бақылайтын постты жаңартты"
+
+msgid "You are following this news post"
+msgstr ""
+
 #, python-format
 msgid "%(sender_name)s updated a news post you are following"
 msgstr "%(sender_name)s сіз бақылайтын постты жаңартты"
@@ -95,8 +123,21 @@ msgstr "%(sender_name)s сіз бақылайтын постты жаңартт�
 msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
 msgstr "Сіз бақылайтын %(sender_name)s қалдырған пост %(team_name)s тобына жаңартылды:"
 
-msgid "A user commented on a news posts you are following"
+#, fuzzy
+#| msgid "A user commented on a news posts you are following"
+msgid "A user commented on a news post you are following"
 msgstr "Пайдаланушы сіз бақылайтын постқа пікір қалдырды"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s commented on the news post %(object_name)s"
+msgstr "%(team_name)s хабарламаларыңызға %(sender_name)s пікір жазды."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s"
+msgstr[0] "%(team_name)s хабарламаларыңызға %(sender_name)s пікір жазды."
 
 #, python-format
 msgid "%(sender_name)s commented on a news posts you are following"
@@ -367,3 +408,12 @@ msgstr "Сіздің пікіріңіз сәтті қосылды."
 
 msgid "Your comment was deleted successfully."
 msgstr "Пікіріңіз сәтті жойылды."
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New news post by %(sender_name)s"
+#~ msgstr "%(sender_name)s жаңа жазба"
+
+#~ msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "%(sender_name)s %(team_name)s (сіз бақылайтын) жаңа пост қалдырды"

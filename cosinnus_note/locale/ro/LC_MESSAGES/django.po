@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2019-11-04 01:45+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -31,10 +31,6 @@ msgstr "Un utilizator a comentat o postare de știri"
 #, python-format
 msgid "%(sender_name)s commented on a news post"
 msgstr "%(sender_name)s a comentat o postare de știri"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
 msgstr "Un utilizator a comentat una dintre mesajele tale de știri"
@@ -94,10 +90,6 @@ msgid "%(sender_name)s created %(count)d news posts"
 msgstr "%(sender_name)s a creat o nouă postare de știri"
 
 #, python-format
-msgid "New news post by %(sender_name)s"
-msgstr "Noutăți postate de %(sender_name)s"
-
-#, python-format
 msgid "%(sender_name)s created a new news post"
 msgstr "%(sender_name)s a creat o nouă postare de știri"
 
@@ -107,10 +99,6 @@ msgstr "%(sender_name)s postat în %(team_name)s:"
 
 msgid "A user created a news post in a team you are following"
 msgstr "Un utilizator a creat o nouă postare într-o echipă pe care o urmărești"
-
-#, python-format
-msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Noutăți postate de %(sender_name)s în %(team_name)s (pe care le urmezi)"
 
 #, python-format
 msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
@@ -427,3 +415,12 @@ msgstr "Comentariu dvs. a fost adăugat cu succes."
 
 msgid "Your comment was deleted successfully."
 msgstr "Comentariul dvs. a fost șters cu succes."
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New news post by %(sender_name)s"
+#~ msgstr "Noutăți postate de %(sender_name)s"
+
+#~ msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Noutăți postate de %(sender_name)s în %(team_name)s (pe care le urmezi)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2019-09-22 17:45+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -31,10 +31,6 @@ msgstr "Een gebruiker heeft gereageerd op een nieuwspost"
 #, python-format
 msgid "%(sender_name)s commented on a news post"
 msgstr "%(sender_name)s heeft gereageerd op een nieuwspost"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on one of your news posts"
 msgstr "Een gebruiker heeft op een van uw nieuwspost gereageerd"
@@ -92,10 +88,6 @@ msgid "%(sender_name)s created %(count)d news posts"
 msgstr "%(sender_name)s heeft een nieuws nieuwbericht geplaatst"
 
 #, python-format
-msgid "New news post by %(sender_name)s"
-msgstr "Nieuw nieuwsbericht door %(sender_name)s"
-
-#, python-format
 msgid "%(sender_name)s created a new news post"
 msgstr "%(sender_name)s heeft een nieuws nieuwbericht geplaatst"
 
@@ -105,10 +97,6 @@ msgstr "%(sender_name)s plaatste in %(team_name)s:"
 
 msgid "A user created a news post in a team you are following"
 msgstr "Een gebruiker heeft een nieuwsbericht geplaatst in een team die u volgt"
-
-#, python-format
-msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Nieuw nieuwsbericht geplaatst door %(sender_name)s in %(team_name)s (die u volgt)"
 
 #, python-format
 msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
@@ -424,3 +412,12 @@ msgstr "Uw reactie is succesvol toegevoegd."
 
 msgid "Your comment was deleted successfully."
 msgstr "Uw reactie is succesvol verwijderd."
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New news post by %(sender_name)s"
+#~ msgstr "Nieuw nieuwsbericht door %(sender_name)s"
+
+#~ msgid "New news post by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Nieuw nieuwsbericht geplaatst door %(sender_name)s in %(team_name)s (die u volgt)"
