@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 16:06+0200\n"
-"PO-Revision-Date: 2019-11-04 01:45+0200\n"
+"PO-Revision-Date: 2020-10-12 00:04+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.2.4\n"
 
 msgid "Notes"
 msgstr "Noate"
@@ -35,18 +35,16 @@ msgstr "%(sender_name)s a comentat o postare de știri"
 msgid "A user commented on one of your news posts"
 msgstr "Un utilizator a comentat una dintre mesajele tale de știri"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on your news post %(object_name)s"
-msgstr "%(sender_name)s a comentat una dintre mesajele tale de știri în %(team_name)s."
+msgstr "%(sender_name)s a comentat postarea dvs., de știri %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your news post %(object_name)s"
-msgstr[0] "%(sender_name)s a comentat una dintre mesajele tale de știri în %(team_name)s."
-msgstr[1] "%(sender_name)s a comentat una dintre mesajele tale de știri în %(team_name)s."
-msgstr[2] "%(sender_name)s a comentat una dintre mesajele tale de știri în %(team_name)s."
+msgstr[0] "%(sender_name)s și %(count_minus_one)d și altul a comentat postarea dvs., %(object_name)s"
+msgstr[1] "%(sender_name)s și %(count_minus_one)d altele a comentat postarea dvs., %(object_name)s"
+msgstr[2] "%(sender_name)s și %(count_minus_one)d altele a comentat postarea dvs., %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your news post"
@@ -59,35 +57,31 @@ msgstr "%(sender_name)s a comentat una dintre mesajele tale de știri"
 msgid "A user commented on a news posts you commented in"
 msgstr "Un utilizator a comentat postările de știri pe care le-ați comentat"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a news post you commented in"
+#, python-format
 msgid "%(sender_name)s commented on the news post %(object_name)s you commented in"
-msgstr "%(sender_name)s ai comentat o postare de știri în care ai comentat "
+msgstr "%(sender_name)s ai comentat o postare de știri %(object_name)s în care ai comentat"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a news post you commented in"
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s you commented in"
-msgstr[0] "%(sender_name)s ai comentat o postare de știri în care ai comentat "
-msgstr[1] "%(sender_name)s ai comentat o postare de știri în care ai comentat "
-msgstr[2] "%(sender_name)s ai comentat o postare de știri în care ai comentat "
+msgstr[0] "%(sender_name)s și %(count_minus_one)d și altul a comentat postarea dvs., %(object_name)s a comentat în"
+msgstr[1] "%(sender_name)s și %(count_minus_one)d și altele a comentat postarea dvs., %(object_name)s au comentat în"
+msgstr[2] "%(sender_name)s și %(count_minus_one)d și altul a comentat postarea dvs., %(object_name)s ai comentat în"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr "%(sender_name)s ai comentat o postare de știri în care ai comentat "
+msgstr "%(sender_name)s ai comentat o postare de știri în care ai comentat"
 
 msgid "A user created a news post"
 msgstr "Un utilizator a creat o nouă postare"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new news post"
+#, python-format
 msgid "%(sender_name)s created the news post %(object_name)s"
-msgstr "%(sender_name)s a creat o nouă postare de știri"
+msgstr "%(sender_name)s a creat o postarea de știri %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new news post"
+#, python-format
 msgid "%(sender_name)s created %(count)d news posts"
-msgstr "%(sender_name)s a creat o nouă postare de știri"
+msgstr "%(sender_name)s a creat %(count)d postare de știri"
 
 #, python-format
 msgid "%(sender_name)s created a new news post"
@@ -111,13 +105,12 @@ msgstr "%(sender_name)s a postat în %(team_name)s: (pe care le urmezi)"
 msgid "A user updated a news post"
 msgstr "Un utilizator a actualizat o nouă postare"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s updated a news post you are following"
+#, python-format
 msgid "%(sender_name)s updated the news post %(object_name)s"
-msgstr "%(sender_name)s a actualizat o nouă postare pe care o urmărești"
+msgstr "%(sender_name)s a actualizat postare de știri %(object_name)s"
 
 msgid "You are following this news post"
-msgstr ""
+msgstr "Urmăriți această postare de știri"
 
 #, python-format
 msgid "%(sender_name)s updated a news post you are following"
@@ -127,23 +120,19 @@ msgstr "%(sender_name)s a actualizat o nouă postare pe care o urmărești"
 msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
 msgstr "O nouă postare pe care o urmărești %(sender_name)s a fost actualizat %(team_name)s:"
 
-#, fuzzy
-#| msgid "A user commented on a news posts you are following"
 msgid "A user commented on a news post you are following"
-msgstr "Un utilizator a comentat  o postare de știri pe care o urmărești"
+msgstr "Un utilizator a comentat o postare de știri pe care o urmărești"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on the news post %(object_name)s"
-msgstr "%(sender_name)s a comentat una dintre mesajele tale de știri în %(team_name)s."
+msgstr "%(sender_name)s a comentat postarea de știri %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s"
-msgstr[0] "%(sender_name)s a comentat una dintre mesajele tale de știri în %(team_name)s."
-msgstr[1] "%(sender_name)s a comentat una dintre mesajele tale de știri în %(team_name)s."
-msgstr[2] "%(sender_name)s a comentat una dintre mesajele tale de știri în %(team_name)s."
+msgstr[0] "%(sender_name)s și %(count_minus_one)d și altul a comentat postarea de știri %(object_name)s"
+msgstr[1] "%(sender_name)s și %(count_minus_one)d și altele au comentat postarea de știri %(object_name)s"
+msgstr[2] "%(sender_name)s și %(count_minus_one)d și altele au comentat postarea de știri %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on a news posts you are following"
