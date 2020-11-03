@@ -36,7 +36,7 @@
                                 
                                 {% include 'cosinnus/feedback/report_button_a.html' with object=note %}
                                 
-                                {% if user|has_write_access:note %}
+                                {% if note.creator == user %}
 	                                <a href="{% group_url 'cosinnus:note:update' group=note.group slug=note.slug %}">
 	                                    <i class="fa fa-pencil"></i>
 	                                    {% trans "Edit" %}

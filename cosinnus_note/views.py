@@ -37,6 +37,7 @@ from django.contrib.auth import get_user_model
 from django.utils.timezone import now
 from ajax_forms.ajax_forms import AjaxFormsCommentCreateViewMixin,\
     AjaxFormsDeleteViewMixin, AjaxFormsCreateViewMixin
+from cosinnus.core.decorators.views import redirect_to_403
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
@@ -190,6 +191,16 @@ class NoteUpdateView(EditViewWatchChangesMixin, RequireWriteMixin, FilterGroupMi
     changed_attr_watchlist = ['title', 'text', 'get_attached_objects_hash', 'get_tagged_persons_hash']
     
     message_success = _('Your news post was edited successfully.')
+    
+    def get(self, request, *args, **kwargs):
+        if not self.get_object().creator == request.user:
+            return redirect_to_403(request, self, group=self.group)
+        return super(NoteUpdateView, self).get(request, *args, **kwargs)
+    
+    def post(self, request, *args, **kwargs):
+        if not self.get_object().creator == request.user:
+            return redirect_to_403(request, self, group=self.group)
+        return super(NoteUpdateView, self).post(request, *args, **kwargs)
     
     def get_context_data(self, **kwargs):
         context = super(NoteUpdateView, self).get_context_data(**kwargs)
