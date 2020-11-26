@@ -8,243 +8,236 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-27 09:46+0200\n"
-"PO-Revision-Date: 2020-11-26 09:00+0100\n"
-"Language: ar\n"
+"PO-Revision-Date: 2020-09-24 04:30+0200\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? "
-"4 : 5;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.4.1\n"
 
 msgid "Notes"
-msgstr "ملاحظات"
+msgstr "Poznámky"
 
 msgctxt "the_app"
 msgid "note"
-msgstr "ملاحظة"
+msgstr "poznámka"
 
 msgid "A user commented on a news post"
-msgstr "علق مستخدم على منشور"
+msgstr "Uživatel okomentoval novinku"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post"
-msgstr "%(sender_name)sتم العليق علق على منشور"
+msgstr "%(sender_name)s okomentoval/a novinku"
 
 msgid "A user commented on one of your news posts"
-msgstr "علق مستخدم على إحدى منشوراتك"
+msgstr "Uživatel okomentoval jednu z vašich novinku"
 
 #, python-format
 msgid "%(sender_name)s commented on your news post %(object_name)s"
-msgstr "%(sender_name)s تم على منشور خاص بك %(object_name)s"
+msgstr "%(sender_name)s okomentoval/a vaši novinku %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your news post %(object_name)s"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "%(sender_name)s a %(count_minus_one)d další okomentoval vaši novinku %(object_name)s"
+msgstr[1] "%(sender_name)s a %(count_minus_one)d další okomentovali vaši novinku %(object_name)s"
+msgstr[2] "%(sender_name)s a %(count_minus_one)d další okomentovali vaši novinku %(object_name)s"
+msgstr[3] "%(sender_name)s a %(count_minus_one)d dalších okomentovalo vaši novinku %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your news post"
-msgstr "علق %(sender_name)s على منشور خاص بك"
+msgstr "%(sender_name)s okomentoval/a vaši novinku"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts"
-msgstr "%(sender_name)s علق على إحدى منشوراتك"
+msgstr "%(sender_name)s okomentoval/a jednu z vašich novinek"
 
 msgid "A user commented on a news posts you commented in"
-msgstr "علق مستخدم على منشورات قمت بالتعليق عليها"
+msgstr "Uživatel okomentoval novinky, které jste komentovali"
 
 #, python-format
 msgid "%(sender_name)s commented on the news post %(object_name)s you commented in"
-msgstr "%(sender_name)s تم التعليق على منشور %(object_name)sقمت بالتعليق عليه"
+msgstr "%(sender_name)s okomentoval/a novinku %(object_name)s, kterou jste komentovali"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s you commented in"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "%(sender_name)s a %(count_minus_one)d další okomentoval novinku %(object_name)s, kterou jste komentovali"
+msgstr[1] "%(sender_name)s a %(count_minus_one)d další okomentovali novinku %(object_name)s, kterou jste komentovali"
+msgstr[2] "%(sender_name)s a %(count_minus_one)d další okomentovali novinku %(object_name)s, kterou jste komentovali"
+msgstr[3] "%(sender_name)s a %(count_minus_one)d dalších okomentovalo novinku %(object_name)s, kterou jste komentovali"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr "%(sender_name)s تم التعليق على منشور قمت بالتعليق عليه"
+msgstr "%(sender_name)s okomentoval/a novinku, kterou jste komentovali"
 
 msgid "A user created a news post"
-msgstr "أنشأ المستخدم منشورًا"
+msgstr "Uživatel vytvořil novinku"
 
 #, python-format
 msgid "%(sender_name)s created the news post %(object_name)s"
-msgstr "%(sender_name)sتم إنشاء المنشور الجديد%(object_name)s"
+msgstr "%(sender_name)s vytvořil/a novinku %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s created %(count)d news posts"
-msgstr "%(sender_name)s تم إنشاء%(count)d منشورات جديدة"
+msgstr "%(sender_name)s vytvořil/a %(count)d novinek"
 
 #, python-format
 msgid "%(sender_name)s created a new news post"
-msgstr "%(sender_name)s تم إنشاء منشور جديد"
+msgstr "%(sender_name)s vytvořil/a novou novinku"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
-msgstr "تم نشر%(sender_name)s في%(team_name)s:"
+msgstr "\"%(sender_name)s\" zveřejnil/a v týmu %(team_name)s:"
 
 msgid "A user created a news post in a team you are following"
-msgstr "قام مستخدم بإنشاء منشور في فريق تتابعه"
+msgstr "Uživatel vytvořil novinku v týmu, který sledujete"
 
 #, python-format
 msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
-msgstr "%(sender_name)s تم إنشاء منشور اخباري جديد في%(team_name)s (الذي تتابعه)"
+msgstr "%(sender_name)s vytvořil/a novinku v týmu %(team_name)s (který sledujete)"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s: (which you follow)"
-msgstr "تم نشر%(sender_name)s في%(team_name)s: (أنت تتابعه)"
+msgstr "%(sender_name)s zveřejnil/a v týmu %(team_name)s: (který sledujete)"
 
 msgid "A user updated a news post"
-msgstr "قام مستخدم يتحديث المنشور الاخباري"
+msgstr "Uživatel aktualizoval novinku"
 
 #, python-format
 msgid "%(sender_name)s updated the news post %(object_name)s"
-msgstr "%(sender_name)s تم تحديث المنشور اخباري%(object_name)s"
+msgstr "%(sender_name)s aktualizoval/a novinku %(object_name)s"
 
 msgid "You are following this news post"
-msgstr "أنت تتابع هذا المنشور الإخباري"
+msgstr "Sledujete tuto novinku"
 
 #, python-format
 msgid "%(sender_name)s updated a news post you are following"
-msgstr "حدث %(sender_name)s منشور إخباري أنت تتابعه"
+msgstr "%(sender_name)s aktualizoval/a novinku, kterou sledujete"
 
 #, python-format
 msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
-msgstr "تم تحديث منشور إخباري جديد ل%(sender_name)s تتابعه بواسطة %(team_name)s:"
+msgstr "Novinka od %(sender_name)s, kterou sledujete, byla aktualizována %(team_name)s:"
 
 msgid "A user commented on a news post you are following"
-msgstr "علق مستخدم على منشور إخباري أنت تتابعه"
+msgstr "Uživatel okomentoval novinku, kterou sledujete"
 
 #, python-format
 msgid "%(sender_name)s commented on the news post %(object_name)s"
-msgstr "%(sender_name)s تم التعليق على منشور الأخبار%(object_name)s"
+msgstr "%(sender_name)s okomentoval/a novinku %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "%(sender_name)s a %(count_minus_one)d další okomentoval novinku %(object_name)s"
+msgstr[1] "%(sender_name)s a %(count_minus_one)d další okomentovali novinku %(object_name)s"
+msgstr[2] "%(sender_name)s a %(count_minus_one)d další okomentovali novinku %(object_name)s"
+msgstr[3] "%(sender_name)s a %(count_minus_one)d dalších okomentovalo novinku %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on a news posts you are following"
-msgstr "%(sender_name)s تم التعليق على منشورات الأخبار التي تتابعها"
+msgstr "%(sender_name)s okomentoval/a novinku, kterou sledujete"
 
 msgid "No news"
-msgstr "لا توجد أية أخبار"
+msgstr "Žádné novinky"
 
 msgid "Write a news post"
-msgstr "كتابة منشور أخبار"
+msgstr "Napsat novinku"
 
 msgid "News stream"
-msgstr "اخبار العرض"
+msgstr "Stream novinek"
 
 msgid "Created By"
-msgstr "بواسطة"
+msgstr "Vytvořil/a"
 
 msgid "Newest Created"
-msgstr "حديث الإنشاء"
+msgstr "Nejnovější vytvořené"
 
 msgid "Popularity"
-msgstr "شعبية"
+msgstr "Popularita"
 
 msgid "Text"
-msgstr "نص"
+msgstr "Text"
 
 msgid "Facebook Share"
-msgstr "مشاركة فيسبوك"
+msgstr "Sdílet na Facebooku"
 
 msgid "Note Item"
-msgstr "ايقونة ملاحظة"
+msgstr "Položka poznámky"
 
 msgid "Note Items"
-msgstr "ايقونة ملاحظات"
+msgstr "Položky poznámky"
 
 msgid "Author"
-msgstr "مؤلف"
+msgstr "Autor"
 
 msgid "Creator"
-msgstr "المُنشئ"
+msgstr "Tvůrce"
 
 msgid "Created"
-msgstr "تم انشاؤه"
+msgstr "Vytvořeno"
 
 msgid "Comment"
-msgstr "تعليق"
+msgstr "Komentář"
 
 msgid "Comments"
-msgstr "تعليقات"
+msgstr "Komentáře"
 
 msgid "News"
-msgstr "أخبار"
+msgstr "Novinky"
 
 msgctxt "the_verb"
 msgid "Comment"
-msgstr "تعليق"
+msgstr "Komentovat"
 
 msgid "Delete"
-msgstr "حدف"
+msgstr "Smazat"
 
 msgid "Write comment..."
-msgstr "كتابة تعليق..."
+msgstr "Napsat komentář..."
 
 msgid "Post"
-msgstr "منشور"
+msgstr "Publikovat příspěvek"
 
 msgid "There are no public news posts"
-msgstr "لا توجدمنشورات إخبارية عامة"
+msgstr "Nejsou k dispozici žádné veřejné novinky"
 
 msgid "Edit news post"
-msgstr "تعديل منشور اخباري"
+msgstr "Upravit novinku"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr "حدث خطأ في أحد الحقول التي أدخلتها. يرجى تصحيحها قبل الحفظ!"
+msgstr "V jednom z polí, která jste zadali, došlo k chybě. Před uložením to prosím opravte!"
 
 msgid "Save changes"
-msgstr "حفظ التغيرات"
+msgstr "Uložit změny"
 
 msgid "Title (optional)"
-msgstr "عنوان(اختياري)"
+msgstr "Název (volitelné)"
 
 msgid "Title"
-msgstr "عنوان"
+msgstr "Název"
 
 msgctxt "label for the form text input"
 msgid "News text"
-msgstr "نص الأخبار"
+msgstr "Text novinky"
 
 msgid "Please enter a message..."
-msgstr "من فضلك أدخل رسالة..."
+msgstr "Zadejte zprávu..."
 
 msgid "To post in this team you need to"
-msgstr "للنشر في هذا الفريق تحتاج إلى"
+msgstr "Abyste mohli zveřejňovat v tomto týmu, potřebujete"
 
 msgid "request to join"
-msgstr "طلب الانضمام"
+msgstr "si požádat o připojení"
 
 msgid "Cancel"
-msgstr "إلغاء"
+msgstr "Zrušit"
 
 msgid "There are no news posts yet"
-msgstr "لا توجد أية منشورات إخبارية بعد"
+msgstr "Nejsou k dispozici žádné novinky"
 
 #, python-format
 msgid ""
@@ -269,26 +262,25 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Hi, %(receiver_name)s!\n"
+"Ahoj, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a news post you wrote in %(team_name)s:\n"
+"%(sender_name)s přidal/a komentář k novince, kterou jste napsali v týmu %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
 "\n"
-"on your post:\n"
+"na vašem příspěvku:\n"
 "\n"
 "\"%(note_text)s\"\n"
 "\n"
 "\n"
-"Follow this link to see the comment: \n"
+"Kliknutím na tento odkaz zobrazíte komentář:\n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+"(Chcete-li upravit předvolby oznámení, použijte tento odkaz: %(notification_settings_url)s )\n"
 "\n"
-"%(site_name)s.\n"
-"فريقك\n"
+"Váš tým %(site_name)s.\n"
 "\n"
 
 #, python-format
@@ -314,31 +306,34 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"مرحبًا %(receiver_name)s!\n"
+"Ahoj, %(receiver_name)s!\n"
 "\n"
-"قام%(sender_name)s بنشر تعليق على منشور أخبار قمت بالتعليق فيه ، في%(team_name)s:\n"
+"%(sender_name)s přidal/a komentář k novince, kterou jste okomentovali, v týmu %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
-"في المنشور:\n"
+"\n"
+"na příspěvku:\n"
 "\n"
 "\"%(note_text)s\"\n"
 "\n"
-"اتبع هذا الرابط لمشاهدة التعليق:\n"
+"\n"
+"Kliknutím na tento odkaz zobrazíte komentář:\n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(اتبع هذا الرابط لتعديل اشعاراتك المفضلة:%(notification_settings_url)s )\n"
+"(Chcete-li upravit předvolby oznámení, použijte tento odkaz: %(notification_settings_url)s )\n"
 "\n"
-"فريقك %(site_name)s team.\n"
+"Váš tým %(site_name)s.\n"
+"\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
-msgstr "%(sender_name)sتم التعليق على منشور أخبار قمت بالتعليق عليه ، في%(team_name)s."
+msgstr "%(sender_name)s přidal/a komentář k novince, kterou jste okomentovali, v týmu %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
-msgstr "%(sender_name)s تم التعليق على إحدى منشوراتك الإخبارية في%(team_name)s."
+msgstr "%(sender_name)s okomentoval/a jednu z vašich novinek v %(team_name)s."
 
 #, python-format
 msgid ""
@@ -346,9 +341,9 @@ msgid ""
 "\n"
 "%(sender_name)s just posted an update in %(team_name)s:\n"
 msgstr ""
-"مرحبًا%(receiver_name)s,(\n"
+"Ahoj %(receiver_name)s,\n"
 "\n"
-"%(sender_name)sنشر للتو تحديثًا في %(team_name)s:\n"
+"%(sender_name)s právě zveřejnil aktualizaci v týmu %(team_name)s:\n"
 
 #, python-format
 msgid ""
@@ -368,48 +363,47 @@ msgstr ""
 "\n"
 "\n"
 "\n"
-"يمكنك العثور عليه باتباع هذا الرابط: %(object_url)s\n"
-".\n"
+"Kliknutím na tento odkaz ji zobrazíte: %(object_url)s\n"
 "\n"
 "\n"
 "\n"
-"(اتبع هذا الرابط لتعديل اشعاراتك المفضلة:%(notification_settings_url)s )\n"
+"(Chcete-li upravit předvolby oznámení, použijte tento odkaz: %(notification_settings_url)s )\n"
 "\n"
-"فريقك%(site_name)s."
+"Váš tým %(site_name)s."
 
 msgid "Show in my projects..."
-msgstr "عرض في مشاريعي ..."
+msgstr "Zobrazit v mých projektech..."
 
 msgid "Edit"
-msgstr "تعديل"
+msgstr "Upravit"
 
 msgid "Delete note"
-msgstr "حذف الملاحظة"
+msgstr "Smazat poznámku"
 
 msgid "View on Facebook"
-msgstr "عرض في فيسبوك"
+msgstr "Zobrazit na Facebooku"
 
 msgid "Do you really want to delete this note?"
-msgstr "هل تريد حقا حذف هذه الملاحظة؟"
+msgstr "Opravdu chcete smazat tuto poznámku?"
 
 msgid "You added a post"
-msgstr "لقد قمت بإضافة منشور"
+msgstr "Přidali jste příspěvek"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "added a post"
-msgstr "تم اضافة منشور"
+msgstr "přidal/a příspěvek"
 
 msgid "Your news post was added successfully."
-msgstr "تم إضافة منشور الأخبار الخاص بك بنجاح."
+msgstr "Vaše novinka byla úspěšně přidána."
 
 msgid "Your news post was deleted successfully."
-msgstr "تم حذف منشور الأخبار الخاصة بك بنجاح."
+msgstr "Vaše novinka byla úspěšně smazána."
 
 msgid "Your news post was edited successfully."
-msgstr "تم تعديل منشور الأخبار الخاصة بك بنجاح."
+msgstr "Vaše novinka byla úspěšně upravena."
 
 msgid "Your comment was added successfully."
-msgstr "تم إضافة تعليقك بنجاح."
+msgstr "Váš komentář byl úspěšně přidán."
 
 msgid "Your comment was deleted successfully."
-msgstr "تم حذف تعليقك بنجاح."
+msgstr "Váš komentář byl úspěšně smazán."
