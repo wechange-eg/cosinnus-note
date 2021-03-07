@@ -10,6 +10,7 @@ class NoteViewSet(CosinnusFilterQuerySetMixin,
                   viewsets.ReadOnlyModelViewSet):
 
     queryset = Note.objects.all()
+    MANAGED_TAGS_FILTER_ON_GROUP = True
 
     def get_serializer_class(self):
         if self.action == 'list':
