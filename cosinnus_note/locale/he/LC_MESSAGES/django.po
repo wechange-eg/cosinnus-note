@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-23 18:24+0100\n"
-"PO-Revision-Date: 2020-09-29 18:04+0100\n"
+"POT-Creation-Date: 2021-03-12 17:55+0100\n"
+"PO-Revision-Date: 2021-03-08 23:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he\n"
@@ -16,28 +16,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.4.2\n"
 
 msgid "Notes"
 msgstr "פתקים"
 
 msgctxt "the_app"
 msgid "note"
-msgstr ""
+msgstr "פתק"
 
 msgid "A user commented on a news post"
 msgstr "משתמש הגיב על פוסט"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post"
-msgstr "%(sender_name)s הגיב'ה על פוסט"
+msgstr "%(sender_name)s הגיב/ה על פוסט"
 
 msgid "A user commented on one of your news posts"
 msgstr "משתמש הגיב על אחד הפרסומים שלך"
 
 #, python-format
 msgid "%(sender_name)s commented on your news post %(object_name)s"
-msgstr "%(sender_name)s הגיב'ה על פרסום שלך %(object_name)s"
+msgstr "%(sender_name)s הגיב/ה על פרסום שלך %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s"
@@ -47,18 +47,18 @@ msgstr[1] "%(sender_name)s ו-%(count_minus_one)d אחרים הגיבו על ה�
 
 #, python-format
 msgid "%(sender_name)s commented on your news post"
-msgstr "%(sender_name)s הגיב'ה על פוסט שלך"
+msgstr "%(sender_name)s הגיב/ה על פוסט שלך"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts"
-msgstr "%(sender_name)s הגיב'ה על אחד מהפוסטים שלך"
+msgstr "%(sender_name)s הגיב/ה על אחד מהפוסטים שלך"
 
 msgid "A user commented on a news posts you commented in"
 msgstr "משתמש הגיב על פוסט שהגבת עליו"
 
 #, python-format
 msgid "%(sender_name)s commented on the news post %(object_name)s you commented in"
-msgstr "%(sender_name)s הגיב'ה על הפוסט %(object_name)s שהגבת עליו"
+msgstr "%(sender_name)s הגיב/ה על הפוסט %(object_name)s שהגבת עליו"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in"
@@ -68,51 +68,51 @@ msgstr[1] "%(sender_name)s ו-%(count_minus_one)d אחרים הגיבו על ה�
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
-msgstr "%(sender_name)s הגיב'ה על פוסט שהגבת עליו"
+msgstr "%(sender_name)s הגיב/ה על פוסט שהגבת עליו"
 
 msgid "A user created a news post"
 msgstr "משתמש העלה פוסט חדש"
 
 #, python-format
 msgid "%(sender_name)s created the news post %(object_name)s"
-msgstr "%(sender_name)s העלת'ה את הפוסט %(object_name)s"
+msgstr "%(sender_name)s העלת/ה את הפוסט %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s created %(count)d news posts"
-msgstr "%(sender_name)s יצר'ה %(count)d פוסטים"
+msgstr "%(sender_name)s יצר/ה %(count)d פוסטים"
 
 #, python-format
 msgid "%(sender_name)s created a new news post"
-msgstr "%(sender_name)s יצר'ה פוסט חדש"
+msgstr "%(sender_name)s יצר/ה פוסט חדש"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s:"
-msgstr "%(sender_name)s פרסמ'ה פוסט ב- %(team_name)s:"
+msgstr "%(sender_name)s פרסמ/ה פוסט ב- %(team_name)s:"
 
 msgid "A user created a news post in a team you are following"
 msgstr "משתמש יצר פוסט חדש בצוות שאתה עוקב אחריו"
 
 #, python-format
 msgid "%(sender_name)s created a new news post in %(team_name)s (which you follow)"
-msgstr "%(sender_name)s יצר'ה פוסט חדש ב-%(team_name)s (שאתם עוקבים)"
+msgstr "%(sender_name)s יצר/ה פוסט חדש ב-%(team_name)s (שאתם עוקבים)"
 
 #, python-format
 msgid "%(sender_name)s posted in %(team_name)s: (which you follow)"
-msgstr "%(sender_name)s פרסמ'ה ב-%(team_name)s: (שאתם עוקבים)"
+msgstr "%(sender_name)s פרסמ/ה ב-%(team_name)s: (שאתם עוקבים)"
 
 msgid "A user updated a news post"
-msgstr "משתמש עדכן פוסט."
+msgstr "משתמש עדכן פוסט"
 
 #, python-format
 msgid "%(sender_name)s updated the news post %(object_name)s"
-msgstr "%(sender_name)s עדכן'ה את הפוסט %(object_name)s"
+msgstr "%(sender_name)s עדכן/ה את הפוסט %(object_name)s"
 
 msgid "You are following this news post"
 msgstr "אתם עוקבים אחר פוסט זה"
 
 #, python-format
 msgid "%(sender_name)s updated a news post you are following"
-msgstr "%(sender_name)s עדכן פוסט שאתם עוקבים"
+msgstr "%(sender_name)s עדכן/ה פוסט שאתם עוקבים"
 
 #, python-format
 msgid "A news post you follow by %(sender_name)s was updated %(team_name)s:"
@@ -123,7 +123,7 @@ msgstr "משתמש הגיב על פוסט שאתם עוקבים"
 
 #, python-format
 msgid "%(sender_name)s commented on the news post %(object_name)s"
-msgstr "%(sender_name)s הגיב'ה על הפוסט %(object_name)s"
+msgstr "%(sender_name)s הגיב/ה על הפוסט %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s"
@@ -133,7 +133,7 @@ msgstr[1] "%(sender_name)s ו-%(count_minus_one)d אחרים הגיבו על ה�
 
 #, python-format
 msgid "%(sender_name)s commented on a news posts you are following"
-msgstr "%(sender_name)s הגיב'ה על פוסט שאתם עוקבים"
+msgstr "%(sender_name)s הגיב/ה על פוסט שאתם עוקבים"
 
 msgid "No news"
 msgstr "אין חדשות"
@@ -141,9 +141,8 @@ msgstr "אין חדשות"
 msgid "Write a news post"
 msgstr "כתיבת פוסט חדש"
 
-#, fuzzy
 msgid "News stream"
-msgstr "שידור חדשות"
+msgstr "ניוז סטרים"
 
 msgid "Created By"
 msgstr "נוצר על ידי"
@@ -167,10 +166,10 @@ msgid "Note Items"
 msgstr "פריטי פתקים"
 
 msgid "Author"
-msgstr "מחבר'ת"
+msgstr "מחבר/ת"
 
 msgid "Creator"
-msgstr "יוצר'ת"
+msgstr "יוצר/ת"
 
 msgid "Created"
 msgstr "נוצר"
@@ -226,7 +225,7 @@ msgid "To post in this team you need to"
 msgstr "כדי לפרסם בצוות זה אתם צריכים"
 
 msgid "request to join"
-msgstr "בקש'י להצטרף"
+msgstr "בקש/י להצטרף"
 
 msgid "Cancel"
 msgstr "ביטול"
@@ -259,7 +258,7 @@ msgid ""
 msgstr ""
 "הי, %(receiver_name)s! \n"
 "\n"
-"%(sender_name)s הגיב'ה על פוסט שכתבת ב-%(team_name)s: \n"
+"%(sender_name)s הגיב/ה על פוסט שכתבת ב-%(team_name)s: \n"
 "\n"
 "\"%(comment_text)s\" \n"
 "\n"
@@ -302,7 +301,7 @@ msgid ""
 msgstr ""
 "הי, %(receiver_name)s! \n"
 "\n"
-"%(sender_name)s הגיב'ה על פוסט שהגבת בו, ב- %(team_name)s: \n"
+"%(sender_name)s הגיב/ה על פוסט שהגבת בו, ב- %(team_name)s: \n"
 "\n"
 "\"%(comment_text)s\" \n"
 "\n"
@@ -322,11 +321,11 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
-msgstr "%(sender_name)s הגיב'ה על פוסט שהגבת בו, ב-%(team_name)s."
+msgstr "%(sender_name)s הגיב/ה על פוסט שהגבת בו, ב-%(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
-msgstr "%(sender_name)s הגיב'ה על אחד מהפוסטים שלך ב-%(team_name)s."
+msgstr "%(sender_name)s הגיב/ה על אחד מהפוסטים שלך ב-%(team_name)s."
 
 #, python-format
 msgid ""
@@ -365,7 +364,7 @@ msgstr ""
 "שלך, צוות %(site_name)s."
 
 msgid "Show in my projects..."
-msgstr "הצג בפרוייקטים שלי..."
+msgstr "הצג בפרויקטים שלי..."
 
 msgid "Edit"
 msgstr "ערוך"
@@ -384,7 +383,7 @@ msgstr "העלת פוסט"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "added a post"
-msgstr "העלה'תה פוסט חדש"
+msgstr "העלה/תה פוסט חדש"
 
 msgid "Your news post was added successfully."
 msgstr "הפרסום שלך הועלה בהצלחה."
