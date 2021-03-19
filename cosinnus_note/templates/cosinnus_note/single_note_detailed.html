@@ -115,9 +115,10 @@
 	    
 	    <div class=" indented">
 		    <div class="white-content">
-		        {% include 'cosinnus/common/likefollow/like_button.html' with object=note %}
-		        {% include 'cosinnus/common/likefollow/follow_button.html' with object=note %}
-		        {% include 'cosinnus/common/likefollow/confirm_likefollow_modal.html' with object=note %}
+				{% include 'cosinnus/common/likefollowstar/like_button.html' with object=note %}
+				{% include 'cosinnus/common/likefollowstar/star_button.html' with object=note %}
+		        {% include 'cosinnus/common/likefollowstar/follow_button.html' with object=note %}
+		        {% include 'cosinnus/common/likefollowstar/confirm_likefollowstar_modal.html' with object=note %}
 		    </div>
 	    </div>
 	    
