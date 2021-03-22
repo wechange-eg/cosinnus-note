@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 17:55+0100\n"
+"POT-Creation-Date: 2021-02-23 18:24+0100\n"
 "PO-Revision-Date: 2020-10-09 20:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 msgid "Notes"
-msgstr "Notatki"
+msgstr "Uwagi"
 
 msgctxt "the_app"
 msgid "note"
-msgstr "notatka"
+msgstr "Uwaga"
 
 msgid "A user commented on a news post"
 msgstr "Użytkownik skomentował wpis"
@@ -42,9 +42,9 @@ msgstr "%(sender_name)s skomentował/a jeden z Twoich wpisów w %(object_name)s"
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your news post %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your news post %(object_name)s"
-msgstr[0] "%(sender_name)s i %(count_minus_one)d skomentował/a Twój nowy wpis %(object_name)s"
-msgstr[1] "%(sender_name)s i %(count_minus_one)d skomentowali Twój nowy wpis %(object_name)s"
-msgstr[2] "%(sender_name)s i %(count_minus_one)d skomentowali Twój nowy wpis %(object_name)s"
+msgstr[0] "%(sender_name)s i inny/-a %(count_minus_one)d skomentował/-a Twój nowy wpis %(object_name)s"
+msgstr[1] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły Twój nowy wpis %(object_name)s"
+msgstr[2] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły Twój nowy wpis %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your news post"
@@ -64,9 +64,9 @@ msgstr "%(sender_name)s skomentował/a wpis %(object_name)s, który skomentował
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s you commented in"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s you commented in"
-msgstr[0] "%(sender_name)s i %(count_minus_one)d skomentował/a wpis %(object_name)s, który skomentowałeś/aś"
-msgstr[1] "%(sender_name)s i %(count_minus_one)d skomentowali wpis %(object_name)s, który skomentowałeś/aś"
-msgstr[2] "%(sender_name)s i %(count_minus_one)d skomentowali wpis %(object_name)s, który skomentowałeś/aś"
+msgstr[0] "%(sender_name)s i inny/-a %(count_minus_one)d skomentował/-a wpis %(object_name)s, który skomentowałeś/aś"
+msgstr[1] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły wpis %(object_name)s, który skomentowałeś/aś"
+msgstr[2] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły wpis %(object_name)s, który skomentowałeś/aś"
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in"
@@ -130,9 +130,9 @@ msgstr "%(sender_name)s skomentował/a Twój wpis %(object_name)s"
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the news post %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the news post %(object_name)s"
-msgstr[0] "%(sender_name)s i %(count_minus_one)d skomentował/a Twój wpis %(object_name)s"
-msgstr[1] "%(sender_name)s i %(count_minus_one)d skomentowali Twój wpis %(object_name)s"
-msgstr[2] "%(sender_name)s i %(count_minus_one)d skomentowali Twój wpis %(object_name)s"
+msgstr[0] "%(sender_name)s i inny/-a %(count_minus_one)d skomentował/-a Twój wpis %(object_name)s"
+msgstr[1] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły Twój wpis %(object_name)s"
+msgstr[2] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły Twój wpis %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on a news posts you are following"
@@ -145,19 +145,19 @@ msgid "Write a news post"
 msgstr "Dodaj wpis"
 
 msgid "News stream"
-msgstr "Stream"
+msgstr "Stream aktualności"
 
 msgid "Created By"
 msgstr "Utworzone Przez"
 
 msgid "Newest Created"
-msgstr "Najnowsze"
+msgstr "Ostatnio Utworzone"
 
 msgid "Popularity"
 msgstr "Popularność"
 
 msgid "Text"
-msgstr "Treść"
+msgstr "Tekst"
 
 msgid "Facebook Share"
 msgstr "Udostępnienie na Facebooku"
@@ -175,7 +175,7 @@ msgid "Creator"
 msgstr "Twórca"
 
 msgid "Created"
-msgstr "Utworzone"
+msgstr "Utworzył/-a"
 
 msgid "Comment"
 msgstr "Komentarz"
@@ -188,13 +188,13 @@ msgstr "Aktualności"
 
 msgctxt "the_verb"
 msgid "Comment"
-msgstr "Skomentuj"
+msgstr "Komentarz"
 
 msgid "Delete"
 msgstr "Usuń"
 
 msgid "Write comment..."
-msgstr "Dodaj komentarz..."
+msgstr "Napisz komentarz..."
 
 msgid "Post"
 msgstr "Opublikuj"
@@ -219,7 +219,7 @@ msgstr "Tytuł"
 
 msgctxt "label for the form text input"
 msgid "News text"
-msgstr "Tekst"
+msgstr "Tekst aktualności"
 
 msgid "Please enter a message..."
 msgstr "Wpisz wiadomość..."
@@ -234,7 +234,7 @@ msgid "Cancel"
 msgstr "Anuluj"
 
 msgid "There are no news posts yet"
-msgstr "Nie ma nowych wpisów"
+msgstr "Nie ma jeszcze nowych wpisów"
 
 #, python-format
 msgid ""
