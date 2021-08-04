@@ -74,6 +74,14 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
         """
         return super(NoteCreateView, self).form_invalid(form)
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        if self.request:
+            kwargs.update({
+                'request': self.request
+            })
+        return kwargs
+
     def post(self, request, *args, **kwargs):
         self.referer = self.request.GET.get('next', request.META.get('HTTP_REFERER', group_aware_reverse('cosinnus:note:list', kwargs={'group':self.group})))
         return super(NoteCreateView, self).post(request, *args, **kwargs)
