@@ -41,13 +41,13 @@ class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
     def user_needs_email_validation(self):
         user = self.request.user
         portal = CosinnusPortal.get_current()
-        user_email_verified = user.cosinus_profile.email_verified
+        user_email_verified = user.cosinnus_profile.email_verified
         verification_needed = portal.email_needs_verification
-        if user.is_authenticated():
+        if user.is_authenticated:
             return not user_email_verified and verification_needed
 
     def check_user_can_not_post(self):
-        return self.group_is_forum() and self.user_needs_email_validation
+        return self.group_is_forum() and self.user_needs_email_validation()
 
     def clean(self):
         """ Insert a placeholder title if no title is given """
