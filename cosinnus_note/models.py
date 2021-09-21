@@ -25,12 +25,16 @@ from django.template.defaultfilters import truncatechars
 from cosinnus.models.group import CosinnusPortal
 from cosinnus.views.mixins.reflected_objects import MixReflectedObjectsMixin
 from uuid import uuid1
+
+from cosinnus.models.mixins.translations import TranslateableFieldsModelMixin
+
 logger = logging.getLogger('cosinnus')
 
 FACEBOOK_POST_URL = 'https://www.facebook.com/%s/posts/%s' # %s, %s :  user_id, post_id
 
 
-class Note(LikeableObjectMixin, BaseTaggableObjectModel):
+class Note(LikeableObjectMixin, TranslateableFieldsModelMixin, BaseTaggableObjectModel):
+    translateable_fields = ['title', 'text']
     
     EMPTY_TITLE_PLACEHOLDER = '---'
     
