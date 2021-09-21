@@ -11,8 +11,10 @@ from cosinnus.forms.user import UserKwargModelFormMixin
 
 from cosinnus_note.models import Comment, Note
 
+from cosinnus.forms.translations import TranslatedFieldsFormMixin
 
-class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
+
+class _NoteForm(TranslatedFieldsFormMixin, GroupKwargModelFormMixin, UserKwargModelFormMixin,
                 FormAttachableMixin, BaseTaggableObjectForm):
     
     # HTML required attribute disabled because of the model-required but form-optional field 'title'
@@ -29,7 +31,7 @@ class _NoteForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
             self.initial['title'] = ''
         if self.fields['title'].initial == Note.EMPTY_TITLE_PLACEHOLDER:
             self.fields['title'].initial = ''
-        
+
     def clean(self):
         """ Insert a placeholder title if no title is given """
         title = self.cleaned_data.get('title', None)
