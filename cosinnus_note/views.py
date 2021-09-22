@@ -37,7 +37,9 @@ from django.contrib.auth import get_user_model
 from django.utils.timezone import now
 from ajax_forms.ajax_forms import AjaxFormsCommentCreateViewMixin,\
     AjaxFormsDeleteViewMixin, AjaxFormsCreateViewMixin
-from cosinnus.core.decorators.views import redirect_to_403
+from cosinnus.core.decorators.views import redirect_to_403,\
+    MSG_USER_NOT_VERIFIED
+from cosinnus.utils.permissions import check_user_verified
 
 
 class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGroupMixin, 
@@ -62,6 +64,13 @@ class NoteCreateView(FacebookIntegrationViewMixin, RequireWriteMixin, FilterGrou
         return context
     
     def form_valid(self, form):
+        # special check: if user isn't verified, don't allow posts to the forum group
+        if not check_user_verified(self.request.user) and CosinnusPortal.get_current().email_needs_verification and \
+                (self.group.is_default_user_group or self.group.is_forum_group):
+            messages.warning(self.request, MSG_USER_NOT_VERIFIED)
+            form.add_error(None, MSG_USER_NOT_VERIFIED)
+            return self.form_invalid(form)
+        
         form.instance.creator = self.request.user
         ret = super(NoteCreateView, self).form_valid(form)
         # creator follows their own note
