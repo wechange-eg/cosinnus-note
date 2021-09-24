@@ -1,7 +1,7 @@
 {% load i18n cosinnus_tags widget_tweaks %}
 
 {# sadly we have no practical way of a block to extend for this #}
-{% include 'cosinnus/common/simplemde_dependencies.html' with element_id=form.forms.obj.text.id_for_label %}
+{% include 'cosinnus/common/simplemde_dependencies.html' with element_id=form.forms.obj.text.id_for_label translation_form=form.forms.obj translated_field_name=form.forms.obj.text.html_name %}
 
 {% captureas label %}
     {% if user|can_create_objects_in:group %}
