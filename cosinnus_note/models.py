@@ -5,7 +5,6 @@ from builtins import object
 import re
 
 from django.conf import settings
-from django.urls import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
@@ -34,7 +33,9 @@ FACEBOOK_POST_URL = 'https://www.facebook.com/%s/posts/%s' # %s, %s :  user_id, 
 
 
 class Note(LikeableObjectMixin, TranslateableFieldsModelMixin, BaseTaggableObjectModel):
-    translateable_fields = ['title', 'text']
+    
+    if settings.COSINNUS_TRANSLATED_FIELDS_ENABLED:
+        translateable_fields = ['title', 'text']
     
     EMPTY_TITLE_PLACEHOLDER = '---'
     
