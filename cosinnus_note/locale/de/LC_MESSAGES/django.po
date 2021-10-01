@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-14 15:23+0200\n"
-"PO-Revision-Date: 2020-02-02 16:33+0100\n"
+"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"PO-Revision-Date: 2021-10-01 15:36+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 3.0\n"
 
 msgid "Notes"
 msgstr "Neuigkeiten"
@@ -197,7 +197,7 @@ msgid "Post"
 msgstr "Posten"
 
 msgid "There are no public news posts"
-msgstr "Bisher gibt es keine Neuigkeiten."
+msgstr "Bisher gibt es keine öffentliche Neuigkeiten"
 
 msgid "Edit news post"
 msgstr "Neuigkeit bearbeiten"
@@ -231,7 +231,7 @@ msgid "Cancel"
 msgstr "Abbrechen"
 
 msgid "There are no news posts yet"
-msgstr "Es gibt keine Neuigkeiten."
+msgstr "Es gibt keine Neuigkeiten"
 
 #, python-format
 msgid ""
@@ -323,11 +323,11 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on a news post you commented in, in %(team_name)s."
-msgstr "%(sender_name)s hat eine Neuigkeit kommentiert, die du kommentiert hast in %(team_name)s!"
+msgstr "%(sender_name)s hat eine Neuigkeit kommentiert, die du kommentiert hast in %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s commented on one of your news posts in %(team_name)s."
-msgstr "%(sender_name)s hat eine Neuigkeit von dir kommentiert in %(team_name)s!"
+msgstr "%(sender_name)s hat eine Neuigkeit von dir kommentiert in %(team_name)s."
 
 #, python-format
 msgid ""
