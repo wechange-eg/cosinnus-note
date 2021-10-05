@@ -7,9 +7,9 @@
 	        <div type="button" class="btn btn-emphasized w100">
 	            <ul class="media-list">
 	                <li class="media">
-	                    <a class="pull-left" href="{{ note.creator|profile_url }}">
+	                    <span class="pull-left" href="{{ note.creator|profile_url }}">
 	                        {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
-	                    </a>
+	                    </span>
 	                    <div class="media-body media-body-normalwrap">
 	                        {% if not hide_group_name %}
 			                	<span class="annotation">
@@ -28,36 +28,36 @@
                                 {% endif %}
                                 {% if may_reflect and not reflectable_groups %}
                                     {# Simplification so we don't overload the page with modals: For reflecting in lists we link to the detail page and open the modal #}
-                                    <a href="{{ note.get_absolute_url }}?select_reflect=1">
+                                    <span href="{{ note.get_absolute_url }}?select_reflect=1">
 							            <i class="fa fa-fw fa-share"></i>
 						                {% trans "Show in my projects..." %}
-					                <a>
+					                <span>
                                 {% endif %}
                                 
                                 {% include 'cosinnus/feedback/report_button_a.html' with object=note %}
                                 
                                 {% if note.creator == user %}
-	                                <a href="{% group_url 'cosinnus:note:update' group=note.group slug=note.slug %}">
+	                                <span href="{% group_url 'cosinnus:note:update' group=note.group slug=note.slug %}">
 	                                    <i class="fa fa-pencil"></i>
 	                                    {% trans "Edit" %}
-									</a>
+									</span>
 								{% endif %}
 								{% if note.creator == user or user|is_superuser %}
-                                    <a data-toggle="modal" data-target="#deleteNote_{{note.pk}}" href="#" title="{% trans "Delete note" %}">
+                                    <span data-toggle="modal" data-target="#deleteNote_{{note.pk}}" href="#" title="{% trans "Delete note" %}">
                                         <i class="fa fa-times"></i>
                                         {% trans "Delete" %}
-                                    </a> &nbsp;
+                                    </span> &nbsp;
 		                        {% endif %}
                             </span>
 	                        <strong><a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a></strong> 
-	                        <a class="light-link" target="_blank" href="{{ note.get_absolute_url }}"
+	                        <span class="light-link" target="_blank" href="{{ note.get_absolute_url }}"
                             ><span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span> <i class="fa fa-external-link"></i>
-                            </a>
+                            </span>
                             {% if note.get_facebook_post_url %}
-	                            <a target="_blank" href="{{ note.get_facebook_post_url }}"
+	                            <span target="_blank" href="{{ note.get_facebook_post_url }}"
 	                            ><i class="fa fa-facebook-square"></i> 
 	                            <span>{% trans "View on Facebook" %}</span>
-	                            </a>
+	                            </span>
                             {% endif %}
 	                    </div>
 	                </li>
@@ -99,13 +99,13 @@
 	        <button type="button" class="btn btn-emphasized w100">
 	            <ul class="media-list fine-space">
 	                <li class="media">
-	                    <a class="pull-left" href="#">
+	                    <span class="pull-left">
 	                        <i class="fa fa-calendar"></i>
-	                    </a>
-	                    <a class="pull-right square-date-icon btn-extra-emphasized" href="#">
+	                    </span>
+	                    <span class="pull-right square-date-icon btn-extra-emphasized">
 	                        <div>19</div>
 	                        <div>Dez</div>
-	                    </a>
+	                    </span>
 	                    <div class="media-body">
 	                                <strong><a>de:groth Call for Papers</a></strong>
 	                    </div>
