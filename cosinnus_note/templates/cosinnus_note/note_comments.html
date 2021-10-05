@@ -59,7 +59,7 @@
                                 {% include 'cosinnus/user/user_avatar_image.html' with user=comment.creator %}
                             </span>
                             <div class="media-body comment-background">
-                                <strong><a href="{{ comment.creator|profile_url }}">{{ comment.creator|full_name }}</a></strong>
+                                <strong><span href="{{ comment.creator|profile_url }}">{{ comment.creator|full_name }}</span></strong>
                                 <div class="font11px regular-space">
                                     {% if user|has_write_access:comment %}
                                     	{% comment %} Force the URL of the POST to remain on this site because of CSRF checks, but
