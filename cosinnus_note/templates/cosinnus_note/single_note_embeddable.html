@@ -7,9 +7,9 @@
 	        <div type="button" class="btn btn-emphasized w100">
 	            <ul class="media-list">
 	                <li class="media">
-	                    <span class="pull-left" href="{{ note.creator|profile_url }}">
+	                    <a class="pull-left" href="{{ note.creator|profile_url }}">
 	                        {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
-	                    </span>
+						</a>
 	                    <div class="media-body media-body-normalwrap">
 	                        <span class="annotation">
                                 {% include 'cosinnus/group/group_label.html' with group=note.group %}

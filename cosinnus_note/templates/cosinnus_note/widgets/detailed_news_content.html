@@ -6,25 +6,25 @@
         <div type="button" class="btn btn-emphasized btn-headline">
             <ul class="media-list">
                 <li class="media">
-                    <span class="pull-left" href="{{ note.creator|profile_url }}">
+                    <a class="pull-left" href="{{ note.creator|profile_url }}">
                         {% include "cosinnus/user/user_avatar_image.html" with user=note.creator %}
-                    </span>
+                    </a>
                     <div class="media-body">
-                         <span href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</span> 
+                         <a href="{{ note.creator|profile_url }}">{{ note.creator|full_name }}</a> 
                          {% if note.get_facebook_post_url %}
-                            <span target="_blank" href="{{ note.get_facebook_post_url }}"
+                            <a target="_blank" href="{{ note.get_facebook_post_url }}"
                             ><i class="fa fa-facebook-square"></i> 
-                            </span>
+                            </a>
                          {% endif %}
                          
                          {% if note.creator == user or user|is_superuser %}
-                            <span data-toggle="modal" data-target="#deleteNote_{{note.pk}}" href="#" title="{% trans "Delete note" %}"><i class="fa fa-times"></i></span>
+                            <a data-toggle="modal" data-target="#deleteNote_{{note.pk}}" href="#" title="{% trans "Delete note" %}"><i class="fa fa-times"></i></a>
                          {% endif %}
                          {% if note.creator == user %}
-                             <span href="{% group_url 'cosinnus:note:update' group=note.group slug=note.slug %}">
+                             <a href="{% group_url 'cosinnus:note:update' group=note.group slug=note.slug %}">
                                  <i class="fa fa-pencil"></i>
                                  {% trans "Edit" %}
-                             </span>
+                             </a>
                          {% endif %}
                          
                          {% include 'cosinnus/feedback/report_button_a.html' with object=note %}
@@ -32,10 +32,10 @@
                          <div class="group-annotation">
                              {% include 'cosinnus/common/reflect/reflected_group_display_link.html' %}
                              
-                             <span class="light-link" target="_blank" href="{{ note.get_absolute_url }}{% if group != note.group %}?reflected_item_redirect=1{% endif %}">
+                             <a class="light-link" target="_blank" href="{{ note.get_absolute_url }}{% if group != note.group %}?reflected_item_redirect=1{% endif %}">
                                 <span class="moment-data-date" data-date="{{ note.created|date:'c' }}" title="{{ note.created|date:'r' }}"></span>
                                 <i class="fa fa-external-link"></i>
-                             </span>
+                             </a>
                          </div>
                     </div>
                 </li>
