@@ -32,6 +32,7 @@ following_note_comment_posted = dispatch.Signal(providing_args=["user", "obj", "
         :object_url The url of the object, if defined by get_absolute_url()
         :object_name The title of the object (only available if it is a BaseTaggableObject)
         :group_name The name of the group the object is housed in (only available if it is a BaseTaggableObject)
+        :team_name_short The same variable as `team_name` (`group_name`) but truncated to its first 10 characters
         :site_name Current django site's name
         :domain_url The complete base domain needed to prefix URLs. (eg: 'http://sinnwerkstatt.com')
         :notification_settings_url The URL to the cosinnus notification settings page.
@@ -52,7 +53,7 @@ notifications = {
         
         'is_html': True,
         'event_text': _('%(sender_name)s commented on a news post'),
-        'subject_text': _('%(sender_name)s commented on a news post'),
+        'subject_text': _('[%(team_name_short)s] - %(sender_name)s commented on a news post'),
         'display_object_name': False,
         'data_attributes': {
             'object_name': 'note.get_readable_title', 
@@ -79,7 +80,7 @@ notifications = {
         
         'is_html': True,
         'event_text': _('%(sender_name)s commented on your news post'),
-        'subject_text': _('%(sender_name)s commented on one of your news posts'),
+        'subject_text': _('[%(team_name_short)s] - %(sender_name)s commented on one of your news posts'),
         'display_object_name': False,
         'data_attributes': {
             'object_name': 'note.get_readable_title', 
@@ -106,7 +107,7 @@ notifications = {
         
         'is_html': True,
         'event_text': _('%(sender_name)s commented on a news post you commented in'),
-        'subject_text': _('%(sender_name)s commented on a news post you commented in'),
+        'subject_text': _('[%(team_name_short)s] - %(sender_name)s commented on a news post you commented in'),
         'display_object_name': False,
         'data_attributes': {
             'object_name': 'note.get_readable_title', 
@@ -133,7 +134,7 @@ notifications = {
         
         'is_html': True,
         'event_text': _('%(sender_name)s created a new news post'),
-        'subject_text': _('%(sender_name)s posted in %(team_name)s:'),
+        'subject_text': _('[%(team_name_short)s] - %(sender_name)s posted a news post' ),
         'data_attributes': {
             'object_name': 'get_readable_title', 
             'object_url': 'get_absolute_url', 
@@ -157,7 +158,7 @@ notifications = {
         
         'is_html': True,
         'event_text': _('%(sender_name)s created a new news post in %(team_name)s (which you follow)'),
-        'subject_text': _('%(sender_name)s posted in %(team_name)s: (which you follow)'),
+        'subject_text': _('[%(team_name_short)s] - %(sender_name)s posted in %(team_name)s: (which you follow)'),
         'data_attributes': {
             'object_name': 'get_readable_title', 
             'object_url': 'get_absolute_url', 
@@ -180,7 +181,7 @@ notifications = {
         
         'is_html': True,
         'event_text': _('%(sender_name)s updated a news post you are following'),
-        'subject_text': _('A news post you follow by %(sender_name)s was updated %(team_name)s:'),
+        'subject_text': _('[%(team_name_short)s] - A news post you follow by %(sender_name)s was updated'),
         'data_attributes': {
             'object_name': 'get_readable_title', 
             'object_url': 'get_absolute_url', 
@@ -204,7 +205,7 @@ notifications = {
         
         'is_html': True,
         'event_text': _('%(sender_name)s commented on a news posts you are following'),
-        'subject_text': _('%(sender_name)s commented on a news posts you are following'),
+        'subject_text': _('[%(team_name_short)s] - %(sender_name)s commented on a news posts you are following'),
         'display_object_name': False,
         'data_attributes': {
             'object_name': 'note.get_readable_title',
