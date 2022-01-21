@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
-"PO-Revision-Date: 2020-10-11 17:18+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
+"PO-Revision-Date: 2022-01-21 09:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 msgid "Notes"
 msgstr "Новости"
@@ -199,6 +199,9 @@ msgid "Post"
 msgstr "Отправить"
 
 msgid "There are no public news posts"
+msgstr "Пока публичных новостей нет"
+
+msgid "There are no news posts yet"
 msgstr "Пока новостей нет"
 
 msgid "Edit news post"
@@ -231,9 +234,6 @@ msgstr "отправить запрос на вступление"
 
 msgid "Cancel"
 msgstr "Отмена"
-
-msgid "There are no news posts yet"
-msgstr "Пока новостей нет"
 
 #, python-format
 msgid ""

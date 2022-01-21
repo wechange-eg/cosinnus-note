@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
 "PO-Revision-Date: 2020-05-04 02:38+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -199,6 +199,9 @@ msgstr "Yazı"
 msgid "There are no public news posts"
 msgstr "Heç bir ictimai xəbər yazısı yoxdur"
 
+msgid "There are no news posts yet"
+msgstr "Heç bir xəbər yazısı yoxdur"
+
 msgid "Edit news post"
 msgstr "Xəbər yazısını düzəldin"
 
@@ -229,9 +232,6 @@ msgstr "qoşulmağı tələb et"
 
 msgid "Cancel"
 msgstr "Təxirə sal"
-
-msgid "There are no news posts yet"
-msgstr "Heç bir xəbər yazısı yoxdur"
 
 #, python-format
 msgid ""

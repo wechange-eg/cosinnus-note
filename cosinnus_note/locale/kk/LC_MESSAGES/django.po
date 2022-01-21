@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
 "PO-Revision-Date: 2020-04-14 14:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -207,6 +207,9 @@ msgstr "Жіберу"
 msgid "There are no public news posts"
 msgstr "Қоғамдық посттар жоқ"
 
+msgid "There are no news posts yet"
+msgstr "Әзірге жаңалықтар жоқ"
+
 msgid "Edit news post"
 msgstr "Жаңалықтар баспасын редакциялау"
 
@@ -237,9 +240,6 @@ msgstr "кіруге өтініш"
 
 msgid "Cancel"
 msgstr "Болдырмау"
-
-msgid "There are no news posts yet"
-msgstr "Әзірге жаңалықтар жоқ"
 
 #, python-format
 msgid ""

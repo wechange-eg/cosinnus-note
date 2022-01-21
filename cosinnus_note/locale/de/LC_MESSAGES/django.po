@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
 "PO-Revision-Date: 2021-10-01 15:36+0200\n"
 "Last-Translator: Markus Holtermann <info@markusholtermann.eu>\n"
 "Language-Team: German <>\n"
@@ -199,6 +199,9 @@ msgstr "Posten"
 msgid "There are no public news posts"
 msgstr "Bisher gibt es keine öffentliche Neuigkeiten"
 
+msgid "There are no news posts yet"
+msgstr "Es gibt keine Neuigkeiten"
+
 msgid "Edit news post"
 msgstr "Neuigkeit bearbeiten"
 
@@ -229,9 +232,6 @@ msgstr "beantragen, Mitglied zu werden"
 
 msgid "Cancel"
 msgstr "Abbrechen"
-
-msgid "There are no news posts yet"
-msgstr "Es gibt keine Neuigkeiten"
 
 #, python-format
 msgid ""

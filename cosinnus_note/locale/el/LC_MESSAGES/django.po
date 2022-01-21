@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
 "PO-Revision-Date: 2021-04-26 14:07+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -199,6 +199,9 @@ msgstr "Ανάρτηση"
 msgid "There are no public news posts"
 msgstr "Δεν υπάρχουν δημόσιες αναρτήσεις ειδήσεων"
 
+msgid "There are no news posts yet"
+msgstr "Δεν υπάρχουν ακόμη αναρτήσεις ειδήσεων"
+
 msgid "Edit news post"
 msgstr "Επεξεργασία ανάρτησης ειδήσεων"
 
@@ -229,9 +232,6 @@ msgstr "αίτημα για συμμετοχή"
 
 msgid "Cancel"
 msgstr "Ακύρωση"
-
-msgid "There are no news posts yet"
-msgstr "Δεν υπάρχουν ακόμη αναρτήσεις ειδήσεων"
 
 #, python-format
 msgid ""
