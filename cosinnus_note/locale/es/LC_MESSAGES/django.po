@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
 "PO-Revision-Date: 2020-04-22 12:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -210,6 +210,9 @@ msgstr "Publicar"
 msgid "There are no public news posts"
 msgstr "No hay publicaciónes de novedades"
 
+msgid "There are no news posts yet"
+msgstr "Aún no hay publicaciónes de novedades"
+
 msgid "Edit news post"
 msgstr "Editar publicación de novedades"
 
@@ -240,9 +243,6 @@ msgstr "solicita oara participar"
 
 msgid "Cancel"
 msgstr "Cancelar"
-
-msgid "There are no news posts yet"
-msgstr "Aún no hay publicaciónes de novedades"
 
 #, python-format
 msgid ""

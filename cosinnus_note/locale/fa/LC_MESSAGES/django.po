@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
 "PO-Revision-Date: 2021-05-24 17:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -200,6 +200,9 @@ msgstr "بفرست"
 msgid "There are no public news posts"
 msgstr "هیچ مطلب خبری همگانی‌ای نیست"
 
+msgid "There are no news posts yet"
+msgstr "هیچ مطلب خبری‌ای نیست"
+
 msgid "Edit news post"
 msgstr "مطلب خبری را ویرایش کن"
 
@@ -230,9 +233,6 @@ msgstr "درخواست عضویت بدهید"
 
 msgid "Cancel"
 msgstr "لغو کن"
-
-msgid "There are no news posts yet"
-msgstr "هیچ مطلب خبری‌ای نیست"
 
 #, python-format
 msgid ""

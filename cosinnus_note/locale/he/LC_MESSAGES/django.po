@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
 "PO-Revision-Date: 2021-03-08 23:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -199,6 +199,9 @@ msgstr "פרסם"
 msgid "There are no public news posts"
 msgstr "אין פוסטים ציבוריים חדשים"
 
+msgid "There are no news posts yet"
+msgstr "אין עדיין פוסטים"
+
 msgid "Edit news post"
 msgstr "ערוך פוסט"
 
@@ -229,9 +232,6 @@ msgstr "בקש/י להצטרף"
 
 msgid "Cancel"
 msgstr "ביטול"
-
-msgid "There are no news posts yet"
-msgstr "אין עדיין פוסטים"
 
 #, python-format
 msgid ""

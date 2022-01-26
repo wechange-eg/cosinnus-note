@@ -34,7 +34,11 @@
 	        {% empty %}
 	            <!-- {% trans "There are no public news posts" %} -->
 	            {# {% include 'cosinnus/common/empty_button.html' with message="There are no public news posts" %} #}
-	            <p><i>{% trans "There are no public news posts" %}</i><p>
+				{% if SETTINGS.COSINNUS_USER_EXTERNAL_USERS_FORBIDDEN %}
+					<p><i>{% trans "There are no news posts yet" %}</i><p>
+				{% else %}
+	            	<p><i>{% trans "There are no public news posts" %}</i><p>
+				{% endif %}
 	        {% endfor %}
 	        
 	        {% comment %}  

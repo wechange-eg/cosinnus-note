@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
 "PO-Revision-Date: 2020-09-24 04:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -205,6 +205,9 @@ msgstr "Publikovat příspěvek"
 msgid "There are no public news posts"
 msgstr "Nejsou k dispozici žádné veřejné novinky"
 
+msgid "There are no news posts yet"
+msgstr "Nejsou k dispozici žádné novinky"
+
 msgid "Edit news post"
 msgstr "Upravit novinku"
 
@@ -235,9 +238,6 @@ msgstr "si požádat o připojení"
 
 msgid "Cancel"
 msgstr "Zrušit"
-
-msgid "There are no news posts yet"
-msgstr "Nejsou k dispozici žádné novinky"
 
 #, python-format
 msgid ""

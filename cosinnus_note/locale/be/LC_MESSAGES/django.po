@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:36+0200\n"
+"POT-Creation-Date: 2022-01-21 09:33+0100\n"
 "PO-Revision-Date: 2019-05-01 23:00+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -218,6 +218,9 @@ msgstr "Апублікаваць"
 msgid "There are no public news posts"
 msgstr "Публічных допісаў няма"
 
+msgid "There are no news posts yet"
+msgstr "Допісаў пакуль няма"
+
 msgid "Edit news post"
 msgstr "Рэдагаваць допіс"
 
@@ -248,9 +251,6 @@ msgstr "выслаць запыт на далучэнне"
 
 msgid "Cancel"
 msgstr "Скасаваць"
-
-msgid "There are no news posts yet"
-msgstr "Допісаў пакуль няма"
 
 #, python-format
 msgid ""
