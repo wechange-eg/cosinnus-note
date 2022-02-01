@@ -3,10 +3,10 @@ from __future__ import unicode_literals
 
 from builtins import object
 import re
+import six
 
 from django.conf import settings
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from embed_video.fields import EmbedVideoField
@@ -164,7 +164,7 @@ class Note(LikeableObjectMixin, TranslateableFieldsModelMixin, BaseTaggableObjec
         return group_aware_reverse('cosinnus:note:comment', kwargs={'group': self.group, 'note_slug': self.slug})
     
 
-@python_2_unicode_compatible
+@six.python_2_unicode_compatible
 class Comment(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('Creator'), on_delete=models.PROTECT)
     created_on = models.DateTimeField(_('Created'), auto_now_add=True, editable=False)
